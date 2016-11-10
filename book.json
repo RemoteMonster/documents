@@ -28,7 +28,7 @@
 			"url": "https://github.com/remotemonster/remon-docs/"
 		},
 		"edit-link": {
-			"base": "https://github.com/remotemonster/remon-docs/edit/master/",
+			"base": "https://github.com/RemoteMonster/REMON-Docs/edit/master/src/",
 			"label": {
 				"en": "Edit This Page",
 				"ko": "이 페이지를 수정하기"
