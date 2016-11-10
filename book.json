@@ -1,0 +1,44 @@
+{
+	"title": "RemoteMonster Documents",
+	"description": "RemoteMonster Documents",
+	"author": "RemoteMonster",
+	"root": "./src",
+	"pdf": {
+		"fontFamily": "nato-sans"
+	},
+	"plugins": [
+		"versions",
+		"github",
+		"edit-link",
+		"language-picker",
+		"ga",
+		"mixpanel"
+	],
+	"pluginsConfig": {
+		"versions": {
+			"type": "tags",
+			"options": [
+				{
+					"value": "https://docs.remotemonster.com/docs/v0.1.0/",
+					"text": "0.1.0"
+				}
+			]
+		},
+		"github": {
+			"url": "https://github.com/remotemonster/remon-docs/"
+		},
+		"edit-link": {
+			"base": "https://github.com/remotemonster/remon-docs/edit/master/",
+			"label": {
+				"en": "Edit This Page",
+				"ko": "이 페이지를 수정하기"
+			}
+		},
+		"ga": {
+			"token": "UA-84812645-2"
+		},
+		"mixpanel": {
+			"token": "e527efe2b8e51e982b2cee4647a55f3f"
+		}
+	}
+}
