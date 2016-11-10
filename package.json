@@ -9,7 +9,7 @@
     "serve": "gitbook serve",
     "build": "npm run clean && gitbook build",
     "clean": "rm -rf _book",
-    "docs:publish": "npm run docs:build && cd _book && git init && git commit --allow-empty -m 'Update docs' && git checkout -b gh-pages && git add . && git commit -am 'Update docs' && git push git@github.com:remotemonster/REMON-docs gh-pages --force"
+    "publish": "npm run build && cd _book && git init && git commit --allow-empty -m 'Update docs' && git checkout -b gh-pages && git add . && git commit -am 'Update docs' && git push git@github.com:remotemonster/REMON-docs gh-pages --force"
   },
   "author": "REMOTEMONSTER",
   "license": "ISC",
