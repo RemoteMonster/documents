@@ -1,45 +1,110 @@
 # Browser SDK - Getting Started
 
-## 설치
+## 준비사항
+- node.js
+- WebServer (Apache server, python SimpleHttpServer, nginx, harp ...)
 
-npm을 통한 설치
-
-- `npm install --save remon-browser-sdk`
-
-
-
-## 설정
-
-### config 객체 생성
-
-- 아래의 값은 필수적으로 설정되어야함
-- view에서 값은 CSS 셀렉터 형태로 지정되어야함
-
-
+## 세상에서 가장 쉬운 통화앱 개발
+- 먼저 웹서버가 서비스할 디렉토리 하나를 선택하거나 만듭니다.
+- 해당 디렉토리에서 npm install remon-browser-sdk 실행합니다.
+- index.html 파일을 생성하고 코드를 작성합니다.
 ```javascript
-{
-  credential: {
-    key: undefined,
-    serviceId: undefined,
-  },
-  view: {
-    local: undefined,
-    remote: undefined,
-  },
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./node_modules/remon-browser-sdk/remon.min.js"></script>
+
+  <style>
+    video#remoteVideo{width:auto; height: 80%; background-color: black;}
+    button#connectChannelButton{position:absolute;
+    overflow:visible;left:50%; top:10px;}
+    html,body{height:100%;}
+  </style>
+  <script>
+  var remon = Remon;
+  var isConnected = false;
+  var config = {credential: {
+      key: '1234567890', serviceId: 'SERVICEID1'
+    },
+    view: {remote: '#remoteVideo'}
+  };
+  remon.init({userConfig:config});
+
+  function start(){
+    if (isConnected === false){
+      isConnected = true;
+      document.getElementById("connectChannelButton").innerHTML = "Close";
+      remon.connectChannel("simpleRemon");
+    }else{
+      isConnected = false;
+      document.getElementById("connectChannelButton").innerHTML = "Connect";
+      remon.disconnect();
+    }
+  }
+  </script>
+  <title>Remon JS Simple Test</title>
+</head>
+<body>
+  <video id="remoteVideo" autoplay controls class="video"></video>
+  <button id="connectChannelButton" class="btn btn-sm" onclick="start();">Connect</button>
+</body>
+</html>
 ```
+- 이제 이 디렉토리를 웹서버를 통해서 접근할 차례입니다. 예를 들어 harp server를 사용했다고 합시다.
+- harp server 라고 실행하면 포트 9000번을 통해 접근할 수 있죠.
+- http://localhost:9000 으로 파이어폭스나 크롬 브라우저를 통해 접근해봅시다. 2개의 탭으로 접근하거나 아예 다른 창으로 각각 'Connect'를 클릭하면?
+- 첫번째 Remon 앱을 만든 것을 축하합니다.
 
-### listener 객체 생성
+## 소스를 살펴보기
+- 몇가지 단계로 Remon기반의 웹서비스 개발을 나눠볼 수 있습니다.
+- var remon = Remon
+- Remon 객체를 생성하는 코드입니다. 아무런 인자도 줄 이유가 없습니다.
+```javascript
+var config = {credential: {
+    key: '1234567890', serviceId: 'SERVICEID1'
+  },
+  view: {remote: '#remoteVideo'}
+};
+```
+  - 이제 Remon에 넘겨줄 설정을 정의합니다. key값은 Remote Monster에 회원가입하여 받게 되는 비밀번호입니다. serviceId값은 Remote Monster에 회원가입시 입력한 자신의 서비스 id입니다. 이 2개의 값은 꼭 있어야 합니다.
+  - view 항목에 보면 video 태그의 id를 설정합니다. 원격에서 상대방의 영상이 수신되면 그 영상을 출력할 video 태그의 id인 것입니다.
+```javascript
+remon.init({userConfig:config})
+```
+- 이제 작성한 config값을 이용하여 remon을 초기화합니다.
+- remon.connectChannel("simpleRemon")
+- 이제 방에 들어갈 시간입니다. connectChannel 메소드는 입력값에 해당하는 방으로 들어가는 명령을 수행합니다.
+- remon.disconnect()
+- 방에 들어가는 명령이 있다면 나오는 명령이 있겠죠. disconnect는 바로 들어갔던 방에서 나오는 명령입니다
+- 이제 모든 것이 끝났습니다. Remote Monster의 Javascript API는 이것만으로도 통신의 모든 것을 완벽히 수행합니다. 물론 더 자세한 조작은 필요하겠죠?
 
-- 아래와 일치하는 이름의 콜백 리스너를 생성
-- 아래와 같이 일부 리스너는 함수 인자를 받아 조작하여 사용할 수 있음
+## LocalVideo 생성
+- 앞서 예제는 상대편 video만 있어서 연결하기 전에는 나의 얼굴을 확인할 수 없었습니다. 이제 나의 video tag를 삽입하고 그 tag의 id를 RemoteMonster에게 알려줍시다.
+- html body에 다음과 같이 local Video를 추가합니다.
+- <video id=\"localVideo\" autoplay controls class=\"video\">
+- 그리고 config를 다음과 같이 수정합니다.
+```
+var config = {credential: {
+    key: '1234567890', serviceId: 'SERVICEID1'
+  },
+  view: {remote: '#remoteVideo', local:'#localVideo'}
+};
+```
+- CSS를 조금 수정하면 다음과 같이 2개의 화면을 같이 볼 수 있어요.
+
+## Callback 이벤트 처리기 사용하기
+- Remon은 수많은 일들을 내부적으로 Remote Monster의 서버와 작업하게 됩니다. 때로는 네트워크 상황이 안좋아서 연결이 안될 수도 있고 특별한 이벤트는 귀기울여 수신해야할 필요도 있습니다. 때문에 Remon은 콜백 이벤트 처리기, Listener를 제공하여 이를 통해 다양한 정보를 개발자가 얻을 수 있도록 하고 있습니다.
+- 이제 아래와 일치하는 이름의 콜백 리스너를 생성합니다.
 
 ```javascript
-{
+var listener = {
  onInit(token) { ... },
  onCreateChannel(channelId) { ... },
  onConnectChannel(channelId) { ... },
- onComplate() { ... },
+ onComplete() { ... },
  onDisplayUserMedia(stream) { ... },
  onAddLocalStream(stream) { ... },
  onAddRemoteStream(stream) { ... },
@@ -47,32 +112,14 @@ npm을 통한 설치
  onDisconnectChannel() { ... },
  onMessage(message) { ... },
  onError(error) { ... },
-}
+};
 ```
 
-## 초기화
-- 위에서 만든 설정과 리스너를 인자로 하여 시작
+- 위에서 만든 설정과 리스너를 인자로 하여 다시 시작해봅시다.
 
 ```javascript
-
-Remon.init({ userConfig, userListeners });
-
-// connect Channel with channel name
-remon.connectChannel(“myroom”);
+remon.init({ userConfig:config, userListeners:listener });
+...
+remon.connectChannel("simpleRemon");
 
 ```
-
-## onDestroy() 처리
-
-- 현재 아래와 같으나 0.1.0 릴리즈에서 close로 변경예정
-
-```javascript
-remon.disconnect();
-```
-
-
-
-
-
-
-
