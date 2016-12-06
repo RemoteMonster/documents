@@ -1,9 +1,11 @@
 # Summary
 
 - [Introduction](README.md)
+- [Features](Features.md)
+
 
 ## Getting Started
 
-- [Browser SDK Getting Started](Browser SDK - Getting Started.md)
-- [Android SDK Getting Started](Android SDK - Getting Started.md)
-
+- [Getting Started](Getting Started.md)
+- [Browser SDK Getting Started](Getting Started - Browser SDK.md)
+- [Android SDK Getting Started](Getting Started - Android SDK.md)

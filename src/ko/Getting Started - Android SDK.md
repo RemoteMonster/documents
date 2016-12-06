@@ -32,9 +32,11 @@ allprojects {
 ```
 ### module build.gradle을 수정하기
 - 모듈 build.gradle dependencies 항목 마지막 라인에 다음과 같이 한 줄을 추가합니다.
+
 ```groovy
 compile(group: 'com.remon', name: 'remondroid', version: '0.0.11')
 ```
+
 - 이제 안드로이드 스튜디오를 동기화하면 자동으로 Remote Monster의 Android SDK인 remondroid를 다운로드 받게 됩니다.
 
 ### `AndroidManifest.xml`에 권한 추가
@@ -105,16 +107,18 @@ config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view))
 //remon = new Remon(MainActivity.this, config, new MyObserver());
 remon = new Remon(MainActivity.this, config, new RemonObserver());
 ```
-### Connect !!
+
+### Connect
 - 이제 방을 만들거나 이미 만들어진 방에 들어갈 차례입니다. connect에는 크게 두가지 방식이 있습니다. 방이름을 입력하지 않고 connect명령을 할 경우 RemoteMonster는 임의의 방이름을 생성해서 반환값으로 방이름을 반환합니다. 다음에 그 방으로 입장하고 싶은 이는 그 반환된 값으로 connect할 때 사용하여 connect하면 됩니다. 그렇지 않고 직접 방 이름을 넣어서 방을 생성하거나 방을 접속할 수도 있습니다.
+
 ```java
 // connect Channel with channel name
 remon.connectChannel(“myroom”);
 ```
 
-### onDestroy\(\) 처리
+### onDestroy 처리
 - 모든 통신이 끝났을 경우 꼭 remon객체를 close해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
--
+
 ```java
 remon.close();
 ```
@@ -141,6 +145,7 @@ public static final String[] MANDATORY_PERMISSIONS = {
 
 ### RemonObserver 클래스 생성
 - Remote Monster를 통해 오고가는 모든 통신과정의 이벤트를 수신할 필요가 있습니다. 이를 위해 RemonObserver에서 상속받은 별도의 Callback 클래스를 만들어봅시다.
+
 ```java
 public class MyObserver extends RemonObserver {
   @Override
@@ -149,9 +154,10 @@ public class MyObserver extends RemonObserver {
   }
 }
 ```
+
 - RemonObserver를 통해 처리하면 좋은 메소드는 다음과 같습니다.
-  * onStateChange: 최초 Remon객체를 만들고 방을 만들며 접속하고 접속에 성공하고 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. RemonState enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. RemonState의 상태는 다음과 같습니다.
-     * INIT(시작), WAIT(방 생성), CONNECT(방 접속), COMPLETE(통신 연결완료), FAIL(실패), CLOSE(종료)
-  * onError: 통신 시도 중 장애 발생시 호출됩니다.
-  * onAddLocalStream: 자기 자신의 카메라의 영상이 혹은 음성 스트림을 획득하였을 경우 호출됩니다.
-  * onAddRemoteStream: 상대방의 영상이나 음성 스트림을 획득하였을 경우 호출됩니다. 연결이 되었다는 뜻이죠.
+  - onStateChange: 최초 Remon객체를 만들고 방을 만들며 접속하고 접속에 성공하고 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. RemonState enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. RemonState의 상태는 다음과 같습니다.
+    - INIT(시작), WAIT(방 생성), CONNECT(방 접속), COMPLETE(통신 연결완료), FAIL(실패), CLOSE(종료)
+  - onError: 통신 시도 중 장애 발생시 호출됩니다.
+  - onAddLocalStream: 자기 자신의 카메라의 영상이 혹은 음성 스트림을 획득하였을 경우 호출됩니다.
+  - onAddRemoteStream: 상대방의 영상이나 음성 스트림을 획득하였을 경우 호출됩니다. 연결이 되었다는 뜻이죠.
