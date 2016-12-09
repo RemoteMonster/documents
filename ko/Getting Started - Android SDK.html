@@ -1,0 +1,503 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Android SDK Getting Started · RemoteMonster Documents</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="RemoteMonster">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Getting Started - Browser SDK.html" />
+    
+
+    </head>
+    <body>
+        
+  <div class="remon-navbar navbar">
+    <a class="navbar-brand" href="https://remotemonster.com">Home</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="http://docs.remotemonster.com/ko/Features.html">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://remotemonster.com/#/pricing">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://remotemonster.com/#/sdks">SDKs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://community.remotemonster.com">Community</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://blog.remotemonster.com">Blog</a>
+      </li>
+    </ul>
+  </div>
+  
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Features.html">
+            
+                <a href="Features.html">
+            
+                    
+                    Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Getting Started</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Getting Started.html">
+            
+                <a href="Getting Started.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Getting Started - Browser SDK.html">
+            
+                <a href="Getting Started - Browser SDK.html">
+            
+                    
+                    Browser SDK Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="Getting Started - Android SDK.html">
+            
+                <a href="Getting Started - Android SDK.html">
+            
+                    
+                    Android SDK Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Android SDK Getting Started</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="android-sdk---getting-started">Android SDK - Getting Started</h1>
+<h2 id="&#xC900;&#xBE44;-&#xC0AC;&#xD56D;">&#xC900;&#xBE44; &#xC0AC;&#xD56D;</h2>
+<ul>
+<li>&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xC2A4;&#xB9C8;&#xD2B8;&#xD3F0; 2&#xAC1C;</li>
+<li>Android Studio &#xAC1C;&#xBC1C; &#xD658;&#xACBD;</li>
+<li>&#xB864;&#xB9AC;&#xD31D; &#xC774;&#xC0C1;&#xC758; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; OS</li>
+</ul>
+<h2 id="&#xC138;&#xC0C1;&#xC5D0;&#xC11C;-&#xAC00;&#xC7A5;-&#xC26C;&#xC6B4;-&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;-&#xD1B5;&#xD654;&#xC571;-&#xAC1C;&#xBC1C;">&#xC138;&#xC0C1;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC26C;&#xC6B4; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xD1B5;&#xD654;&#xC571; &#xAC1C;&#xBC1C;</h2>
+<ul>
+<li>&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;&#xC5D0;&#xC11C; Remote Monster&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xD06C;&#xAC8C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xB85C; &#xAC1C;&#xBC1C;&#xC774; &#xC9C4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.<ol>
+<li>Remote Monster Android SDK download center URL&#xC744; &#xD504;&#xB85C;&#xC81D;&#xD2B8; build.gradle &#xB4F1;&#xB85D;</li>
+<li>&#xBAA8;&#xB4C8; build.gradle&#xC5D0; SDK &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xC124;&#xC815;</li>
+<li>AndroidMenifest.xml&#xC5D0; &#xAD8C;&#xD55C;&#xB4F1;&#xC758; &#xC124;&#xC815;</li>
+<li>&#xC601;&#xC0C1; &#xD1B5;&#xD654;&#xC778; &#xACBD;&#xC6B0; layout file&#xC5D0; &#xC601;&#xC0C1;&#xC804;&#xC6A9; View &#xB4F1;&#xB85D;</li>
+<li>Config file &#xC0DD;&#xC131;</li>
+<li>Remon &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;</li>
+<li>Remon.connect &#xC2E4;&#xD589;</li>
+<li>Callback &#xBA54;&#xC18C;&#xB4DC; &#xCC98;&#xB9AC;&#xD558;&#xAE30;</li>
+</ol>
+</li>
+<li>&#xC774;&#xC81C; &#xD558;&#xB098;&#xC529; &#xB530;&#xB77C;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;. &#xC608;&#xC0C1; &#xC18C;&#xC694;&#xC2DC;&#xAC04;&#xC740; &#xC57D; 30&#xBD84; &#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h3 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;-buildgradle&#xC5D0;&#xC11C;-repository-url-&#xC124;&#xC815;">&#xD504;&#xB85C;&#xC81D;&#xD2B8; build.gradle&#xC5D0;&#xC11C; repository URL &#xC124;&#xC815;</h3>
+<ul>
+<li>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; Remote Monster&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; SDK repository URL&#xC744; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC774; URL&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC774;&#xC804; &#xBC84;&#xC804;&#xC758; Remote Monster SDK&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xBC1B;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-groovy">allprojects {
+repositories {
+  jcenter()
+  maven {
+    url <span class="hljs-string">&apos;https://remotemonster.com/artifactory/libs-release-local&apos;</span>
+  }
+}
+}
+</code></pre>
+<h3 id="module-buildgradle&#xC744;-&#xC218;&#xC815;&#xD558;&#xAE30;">module build.gradle&#xC744; &#xC218;&#xC815;&#xD558;&#xAE30;</h3>
+</li>
+<li>&#xBAA8;&#xB4C8; build.gradle dependencies &#xD56D;&#xBAA9; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC5D0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD55C; &#xC904;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-groovy">compile(<span class="hljs-string">group:</span> <span class="hljs-string">&apos;com.remon&apos;</span>, <span class="hljs-string">name:</span> <span class="hljs-string">&apos;remondroid&apos;</span>, <span class="hljs-string">version:</span> <span class="hljs-string">&apos;0.0.11&apos;</span>)
+</code></pre>
+<ul>
+<li>&#xC774;&#xC81C; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xC2A4;&#xD29C;&#xB514;&#xC624;&#xB97C; &#xB3D9;&#xAE30;&#xD654;&#xD558;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; Remote Monster&#xC758; Android SDK&#xC778; remondroid&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xBC1B;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h3 id="androidmanifestxml&#xC5D0;-&#xAD8C;&#xD55C;-&#xCD94;&#xAC00;"><code>AndroidManifest.xml</code>&#xC5D0; &#xAD8C;&#xD55C; &#xCD94;&#xAC00;</h3>
+<ul>
+<li>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; Remondroid&#xAC00; &#xB3D9;&#xC791;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD544;&#xC694;&#xD55C; &#xAD8C;&#xD55C;&#xB4F1;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">uses-feature</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.hardware.camera&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-feature</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.hardware.camera2&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-feature</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.hardware.camera.autofocus&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-feature</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.hardware.camera.flash&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-feature</span> <span class="hljs-attr">android:glEsVersion</span>=<span class="hljs-string">&quot;0x00020000&quot;</span> <span class="hljs-attr">android:required</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CAMERA&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_NETWORK_STATE&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_WIFI_STATE&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_WIFI_STATE&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.RECORD_AUDIO&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.INTERNET&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.BLUETOOTH&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.BLUETOOTH_ADMIN&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.BROADCAST_STICKY&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.READ_PHONE_STATE&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.MODIFY_AUDIO_SETTINGS&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="local&#xACFC;-remote-view&#xB97C;-layout&#xC5D0;-&#xCD94;&#xAC00;">local&#xACFC; remote view&#xB97C; layout&#xC5D0; &#xCD94;&#xAC00;</h3>
+<ul>
+<li>&#xB9CC;&#xC57D; &#xC601;&#xC0C1;&#xD1B5;&#xD654;&#xB97C; &#xD55C;&#xB2E4;&#xBA74; &#xBCF4;&#xD1B5; &#xC790;&#xC2E0;&#xC758; &#xD654;&#xBA74;&#xACFC; &#xC6D0;&#xACA9;&#xC758; &#xD654;&#xBA74;&#xC744; &#xB3D9;&#xC2DC;&#xC5D0; &#xBCF4;&#xC5EC;&#xC8FC;&#xACE0; &#xC2F6;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xB54C;&#xBB38;&#xC5D0; &#xBBF8;&#xB9AC; &#xC790;&#xC2E0;&#xC774; &#xC6D0;&#xD558;&#xB294; View&#xC5D0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB85C;&#xCEEC;&#xACFC; &#xC6D0;&#xACA9;&#xC758; &#xBDF0;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. PercentFrameLayout&#xC740; &#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xB2E4;&#xC591;&#xD55C; &#xBE44;&#xC728;&#xB85C; &#xD654;&#xBA74; &#xD06C;&#xAE30;&#xC640; &#xC704;&#xCE58;&#xB97C; &#xC870;&#xC808;&#xD558;&#xB294; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC774;&#xBA70; &#xC2E4;&#xC81C; &#xC601;&#xC0C1;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xBDF0;&#xB294; SurfaceViewRenderer&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">com.remon.remondroid.PercentFrameLayout</span> <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/remote_video_layout&quot;</span>
+ <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+ <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">org.webrtc.SurfaceViewRenderer</span>
+ <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/remote_video_view&quot;</span>
+ <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+ <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">com.remon.remondroid.PercentFrameLayout</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">com.remon.remondroid.PercentFrameLayout</span> <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/local_video_layout&quot;</span>
+ <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+ <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">org.webrtc.SurfaceViewRenderer</span>
+ <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/local_video_view&quot;</span>
+ <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+ <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">com.remon.remondroid.PercentFrameLayout</span>&gt;</span>
+</code></pre>
+<h3 id="remon&#xC758;-config-&#xAC1D;&#xCCB4;-&#xC0DD;&#xC131;">Remon&#xC758; Config &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;</h3>
+<ul>
+<li>&#xC774;&#xC81C; &#xCF54;&#xB529;&#xC758; &#xC2DC;&#xAC04;&#xC785;&#xB2C8;&#xB2E4;. &#xBA3C;&#xC800; &#xC0AC;&#xC804;&#xC5D0; &#xD658;&#xACBD; &#xC124;&#xC815;&#xC744; &#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. View&#xAC00; &#xC2DC;&#xC791;&#xB420; &#xB54C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; Config&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. Key&#xC640; ServiceID&#xB294; &#xB123;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;. &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD14C;&#xC2A4;&#xD2B8;&#xC6A9; key&#xC640; serviceId&#xB85C; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;. &#xB098;&#xC911;&#xC5D0; &#xBCF8;&#xACA9;&#xC801;&#xC73C;&#xB85C; Remote Monster&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xD68C;&#xC6D0;&#xAC00;&#xC785;&#xC744; &#xD558;&#xACE0; &#xD0A4;&#xB97C; &#xBC1C;&#xAE09;&#xBC1B;&#xC544;&#xC11C; Config&#xC5D0; &#xC785;&#xB825;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>Config &#xAC1D;&#xCCB4;&#xB97C; &#xD1B5;&#xD574; &#xB2E4;&#xC591;&#xD55C; &#xD658;&#xACBD; &#xC124;&#xC815;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xC77C;&#xB2E8; &#xC55E;&#xC11C; &#xC124;&#xC815;&#xD55C; Local, Remote View&#xB97C; &#xC124;&#xC815;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD544;&#xC694;&#xC5D0; &#xB530;&#xB77C;&#xC11C;&#xB294; &#xC601;&#xC0C1;&#xD1B5;&#xD654;&#xAC00; &#xC544;&#xB2CC; &#xC74C;&#xC131;&#xD1B5;&#xD654;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xACE0; &#xCF54;&#xB371;&#xC744; &#xBC14;&#xAFB8;&#xAC70;&#xB098; &#xD574;&#xC0C1;&#xB3C4;&#xB97C; &#xBC14;&#xAFC0; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java">Config config = <span class="hljs-keyword">new</span> com.remon.remondroid.Config();
+<span class="hljs-comment">//config.setKey(&quot;1234567890&quot;);</span>
+<span class="hljs-comment">//config.setServiceId(&quot;SERVICEID1&quot;);</span>
+config.setLocalView((SurfaceViewRenderer) findViewById(R.id.local_video_view));
+config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view));
+</code></pre>
+<h3 id="remon-&#xAC1D;&#xCCB4;-&#xC0DD;&#xC131;">Remon &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;</h3>
+<ul>
+<li>&#xC774;&#xC81C; Remon &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xC8FC;&#xB85C; View &#xC2DC;&#xC791;&#xC2DC;&#xC5D0; &#xBA3C;&#xC800; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xAC83;&#xC744; &#xAD8C;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>Remon&#xAC1D;&#xCCB4; &#xC0DD;&#xC131;&#xC2DC; &#xC55E;&#xC11C; &#xC124;&#xC815;&#xD558;&#xC600;&#xB358; Config&#xAC1D;&#xCCB4;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xB123;&#xC5B4;&#xC8FC;&#xACE0; &#xAE30;&#xD0C0; Observer&#xB294; &#xADF8;&#xB0E5; &#xB2E4;&#xC74C;&#xC5D0; &#xC124;&#xBA85;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>Observer&#xB294; Callback &#xD074;&#xB798;&#xC2A4;&#xC778;&#xB370; &#xAD73;&#xC774; &#xB123;&#xACE0; &#xC2F6;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; RemonObserver&#xB97C; new &#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-comment">// create channel</span>
+<span class="hljs-comment">//remon = new Remon(MainActivity.this, config, new MyObserver());</span>
+remon = <span class="hljs-keyword">new</span> Remon(MainActivity.<span class="hljs-keyword">this</span>, config, <span class="hljs-keyword">new</span> RemonObserver());
+</code></pre>
+<h3 id="connect">Connect</h3>
+<ul>
+<li>&#xC774;&#xC81C; &#xBC29;&#xC744; &#xB9CC;&#xB4E4;&#xAC70;&#xB098; &#xC774;&#xBBF8; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xBC29;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC08; &#xCC28;&#xB840;&#xC785;&#xB2C8;&#xB2E4;. connect&#xC5D0;&#xB294; &#xD06C;&#xAC8C; &#xB450;&#xAC00;&#xC9C0; &#xBC29;&#xC2DD;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBC29;&#xC774;&#xB984;&#xC744; &#xC785;&#xB825;&#xD558;&#xC9C0; &#xC54A;&#xACE0; connect&#xBA85;&#xB839;&#xC744; &#xD560; &#xACBD;&#xC6B0; RemoteMonster&#xB294; &#xC784;&#xC758;&#xC758; &#xBC29;&#xC774;&#xB984;&#xC744; &#xC0DD;&#xC131;&#xD574;&#xC11C; &#xBC18;&#xD658;&#xAC12;&#xC73C;&#xB85C; &#xBC29;&#xC774;&#xB984;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xC5D0; &#xADF8; &#xBC29;&#xC73C;&#xB85C; &#xC785;&#xC7A5;&#xD558;&#xACE0; &#xC2F6;&#xC740; &#xC774;&#xB294; &#xADF8; &#xBC18;&#xD658;&#xB41C; &#xAC12;&#xC73C;&#xB85C; connect&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; connect&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xACE0; &#xC9C1;&#xC811; &#xBC29; &#xC774;&#xB984;&#xC744; &#xB123;&#xC5B4;&#xC11C; &#xBC29;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xAC70;&#xB098; &#xBC29;&#xC744; &#xC811;&#xC18D;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-comment">// connect Channel with channel name</span>
+remon.connectChannel(&#x201C;myroom&#x201D;);
+</code></pre>
+<h3 id="ondestroy-&#xCC98;&#xB9AC;">onDestroy &#xCC98;&#xB9AC;</h3>
+<ul>
+<li>&#xBAA8;&#xB4E0; &#xD1B5;&#xC2E0;&#xC774; &#xB05D;&#xB0AC;&#xC744; &#xACBD;&#xC6B0; &#xAF2D; remon&#xAC1D;&#xCCB4;&#xB97C; close&#xD574;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. close&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xBAA8;&#xB4E0; &#xD1B5;&#xC2E0;&#xC790;&#xC6D0;&#xACFC; &#xBBF8;&#xB514;&#xC5B4; &#xC2A4;&#xD2B8;&#xB9BC; &#xC790;&#xC6D0;&#xC774; &#xD574;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java">remon.close();
+</code></pre>
+<h3 id="&#xAD8C;&#xD55C;&#xC5D0;-&#xB300;&#xD55C;-&#xACE0;&#xAC1D;-&#xD655;&#xC778;&#xCC3D;-&#xCC98;&#xB9AC;">&#xAD8C;&#xD55C;&#xC5D0; &#xB300;&#xD55C; &#xACE0;&#xAC1D; &#xD655;&#xC778;&#xCC3D; &#xCC98;&#xB9AC;</h3>
+<ul>
+<li>&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xCD5C;&#xC2E0; &#xBC84;&#xC804;&#xC758; &#xACBD;&#xC6B0; &#xC571;&#xC758; &#xAD8C;&#xD55C;&#xC5D0; &#xB300;&#xD574; &#xCC98;&#xC74C; &#xC571; &#xC0AC;&#xC6A9;&#xC2DC; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC9C1;&#xC811; &#xBB3B;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD55C; &#xCC98;&#xB9AC;&#xB3C4; &#xD544;&#xC694;&#xD558;&#xACA0;&#xC8E0;.</li>
+<li>&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xAC1C;&#xBC1C;&#xC790;&#xC778; &#xB2F9;&#xC2E0;&#xC774; &#xAC00;&#xC7A5; &#xC120;&#xD638;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC774;&#xAC83;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xCC98;&#xB9AC;&#xD574;&#xC57C;&#xD560; &#xAD8C;&#xD55C;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String[] MANDATORY_PERMISSIONS = {
+  <span class="hljs-string">&quot;android.permission.INTERNET&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.CAMERA&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.RECORD_AUDIO&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.MODIFY_AUDIO_SETTINGS&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.CHANGE_WIFI_STATE&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.ACCESS_WIFI_STATE&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.READ_PHONE_STATE&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.BLUETOOTH&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.BLUETOOTH_ADMIN&quot;</span>,
+  <span class="hljs-string">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span>
+};
+</code></pre>
+<h3 id="remonobserver-&#xD074;&#xB798;&#xC2A4;-&#xC0DD;&#xC131;">RemonObserver &#xD074;&#xB798;&#xC2A4; &#xC0DD;&#xC131;</h3>
+<ul>
+<li>Remote Monster&#xB97C; &#xD1B5;&#xD574; &#xC624;&#xACE0;&#xAC00;&#xB294; &#xBAA8;&#xB4E0; &#xD1B5;&#xC2E0;&#xACFC;&#xC815;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC218;&#xC2E0;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574; RemonObserver&#xC5D0;&#xC11C; &#xC0C1;&#xC18D;&#xBC1B;&#xC740; &#xBCC4;&#xB3C4;&#xC758; Callback &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xBD05;&#xC2DC;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyObserver</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">RemonObserver</span> </span>{
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable t)</span> </span>{
+    <span class="hljs-keyword">super</span>.onError(t);
+  }
+}
+</code></pre>
+<ul>
+<li>RemonObserver&#xB97C; &#xD1B5;&#xD574; &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC88B;&#xC740; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.<ul>
+<li>onStateChange: &#xCD5C;&#xCD08; Remon&#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xBC29;&#xC744; &#xB9CC;&#xB4E4;&#xBA70; &#xC811;&#xC18D;&#xD558;&#xACE0; &#xC811;&#xC18D;&#xC5D0; &#xC131;&#xACF5;&#xD558;&#xACE0; &#xD1B5;&#xC2E0;&#xC744; &#xB9C8;&#xCE60; &#xB54C;&#xAE4C;&#xC9C0;&#xC758; &#xBAA8;&#xB4E0; &#xC0C1;&#xD0DC; &#xBCC0;&#xD654;&#xC5D0; &#xB300;&#xD574; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. RemonState enum&#xAC1D;&#xCCB4;&#xB97C; &#xD1B5;&#xD574; &#xC5B4;&#xB5A4; &#xC0C1;&#xD0DC;&#xB85C; &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xB294;&#xC9C0;&#xB97C; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;. RemonState&#xC758; &#xC0C1;&#xD0DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.<ul>
+<li>INIT(&#xC2DC;&#xC791;), WAIT(&#xBC29; &#xC0DD;&#xC131;), CONNECT(&#xBC29; &#xC811;&#xC18D;), COMPLETE(&#xD1B5;&#xC2E0; &#xC5F0;&#xACB0;&#xC644;&#xB8CC;), FAIL(&#xC2E4;&#xD328;), CLOSE(&#xC885;&#xB8CC;)</li>
+</ul>
+</li>
+<li>onError: &#xD1B5;&#xC2E0; &#xC2DC;&#xB3C4; &#xC911; &#xC7A5;&#xC560; &#xBC1C;&#xC0DD;&#xC2DC; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>onAddLocalStream: &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC758; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC601;&#xC0C1;&#xC774; &#xD639;&#xC740; &#xC74C;&#xC131; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xD68D;&#xB4DD;&#xD558;&#xC600;&#xC744; &#xACBD;&#xC6B0; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>onAddRemoteStream: &#xC0C1;&#xB300;&#xBC29;&#xC758; &#xC601;&#xC0C1;&#xC774;&#xB098; &#xC74C;&#xC131; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xD68D;&#xB4DD;&#xD558;&#xC600;&#xC744; &#xACBD;&#xC6B0; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;. &#xC5F0;&#xACB0;&#xC774; &#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xB73B;&#xC774;&#xC8E0;.</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Android SDK Getting Started","level":"2.3","depth":1,"previous":{"title":"Browser SDK Getting Started","level":"2.2","depth":1,"path":"Getting Started - Browser SDK.md","ref":"Getting Started - Browser SDK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster Documents"},"file":{"path":"Getting Started - Android SDK.md","mtime":"2016-12-09T02:29:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-09T06:55:07.226Z"},"basePath":".","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mixpanel/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+
