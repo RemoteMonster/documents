@@ -7,6 +7,8 @@
 		"fontFamily": "nato-sans"
 	},
 	"plugins": [
+    "theme-api",
+    "sitemap",
 		"versions",
 		"github",
 		"edit-link",
@@ -39,6 +41,9 @@
 		},
 		"mixpanel": {
 			"token": "e527efe2b8e51e982b2cee4647a55f3f"
-		}
+		},
+    "sitemap": {
+      "hostname": "http://docs.remotemonster.com/"
+    }
 	}
 }
