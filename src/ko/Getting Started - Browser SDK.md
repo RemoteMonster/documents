@@ -26,7 +26,7 @@
 
   <script>
   const remon = Remon;
-  const isConnected = false;
+  let isConnected = false;
   const config = { credential: {
       key: '1234567890', serviceId: 'SERVICEID1'
     },
