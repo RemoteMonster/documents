@@ -196,6 +196,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="Getting Started - iOS SDK.html">
+            
+                <a href="Getting Started - iOS SDK.html">
+            
+                    
+                    iOS SDK Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -258,15 +271,14 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/remon-browser-sdk/remon.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
   <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-    <span class="hljs-selector-tag">video</span><span class="hljs-selector-id">#remoteVideo</span>{ <span class="hljs-attribute">width</span>:auto; <span class="hljs-attribute">height</span>: <span class="hljs-number">80%</span>; <span class="hljs-attribute">background-color</span>: black; }
-    <span class="hljs-selector-tag">button</span><span class="hljs-selector-id">#connectChannelButton</span>{ <span class="hljs-attribute">position</span>:absolute; <span class="hljs-attribute">overflow</span>:visible; <span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span>; <span class="hljs-attribute">top</span>:<span class="hljs-number">10px</span>; }
-    <span class="hljs-selector-tag">html</span>,<span class="hljs-selector-tag">body</span>{ <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>; }
+    <span class="hljs-selector-tag">video</span><span class="hljs-selector-id">#remoteVideo</span> { <span class="hljs-attribute">width</span>:auto; <span class="hljs-attribute">height</span>: <span class="hljs-number">80%</span>; <span class="hljs-attribute">background-color</span>: black; }
+    <span class="hljs-selector-tag">button</span><span class="hljs-selector-id">#connectChannelButton</span> { <span class="hljs-attribute">position</span>:absolute; <span class="hljs-attribute">overflow</span>:visible; <span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span>; <span class="hljs-attribute">top</span>:<span class="hljs-number">10px</span>; }
+    <span class="hljs-selector-tag">html</span>,<span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>; }
   </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/remon-browser-sdk/remon.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
   <span class="hljs-keyword">const</span> remon = Remon;
   <span class="hljs-keyword">let</span> isConnected = <span class="hljs-literal">false</span>;
@@ -346,7 +358,8 @@
 <li><code>&lt;video id=\&quot;localVideo\&quot; autoplay controls class=\&quot;video\&quot;&gt;</code></li>
 </ul>
 <p>&#xADF8;&#xB9AC;&#xACE0; config&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC218;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = { credential: {
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
+  credential: {
     key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
   },
   view: {
@@ -407,7 +420,7 @@ remon.connectChannel(<span class="hljs-string">&quot;simpleRemon&quot;</span>);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Browser SDK Getting Started","level":"2.2","depth":1,"next":{"title":"Android SDK Getting Started","level":"2.3","depth":1,"path":"Getting Started - Android SDK.md","ref":"Getting Started - Android SDK.md","articles":[]},"previous":{"title":"Getting Started","level":"2.1","depth":1,"path":"Getting Started.md","ref":"Getting Started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster Documents"},"file":{"path":"Getting Started - Browser SDK.md","mtime":"2016-12-09T06:36:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-12T06:29:15.419Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"Browser SDK Getting Started","level":"2.2","depth":1,"next":{"title":"Android SDK Getting Started","level":"2.3","depth":1,"path":"Getting Started - Android SDK.md","ref":"Getting Started - Android SDK.md","articles":[]},"previous":{"title":"Getting Started","level":"2.1","depth":1,"path":"Getting Started.md","ref":"Getting Started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster Documents"},"file":{"path":"Getting Started - Browser SDK.md","mtime":"2016-12-13T02:38:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T09:13:07.382Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>

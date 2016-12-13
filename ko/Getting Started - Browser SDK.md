@@ -15,15 +15,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="./node_modules/remon-browser-sdk/remon.min.js"></script>
 
   <style>
-    video#remoteVideo{ width:auto; height: 80%; background-color: black; }
-    button#connectChannelButton{ position:absolute; overflow:visible; left:50%; top:10px; }
-    html,body{ height:100%; }
+    video#remoteVideo { width:auto; height: 80%; background-color: black; }
+    button#connectChannelButton { position:absolute; overflow:visible; left:50%; top:10px; }
+    html,body { height:100%; }
   </style>
 
+  <script src="./node_modules/remon-browser-sdk/remon.min.js"></script>
   <script>
   const remon = Remon;
   let isConnected = false;
@@ -68,6 +67,7 @@
 - `const remon = Remon`
 
 설정 객체를 만듭니다.
+
 ```javascript
 const config = { credential: {
     key: '1234567890', serviceId: 'SERVICEID1'
@@ -101,7 +101,8 @@ const config = { credential: {
 
 그리고 config를 다음과 같이 수정합니다.
 ```javascript
-const config = { credential: {
+const config = {
+  credential: {
     key: '1234567890', serviceId: 'SERVICEID1'
   },
   view: {

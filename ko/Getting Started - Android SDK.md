@@ -20,6 +20,7 @@
 ### 프로젝트 build.gradle에서 repository URL 설정
 - 다음과 같이 Remote Monster가 제공하는 안드로이드 SDK repository URL을 등록합니다.
 - 이 URL을 통해서 이전 버전의 Remote Monster SDK를 다운로드 받을 수도 있습니다.
+
 ```groovy
 allprojects {
   repositories {
@@ -30,6 +31,7 @@ allprojects {
   }
 }
 ```
+
 ### module build.gradle을 수정하기
 - 모듈 build.gradle dependencies 항목 마지막 라인에 다음과 같이 한 줄을 추가합니다.
 

@@ -71,6 +71,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="Getting Started - iOS SDK.html" />
+    
     
     <link rel="prev" href="Getting Started - Browser SDK.html" />
     
@@ -194,6 +196,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="Getting Started - iOS SDK.html">
+            
+                <a href="Getting Started - iOS SDK.html">
+            
+                    
+                    iOS SDK Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -264,17 +279,19 @@
 <h3 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;-buildgradle&#xC5D0;&#xC11C;-repository-url-&#xC124;&#xC815;">&#xD504;&#xB85C;&#xC81D;&#xD2B8; build.gradle&#xC5D0;&#xC11C; repository URL &#xC124;&#xC815;</h3>
 <ul>
 <li>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; Remote Monster&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; SDK repository URL&#xC744; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</li>
-<li>&#xC774; URL&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC774;&#xC804; &#xBC84;&#xC804;&#xC758; Remote Monster SDK&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xBC1B;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-groovy">allprojects {
-repositories {
-  jcenter()
-  maven {
-    url <span class="hljs-string">&apos;https://remotemonster.com/artifactory/libs-release-local&apos;</span>
+<li>&#xC774; URL&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC774;&#xC804; &#xBC84;&#xC804;&#xC758; Remote Monster SDK&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xBC1B;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-groovy">allprojects {
+  repositories {
+    jcenter()
+    maven {
+      url <span class="hljs-string">&apos;https://remotemonster.com/artifactory/libs-release-local&apos;</span>
+    }
   }
-}
 }
 </code></pre>
 <h3 id="module-buildgradle&#xC744;-&#xC218;&#xC815;&#xD558;&#xAE30;">module build.gradle&#xC744; &#xC218;&#xC815;&#xD558;&#xAE30;</h3>
-</li>
+<ul>
 <li>&#xBAA8;&#xB4C8; build.gradle dependencies &#xD56D;&#xBAA9; &#xB9C8;&#xC9C0;&#xB9C9; &#xB77C;&#xC778;&#xC5D0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD55C; &#xC904;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
 <pre><code class="lang-groovy">compile(<span class="hljs-string">group:</span> <span class="hljs-string">&apos;com.remon&apos;</span>, <span class="hljs-string">name:</span> <span class="hljs-string">&apos;remondroid&apos;</span>, <span class="hljs-string">version:</span> <span class="hljs-string">&apos;0.0.11&apos;</span>)
@@ -435,7 +452,7 @@ remon.connectChannel(&#x201C;myroom&#x201D;);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android SDK Getting Started","level":"2.3","depth":1,"previous":{"title":"Browser SDK Getting Started","level":"2.2","depth":1,"path":"Getting Started - Browser SDK.md","ref":"Getting Started - Browser SDK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster Documents"},"file":{"path":"Getting Started - Android SDK.md","mtime":"2016-12-09T02:29:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-12T06:29:15.419Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"Android SDK Getting Started","level":"2.3","depth":1,"next":{"title":"iOS SDK Getting Started","level":"2.4","depth":1,"path":"Getting Started - iOS SDK.md","ref":"Getting Started - iOS SDK.md","articles":[]},"previous":{"title":"Browser SDK Getting Started","level":"2.2","depth":1,"path":"Getting Started - Browser SDK.md","ref":"Getting Started - Browser SDK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster Documents"},"file":{"path":"Getting Started - Android SDK.md","mtime":"2016-12-13T02:35:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T09:13:07.382Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>
