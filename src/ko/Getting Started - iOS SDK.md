@@ -9,32 +9,43 @@
 ## 프로젝트 생성 및 설정
 - Xcode에서 Swift기반의 프로젝트를 하나 생성합니다.
 - 프로젝트 생성 후 Build Settings에서 bitcode에 대하여 No를 설정해야 합니다.
+
 ![bitcode](images/ios_bitcode.png)
+
 - 또한 Info.plist에서 다음 항목에 대해 추가 혹은 변경을 해주셔야 합니다.
   - Privacy: Bluetooth, Microphone, Camera
   - App Transport Security Settings: Allow Arbitrary Loads=YES
+
 ![settings](images/ios_buildsettings.png)
+
 
 ## RemoteMonster iOS SDK import하기
 - 다운로드받은 RemoteMonster iOS SDK를 압축을 풀어서 부모 디렉토리를 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster iOS SDK를 프레임워크로 인식하게 됩니다.
+
 ![framework](images/ios_importframework.png)
+
 
 ## Cocoapods 설정
 - 이제 Cocoapods의 설정파일인 Podfile을 생성할 차례입니다. 터미널을 열어서 프로젝트 파일이 있는 곳에서 다음과 같이 명령을 실행하여 Podfile을 생성합니다.
-pod init
+  - `pod init`
 - Podfile을 편집기에서 열어서 다음과 같이 몇몇 라이브러리를 다운로드할 수 있도록 수정합니다.
-pod "libjingle_peerconnection"
-pod "SocketRocket"
+  - `pod "libjingle_peerconnection"`
+  - `pod "SocketRocket"`
 - 이제 터미널에서 다시 다음과 같이 명령을 실행합니다.
-pod install
+  - `pod install`
 - pod install을 실행하면 별도의 workspace파일이 생성됩니다. 따라서 앞으로는 생성된 workspace파일을 기반으로 개발을 진행합니다. xcode창을 닫고 다시 이 workspace파일을 클릭하여 실행합니다.
 - 그리고 clean하고 build를 해봅니다.
 
+
 ## 레이아웃 구성
 - 스토리보드에서 원하는 Scene에서 적당히 버튼을 배치하고 영상통화를 할 경우 다음과 같이 View하나를 화면에 위치시킨 후 그것의 Class를 RTCEAGLVideoView로 지정합니다.
+
 ![layout](images/ios_rtceaglview.png)
+
 - 이제 거의 완료되었습니다. 전체적인 화면 구성은 다음과 같습니다.
+
 ![layout](images/ios_layout.png)
+
 
 ## 개발
 - 개발은 생각보다 간단합니다. ViewController를 선택하여 다음과 같이 코드를 작성합니다.
@@ -92,6 +103,7 @@ class ViewController: UIViewController, RemonDelegate {
 
 }
 ```
+
 
 ## import 그리고 주요 클래스
 - Remotemonster의 iOS SDK를 사용하기 위해서는 일단 remoniosv1을 import하여야 합니다.
