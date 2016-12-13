@@ -12,12 +12,14 @@ RemoteMonster는 사용하기 쉬운 통신 기능을 목표로 아래와 같은
 
 ### 구성
 키는 아래와 같은 형태로 구성 되 있으며, RemoteMonster SDK가 RemoteMonster 서버에 접근할때 사용 됩니다.
+
 ```json
 credential = {
   serviceId: '',
   key: '',
 }
 ```
+
 - serviceId: e-mail 형태의 각 서비스를 구분하는 Id
 - key: TestKey와 ProductionKey가 발급. 용도별 사용
 
