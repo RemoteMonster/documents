@@ -287,7 +287,6 @@
 
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/remon-browser-sdk/remon.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">const</span> remon = Remon;
   <span class="hljs-keyword">let</span> isConnected = <span class="hljs-literal">false</span>;
   <span class="hljs-keyword">const</span> config = { credential: {
       key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
@@ -296,7 +295,7 @@
       remote: <span class="hljs-string">&apos;#remoteVideo&apos;</span>
     },
   };
-  remon.init({ userConfig:config });
+  <span class="hljs-keyword">const</span> remon = <span class="hljs-keyword">new</span> Remon({ config:config });
 
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">if</span> (isConnected === <span class="hljs-literal">false</span>){
@@ -326,11 +325,7 @@
 </ul>
 <h2 id="&#xC18C;&#xC2A4;&#xB97C;-&#xC0B4;&#xD3B4;&#xBCF4;&#xAE30;">&#xC18C;&#xC2A4;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xAE30;</h2>
 <h3 id="config">Config</h3>
-<p>&#xBA3C;&#xC800; remon &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
-<ul>
-<li><code>const remon = Remon</code></li>
-</ul>
-<p>&#xC124;&#xC815; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBA3C;&#xC800; &#xC124;&#xC815; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = { credential: {
     key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
   },
@@ -343,9 +338,9 @@
 <li>key&#xAC12;&#xC740; Remote Monster&#xC5D0; &#xD68C;&#xC6D0;&#xAC00;&#xC785;&#xD558;&#xC5EC; &#xBC1B;&#xAC8C; &#xB418;&#xB294; &#xBE44;&#xBC00;&#xBC88;&#xD638;&#xC785;&#xB2C8;&#xB2E4;. serviceId&#xAC12;&#xC740; Remote Monster&#xC5D0; &#xD68C;&#xC6D0;&#xAC00;&#xC785;&#xC2DC; &#xC785;&#xB825;&#xD55C; &#xC790;&#xC2E0;&#xC758; &#xC11C;&#xBE44;&#xC2A4; id&#xC785;&#xB2C8;&#xB2E4;. &#xC798; &#xBAA8;&#xB978;&#xB2E4;&#xBA74; <code>credential</code> &#xAC1D;&#xCCB4;&#xB97C; &#xC124;&#xC815; &#xC54A;&#xD574;&#xB3C4; &#xBB34;&#xBC29;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li>view &#xD56D;&#xBAA9;&#xC5D0; &#xBCF4;&#xBA74; video &#xD0DC;&#xADF8;&#xC758; id&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC6D0;&#xACA9;&#xC5D0;&#xC11C; &#xC0C1;&#xB300;&#xBC29;&#xC758; &#xC601;&#xC0C1;&#xC774; &#xC218;&#xC2E0;&#xB418;&#xBA74; &#xADF8; &#xC601;&#xC0C1;&#xC744; &#xCD9C;&#xB825;&#xD560; video &#xD0DC;&#xADF8;&#xC758; id&#xC785;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<p>&#xB9CC;&#xB4E4;&#xC5B4;&#xB454; &#xC124;&#xC815;&#xC744; &#xC778;&#xC790;&#xB85C; &#xD558;&#xC5EC; &#xAC1D;&#xCCB4;&#xB97C; &#xCD08;&#xAE30;&#xD654; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xB4E4;&#xC5B4;&#xB454; &#xC124;&#xC815;&#xC744; &#xC778;&#xC790;&#xB85C; &#xD558;&#xC5EC; Remon &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <ul>
-<li><code>remon.init({ userConfig:config });</code></li>
+<li><code>const remon = new Remon({ config:config });</code></li>
 </ul>
 <h3 id="connect">Connect</h3>
 <p>&#xC774;&#xC81C; &#xBC29;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC08; &#xC2DC;&#xAC04;&#xC785;&#xB2C8;&#xB2E4;. connectChannel &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xC785;&#xB825;&#xAC12;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xBC29;&#xC73C;&#xB85C; &#xB4E4;&#xC5B4;&#xAC00;&#xB294; &#xBA85;&#xB839;&#xC744; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -387,10 +382,11 @@
   onDisconnectChannel() { ... },
   onMessage(message) { ... },
   onError(error) { ... },
+  onStat(result) { ... },
 };
 </code></pre>
 <p>&#xC704;&#xC5D0;&#xC11C; &#xB9CC;&#xB4E0; &#xC124;&#xC815;&#xACFC; &#xB9AC;&#xC2A4;&#xB108;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xD558;&#xC5EC; &#xB2E4;&#xC2DC; &#xC2DC;&#xC791;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
-<pre><code class="lang-javascript">remon.init({ userConfig:config, userListeners:listener });
+<pre><code class="lang-javascript">remon.init({ config:config, listener:listener });
 ...
 remon.connectChannel(<span class="hljs-string">&quot;simpleRemon&quot;</span>);
 </code></pre>
@@ -427,7 +423,7 @@ remon.connectChannel(<span class="hljs-string">&quot;simpleRemon&quot;</span>);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Browser SDK Getting Started","level":"2.2","depth":1,"next":{"title":"Android SDK Getting Started","level":"2.3","depth":1,"path":"Getting Started - Android SDK.md","ref":"Getting Started - Android SDK.md","articles":[]},"previous":{"title":"Getting Started","level":"2.1","depth":1,"path":"Getting Started.md","ref":"Getting Started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster Documents"},"file":{"path":"Getting Started - Browser SDK.md","mtime":"2016-12-15T01:07:39.523Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-22T02:37:52.653Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"Browser SDK Getting Started","level":"2.2","depth":1,"next":{"title":"Android SDK Getting Started","level":"2.3","depth":1,"path":"Getting Started - Android SDK.md","ref":"Getting Started - Android SDK.md","articles":[]},"previous":{"title":"Getting Started","level":"2.1","depth":1,"path":"Getting Started.md","ref":"Getting Started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster Documents"},"file":{"path":"Getting Started - Browser SDK.md","mtime":"2016-12-22T08:48:55.596Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-22T08:51:07.442Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>

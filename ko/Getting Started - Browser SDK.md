@@ -24,7 +24,6 @@
 
   <script src="./node_modules/remon-browser-sdk/remon.min.js"></script>
   <script>
-  const remon = Remon;
   let isConnected = false;
   const config = { credential: {
       key: '1234567890', serviceId: 'SERVICEID1'
@@ -33,7 +32,7 @@
       remote: '#remoteVideo'
     },
   };
-  remon.init({ userConfig:config });
+  const remon = new Remon({ config:config });
 
   function start() {
     if (isConnected === false){
@@ -63,10 +62,8 @@
 
 ## 소스를 살펴보기
 ### Config
-먼저 remon 객체를 만듭니다.
-- `const remon = Remon`
 
-설정 객체를 만듭니다.
+먼저 설정 객체를 만듭니다.
 
 ```javascript
 const config = { credential: {
@@ -81,8 +78,8 @@ const config = { credential: {
 - key값은 Remote Monster에 회원가입하여 받게 되는 비밀번호입니다. serviceId값은 Remote Monster에 회원가입시 입력한 자신의 서비스 id입니다. 잘 모른다면 `credential` 객체를 설정 않해도 무방합니다.
 - view 항목에 보면 video 태그의 id를 설정합니다. 원격에서 상대방의 영상이 수신되면 그 영상을 출력할 video 태그의 id입니다.
 
-만들어둔 설정을 인자로 하여 객체를 초기화 합니다.
-- `remon.init({ userConfig:config });`
+만들어둔 설정을 인자로 하여 Remon 객체를 생성 합니다.
+- `const remon = new Remon({ config:config });`
 
 ### Connect
 이제 방에 들어갈 시간입니다. connectChannel 메소드는 입력값에 해당하는 방으로 들어가는 명령을 수행합니다.
@@ -126,13 +123,14 @@ const listener = {
   onDisconnectChannel() { ... },
   onMessage(message) { ... },
   onError(error) { ... },
+  onStat(result) { ... },
 };
 ```
 
 위에서 만든 설정과 리스너를 인자로 하여 다시 시작해봅시다.
 
 ```javascript
-remon.init({ userConfig:config, userListeners:listener });
+remon.init({ config:config, listener:listener });
 ...
 remon.connectChannel("simpleRemon");
 
