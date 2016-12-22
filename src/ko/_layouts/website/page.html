@@ -1,26 +1,32 @@
 {% extends template.self %}
 
 {% block body %}
-  <div class="remon-navbar navbar">
-    <a class="navbar-brand" href="https://remotemonster.com">Home</a>
+<div class="remon-navbar navbar">
+    <a href="https://remotemonster.com" class="navbar-brand">
+        <img src="https://remotemonster.com/static/img/RemoteMonster-Logo_Title_Simple.928e738.svg"
+        alt="REMOTEMONSTER Logo" style="height:2.3em;" class="logo d-block align-top mx-auto hidden-md-up">
+    </a>
+    <!-- <a class="navbar-brand" href="https://remotemonster.com">Home</a> -->
     <ul class="nav navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="http://docs.remotemonster.com/ko/Features.html">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://remotemonster.com/pricing">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://remotemonster.com/sdks">SDKs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://community.remotemonster.com">Community</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://blog.remotemonster.com">Blog</a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://docs.remotemonster.com/ko/Features.html" style="color: rgba(0,0,0,.5);">Features</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://remotemonster.com/pricing" style="color: rgba(0,0,0,.5);">Pricing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://remotemonster.com/sdks" style="color: rgba(0,0,0,.5);">SDKs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://docs.remotemonster.com/ko" style="color: rgba(0,0,0,.5);">Documents</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://community.remotemonster.com" style="color: rgba(0,0,0,.5);">Community</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://blog.remotemonster.com">Blog</a>
+        </li>
     </ul>
-  </div>
+</div>
   {{ super() }}
 {% endblock %}
-

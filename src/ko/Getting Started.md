@@ -60,7 +60,7 @@ remon.connect("방이름");
 - onInit
 - onConnectChannel
 - onCreateChannel
-- onComplate
+- onComplete
 - onAddLocalStream
 - onAddRemoteStream
 - onStateChange
