@@ -11,3 +11,4 @@
 - [Android SDK Getting Started](Getting Started - Android SDK.md)
 - [iOS SDK Getting Started](Getting Started - iOS SDK.md)
 
+- [Browser SDK How to config](BrowserConfigGuide.md)
