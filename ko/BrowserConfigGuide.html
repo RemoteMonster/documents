@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Browser SDK How to config · RemoteMonster Documents</title>
+        <title>JS Config 가이드 · RemoteMonster Documents</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -71,8 +71,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="webrtc-internalGuide.html" />
     
-    <link rel="prev" href="Getting Started - iOS SDK.html" />
+    
+    <link rel="prev" href="RemonJsRemon.html" />
     
 
     </head>
@@ -147,7 +149,20 @@
                 <a href="Features.html">
             
                     
-                    Features
+                    RemoteMonster API란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="SdkOverview.html">
+            
+                <a href="SdkOverview.html">
+            
+                    
+                    SDK 공통 지식
             
                 </a>
             
@@ -162,20 +177,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="Getting Started.html">
-            
-                <a href="Getting Started.html">
-            
-                    
-                    Getting Started
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="Getting Started - Browser SDK.html">
+        <li class="chapter " data-level="2.1" data-path="Getting Started - Browser SDK.html">
             
                 <a href="Getting Started - Browser SDK.html">
             
@@ -188,7 +190,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="Getting Started - Android SDK.html">
+        <li class="chapter " data-level="2.2" data-path="Getting Started - Android SDK.html">
             
                 <a href="Getting Started - Android SDK.html">
             
@@ -201,7 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="Getting Started - iOS SDK.html">
+        <li class="chapter " data-level="2.3" data-path="Getting Started - iOS SDK.html">
             
                 <a href="Getting Started - iOS SDK.html">
             
@@ -214,12 +216,91 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.5" data-path="BrowserConfigGuide.html">
+
+    
+        
+        <li class="header">Javascript</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="RemonJsRemon.html">
+            
+                <a href="RemonJsRemon.html">
+            
+                    
+                    JS Remon 클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="BrowserConfigGuide.html">
             
                 <a href="BrowserConfigGuide.html">
             
                     
-                    Browser SDK How to config
+                    JS Config 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="webrtc-internalGuide.html">
+            
+                <a href="webrtc-internalGuide.html">
+            
+                    
+                    WebRTC-Internal 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Android</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="RemondroidRemon.html">
+            
+                <a href="RemondroidRemon.html">
+            
+                    
+                    Android Remon 클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="AndroidConfigGuide.html">
+            
+                <a href="AndroidConfigGuide.html">
+            
+                    
+                    Android Config 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="RemondroidLayout.html">
+            
+                <a href="RemondroidLayout.html">
+            
+                    
+                    Android 레이아웃 가이드
             
                 </a>
             
@@ -257,7 +338,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Browser SDK How to config</a>
+        <a href="." >JS Config 가이드</a>
     </h1>
 </div>
 
@@ -273,7 +354,6 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#xBE0C;&#xB77C;&#xC6B0;&#xC800;-sdk&#xC758;-config">&#xBE0C;&#xB77C;&#xC6B0;&#xC800; SDK&#xC758; Config</h1>
-<h2 id="remotemonster-sdk-config&#xC758;-&#xC804;&#xCCB4;-&#xACF5;&#xD1B5;-&#xAD6C;&#xC870;">RemoteMonster SDK config&#xC758; &#xC804;&#xCCB4; &#xACF5;&#xD1B5; &#xAD6C;&#xC870;</h2>
 <ul>
 <li>RemoteMonster&#xB294; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131; &#xC804;&#xC5D0; config&#xAC12;&#xC744; &#xC120;&#xD589;&#xC801;&#xC73C;&#xB85C; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC00;&#xC7A5; &#xB2E8;&#xC21C;&#xD558;&#xAC8C;&#xB294;<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
 view: {
@@ -309,10 +389,10 @@ media: {
 </li>
 <li>&#xC774; media&#xC635;&#xC158; &#xB0B4;&#xC6A9;&#xC740; &#xC74C;&#xC131;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xB2E4;&#xB294; &#xC635;&#xC158;&#xC785;&#xB2C8;&#xB2E4;. &#xC989; video&#xB97C; false&#xD558;&#xBA74; &#xC601;&#xC0C1;&#xD1B5;&#xC2E0;&#xC744; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xC6B0; &#xB9CE;&#xC740; RemoteMonster&#xC758; &#xC11C;&#xBE44;&#xC2A4;&#xB4E4;&#xC740; &#xC74C;&#xC131;&#xC804;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4;&#xC774;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.</li>
 <li>&#xB9CC;&#xC57D; video&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB9E4;&#xC6B0; &#xB9CE;&#xC740; &#xC635;&#xC158;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript">video: {
-width: {max: <span class="hljs-string">&apos;640&apos;</span>},
-height: {max: <span class="hljs-string">&apos;480&apos;</span>},
+width: {max: <span class="hljs-string">&apos;640&apos;</span>, min: <span class="hljs-string">&apos;640&apos;</span>},
+height: {max: <span class="hljs-string">&apos;480&apos;</span>, min: <span class="hljs-string">&apos;480&apos;</span>},
 codec: <span class="hljs-string">&apos;H264&apos;</span>, <span class="hljs-comment">// &apos;VP9&apos; , &apos;VP8&apos; or &apos;H264&apos;</span>
-frameRate: <span class="hljs-number">15</span>,
+frameRate: {max:<span class="hljs-number">15</span>, min:<span class="hljs-number">15</span>},
 facingMode: <span class="hljs-string">&apos;user&apos;</span>, <span class="hljs-comment">// &apos;user&apos; or &apos;environment&apos;</span>
 }
 </code></pre>
@@ -321,31 +401,25 @@ facingMode: <span class="hljs-string">&apos;user&apos;</span>, <span class="hljs
 <li>&#xBA3C;&#xC800; width&#xC640; height&#xB294; &#xC0C1;&#xB300;&#xD3B8;&#xC5D0;&#xAC8C; &#xBCF4;&#xB0BC; &#xC601;&#xC0C1;&#xC758; &#xD574;&#xC0C1;&#xB3C4;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xCD5C;&#xB300; 640 480&#xC758; &#xD574;&#xC0C1;&#xB3C4;&#xB85C; &#xBCF4;&#xB0BC; &#xAC83;&#xC744; &#xC124;&#xC815;&#xD558;&#xC600;&#xC9C0;&#xB9CC; &#xC774;&#xAC83;&#xC774; &#xAF2D; &#xC9C0;&#xCF1C;&#xC9C0;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. WebRTC&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB098; &#xB2E8;&#xB9D0;&#xC758; &#xC0C1;&#xD0DC;&#xC5D0; &#xB530;&#xB77C; &#xD574;&#xC0C1;&#xB3C4;&#xC640; framerate&#xB4F1;&#xC744; &#xC720;&#xC5F0;&#xD558;&#xAC8C; &#xBCC0;&#xD654;&#xC2DC;&#xD0A4;&#xBA74;&#xC11C; &#xD488;&#xC9C8;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xACE0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xD574;&#xC0C1;&#xB3C4;&#xAC00; &#xC2E4;&#xC81C;&#xC640; &#xCC28;&#xC774;&#xAC00; &#xB0A0; &#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC; ratio&#xB294; &#xCD5C;&#xB300;&#xD55C; &#xB9DE;&#xCD94;&#xAE30; &#xC704;&#xD574; &#xB178;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li>Browser&#xB294; H.264&#xC640; VP8, VP9&#xB4F1;&#xC758; &#xC601;&#xC0C1; &#xCF54;&#xB371;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. RemoteMonster&#xB294; H.264&#xB97C; &#xAE30;&#xBCF8; &#xCF54;&#xB371;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC73C;&#xBA70; &#xBCC0;&#xACBD;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;&#xBA74; &#xC774; &#xC124;&#xC815;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 <li>frameRate&#xD56D;&#xBAA9;&#xC740; 1&#xCD08;&#xC5D0; &#xBA87;&#xBC88;&#xC758; frame&#xC73C;&#xB85C; &#xC778;&#xCF54;&#xB529;&#xD560; &#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC601;&#xC0C1;&#xD1B5;&#xD654;&#xC5D0;&#xC11C;&#xB294; 15&#xC815;&#xB3C4;&#xBA74; &#xC801;&#xB2F9;&#xD558;&#xC9C0;&#xB9CC; &#xB354; &#xCD18;&#xCD18;&#xD55C; framerate&#xB97C; &#xC6D0;&#xD55C;&#xB2E4;&#xBA74; &#xB192;&#xC5EC;&#xC904; &#xC218; &#xC788;&#xACA0;&#xC8E0;.</li>
-<li>facingMode&#xB294; &#xAE30;&#xAE30;&#xC758; &#xC55E;&#xACFC; &#xB4A4;&#xC5D0; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC788;&#xC744; &#xB54C; &#xC5B4;&#xB5A4; &#xCABD;&#xC758; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC778;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</li>
-<li>&#xB9CC;&#xC57D; &#xD1B5;&#xD654; &#xB0B4;&#xC6A9;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC124;&#xC815;&#xD558;&#xBA74; &#xD1B5;&#xD654; &#xD6C4; &#xB098;&#xC911;&#xC5D0; RemoteMonster&#xC758; &#xD648;&#xD398;&#xC774;&#xC9C0;&#xB97C; &#xD1B5;&#xD574; &#xB179;&#xC74C;&#xB41C; &#xD30C;&#xC77C;&#xC744; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
-credential: {
-  key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
-},
-view: {
-  <span class="hljs-comment">//remote: &apos;#remoteVideo&apos;</span>
-},
-media: {
-  audio: <span class="hljs-literal">true</span>, video: <span class="hljs-literal">false</span>,
-  record: <span class="hljs-literal">true</span>,
-}
+<li>facingMode&#xB294; &#xAE30;&#xAE30;&#xC758; &#xC55E;&#xACFC; &#xB4A4;&#xC5D0; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC788;&#xC744; &#xB54C; &#xC5B4;&#xB5A4; &#xCABD;&#xC758; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC778;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xD604;&#xC7AC; &#xBAA8;&#xBC14;&#xC77C; &#xBC84;&#xC804;&#xC758; &#xD06C;&#xB86C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C;&#xB294; facingMode&#xAC00; &#xC81C;&#xB300;&#xB85C; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
+  credential: {
+    key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
+  },
+  view: {
+    <span class="hljs-comment">//blah blah</span>
+  },
+  media: {
+    <span class="hljs-comment">// blahblah</span>
+  },
+  dev:{
+    logLevel: <span class="hljs-string">&apos;INFO&apos;</span>,
+  }
 };
 </code></pre>
-== &#xAE30;&#xD0C0;</li>
-<li>&#xADF8;&#xC678;&#xC758; &#xC635;&#xC158;&#xC744; dev&#xB77C;&#xB294; &#xD56D;&#xBAA9;&#xC5D0;&#xC11C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
-credential: {blahblah},
-view: {blahblah},
-media: {blahblah},
-dev:{
-  logLevel: <span class="hljs-string">&apos;INFO&apos;</span>,
-}
-};
-</code></pre>
-</li>
+<ul>
+<li>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB85C;&#xADF8;&#xB808;&#xBCA8; &#xC124;&#xC815;&#xC785;&#xB2C8;&#xB2E4;. SILENT, ERROR, WARN, INFO, DEBUG, VERBOSE&#xB97C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xB4A4;&#xB85C; &#xAC08; &#xC218;&#xB85D; &#xB354; &#xC790;&#xC138;&#xD55C; &#xB85C;&#xADF8;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 </ul>
 
                                 
@@ -380,7 +454,7 @@ dev:{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Browser SDK How to config","level":"2.5","depth":1,"previous":{"title":"iOS SDK Getting Started","level":"2.4","depth":1,"path":"Getting Started - iOS SDK.md","ref":"Getting Started - iOS SDK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-2"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"BrowserConfigGuide.md","mtime":"2016-12-26T12:03:09.816Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T13:47:23.083Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"JS Config 가이드","level":"3.2","depth":1,"next":{"title":"WebRTC-Internal 가이드","level":"3.3","depth":1,"path":"webrtc-internalGuide.md","ref":"webrtc-internalGuide.md","articles":[]},"previous":{"title":"JS Remon 클래스","level":"3.1","depth":1,"path":"RemonJsRemon.md","ref":"RemonJsRemon.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"BrowserConfigGuide.md","mtime":"2017-01-03T08:02:53.382Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T05:10:54.684Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>

@@ -1,0 +1,567 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>WebRTC-Internal 가이드 · RemoteMonster Documents</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="RemoteMonster">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="RemondroidRemon.html" />
+    
+    
+    <link rel="prev" href="BrowserConfigGuide.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="remon-navbar navbar">
+    <a href="https://remotemonster.com" class="navbar-brand">
+        <img src="https://remotemonster.com/static/img/RemoteMonster-Logo_Title_Simple.928e738.svg"
+        alt="REMOTEMONSTER Logo" style="height:2.3em;" class="logo d-block align-top mx-auto hidden-md-up">
+    </a>
+    <!-- <a class="navbar-brand" href="https://remotemonster.com">Home</a> -->
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="http://docs.remotemonster.com/ko/Features.html" style="color: rgba(0,0,0,.5);">Features</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://remotemonster.com/pricing" style="color: rgba(0,0,0,.5);">Pricing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://remotemonster.com/sdks" style="color: rgba(0,0,0,.5);">SDKs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://docs.remotemonster.com/ko" style="color: rgba(0,0,0,.5);">Documents</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://community.remotemonster.com" style="color: rgba(0,0,0,.5);">Community</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://blog.remotemonster.com">Blog</a>
+        </li>
+    </ul>
+</div>
+  
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Features.html">
+            
+                <a href="Features.html">
+            
+                    
+                    RemoteMonster API란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="SdkOverview.html">
+            
+                <a href="SdkOverview.html">
+            
+                    
+                    SDK 공통 지식
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Getting Started</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Getting Started - Browser SDK.html">
+            
+                <a href="Getting Started - Browser SDK.html">
+            
+                    
+                    Browser SDK Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Getting Started - Android SDK.html">
+            
+                <a href="Getting Started - Android SDK.html">
+            
+                    
+                    Android SDK Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Getting Started - iOS SDK.html">
+            
+                <a href="Getting Started - iOS SDK.html">
+            
+                    
+                    iOS SDK Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="RemonJsRemon.html">
+            
+                <a href="RemonJsRemon.html">
+            
+                    
+                    JS Remon 클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="BrowserConfigGuide.html">
+            
+                <a href="BrowserConfigGuide.html">
+            
+                    
+                    JS Config 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="webrtc-internalGuide.html">
+            
+                <a href="webrtc-internalGuide.html">
+            
+                    
+                    WebRTC-Internal 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Android</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="RemondroidRemon.html">
+            
+                <a href="RemondroidRemon.html">
+            
+                    
+                    Android Remon 클래스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="AndroidConfigGuide.html">
+            
+                <a href="AndroidConfigGuide.html">
+            
+                    
+                    Android Config 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="RemondroidLayout.html">
+            
+                <a href="RemondroidLayout.html">
+            
+                    
+                    Android 레이아웃 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >WebRTC-Internal 가이드</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xD06C;&#xB86C;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758;-webrtc-internal&#xC744;-&#xC774;&#xC6A9;&#xD558;&#xC5EC;-&#xD488;&#xC9C8;-&#xC815;&#xBCF4;-&#xBD84;&#xC11D;&#xD558;&#xAE30;">&#xD06C;&#xB86C;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; webrtc-internal&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xD488;&#xC9C8; &#xC815;&#xBCF4; &#xBD84;&#xC11D;&#xD558;&#xAE30;</h1>
+<ul>
+<li><p>webrtc-internals&#xB294; WebRTC&#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xC288;&#xB974; &#xD574;&#xACB0;&#xD574;&#xC57C;&#xD560; &#xB54C; &#xAD49;&#xC7A5;&#xD788; &#xC88B;&#xC740; &#xB3C4;&#xAD6C;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xB3C4;&#xAD6C;&#xC5D0; &#xC775;&#xC219;&#xD558;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xD06C;&#xB86C;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; WebRTC&#xC138;&#xC158;&#xC744; &#xC5F0;&#xACB0;&#xD558;&#xACE0; &#xB2E4;&#xB978; &#xD0ED;&#xC744; &#xB354; &#xC5F4;&#xC5B4;&#xC11C; &#xC8FC;&#xC18C;&#xCC3D;&#xC5D0;&#xC11C; chrome://webrtc-internals/ &#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; webrtc-internals&#xB97C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>webrtc-internals&#xB294; &#xD604;&#xC7AC; &#xC5F0;&#xACB0;&#xB418;&#xC5B4;&#xC11C; &#xD1B5;&#xC2E0;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC5EC;&#xB7EC; stat&#xC815;&#xBCF4;&#xB97C; &#xB369;&#xCE58; &#xD070; JSON&#xB369;&#xC5B4;&#xB9AC;&#xB85C; &#xC800;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xACE0; &#xC774;&#xAC83;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC0B4;&#xD3B4;&#xBCFC; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xB300;&#xB2E4;&#xC218;&#xC758; &#xC0AC;&#xB78C;&#xB4E4;&#xC740; &#xBB3C;&#xC5B4;&#xBD05;&#xB2C8;&#xB2E4;. &#xB300;&#xCCB4; &#xC774; &#xC22B;&#xC790;&#xAC00; &#xC758;&#xBBF8;&#xD558;&#xB294; &#xAC8C; &#xBB34;&#xC5C7;&#xC774;&#xB0D0;&#xACE0;? &#xC774;&#xC81C; &#xD558;&#xB098;&#xC529; &#xC774; webrtc-internals&#xC758; &#xD56D;&#xBAA9;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li>&#xD398;&#xC774;&#xC9C0;&#xC758; &#xAC00;&#xC7A5; &#xC704;&#xC5D0;&#xB294; &#xBA87;&#xAC1C;&#xC758; &#xD0ED;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xB098;&#xB294; getUserMedia &#xD638;&#xCD9C;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC774;&#xACE0; &#xB098;&#xBA38;&#xC9C0;&#xB294; RTCPeerConnection &#xAC1D;&#xCCB4;&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</li>
+<li>&#xBA3C;&#xC800; getUserMedia Reuqest &#xD0ED;&#xC744; &#xD074;&#xB9AD;&#xD574;&#xBCF4;&#xBA74; getUserMedia&#xB97C; &#xD1B5;&#xD574; &#xC804;&#xB2EC;&#xB41C; constraints&#xAC12;&#xB4E4;&#xC774; &#xAE30;&#xB85D;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC548;&#xD0C0;&#xAE5D;&#xAC8C;&#xB3C4; MediaStreams&#xC758; id&#xB098; &#xACB0;&#xACFC;&#xB4F1;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xB2E8;&#xC21C;&#xD55C; &#xB0B4;&#xC6A9;&#xB9CC; &#xC788;&#xB124;&#xC694;.</li>
+</ul>
+<h2 id="rtcpeerconnection-stat">RTCPeerConnection stat</h2>
+<ul>
+<li>&#xC774;&#xC81C; RTCPeerConnection&#xD56D;&#xBAA9;&#xC744; &#xC0B4;&#xD3B4;&#xBCFC; &#xCC28;&#xB840;&#xC785;&#xB2C8;&#xB2E4;. &#xD06C;&#xAC8C; 4&#xAC1C;&#xC758; &#xD56D;&#xBAA9;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>RTCPeerConnection&#xC774; &#xC5B4;&#xB5BB;&#xAC8C; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xB294;&#xC9C0;, &#xC774;&#xB97C;&#xD14C;&#xBA74; &#xC5B4;&#xB5A4; STUN, TURN&#xC11C;&#xBC84;&#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xADF8; &#xC635;&#xC158;&#xC740; &#xC5B4;&#xB5BB;&#xAC8C; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xB294;&#xC9C0; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC67C;&#xCABD;&#xD3B8;&#xC740; PeerConnection &#xAC1D;&#xCCB4;&#xAC00; &#xD638;&#xCD9C;&#xB41C; trace&#xC785;&#xB2C8;&#xB2E4;. &#xC989;, PeerConnection&#xAC1D;&#xCCB4;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xC21C;&#xC11C;&#xB300;&#xB85C; &#xB098;&#xC5F4;&#xB418;&#xC5B4; &#xC788;&#xACE0; &#xADF8; &#xC778;&#xC790;&#xAC12;(&#xC608;: createOffer)&#xB4F1;&#xACFC; callback &#xC774;&#xBCA4;&#xD2B8; &#xC774;&#xB97C;&#xD14C;&#xBA74; onicecandidate &#xB4F1;&#xB3C4; &#xBAA8;&#xC870;&#xB9AC; &#xAE30;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xAC83;&#xC740; &#xC815;&#xB9D0; &#xAC15;&#xB825;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; ICE &#xC2E4;&#xD328;&#xAC00; &#xC5B4;&#xB514;&#xC11C; &#xC65C; &#xC77C;&#xC5B4;&#xB0AC;&#xB294;&#xC9C0;&#xB97C; &#xD655;&#xC778;&#xD558;&#xAC70;&#xB098; TURN&#xC11C;&#xBC84;&#xB97C; &#xC5B4;&#xB514;&#xC5D0; &#xC124;&#xCE58;&#xD574;&#xC57C;&#xD558;&#xB294; &#xC9C0; &#xACB0;&#xC815;&#xD558;&#xB294;&#xB370;&#xC5D0;&#xB3C4; &#xB9CE;&#xC740; &#xC601;&#xAC10;&#xC744; &#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>Stats Tables: getStats() &#xBA54;&#xC18C;&#xB4DC;&#xB85C;&#xBD80;&#xD130; &#xBC1B;&#xC740; &#xD1B5;&#xACC4;&#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</li>
+<li><p>getStats() &#xC758; &#xAC12;&#xB4E4;&#xC744; &#xADF8;&#xB798;&#xD504;&#xB85C; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;. webrtc-internals&#xC758; &#xD1B5;&#xACC4;&#xAC12;&#xB4E4;&#xC740; &#xC0AC;&#xC2E4; &#xD06C;&#xB86C;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xB0B4;&#xBD80;&#xC758; &#xD3EC;&#xB9F7;&#xC774;&#xC5B4;&#xC11C; &#xD604;&#xC7AC;&#xC758; &#xD45C;&#xC900;&#xACFC;&#xB294; &#xC870;&#xAE08; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xD06C;&#xAC8C; &#xB2E4;&#xB974;&#xC9C0;&#xB294; &#xC54A;&#xACE0; &#xC810;&#xC810; &#xC774; &#xD1B5;&#xACC4;&#xCE58;&#xB4E4;&#xC740; &#xD45C;&#xC900;&#xACFC; &#xC720;&#xC0AC;&#xD558;&#xAC8C; &#xB9DE;&#xCDB0;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xC0C1;&#xD669;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xD1B5;&#xACC4;&#xAC12;&#xC744; webrtc-internals&#xAC00; &#xC544;&#xB2CC; &#xCF54;&#xB4DC;&#xB098; &#xCF58;&#xC194;&#xC744; &#xD1B5;&#xD574; &#xD655;&#xC778;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code>RTCPeerConnection.getStats(function(stats) { console.log(stats.result()); )};
+</code></pre></li>
+<li>RTCStatsReport &#xAC1D;&#xCCB4;&#xC758; &#xBC30;&#xC5F4;&#xAC12;&#xC774;&#xACE0; &#xC544;&#xB798;&#xC5D0;&#xC11C;&#xC640; &#xAC19;&#xC774; &#xB9E4;&#xC6B0; &#xB9CE;&#xC740; key&#xC640; value&#xC30D;&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC838; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code>RTCPeerConnection.getStats(function(stats) {
+ var report = stats.result()[0];
+ report.names().forEach(function(name) {
+     console.log(name, report.stat(name));
+ });
+)}
+</code></pre></li>
+<li><p>&#xC774;&#xB4E4; Report&#xAC1D;&#xCCB4;&#xB97C; &#xC77D;&#xB294; &#xBC29;&#xBC95; &#xC911; &#xC911;&#xC694;&#xD55C; &#xC6D0;&#xCE59; &#xC911; &#xD558;&#xB098;&#xB294; &#xBC14;&#xB85C; &#xB05D;&#xC5D0; Id&#xB85C; &#xB05D;&#xB098;&#xB294; key &#xC774;&#xB984;&#xC740; &#xBCF4;&#xD1B5; &#xB2E4;&#xB978; report&#xC758; id &#xC18D;&#xC131;&#xC744; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xB54C;&#xBB38;&#xC5D0; &#xAC70;&#xC758; &#xBAA8;&#xB4E0; report &#xAC1D;&#xCCB4;&#xB4E4;&#xC740; &#xC11C;&#xB85C;&#xAC04;&#xC5D0; &#xC5F0;&#xACB0;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xAD6C;&#xC870;&#xC785;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xAC12;&#xB4E4;&#xC740; string&#xC778;&#xAC83;&#xB3C4; &#xBA85;&#xC2EC;&#xD558;&#xC138;&#xC694;.</p>
+</li>
+<li><p>RTCStatsReport&#xC758; &#xAC00;&#xC7A5; &#xC911;&#xC694;&#xD55C; &#xC18D;&#xC131;&#xC740; report&#xC758; type&#xC785;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30; &#xADF8;&#xAC83;&#xB4E4; &#xC911; &#xC911;&#xC694;&#xD55C; &#xAC83;&#xB4E4;&#xC744; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>googTrack</li>
+<li>googLibjingleSession</li>
+<li>googCertificate</li>
+<li>googComponent</li>
+<li>googCandidatePair</li>
+<li>localCandidate</li>
+<li>remoteCandidate</li>
+<li>ssrc</li>
+<li>VideoBWE</li>
+</ul>
+</li>
+<li>&#xC774;&#xB4E4; report&#xB4E4;&#xC744; &#xD558;&#xB098;&#xC529; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;.</li>
+</ul>
+<h2 id="googcertificate-report">googCertificate report</h2>
+<ul>
+<li>googCertificate report&#xB294; local&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; certificate &#xC790;&#xCCB4; &#xC6A9;&#xB3C4;&#xB85C;&#xB3C4; &#xC0AC;&#xC6A9;&#xD558;&#xB294; DTLS certificate &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xAC83;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://w3c.github.io/webrtc-stats/#certificatestats-dict" target="_blank">RTCCertificateStats dictionary</a> &#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="googcomponent-report">googComponent report</h2>
+<ul>
+<li>certificate &#xD1B5;&#xACC4;&#xC640; connection&#xAC04;&#xC758; &#xC811;&#xCC29;&#xC81C; &#xC5ED;&#xD560;&#xC744; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. &#xC989;, &#xD604;&#xC7AC; active&#xD55C; candidate &#xC30D;&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xB9C1;&#xD06C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="googcandidatepair-report">googCandidatePair report</h2>
+<ul>
+<li>ICE Candidate &#xC30D;&#xC744; &#xB2E4;&#xB8F9;&#xB2C8;&#xB2E4;. &#xC774; report&#xB97C; &#xD1B5;&#xD574; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<ul>
+<li>&#xC1A1;&#xC218;&#xC2E0;&#xB41C; &#xD328;&#xD0B7;&#xACFC; bytes&#xC758; &#xC804;&#xCCB4; &#xC218;(bytesSent, bytesReceived, packetsSent; packetsReceived&#xB294; &#xC54C;&#xC218;&#xC5C6;&#xB294; &#xC774;&#xC720;&#xB85C; missing). &#xC774;&#xAC83;&#xB4E4;&#xC740; RTP&#xD5E4;&#xB354;&#xB97C; &#xD3EC;&#xD568;&#xD55C; raw&#xD615;&#xD0DC;&#xC758; UDP &#xD639;&#xC740; TCP bytes&#xAC00; &#xAE30;&#xBCF8;&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD604;&#xC7AC; active&#xD55C; connection&#xC778;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; googActiveConnection&#xD56D;&#xBAA9;&#xC744; &#xD1B5;&#xD574; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC2DC;&#xAC04;&#xB3D9;&#xC548; active candidate &#xC30D;&#xC758; &#xD1B5;&#xACC4;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB9CC; &#xAD00;&#xC2EC;&#xC774; &#xC788;&#xC744; &#xAC81;&#xB2C8;&#xB2E4;. &#xC774; &#xC815;&#xBCF4;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://w3c.github.io/webrtc-stats/#transportstats-dict" target="_blank">&#xC5EC;&#xAE30;</a> &#xB97C; &#xD1B5;&#xD574; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</li>
+<li>&#xC1A1;&#xC218;&#xC2E0;&#xB41C; STUN &#xC694;&#xCCAD; &#xBC0F; &#xC218;&#xC2E0;&#xC758; &#xC218;(requestsSent, responsesReceived, requestsReceived, responsesSent). &#xC989;, ICE &#xACFC;&#xC815; &#xC911; &#xC0AC;&#xC6A9;&#xB41C; &#xC1A1;&#xC218;&#xC2E0; STUN&#xC694;&#xCCAD;&#xC758; count&#xC815;&#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>googRtt&#xB97C; &#xD1B5;&#xD574; &#xB9C8;&#xC9C0;&#xB9C9; STUN &#xC694;&#xCCAD;&#xC758; round trip time&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ssrc report&#xC758; googRtt&#xC640;&#xB294; &#xB2E4;&#xB978; &#xAC81;&#xB2C8;&#xB2E4;.</li>
+<li>localCandidateId&#xC640; remoteCandidateId&#xB97C; &#xD1B5;&#xD574; localCandidate&#xC640; remoteCandidate &#xAC1D;&#xCCB4;&#xC758; id&#xB97C; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>googTransportType&#xC744; &#xD1B5;&#xD574; &#xC804;&#xC1A1; type&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xBD80;&#xBD84; udp&#xC774;&#xB098; TURN&#xC11C;&#xBC84; &#xC0AC;&#xC6A9;&#xC2DC; TURN over TCP&#xAC00; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <a href="https://webrtcglossary.com/ice-tcp/" target="_blank">ICE-TCP</a>&#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xBA74; tcp&#xB85C; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<h2 id="localcandidate&#xC640;-remotecandidate-report">localCandidate&#xC640; remoteCandidate report</h2>
+</li>
+</ul>
+</li>
+<li>ip &#xC8FC;&#xC18C;, &#xD3EC;&#xD2B8;&#xBC88;&#xD638;, candidate&#xC758; &#xC885;&#xB958;&#xB4F1;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="ssrc-report">Ssrc report</h2>
+<ul>
+<li>&#xAC00;&#xC7A5; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. peerconnection&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC1A1;&#xC218;&#xC2E0;&#xB418;&#xB294; &#xC74C;&#xC131; &#xD639;&#xC740; &#xC601;&#xC0C1; &#xD2B8;&#xB799; &#xD558;&#xB098;&#xB97C; &#xB2F4;&#xB2F9;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD45C;&#xC900;&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB97C; <a href="https://w3c.github.io/webrtc-stats/#mststats-dict" target="_blank">MediaStreamTrackStats</a>&#xACFC; <a href="https://w3c.github.io/webrtc-stats/#streamstats-dict" target="_blank">RTPStreamStats</a>&#xB85C; &#xAD6C;&#xBD84;&#xD558;&#xC5EC; &#xC815;&#xC758;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; report&#xB294; &#xADF8;&#xAC83;&#xC774; &#xB2E4;&#xB8E8;&#xACE0; &#xC788;&#xB294; &#xAC83;&#xC774; &#xC74C;&#xC131;&#xC778;&#xC9C0; &#xC601;&#xC0C1;&#xC778;&#xC9C0; &#xD639;&#xC740; &#xC1A1;&#xC2E0;&#xC778;&#xC9C0; &#xC218;&#xC2E0;&#xC778;&#xC9C0;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC77C;&#xB2E8; &#xACF5;&#xD1B5;&#xC801;&#xC778; &#xAC12;&#xB4E4;&#xBD80;&#xD130; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;.</li>
+<li>mediaType: &#xC74C;&#xC131;&#xC778;&#xC9C0; &#xC601;&#xC0C1;&#xC778;&#xC9C0;&#xB97C; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</li>
+<li>ssrc: &#xC1A1;&#xC2E0;&#xD558;&#xB294; &#xAC83;&#xC778;&#xC9C0; &#xC218;&#xC2E0;&#xD558;&#xB294; &#xAC83;&#xC778;&#xC9C0; &#xB4F1;&#xC758; &#xACE0;&#xC720;&#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+<li>googTrackId: &#xC774; &#xD1B5;&#xACC4;&#xAC00; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xD558;&#xB294; &#xD2B8;&#xB799;&#xC758; id&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; SDP&#xC758; local &#xD639;&#xC740; remote media &#xC2A4;&#xD2B8;&#xB9BC; &#xD2B8;&#xB799;&#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC5ED;&#xC2DC; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC6D0;&#xB798; &#xC6D0;&#xCE59;&#xC0C1; &#xB05D;&#xC5D0; Id&#xAC00; &#xBD99;&#xB294; &#xAC83;&#xB4E4;&#xC740; &#xB2E4;&#xB978; report&#xB97C; &#xAC00;&#xB9AC;&#xCF1C;&#xC57C;&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xAC83;&#xB9CC;&#xC740; &#xC608;&#xC678;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>googRtt: rount-trip time&#xC778;&#xB370; &#xC774;&#xAC83;&#xC740; RTCP&#xC5D0;&#xC11C; &#xCE21;&#xC815;&#xB41C; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>transportId: &#xC774; RTP &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD55C; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; Bundle&#xC744; &#xC0AC;&#xC6A9;&#xC911;&#xC774;&#xB77C;&#xBA74; &#xC74C;&#xC131;&#xACFC; &#xC601;&#xC0C1; &#xC2A4;&#xD2B8;&#xB9BC; &#xBAA8;&#xB450; &#xB3D9;&#xC77C;&#xD55C; &#xAC12;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>googCodecName: codec&#xC758; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;. opus, VP8, VP9, H264 &#xB4F1;&#xB4F1;. codec&#xC758; &#xAD6C;&#xD604;&#xCCB4;&#xB97C; codecImplementationName stat&#xC744; &#xD1B5;&#xD574; &#xD655;&#xC778;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>bytesSent, bytesReceived, packetsSent, packetsReceived (&#xD574;&#xB2F9; ssrc&#xAC00; &#xC1A1;&#xC2E0;&#xC778;&#xC9C0; &#xC218;&#xC2E0;&#xC778;&#xC9C0;&#xC5D0; &#xB530;&#xB77C; &#xCC28;&#xC774;): bitrates &#xACC4;&#xC0B0;&#xAC12;&#xC785;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xB204;&#xC801;&#xAC12;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xC804;&#xC5D0; &#xCE21;&#xC815;&#xD55C; getStats&#xB85C;&#xBD80;&#xD130; &#xAC78;&#xB9B0; &#xC2DC;&#xAC04;&#xACFC; &#xD568;&#xAED8; &#xC801;&#xC808;&#xD55C; &#xACC4;&#xC0B0;&#xC744; &#xD574;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xD45C;&#xC900;&#xC5D0; &#xB098;&#xC640;&#xC788;&#xB294; <a href="http://w3c.github.io/webrtc-pc/#example" target="_blank">&#xC0D8;&#xD50C;&#xCF54;&#xB4DC;</a>&#xB294; &#xBE44;&#xAD50;&#xC801; &#xD6CC;&#xB96D;&#xD569;&#xB2C8;&#xB2E4;&#xB9CC; &#xAC00;&#xB054; &#xD06C;&#xB86C;&#xC740; &#xC774; &#xAC12;&#xC744; &#xB9AC;&#xC14B;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB54C;&#xB54C;&#xB85C; &#xB9C8;&#xC774;&#xB108;&#xC2A4;&#xAC12;&#xC774; &#xB098;&#xC62C; &#xC218; &#xC788;&#xC74C;&#xC744; &#xBA85;&#xC2EC;&#xD558;&#xC138;&#xC694;.</li>
+<li>packetsLost: &#xC783;&#xC5B4;&#xBC84;&#xB9B0; &#xD328;&#xD0B7;&#xC218;. &#xC1A1;&#xC2E0;&#xC790;&#xC785;&#xC7A5;&#xC5D0;&#xC120; RTCP&#xB97C; &#xD1B5;&#xD574;, &#xC218;&#xC2E0;&#xC790;&#xC785;&#xC7A5;&#xC5D0;&#xC11C;&#xB294; &#xB85C;&#xCEEC;&#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC218;&#xC9D1;&#xD569;&#xB2C8;&#xB2E4;. &#xD1B5;&#xD654; &#xC0C1;&#xD0DC;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xAC00;&#xC7A5; &#xC911;&#xC694;&#xD55C; &#xAC12; &#xC911; &#xD558;&#xB098;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="voice">Voice</h2>
+<ul>
+<li>&#xC74C;&#xC131; &#xD2B8;&#xB799;&#xC744; &#xC704;&#xD574; audioInputLevel&#xACFC; audioOutputLevel(&#xD45C;&#xC900;&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB97C; <a href="https://w3c.github.io/webrtc-stats/#dom-rtcmediastreamtrackstats-audiolevel" target="_blank">audioLevel</a>&#xC774;&#xB77C; &#xCE6D;&#xD569;&#xB2C8;&#xB2E4;)&#xAC12;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC74C;&#xC131; &#xC2E0;&#xD638;&#xAC00; &#xB9C8;&#xC774;&#xD06C;&#xC5D0;&#xC11C; &#xC624;&#xB294;&#xC9C0; &#xC2A4;&#xD53C;&#xCEE4;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC624;&#xB294;&#xC9C0; &#xB4F1;&#xC744; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xD06C;&#xB86C;&#xC758; <a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=4799" target="_blank">&#xC74C;&#xC131; &#xCC98;&#xB9AC; &#xBC84;&#xADF8;</a>&#xB97C; &#xAC10;&#xC9C0;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>googJitterReceived&#xC640; googJitterBufferReceived: <a href="https://webrtcglossary.com/jitter/" target="_blank">&#xC218;&#xC2E0;&#xB41C; Jitter&#xC758; &#xC591;</a>&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4; &#xADF8;&#xB9AC;&#xACE0; <a href="https://webrtcglossary.com/jitter-buffer/" target="_blank">jitter buffer state</a>&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="video">Video</h2>
+<ul>
+<li>googNacksSent: <a href="https://webrtcglossary.com/nack/" target="_blank">NACK</a>&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;</li>
+<li>googPLIsSent: <a href="https://webrtcglossary.com/pli/" target="_blank">PLI</a>&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;</li>
+<li>googFIRsSent: <a href="https://webrtcglossary.com/fir/" target="_blank">FIR</a>&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;</li>
+<li>&#xC704; &#xC815;&#xBCF4;&#xB4E4;&#xC740; &#xD328;&#xD0B7;&#xC190;&#xC2E4;(packetloss)&#xAC00; &#xC601;&#xC0C1; &#xD488;&#xC9C8;&#xC5D0; &#xBBF8;&#xCE58;&#xB294; &#xC601;&#xD5A5;&#xC744; &#xC774;&#xD574;&#xD558;&#xB294; &#xB370; &#xB3C4;&#xC6C0;&#xC744; &#xC90D;&#xB2C8;&#xB2E4;.</li>
+<li>googFrameWidthInput, googFrameHeightInput, googFrameRateInput: &#xC785;&#xB825;&#xB41C; frame size&#xC640; frame rate&#xB4F1;&#xC744; &#xC54C;&#xB824;&#xC8FC;&#xBA70;</li>
+<li>googFrameWidthSent, googFrameHeightSent, googFrameRateSent: &#xC2E4;&#xC81C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C; &#xD1B5;&#xD574; &#xBCF4;&#xB0B4;&#xC5B4;&#xC9C4; &#xC218;&#xCE58;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>googFrameWidthReceived, googFrameHeightReceived: &#xC218;&#xC2E0;&#xD55C; frame size&#xC774;&#xACE0;</li>
+<li>googFrameRateReceived, googFrameRateDecoded, googFrameRateOutput: &#xC218;&#xC2E0;&#xD55C; framerate &#xC815;&#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC601;&#xC0C1;&#xC744; &#xC778;&#xCF54;&#xB529;&#xD558;&#xB294; &#xC785;&#xC7A5;&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB4E4; &#xAC12;&#xB4E4;&#xC758; &#xCC28;&#xC774;&#xB97C; &#xD655;&#xC778;&#xD558;&#xACE0; &#xC65C; &#xC601;&#xC0C1;&#xC758; resolution&#xC774; &#xB0AE;&#xC544;&#xC84C;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xCDA9;&#xBD84;&#xD558;&#xC9C0; &#xC54A;&#xC740; CPU &#xD639;&#xC740; bandwidth&#xAC00; &#xC6D0;&#xC778;&#xC778; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><p>&#xB0AE;&#xC544;&#xC9C4; framerate&#xC5D0; &#xB300;&#xD55C; &#xBE44;&#xAD50;&#xB294; googFrameRateInput&#xC640; googFrameRateSent&#xAC12;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xC5EC; &#xC54C; &#xC218; &#xC788;&#xB294;&#xB370;, &#xC774;&#xC5D0; &#xB354;&#xD558;&#xC5EC; &#xB0AE;&#xC544;&#xC9C4; &#xD574;&#xC0C1;&#xB3C4;&#xC758; &#xC6D0;&#xC778;&#xC774; CPU&#xB54C;&#xBB38;&#xC778;&#xC9C0;(googCpuLimitedResolution&#xAC12;&#xC774; true &#xC778; &#xACBD;&#xC6B0;) &#xD639;&#xC740; &#xBD88;&#xCDA9;&#xBD84;&#xD55C; bandwidth&#xB54C;&#xBB38;&#xC778;&#xC9C0;(googBandwidthLimitedResolution&#xAC12;&#xC774; true)&#xB4E4;&#xC744; &#xC5EC;&#xB7EC; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xD1B5;&#xD558;&#xC5EC; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB4E4;&#xC911; &#xC5B4;&#xB5A4; &#xC870;&#xAC74;&#xC774; &#xBCC0;&#xACBD;&#xC774; &#xB418;&#xBA74; googAdaptionChanges&#xC758; counter&#xAC00; &#xC99D;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xD328;&#xD0B7;&#xC190;&#xC2E4;(packet loss)&#xC744; &#xC778;&#xC704;&#xC801;&#xC73C;&#xB85C; &#xBC1C;&#xC0DD;&#xC2DC;&#xCF1C; &#xBCF4;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC751;&#xB2F5;&#xCABD;&#xC5D0;&#xC11C; &#xD06C;&#xB86C;&#xC740; googFrameWidthSent&#xC640; googFrameWidthInput&#xAC12;&#xC774; &#xB2EC;&#xB77C;&#xC9C0;&#xB294; t=184&#xC5D0;&#xC11C; &#xD574;&#xC0C1;&#xB3C4;&#xB97C; &#xB0AE;&#xCD94;&#xB824; &#xD569;&#xB2C8;&#xB2E4;. t=186&#xC77C; &#xB54C; input framerate&#xC774; 30&#xC5D0;&#xC11C; 0&#xC5D0; &#xAC00;&#xAE5D;&#xAC8C; &#xBCC0;&#xD558;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ul>
+<h2 id="videobwe-report">VideoBWE report</h2>
+<ul>
+<li>bandwidth&#xB97C; &#xC608;&#xCE21;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>googAvailableReceiveBandwidth: &#xC218;&#xC2E0;&#xC911;&#xC778; &#xC601;&#xC0C1; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC704;&#xD574; &#xAC00;&#xC6A9;&#xD55C; bandwidth &#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>googAvailableSendBandwidth: &#xC1A1;&#xC2E0;&#xC911;&#xC778; &#xC601;&#xC0C1;&#xB370;&#xC774;&#xD130;&#xB97C; &#xC704;&#xD574; &#xAC00;&#xC6A9;&#xD55C; bandwidth &#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>googTargetEncBitrate: &#xC601;&#xC0C1; &#xC778;&#xCF54;&#xB354;&#xAC00; &#xBAA9;&#xD45C;&#xB85C; &#xD558;&#xB294; bitrate&#xC785;&#xB2C8;&#xB2E4;. &#xAC00;&#xC6A9;&#xD55C; bandwidth&#xB97C; &#xCD5C;&#xB300;&#xD55C; &#xC0AC;&#xC6A9;&#xD558;&#xB824; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>googActualEncBitrate: &#xC601;&#xC0C1; &#xC778;&#xCF54;&#xB354;&#xC758; &#xC2E4;&#xC81C; &#xC218;&#xD589;&#xD558;&#xB294; &#xCD08;&#xAE30; bitrate&#xC785;&#xB2C8;&#xB2E4;. &#xBAA9;&#xD45C; bitrate&#xC640; &#xB300;&#xC751;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>googTransmitBitrate: &#xC2E4;&#xC81C; &#xC804;&#xC1A1;&#xD558;&#xB294; bitrate&#xC785;&#xB2C8;&#xB2E4;. googActualEncBitrate&#xC640; &#xCC28;&#xC774;&#xAC00; &#xC2EC;&#xD558;&#xB2E4;&#xBA74; &#xC544;&#xB9C8; <a href="https://webrtcglossary.com/fec/" target="_blank">forward error correction</a> &#xB54C;&#xBB38;&#xC77C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>googRetransmitBitrate: RTX&#xAC00; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;&#xBA74; &#xC7AC;&#xC804;&#xC1A1;&#xC758; bitrate&#xC744; &#xCE21;&#xC815;&#xC744; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xD328;&#xD0B7;&#xC190;&#xC2E4;&#xC744; &#xCE21;&#xC815;&#xD558;&#xB294; &#xB370; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>googBucketDelay: &#xD070; &#xD504;&#xB808;&#xC784;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xAD6C;&#xAE00;&#xC758; &quot;leaky bucket&quot; &#xC804;&#xB7B5;&#xC758; &#xCE21;&#xC815;&#xC785;&#xB2C8;&#xB2E4;. &#xD06C;&#xAC8C; &#xC911;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xCC38;&#xACE0;&#xB9C1;&#xD06C;: <a href="http://testrtc.com/webrtc-internals-parameters/#comment-32" target="_blank">http://testrtc.com/webrtc-internals-parameters/#comment-32</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"WebRTC-Internal 가이드","level":"3.3","depth":1,"next":{"title":"Android Remon 클래스","level":"4.1","depth":1,"path":"RemondroidRemon.md","ref":"RemondroidRemon.md","articles":[]},"previous":{"title":"JS Config 가이드","level":"3.2","depth":1,"path":"BrowserConfigGuide.md","ref":"BrowserConfigGuide.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"webrtc-internalGuide.md","mtime":"2017-01-03T05:14:50.633Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T05:10:54.684Z"},"basePath":".","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mixpanel/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+
