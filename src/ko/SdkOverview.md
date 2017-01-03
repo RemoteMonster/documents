@@ -27,6 +27,7 @@ RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과
  - Init: 객체를 초기화하는 과정입니다. 이를 통해 RemoteMonster API 서버와 연결됩니다. 연결되는 순간 RemoteMonster 서버는 이 Remon 객체에게 1회용 토큰을 제공합니다.
  - Connect: 방에 접속하거나 방을 만드는 명령입니다. 주어진 이름의 방이 없을 경우 방을 만들고 이미 방이 있을 경우 방에 접속합니다. 물론 사전에 방 이름이 있어야 하겠지만 만약 방 이름이 없을 경우 RemoteMonster는 고유한 방 이름을 생성해서 반환합니다.
  - Search: 주어진 인자값에 해당하는 방이름이 있는지 검색하여 알려줍니다. 인자값이 없으면 모든 방 정보를 알려줍니다.
+ - sendMessage: 상대편에게 문자형태의 메시지를 보낼 수 있습니다. 이 기능을 통해 다양한 작업을 수행할 수 있습니다.
  - Close: 방을 나오거나 방을 없애버리고 초기화합니다.
 - Remon 클래스를 생성하기 위해서는 2개의 미리 준비된 정보가 필요합니다. 그것이 바로 위의 그림에서 보듯 Config와 Observer입니다.
 
@@ -53,3 +54,4 @@ RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과
 - onAddRemoteStream: 상대방의 영상이나 음성 스트림을 획득하였을 경우 호출됩니다. 연결이 되었다는 뜻이죠.
 - onInit: Remon객체가 무사히(?) 생성되었을 경우 불려집니다. 이 onInit메소드가 불려지고 바로 Remon.connectchannel 메소드를 수행할 수 있습니다.
 - onSearch: Remon.search 메소드를 호출하면 Observer의 onSearch메소드가 결과를 반환합니다.
+- onMessage: Remon.sendMessage 메소드를 호출하면 Observer의 onMessage메소드가 결과를 반환합니다.
