@@ -8,16 +8,16 @@
 - [리모트몬스터 API란?](Features.md)
 
 ## Javascript 개발자라면
-- [GettingStarted Javascript](Getting Started - Browser SDK.md)
+- [GettingStarted Javascript](GettingStartedBrowserSDK.md)
 - [JS Remon 클래스](RemonJsRemon.md)
 - [JS Config 가이드](BrowserConfigGuide.md)
 - [WebRTC-Internal 가이드](webrtc-internalGuide.md)
 
 ## Android 개발자라면
-- [Android SDK Getting Started](Getting Started - Android SDK.md)
+- [Android SDK Getting Started](GettingStartedAndroidSDK.md)
 - [Android Remon 클래스](RemondroidRemon.md)
 - [Android Config 가이드](AndroidConfigGuide.md)
 - [Android 레이아웃 가이드](RemondroidLayout.md)
 
 ## iOS 개발자라면
-- [iOS SDK Getting Started](Getting Started - iOS SDK.md)
+- [iOS SDK Getting Started](GettingStartedIosSDK.md)
