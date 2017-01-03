@@ -1,4 +1,4 @@
-# 기술
+# WebRTC 주요 링크 모음
 ## 기초
 [WebRTC 시작하기](https://coiiee.com/blog.php?idx=2): Coiiee 대표 정유철님께서 작성하신 알기쉬운 WebRTC 자료
 
@@ -17,3 +17,5 @@
 - [Bloggeek.me](https://bloggeek.me/): WebRTC에서 가장 유명한 블로거 Tsahi의 블로그
 - [WebRTCHacks](https://webrtchacks.com/): WebRTC계의 가장 유명한 해커 Chad Hart가 운영하는 사이트. 그 외 Victor나 Philipp등도 같이 운영
 - [WebRTC Weekly](https://webrtcweekly.com/): WebRTC의 최신 트렌드를 주단위로 받아볼 수 있음
+
+최근 업데이트: 2017년 1월 3일 by Jinho Choi
