@@ -68,3 +68,14 @@ const config = {
 };
 ```
 - 마지막으로 로그레벨 설정입니다. SILENT, ERROR, WARN, INFO, DEBUG, VERBOSE를 설정할 수 있으며 뒤로 갈 수록 더 자세한 로그를 확인할 수 있습니다.
+
+# video tag 설정
+- 영상 통화 서비스를 구현 시 HTML5의 video tag를 사용하게 됩니다.
+```HTML5
+<video id="remoteVideo" autoplay controls></video>
+```
+- controls 속성을 추가할 경우 영상에서 제어 컨트롤을 추가할 수 있습니다.
+- local video 영상인 경우에는 보통 muted 속성을 추가하여 자기 음성이 다시 자기에게 들리는 하울링 현상을 없애야 합니다.
+```HTML5
+<video id="localVideo" autoplay controls muted></video>
+```

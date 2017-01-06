@@ -26,11 +26,13 @@ public void sendMessage(String msg);
 - 통신 중에 상대방에게 문자 형태의 메시지를 전달합니다. 이 기능을 활용하여 채팅에 활용하거나 내부 로직에 사용할 수 있습니다.
 - Observer의 onMessage 메소드를 통해서 상대편의 메시지를 수신할 수 있습니다.
 ```java
-public void pauseLocalVideo();
-public void startLocalVideo();
+public void setVideoEnabled(boolean enable)
+public void setLocalVideoEnabled(boolean enable)
+public void setRemoteVideoEnabled(boolean enable)
+public void setAudioEnabled(boolean enable)
 public void setMicMute(boolean mute);
 ```
-- 로컬 영상을 잠시 pause하거나 다시 실행시키는 기능입니다. 아울러 자신의 기기의 마이크를 잠시 꺼두는 기능도 제공합니다.
+- 로컬/리모트 영상, 음성을 잠시 pause하거나 다시 실행시키는 기능입니다. 아울러 자신의 기기의 마이크를 잠시 꺼두는 기능도 제공합니다. setVideoEnabled는 전체 영상을 끄고 킬 수 있습니다.
 ```java
 public void switchCamera();
 ```
@@ -40,6 +42,7 @@ public void close();
 ```
 - Remon을 사용한 이후에는 반드시 close를 해주어야 합니다. 통신에 문제가 생기면 알아서 close가 되기도 하지만 남아있는 자원이 만에 하나 있다면 기기 성능에 아무래도 영향을 미칠 수 있습니다.
 - 재연결이 필요한 경우에도 close를 하고 다시 Remon객체를 생성하는 것을 권합니다.
+- 명시적으로 close를 할 경우 상대 peer에게 onDisconnect 이벤트가 발생합니다. 또한 명시적이지 않고 브라우저를 그냥 닫았다면  상대편에게는 onStateChange 이벤트가 발생하면서 STATE.CLOSE 혹은 STATE.FAIL의 이벤트가 발생합니다. 만약 네트워크가 안좋아졌거나 끊어지면 상대편에게 onError의 type=ICEFailedError이 발생합니다.
 
 ## RemonFactory: 멀티채팅 구현시
 - 여러개의 Remon객체를 생성하여 다중 채널, 멀티 채팅을 구현하고자 한다면 Remonfactory를 사용하여 Remon객체를 생성하기 바랍니다.
