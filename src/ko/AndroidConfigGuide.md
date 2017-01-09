@@ -35,6 +35,7 @@ config.setVideoFps(15);
 config.setSpeakerPhone("auto"|"true"|"false")
 ```
 - Remon은 자동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 false, 계속 유지하고 싶다면 true로 설정하세요.
+
 ```java
 config.setLogLevel(Log.DEBUG);
 ```
