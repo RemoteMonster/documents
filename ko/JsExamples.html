@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JS Remon 클래스 · RemoteMonster Documents</title>
+        <title>JS 예제 모음 · RemoteMonster Documents</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -71,10 +71,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="BrowserConfigGuide.html" />
+    <link rel="next" href="webrtc-internalGuide.html" />
     
     
-    <link rel="prev" href="GettingStartedIosSDK.html" />
+    <link rel="prev" href="BrowserConfigGuide.html" />
     
 
     </head>
@@ -226,7 +226,7 @@
         
         
     
-        <li class="chapter active" data-level="3.1" data-path="RemonJsRemon.html">
+        <li class="chapter " data-level="3.1" data-path="RemonJsRemon.html">
             
                 <a href="RemonJsRemon.html">
             
@@ -252,7 +252,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="JsExamples.html">
+        <li class="chapter active" data-level="3.3" data-path="JsExamples.html">
             
                 <a href="JsExamples.html">
             
@@ -387,7 +387,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >JS Remon 클래스</a>
+        <a href="." >JS 예제 모음</a>
     </h1>
 </div>
 
@@ -402,45 +402,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#xB9AC;&#xBAA8;&#xD2B8;&#xBAAC;&#xC2A4;&#xD130;-javascript&#xC758;-remon-&#xD074;&#xB798;&#xC2A4;">&#xB9AC;&#xBAA8;&#xD2B8;&#xBAAC;&#xC2A4;&#xD130; javascript&#xC758; Remon &#xD074;&#xB798;&#xC2A4;</h1>
+                                <h1 id="remotemonster-javascript-&#xC608;&#xC81C;&#xB4E4;">RemoteMonster Javascript &#xC608;&#xC81C;&#xB4E4;</h1>
+<h2 id="11-&#xC601;&#xC0C1;&#xCC44;&#xD305;&#xC11C;&#xBE44;&#xC2A4;">1:1 &#xC601;&#xC0C1;&#xCC44;&#xD305;&#xC11C;&#xBE44;&#xC2A4;</h2>
+<p><img src="images/chat.png" alt="1:1 &#xC601;&#xC0C1;&#xCC44;&#xD305;"></p>
 <ul>
-<li>Remon&#xD074;&#xB798;&#xC2A4;&#xB294; &#xAC00;&#xC7A5; &#xD575;&#xC2EC;&#xC774; &#xB418;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB85C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-comment">// &#xC0DD;&#xC131;&#xC790;</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Remon</span>(</span>{config:config, listener:listener})
-</code></pre>
-</li>
-<li>Config &#xC815;&#xBCF4;, &#xCF5C;&#xBC31;&#xBA54;&#xC18C;&#xB4DC; &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD55C; Listener&#xB97C; &#xC785;&#xB825;&#xAC12;&#xC73C;&#xB85C; &#xB123;&#xC73C;&#xBA74; &#xC6D0;&#xACA9;&#xC758; &#xB9AC;&#xBAA8;&#xD2B8;&#xBAAC;&#xC2A4;&#xD130; &#xC11C;&#xBC84;&#xC640; &#xC5F0;&#xACB0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</li>
-<li>&#xC5F0;&#xACB0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xBA74; listener&#xC758; onInit&#xBA54;&#xC18C;&#xB4DC;&#xC640; onStateChange&#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li>&#xB9CC;&#xC57D; &#xAC1D;&#xCCB4;&#xAC00; &#xC0DD;&#xC131;&#xD6C4; &#xBC14;&#xB85C; &#xC0C1;&#xB300;&#xD3B8;&#xACFC; &#xC5F0;&#xACB0;&#xC744; &#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; onInit&#xBA54;&#xC18C;&#xB4DC; &#xB54C; Remon&#xC758; connectChannel &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-comment">// &#xBC29;&#xC5D0; &#xD1B5;&#xD654; &#xC5F0;&#xACB0;</span>
-Remon.connectChannel(<span class="hljs-built_in">String</span> channelId)
-</code></pre>
-</li>
-<li>&#xBC29;&#xC5D0; &#xC811;&#xC18D;&#xD558;&#xAC70;&#xB098; &#xBC29;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xBA85;&#xB839;&#xC785;&#xB2C8;&#xB2E4;. &#xC8FC;&#xC5B4;&#xC9C4; &#xC774;&#xB984;&#xC758; &#xBC29;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0; &#xBC29;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xC774;&#xBBF8; &#xBC29;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xBC29;&#xC5D0; &#xC811;&#xC18D;&#xD569;&#xB2C8;&#xB2E4;. &#xBB3C;&#xB860; &#xC0AC;&#xC804;&#xC5D0; &#xBC29; &#xC774;&#xB984;&#xC774; &#xC788;&#xC5B4;&#xC57C; &#xD558;&#xACA0;&#xC9C0;&#xB9CC; &#xB9CC;&#xC57D; &#xBC29; &#xC774;&#xB984;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0; RemoteMonster&#xB294; &#xACE0;&#xC720;&#xD55C; &#xBC29; &#xC774;&#xB984;&#xC744; &#xC0DD;&#xC131;&#xD574;&#xC11C; listener&#xC758; onCreateChannel&#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xBC29;&#xC774;&#xB984;&#xC744; &#xBC18;&#xD658;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</li>
-<li>&#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xD558;&#xB098;&#xC774;&#xC9C0;&#xB9CC; &#xBC29;&#xC774;&#xB984;&#xC774; &#xC774;&#xBBF8; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xC5D0; &#xB530;&#xB77C; &#xC5C6;&#xC73C;&#xBA74; listener&#xC758; onCreateChannel&#xBA54;&#xC18C;&#xB4DC;, &#xC788;&#xC73C;&#xBA74; onConnectChannel &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;&#xACE0; &#xBCF4;&#xBA74; &#xB418;&#xBA70;, onConnectChannel&#xBA54;&#xC18C;&#xB4DC; &#xD638;&#xCD9C;&#xC2DC; &#xC0C1;&#xB300;&#xD3B8;&#xACFC; &#xC5F0;&#xACB0;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xC5C8;&#xC74C;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</li>
-<li>&#xC0C1;&#xB300;&#xD3B8;&#xACFC; &#xD1B5;&#xD654; &#xC5F0;&#xACB0;&#xC5D0; &#xC644;&#xC804;&#xD788; &#xC131;&#xACF5;&#xD558;&#xB294; &#xACBD;&#xC6B0; Observer&#xC758; onStateChange&#xC758; STATE.COMPLETE &#xC0C1;&#xD0DC;&#xAC00; &#xC785;&#xB825;&#xAC12;&#xC73C;&#xB85C; &#xB4E4;&#xC5B4;&#xC635;&#xB2C8;&#xB2E4;. &#xC774; &#xB54C; &#xD544;&#xC694;&#xD55C; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC9C4;&#xD589;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-comment">// &#xBC29;&#xC744; &#xAC80;&#xC0C9;</span>
-Remon.search(<span class="hljs-built_in">String</span> channelId)
-</code></pre>
-</li>
-<li>&#xC8FC;&#xC5B4;&#xC9C4; &#xC778;&#xC790;&#xAC12;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xBC29;&#xC774;&#xB984;&#xC774; &#xC788;&#xB294;&#xC9C0; &#xAC80;&#xC0C9;&#xD558;&#xC5EC; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;. &#xC778;&#xC790;&#xAC12;&#xC774; &#xC5C6;&#xC73C;&#xBA74; &#xBAA8;&#xB4E0; &#xBC29; &#xC815;&#xBCF4;&#xB97C; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</li>
-<li>&#xAC80;&#xC0C9;&#xC758; &#xACB0;&#xACFC;&#xB294; Observer&#xC758; onSearch&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript">pauseLocalVideo(bool)
-pauseRemoteVideo(bool)
-muteLocalAudio(bool)
-muteRemoteAudio(bool)
-</code></pre>
-</li>
-<li>&#xB85C;&#xCEEC; &#xC601;&#xC0C1;/&#xC74C;&#xC131;&#xC744; &#xC7A0;&#xC2DC; pause&#xD558;&#xAC70;&#xB098; &#xB2E4;&#xC2DC; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xB294; &#xAE30;&#xB2A5;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>&#xBC29;&#xC774;&#xB984;&#xC744; &#xC785;&#xB825;&#xD558;&#xC5EC; &#xBC29;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xB2E4;&#xB978; &#xC0AC;&#xB78C;&#xACFC; &#xC601;&#xC0C1;&#xCC44;&#xD305;&#xC744; &#xD558;&#xB294; &#xC11C;&#xBE44;&#xC2A4;. &#xC11C;&#xBC84;&#xC5C6;&#xC774; Javascript&#xC640; HTML, CSS&#xB85C;&#xB9CC; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xC571;.</li>
+<li>&#xB2E4;&#xC591;&#xD55C; &#xC124;&#xC815;&#xC744; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70;, search &#xC0AC;&#xC6A9;&#xBC95;&#xC774;&#xB098; close&#xC0AC;&#xC6A9;&#xBC95;&#xB4F1;&#xC5D0; &#xB300;&#xD574; &#xC775;&#xD790; &#xC218; &#xC788;&#xC74C;.</li>
+<li>&#xC11C;&#xBE44;&#xC2A4; &#xB9C1;&#xD06C;: <a href="https://remotemonster.github.io/Browser-SDK/full/" target="_blank">1:1&#xC601;&#xC0C1;&#xCC44;&#xD305;&#xC11C;&#xBE44;&#xC2A4;</a></li>
+<li>&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;: <a href="https://github.com/RemoteMonster/Browser-SDK/tree/master/examples/full" target="_blank">Github page</a></li>
 </ul>
-<pre><code class="lang-javascript">Remon.close();
-</code></pre>
+<h2 id="&#xAC04;&#xB2E8;&#xD55C;-&#xC601;&#xC0C1;&#xCC44;&#xD305;-&#xC11C;&#xBE44;&#xC2A4;">&#xAC04;&#xB2E8;&#xD55C; &#xC601;&#xC0C1;&#xCC44;&#xD305; &#xC11C;&#xBE44;&#xC2A4;</h2>
 <ul>
-<li>Remon&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xC774;&#xD6C4;&#xC5D0;&#xB294; &#xBC18;&#xB4DC;&#xC2DC; close&#xB97C; &#xD574;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xD1B5;&#xC2E0;&#xC5D0; &#xBB38;&#xC81C;&#xAC00; &#xC0DD;&#xAE30;&#xBA74; &#xC54C;&#xC544;&#xC11C; close&#xAC00; &#xB418;&#xAE30;&#xB3C4; &#xD558;&#xC9C0;&#xB9CC; &#xB0A8;&#xC544;&#xC788;&#xB294; &#xC790;&#xC6D0;&#xC774; &#xB9CC;&#xC5D0; &#xD558;&#xB098; &#xC788;&#xB2E4;&#xBA74; &#xAE30;&#xAE30; &#xC131;&#xB2A5;&#xC5D0; &#xC544;&#xBB34;&#xB798;&#xB3C4; &#xC601;&#xD5A5;&#xC744; &#xBBF8;&#xCE60; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>&#xC7AC;&#xC5F0;&#xACB0;&#xC774; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0;&#xB3C4; close&#xB97C; &#xD558;&#xACE0; &#xB2E4;&#xC2DC; Remon&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xD569;&#xB2C8;&#xB2E4;.</li>
-<li>&#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; close&#xB97C; &#xD560; &#xACBD;&#xC6B0; &#xC0C1;&#xB300; peer&#xC5D0;&#xAC8C; onDisconnectChannel &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; &#xBA85;&#xC2DC;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xACE0; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB97C; &#xADF8;&#xB0E5; &#xB2EB;&#xC558;&#xB2E4;&#xBA74;  &#xC0C1;&#xB300;&#xD3B8;&#xC5D0;&#xAC8C;&#xB294; onStateChange &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74;&#xC11C; STATE.CLOSE &#xD639;&#xC740; STATE.FAIL&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xAC00; &#xC548;&#xC88B;&#xC544;&#xC84C;&#xAC70;&#xB098; &#xB04A;&#xC5B4;&#xC9C0;&#xBA74; &#xC0C1;&#xB300;&#xD3B8;&#xC5D0;&#xAC8C; onError&#xC758; type=ICEFailedError&#xC774; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</li>
-</ul>
-<pre><code class="lang-javascript">Remon.sendMessage(userMessage)
-</code></pre>
-<ul>
-<li>&#xC5F0;&#xACB0;&#xC774; &#xB41C; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xC0C1;&#xB300;&#xC5D0;&#xAC8C; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>&#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBC1B;&#xB294; &#xAC83;&#xC740; listener&#xC758; onMessage&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xBC84;&#xD2BC;&#xB9CC; &#xB204;&#xB974;&#xBA74; &#xC0C1;&#xB300;&#xD3B8;&#xACFC; &#xC5F0;&#xACB0;&#xC774; &#xB418;&#xB294; html &#xD30C;&#xC77C; &#xD558;&#xB098;&#xB85C; &#xAD6C;&#xD604;&#xB41C; &#xAC00;&#xC7A5; &#xB2E8;&#xC21C;&#xD55C; &#xD615;&#xD0DC;&#xC758; &#xC608;&#xC81C;</li>
+<li>&#xC11C;&#xBE44;&#xC2A4; &#xB9C1;&#xD06C;: <a href="https://remotemonster.github.io/Browser-SDK/simple/" target="_blank">&#xAC04;&#xB2E8; &#xC601;&#xC0C1;&#xCC44;&#xD305;</a></li>
+<li>&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;: <a href="https://github.com/RemoteMonster/Browser-SDK/tree/master/examples/simple" target="_blank">Github page</a></li>
 </ul>
 
                                 
@@ -475,7 +450,7 @@ muteRemoteAudio(bool)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JS Remon 클래스","level":"3.1","depth":1,"next":{"title":"JS Config 가이드","level":"3.2","depth":1,"path":"BrowserConfigGuide.md","ref":"BrowserConfigGuide.md","articles":[]},"previous":{"title":"iOS SDK Getting Started","level":"2.3","depth":1,"path":"GettingStartedIosSDK.md","ref":"GettingStartedIosSDK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"RemonJsRemon.md","mtime":"2017-01-06T01:16:26.053Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-09T10:44:58.001Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"JS 예제 모음","level":"3.3","depth":1,"next":{"title":"WebRTC-Internal 가이드","level":"3.4","depth":1,"path":"webrtc-internalGuide.md","ref":"webrtc-internalGuide.md","articles":[]},"previous":{"title":"JS Config 가이드","level":"3.2","depth":1,"path":"BrowserConfigGuide.md","ref":"BrowserConfigGuide.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga","mixpanel"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"mixpanel":{"token":"e527efe2b8e51e982b2cee4647a55f3f"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"JsExamples.md","mtime":"2017-01-09T10:43:59.267Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-09T10:44:58.001Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>
