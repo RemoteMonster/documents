@@ -32,6 +32,11 @@ config.setVideoFps(15);
 ```
 - frameRate항목은 1초에 몇번의 frame으로 인코딩할 지를 결정합니다. 일반적인 영상통화에서는 15정도면 적당하지만 더 촘촘한 framerate를 원한다면 높여줄 수 있겠죠.
 ```java
+config.setSpeakerPhone("auto"|"true"|"false")
+```
+- Remon은 자동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 false, 계속 유지하고 싶다면 true로 설정하세요.
+
+```java
 config.setLogLevel(Log.DEBUG);
 ```
 - 마지막으로 로그레벨 설정입니다. ERROR, WARN, INFO, DEBUG, VERBOSE를 설정할 수 있으며 뒤로 갈 수록 더 자세한 로그를 확인할 수 있습니다.
