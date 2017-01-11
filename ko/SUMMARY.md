@@ -6,6 +6,7 @@
 - [Browser SDK Getting Started](GettingStartedBrowserSDK.md)
 - [Android SDK Getting Started](GettingStartedAndroidSDK.md)
 - [iOS SDK Getting Started](GettingStartedIosSDK.md)
+- [에러코드 유형](ErrorCode.md)
 
 ## Javascript
 - [JS Remon 클래스](RemonJsRemon.md)
