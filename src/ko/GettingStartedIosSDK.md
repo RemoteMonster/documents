@@ -1,10 +1,8 @@
 # iOS SDK - Getting Started
 
 ## 준비 사항
-- Cocoapods 설치
-  - RemoteMonster의 iOS SDK를 설치하기 이전에 먼저 [Cocoapods](https://cocoapods.org/)를 설치해야 합니다. Cocoapods는 애플의 iOS, MacOS환경에서 개발용 패키지 의존성을 관리하는 도구입니다.
 - Xcode 개발 환경
-- iOS 9.5 이상
+- iOS 9.2 이상
 
 ## 프로젝트 생성 및 설정
 - Xcode에서 Swift기반의 프로젝트를 하나 생성합니다.
@@ -14,27 +12,14 @@
 
 - 또한 Info.plist에서 다음 항목에 대해 추가 혹은 변경을 해주셔야 합니다.
   - Privacy: Bluetooth, Microphone, Camera
-  - App Transport Security Settings: Allow Arbitrary Loads=YES
 
 ![settings](images/ios_buildsettings.png)
 
 
 ## RemoteMonster iOS SDK import하기
-- 다운로드받은 RemoteMonster iOS SDK를 압축을 풀어서 부모 디렉토리를 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster iOS SDK를 프레임워크로 인식하게 됩니다.
+- 다운로드받은 RemoteMonster iOS SDK를 압축을 풀면 2개의 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster iOS SDK를 프레임워크로 인식하게 됩니다.
 
 ![framework](images/ios_importframework.png)
-
-
-## Cocoapods 설정
-- 이제 Cocoapods의 설정파일인 Podfile을 생성할 차례입니다. 터미널을 열어서 프로젝트 파일이 있는 곳에서 다음과 같이 명령을 실행하여 Podfile을 생성합니다.
-  - `pod init`
-- Podfile을 편집기에서 열어서 다음과 같이 몇몇 라이브러리를 다운로드할 수 있도록 수정합니다.
-  - `pod "libjingle_peerconnection"`
-  - `pod "SocketRocket"`
-- 이제 터미널에서 다시 다음과 같이 명령을 실행합니다.
-  - `pod install`
-- pod install을 실행하면 별도의 workspace파일이 생성됩니다. 따라서 앞으로는 생성된 workspace파일을 기반으로 개발을 진행합니다. xcode창을 닫고 다시 이 workspace파일을 클릭하여 실행합니다.
-- 그리고 clean하고 build를 해봅니다.
 
 
 ## 레이아웃 구성
@@ -52,7 +37,8 @@
 
 ```swift
 import UIKit
-import remoniosv1
+import remonios
+import WebRTC
 
 class ViewController: UIViewController, RemonDelegate {
 
@@ -65,10 +51,7 @@ class ViewController: UIViewController, RemonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let config = RemonConfig()
-        config.key = "1234567890"
-        config.serviceId = "SERVICEID1"
-        remon = Remon(delegate: self, config: config)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,7 +59,10 @@ class ViewController: UIViewController, RemonDelegate {
     }
 
     @IBAction func onClickConnectButton(_ sender: Any) {
-      remon?.connectChannel(chId: "simpleRemon")
+      let config = RemonConfig()
+      config.key = "1234567890"
+      config.serviceId = "SERVICEID1"
+      remon = Remon(delegate: self, config: config)
     }
 
     @IBAction func onClickDisconnectButton(_ sender: Any) {
@@ -84,7 +70,16 @@ class ViewController: UIViewController, RemonDelegate {
     }
 
     func onStateChange(_ state:RemonState){
-        print("State: \(state)")
+        switch state{
+        case RemonState.INIT:
+          remon?.connectChannel(chId: "demo1")
+        case RemonState.CLOSE:
+          close()
+        case RemonState.FAIL:
+          close()
+        default:
+          print("Unknown state")
+        }
     }
     func didReceiveLocalVideoTrack(_ localVideoTrack:RTCVideoTrack){
         print ("local video track is occured")
@@ -100,13 +95,36 @@ class ViewController: UIViewController, RemonDelegate {
     func onError(_ error:Error){
         print ("Error: \(error)")
     }
+    func onMessage(_ message:String){
 
+    }
+    func onDisconnectChannel(){
+      close()
+    }
+    func onSearch(_ result:Array<[String:String]>){
+      for ch in result{
+        print(ch["id"])
+      }
+    }
+    func close(){
+      remon?.disconnect()
+      if let rvt = self.remoteVideoTrack{
+        if (rvt.accessibilityElementCount())>0{
+          rvt.remove(remoteView)
+        }
+      }
+      if let lvt = self.localVideoTrack{
+        if (lvt.accessibilityElementCount())>0{
+          lvt.remove(localView)
+        }
+      }
+    }
 }
 ```
 
 
 ## import 그리고 주요 클래스
-- Remotemonster의 iOS SDK를 사용하기 위해서는 일단 remoniosv1을 import하여야 합니다.
+- Remotemonster의 iOS SDK를 사용하기 위해서는 일단 remonios와 WebRTC를 import하여야 합니다.
 - 다음은 Remotemonster SDK의 주요 클래스입니다.
 - Remon
   - Remon은 가장 핵심이 되는 클래스입니다. 이를 통해 RemoteMonster의 대부분의 기능을 실행합니다. 초기화하고 연결하고 종료하는 일련의 명령을 수행합니다.
@@ -114,9 +132,14 @@ class ViewController: UIViewController, RemonDelegate {
   - RemoteMonster의 이벤트를 처리하는 protocol입니다. Remote Monster를 통해 오고가는 모든 통신과정의 이벤트를 수신할 필요가 있습니다. 이를 위해 RemonDelegate를 사용합니다.
  - RemonDelegate를 통해 처리해야하는 메소드는 다음과 같습니다.
    - onStateChange: 최초 Remon객체를 만들고 방을 만들며 접속하고 접속에 성공하고 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. RemonState 객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. RemonState의 상태는 다음과 같습니다.
-    - INIT(시작), WAIT(방 생성), CONNECT(방 접속), COMPLETE(통신 연결완료), FAIL(실패), CLOSE(종료)
-    - onError: 통신 시도 중 장애 발생시 호출됩니다.
-    - didReceiveLocalVideoTrack: 자기 자신의 카메라의 영상이 혹은 음성 스트림을 획득하였을 경우 호출됩니다.
-    - didReceiveRemoteVideoTrack: 상대방의 영상이나 음성 스트림을 획득하였을 경우 호출됩니다. 연결이 되었다는 뜻이죠.
+      - INIT(시작), WAIT(방 생성), CONNECT(방 접속), COMPLETE(통신 연결완료), FAIL(실패), CLOSE(종료)
+      - 특히 INIT이 발생하는 시점에 Remon 객체가 제대로 할당되었다는 뜻이므로 만약 Remon객체를 생성하자 마자 바로 Connect하고 싶다면 이 때 바로 connect명령을 실행하면 좋습니다.
+   - onError: 통신 시도 중 장애 발생시 호출됩니다.
+   - didReceiveLocalVideoTrack: 자기 자신의 카메라의 영상이 혹은 음성 스트림을 획득하였을 경우 호출됩니다.
+   - didReceiveRemoteVideoTrack: 상대방의 영상이나 음성 스트림을 획득하였을 경우 호출됩니다. 연결이 되었다는 뜻이죠.
+   - onDisconnectChannel: 상대편이 연결을 명시적으로 끊을 경우 발생합니다.
+   - onError: 에러가 발생할 때 에러 메시지와 함께 발생합니다.
+   - onSearch: 만약 Remon클래스의 search명령을 실행하였다면 이 메소드로 그 결과값이 반환됩니다.
+   - onMessage: 상대편이 나에게 Text메시지를 보냈을 경우 이 메소드로부터 메시지가 반환됩니다.
 - RemonConfig
   - Remon을 init하기 전에 Remon을 사용하기 위한 설정을 하는 클래스입니다. secretkey를 설정하거나 serviceId를 설정하고 영상통화를 사용할지 여부 등을 설정합니다.
