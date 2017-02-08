@@ -38,6 +38,10 @@ public void switchCamera();
 ```
 - 로컬 카메라가 전면과 후면이 있을 경우 이것을 토글시켜서 변경하는 것이 가능합니다.
 ```java
+public void showLocalVideo();
+```
+- Remon 객체 생성시 Local video를 활성화하고 싶다면 showLocalvideo메소드를 호출합니다. connectChannel하기 전에 미리 자신의 카메라 화면을 볼 수 있습니다.
+```java
 public void close();
 ```
 - Remon을 사용한 이후에는 반드시 close를 해주어야 합니다. 통신에 문제가 생기면 알아서 close가 되기도 하지만 남아있는 자원이 만에 하나 있다면 기기 성능에 아무래도 영향을 미칠 수 있습니다.
