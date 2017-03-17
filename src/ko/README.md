@@ -12,6 +12,7 @@
 - [JS Remon 클래스](RemonJsRemon.md)
 - [JS Config 가이드](BrowserConfigGuide.md)
 - [WebRTC-Internal 가이드](webrtc-internalGuide.md)
+- [JS API Reference docs](https://remotemonster.github.io/browser-sdk/doc/)
 - RemoteMonster로 만든 자바스크립트기반 서비스를 체험하고 싶다면! [클릭](https://remotemonster.github.io/Browser-SDK/full/)
 
 ## Android 개발자라면
@@ -19,6 +20,8 @@
 - [Android Remon 클래스](RemondroidRemon.md)
 - [Android Config 가이드](AndroidConfigGuide.md)
 - [Android 레이아웃 가이드](RemondroidLayout.md)
+- [API Reference guide](https://remotemonster.github.io/android-sdk/)
 
 ## iOS 개발자라면
 - [iOS SDK Getting Started](GettingStartedIosSDK.md)
+- [iOS SDK API reference guide](https://remotemonster.github.io/REMON-IOS/)
