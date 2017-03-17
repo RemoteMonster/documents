@@ -124,6 +124,7 @@ const listener = {
   onMessage(message) { ... },
   onError(error) { ... },
   onStat(result) { ... },
+  onSearch(result) { ... },
 };
 ```
 

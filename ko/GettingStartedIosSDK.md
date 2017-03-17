@@ -6,7 +6,7 @@
 
 ## 프로젝트 생성 및 설정
 - Xcode에서 Swift기반의 프로젝트를 하나 생성합니다.
-- 프로젝트 생성 후 Build Settings에서 bitcode에 대하여 No를 설정해야 합니다.
+- 프로젝트 생성 후 Build Settings에서 bitcode에 대하여 No를 설정해야 합니다. (Remon SDK 0.1.6 부터는 bitcode를 지원함)
 
 ![bitcode](images/ios_bitcode.png)
 
