@@ -13,11 +13,13 @@
 - [JS Config 가이드](BrowserConfigGuide.md)
 - [JS 예제 모음](JsExamples.md)
 - [WebRTC-Internal 가이드](webrtc-internalGuide.md)
+- [JS API Reference docs](https://remotemonster.github.io/browser-sdk/doc/)
 
 ## Android
 - [Android Remon 클래스](RemondroidRemon.md)
 - [Android Config 가이드](AndroidConfigGuide.md)
 - [Android 레이아웃 가이드](RemondroidLayout.md)
+- [Android API Reference docs](https://remotemonster.github.io/android-sdk/)
 
 ## 기타
 - [RemoteMonster](AboutUs.md)
