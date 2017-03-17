@@ -40,7 +40,7 @@ allprojects {
 - 모듈 build.gradle dependencies 항목 마지막 라인에 다음과 같이 한 줄을 추가합니다.
 
 ```groovy
-compile(group: 'com.remon', name: 'remondroid', version: '0.0.11')
+compile(group: 'com.remon', name: 'remondroid', version: '0.2.27')
 ```
 
 - 이제 안드로이드 스튜디오를 동기화하면 자동으로 Remote Monster의 Android SDK인 remondroid를 다운로드 받게 됩니다.
