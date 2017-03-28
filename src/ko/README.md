@@ -13,7 +13,7 @@
 - [JS Config 가이드](BrowserConfigGuide.md)
 - [WebRTC-Internal 가이드](webrtc-internalGuide.md)
 - [JS API Reference docs](https://remotemonster.github.io/browser-sdk/doc/)
-- RemoteMonster로 만든 자바스크립트기반 서비스를 체험하고 싶다면! [클릭](https://remotemonster.github.io/Browser-SDK/full/)
+- RemoteMonster로 만든 자바스크립트기반 서비스를 체험하고 싶다면! [클릭](https://remotemonster.github.io/browser-sdk/examples/full/)
 
 ## Android 개발자라면
 - [Android SDK Getting Started](GettingStartedAndroidSDK.md)
