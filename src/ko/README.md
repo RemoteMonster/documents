@@ -24,4 +24,4 @@
 
 ## iOS 개발자라면
 - [iOS SDK Getting Started](GettingStartedIosSDK.md)
-- [iOS SDK API reference guide](https://remotemonster.github.io/REMON-IOS/)
+- [iOS SDK API reference guide](https://remotemonster.github.io/remon-ios-sdk/)
