@@ -22,7 +22,7 @@
 - [Android API Reference docs](https://remotemonster.github.io/android-sdk/)
 
 ## iOS
-- [iOS API Reference docs](https://remotemonster.github.io/REMON-IOS/)
+- [iOS API Reference docs](https://remotemonster.github.io/remon-ios-sdk/)
 
 ## 기타
 - [RemoteMonster](AboutUs.md)
