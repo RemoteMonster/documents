@@ -11,7 +11,8 @@ function languagePickerGrid(gitbook, elem, maxColumns, langData) {
 		for (var ii = 0; (i * maxColumns + ii < langData.length) && (ii < maxColumns); ii++) {
 			var c = $("<td>");
 			var l = $("<a>");
-			l.attr("href", gitbook.state.bookRoot +"/"+ langData[ins][0] +"/"+ CurAddrNoAnchor);
+			l.attr("href", gitbook.state.bookRoot.replace(/([^\/])$/, "$1/") + langData[ins][0] +"/"+ CurAddrNoAnchor);
+			l.attr("data-lang", langData[ins][0]);
 			if (langData[ins][0] == gitbook.state.innerLanguage) l.addClass("current");
 			l.html(langData[ins][1]);
 			c.append(l);
@@ -34,7 +35,7 @@ function parseLanguages(gitbook, elem, maxColumns, cb) {
 			var list = data.match(/<ul class=\"languages\">([\s\S]+?)<\/ul>/);
 			if (list) {
 				var langData = [];
-				list[1].replace(/<a href=\"\.\/([^\/]+)[^>]+>(.+?)<\/a>/g, function(a, b, c) {
+				list[1].replace(/<a href=\"([^\/]+)[^>]+>(.+?)<\/a>/g, function(a, b, c) {
 					langData.push([b, c]);
 				});
 				languagePickerGrid(gitbook, elem, maxColumns, langData);
