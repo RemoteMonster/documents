@@ -22,5 +22,5 @@ npm run serve
 npm run build
 
 # 배포. 저장소 gh-pages 브런치에 빌드된 내용을 올림
-npm run publish
+npm run deploy
 ```

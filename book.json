@@ -13,8 +13,7 @@
 		"github",
 		"edit-link",
 		"language-picker",
-		"ga",
-		"mixpanel"
+		"ga"
 	],
 	"pluginsConfig": {
 		"versions": {
@@ -38,9 +37,6 @@
 		},
 		"ga": {
 			"token": "UA-84812645-1"
-		},
-		"mixpanel": {
-			"token": "e527efe2b8e51e982b2cee4647a55f3f"
 		},
     "sitemap": {
       "hostname": "http://docs.remotemonster.com/"

@@ -9,12 +9,16 @@
     "serve": "gitbook serve",
     "build": "npm run clean && gitbook build",
     "clean": "rm -rf _book",
-    "publish": "npm run build && gh-pages --dist _book"
+    "deploy": "npm run build && gh-pages --dist _book"
   },
   "author": "RemoteMonster",
   "license": "UNLICENSED",
   "devDependencies": {
-    "gh-pages": "^0.12.0",
+    "gh-pages": "^1.0.0",
     "gitbook-cli": "^2.3.0"
+  },
+  "dependencies": {
+    "gitbook-plugin-language-picker": "^0.1.0",
+    "gitbook-plugin-versions": "^2.1.4"
   }
 }
