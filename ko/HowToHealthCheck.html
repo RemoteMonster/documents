@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Android 레이아웃 가이드 · RemoteMonster Documents</title>
+        <title>통화품질을 실시간으로 확인하기 · RemoteMonster Documents</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -71,8 +71,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="RemonJsRemon.html" />
     
-    <link rel="prev" href="AndroidConfigGuide.html" />
+    
+    <link rel="prev" href="ErrorCode.html" />
     
 
     </head>
@@ -230,7 +232,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="HowToHealthCheck.html">
+        <li class="chapter active" data-level="2.5" data-path="HowToHealthCheck.html">
             
                 <a href="HowToHealthCheck.html">
             
@@ -348,7 +350,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.3" data-path="RemondroidLayout.html">
+        <li class="chapter " data-level="4.3" data-path="RemondroidLayout.html">
             
                 <a href="RemondroidLayout.html">
             
@@ -457,7 +459,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Android 레이아웃 가이드</a>
+        <a href="." >통화품질을 실시간으로 확인하기</a>
     </h1>
 </div>
 
@@ -472,60 +474,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#xB9AC;&#xBAA8;&#xD2B8;&#xBAAC;&#xC2A4;&#xD130;-&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;&#xC758;-&#xB808;&#xC774;&#xC544;&#xC6C3;&#xACFC;-&#xBDF0;">&#xB9AC;&#xBAA8;&#xD2B8;&#xBAAC;&#xC2A4;&#xD130; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;&#xC758; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xACFC; &#xBDF0;</h1>
+                                <h1 id="&#xD1B5;&#xD654;&#xD488;&#xC9C8;&#xC744;-&#xC2E4;&#xC2DC;&#xAC04;&#xC73C;&#xB85C;-&#xD655;&#xC778;&#xD558;&#xAE30;">&#xD1B5;&#xD654;&#xD488;&#xC9C8;&#xC744; &#xC2E4;&#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xD655;&#xC778;&#xD558;&#xAE30;</h1>
 <ul>
-<li>&#xB9AC;&#xBAA8;&#xD2B8;&#xBAAC;&#xC2A4;&#xD130; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; SDK&#xB294; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xACFC; &#xAD00;&#xB828;&#xD558;&#xC5EC; 2&#xAC1C;&#xC758; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC00;&#xC7A5; &#xD575;&#xC2EC;&#xC774; &#xB418;&#xB294;, &#xC601;&#xC0C1;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xB294; View&#xC778; org.webrtc.SurfaceViewRender&#xC640; &#xC774; SurfaceViewRender&#xB97C; &#xD6A8;&#xC728;&#xC801;&#xC73C;&#xB85C; RelativeLayout&#xC5D0;&#xC11C; &#xBC30;&#xCE58;&#xD558;&#xB294;&#xB370; &#xB3C4;&#xC6C0;&#xC744; &#xC8FC;&#xB294; PercentFrameLayout&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC838; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xC911;&#xC5D0;&#xC11C;&#xB3C4; SurfaceViewRender&#xAC00; &#xAC00;&#xC7A5; &#xD575;&#xC2EC;&#xC774;&#xBBC0;&#xB85C; &#xBA3C;&#xC800; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-</ul>
-<h2 id="surfaceviewrender">SurfaceViewRender</h2>
-<ul>
-<li>android layout &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; layout&#xC5D0; &#xBC30;&#xCE58;&#xD568;&#xC73C;&#xB85C;&#xC368; SurfaceViewRender&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">RelativeLayout</span>
-<span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
-<span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
-<span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@android:color/darker_gray&quot;</span>
-<span class="hljs-attr">android:layout_alignParentBottom</span>=<span class="hljs-string">&quot;false&quot;</span>
-<span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">org.webrtc.SurfaceViewRenderer</span>
-    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/remote_video_view&quot;</span>
-    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
-    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">org.webrtc.SurfaceViewRenderer</span>
-    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/local_video_view&quot;</span>
-    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
-    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">RelativeLayout</span>&gt;</span>
+<li>&#xC601;&#xC0C1; &#xBC0F; &#xC74C;&#xC131; &#xD1B5;&#xD654; &#xC911;&#xC5D0; &#xD604;&#xC7AC; &#xD1B5;&#xD654;&#xC758; &#xD488;&#xC9C8;&#xC774; &#xC5B4;&#xB5A0;&#xD55C;&#xC9C0;&#xB97C; 1&#xC5D0;&#xC11C; 5&#xAE4C;&#xC9C0;&#xC758; &#xB2E8;&#xACC4;&#xB85C; &#xD56D;&#xC0C1; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xAC04;&#xD639; &#xC790;&#xC2E0; &#xD639;&#xC740; &#xC0C1;&#xB300;&#xBC29;&#xC758; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xBB38;&#xC81C;&#xB85C; &#xC778;&#xD558;&#xC5EC; &#xD1B5;&#xD654; &#xD488;&#xC9C8;&#xC774; &#xC548;&#xC88B;&#xAC70;&#xB098; &#xB04A;&#xC5B4;&#xC9C4; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB3C4; &#xC11C;&#xBE44;&#xC2A4;&#xD68C;&#xC0AC;&#xC758; &#xBB38;&#xC81C;&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xACE0; &#xBD88;&#xB9CC;&#xC744; &#xC81C;&#xAE30;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB54C;&#xBB38;&#xC5D0; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBB38;&#xC81C;&#xAC00; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC758; &#xBB38;&#xC81C;&#xC784;&#xC744; &#xC0AC;&#xC804;&#xC5D0; &#xC54C;&#xB824;&#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD604;&#xC7AC; &#xC774; &#xD1B5;&#xD654; &#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB294; 5&#xCD08;&#xC5D0; &#xD55C;&#xBC88;&#xC529; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<h1 id="javascript&#xC5D0;&#xC11C;-&#xD1B5;&#xD654;&#xD488;&#xC9C8;-&#xC815;&#xBCF4;&#xB97C;-&#xC5BB;&#xAE30;">Javascript&#xC5D0;&#xC11C; &#xD1B5;&#xD654;&#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xAE30;</h1>
+</li>
+<li>Remon &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xB54C; &#xC785;&#xB825; &#xC778;&#xC790;&#xB85C; &#xB123;&#xB294; listener&#xC758; &#xBA54;&#xC18C;&#xB4DC; &#xC911; onStat() &#xC744; &#xAD6C;&#xD604;&#xD558;&#xC5EC; &#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-comment">// listener &#xAD6C;&#xD604;</span>
+<span class="hljs-keyword">const</span> rtcListener = {
+onInit(token) {
+  l(<span class="hljs-string">`EVENT FIRED : onInit: <span class="hljs-subst">${token}</span>`</span>);
+},
+onCreateChannel(channelId) {
+  l(<span class="hljs-string">`EVENT FIRED : onCreateChannel: <span class="hljs-subst">${channelId}</span>`</span>);
+  appTitleElement.innerHTML = roomName+<span class="hljs-string">&quot; - &quot;</span>+ <span class="hljs-string">&quot;Waiting&quot;</span>;
+},
+onStat(result){
+  <span class="hljs-keyword">const</span> stat = <span class="hljs-string">`State: l.cand: <span class="hljs-subst">${result.localCandidate}</span> /r.cand: <span class="hljs-subst">${result.remoteCandidate}</span> /l.res: <span class="hljs-subst">${result.localFrameWidth}</span> x <span class="hljs-subst">${result.localFrameHeight}</span> /r.res: <span class="hljs-subst">${result.remoteFrameWidth}</span> <span class="hljs-subst">${result.remoteFrameHeight}</span> /l.rate: <span class="hljs-subst">${result.localFrameRate}</span> /r.rate: <span class="hljs-subst">${result.remoteFrameRate}</span> / Health: <span class="hljs-subst">${result.rating}</span>`</span>;
+  <span class="hljs-built_in">console</span>.log(stat);
+}
+};
 </code></pre>
 </li>
-<li>&#xADF8;&#xB9AC;&#xACE0; &#xD2B9;&#xC815; Activity&#xC5D0;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC774; View&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xC5BB;&#xC5B4;&#xC635;&#xB2C8;&#xB2E4;.<pre><code class="lang-java">SurfaceViewRender localRender =
-  (SurfaceViewRenderer) findViewById(R.id.local_video_view);
-SurfaceViewRender remoteRender =
-  (SurfaceViewRenderer) findViewById(R.id.remote_video_view);
+<li>&#xC704;&#xC758; result&#xC5D0;&#xC11C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB294; &#xC5EC;&#xB7EC; &#xC815;&#xBCF4; &#xC911; result.rating &#xC774; &#xBC14;&#xB85C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC0C1;&#xD669;&#xC5D0; &#xB530;&#xB978; &#xD1B5;&#xD569;&#xC801;&#xC778; &#xD1B5;&#xD654; &#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>1:&#xB9E4;&#xC6B0; &#xC88B;&#xC74C;, 2: &#xC88B;&#xC74C; 3: &#xB098;&#xC068; 4: &#xB9E4;&#xC6B0; &#xB098;&#xC068; 5: &#xD1B5;&#xD654;&#xBD88;&#xB2A5; &#xC73C;&#xB85C; &#xB098;&#xB204;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.<h1 id="android&#xC5D0;&#xC11C;-&#xD1B5;&#xD654;&#xD488;&#xC9C8;-&#xC815;&#xBCF4;&#xB97C;-&#xC5BB;&#xAE30;">Android&#xC5D0;&#xC11C; &#xD1B5;&#xD654;&#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xAE30;</h1>
+</li>
+<li>RemonObserver&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC740; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; onStatReport &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC;&#xD558;&#xC5EC; &#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-java">  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStatReport</span><span class="hljs-params">(RemonStatReport report)</span> </span>{
+      Logger.i(TAG, <span class="hljs-string">&quot;report: &quot;</span> + report.getHealthRating());
+      String stat = <span class="hljs-string">&quot;health:&quot;</span> + report.getHealthRating().getLevel() + <span class="hljs-string">&quot;\n&quot;</span>;
+  }
 </code></pre>
 </li>
-<li>&#xC774;&#xC81C; &#xC774; &#xBDF0;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xAE30;&#xBCF8; &#xC900;&#xBE44;&#xAC00; &#xC644;&#xB8CC;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>Remon &#xD074;&#xB798;&#xC2A4;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; &#xC0DD;&#xC131;&#xD560; &#xB54C; Config &#xAC1D;&#xCCB4;&#xC5D0; &#xC774; &#xB450; &#xC30D;&#xC758; &#xBDF0;&#xB97C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xD1B5;&#xC2E0;&#xC774; &#xC2DC;&#xC791;&#xB428;&#xACFC; &#xD568;&#xAED8; &#xC774; &#xBDF0;&#xC5D0; &#xCE74;&#xBA54;&#xB77C;&#xB098; &#xC6D0;&#xACA9;&#xC758; &#xC601;&#xC0C1; &#xC2A4;&#xD2B8;&#xB9BC;&#xC774; &#xCD9C;&#xB825;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li>&#xBA87;&#xAC00;&#xC9C0; &#xC774; SurfaceViewRender&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-java">localRender.setZOrderMediaOverlay(<span class="hljs-keyword">true</span>/<span class="hljs-keyword">false</span>);
-</code></pre>
-</li>
-<li>&#xBDF0;&#xAC04;&#xC758; ZOrder&#xB97C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC989; &#xC774; &#xBDF0;&#xB97C; &#xB2E4;&#xB978; &#xBDF0;&#xBCF4;&#xB2E4; &#xC704; &#xC704;&#xCE58;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xACB9;&#xCE58;&#xB294; &#xBDF0;&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xB2E4;&#xB978; &#xBDF0;&#xB294; false&#xB85C; &#xD558;&#xACE0; &#xD574;&#xB2F9; &#xBDF0;&#xB9CC; true&#xB85C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<pre><code class="lang-java">localRender.setMirror(<span class="hljs-keyword">false</span>);
-</code></pre>
-</li>
-<li>&#xD574;&#xB2F9; &#xBDF0;&#xC758; &#xC601;&#xC0C1;&#xC744; &#xAC70;&#xC6B8;&#xD6A8;&#xACFC;&#xB97C; &#xC8FC;&#xC5B4;&#xC11C; &#xC88C;&#xC6B0;&#xAC00; &#xBC14;&#xB00C;&#xB294; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xBCF4;&#xC5EC;&#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-java">localRender.setScalingType(RendererCommon.ScalingType);
-</code></pre>
-</li>
-<li>layout&#xC5D0; &#xC5B4;&#xB5BB;&#xAC8C; &#xCC44;&#xC6B8;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
-</ul>
-<h2 id="percentframelayout">PercentFrameLayout</h2>
-<ul>
-<li>&#xB9AC;&#xBAA8;&#xD2B8;&#xBAAC;&#xC2A4;&#xD130; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; SDK&#xC5D0;&#xC11C;&#xB294; &#xC601;&#xC0C1;&#xAD00;&#xB828; View&#xC758; &#xBC30;&#xCE58;&#xB97C; &#xC27D;&#xAC8C; &#xD558;&#xAE30; &#xC704;&#xD574; PercentFrameLayout&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. PercentFrameLayout&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC601;&#xC0C1; &#xAD00;&#xB828; View&#xB97C; RelativeLayout&#xC548;&#xC5D0;&#xC11C; &#xC790;&#xC720;&#xB86D;&#xAC8C; &#xBC30;&#xCE58;&#xD558;&#xACE0; &#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xC6C0;&#xC9C1;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>&#xB2E4;&#xC74C; &#xD654;&#xBA74;&#xCC98;&#xB7FC; &#xC5EC;&#xB7EC; SurfaceViewRender&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xB294; &#xAC83;&#xB3C4; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.
-<img src="images/4peopleLayout.jpg" alt="4&#xC790;&#xCC44;&#xD305;"></li>
-<li>PercentFrameLayout&#xC740; layout&#xB0B4;&#xC758; &#xBDF0;&#xB4E4;&#xC744; &#xD37C;&#xC13C;&#xD2B8; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xBC30;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;. &#xC989;,<pre><code class="lang-java">layout.setPosition(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>);
-</code></pre>
-</li>
-<li>&#xC740; &#xD574;&#xB2F9; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC744; relativeLayout&#xC0C1;&#xC5D0;&#xC11C; &#xAC00;&#xB85C;&#xC138;&#xB85C; 100%&#xCC44;&#xC6CC;&#xC11C; &#xBC30;&#xCE58;&#xD558;&#xACA0;&#xB2E4;&#xB294; &#xAC83;&#xC774;&#xACE0;<pre><code class="lang-java">layout.setPosition(<span class="hljs-number">0</span>,<span class="hljs-number">50</span>,<span class="hljs-number">50</span>,<span class="hljs-number">50</span>);
-</code></pre>
-</li>
-<li>&#xC740; &#xD574;&#xB2F9; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC744; relativeLayout&#xC744; 4&#xBD84;&#xBA74;&#xC73C;&#xB85C; &#xB098;&#xB220;&#xC11C; &#xC88C;&#xCE21; &#xD558;&#xB2E8;&#xC5D0; 50%&#xB9CC;&#xD07C; &#xC790;&#xB9AC;&#xB97C; &#xCC28;&#xC9C0;&#xD558;&#xACA0;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>RemonStatReport &#xAC1D;&#xCCB4;&#xC758; getHealthRating&#xBA54;&#xC18C;&#xB4DC;&#xC758; getLevel &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; 1&#xC5D0;&#xC11C; 5&#xAE4C;&#xC9C0;&#xC758; &#xC22B;&#xC790;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>1&#xC5D0;&#xC11C; 5&#xAE4C;&#xC9C0;&#xC758; &#xC815;&#xC758;&#xB294; &#xC704;&#xC758; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C;&#xC758; &#xC815;&#xC758;&#xC640; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
 
                                 
@@ -560,7 +542,7 @@ SurfaceViewRender remoteRender =
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android 레이아웃 가이드","level":"4.3","depth":1,"next":{"title":"Android API Reference docs","level":"4.4","depth":1,"url":"https://remotemonster.github.io/android-sdk/","ref":"https://remotemonster.github.io/android-sdk/","articles":[]},"previous":{"title":"Android Config 가이드","level":"4.2","depth":1,"path":"AndroidConfigGuide.md","ref":"AndroidConfigGuide.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"RemondroidLayout.md","mtime":"2017-07-18T02:37:50.195Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-18T12:40:24.170Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"통화품질을 실시간으로 확인하기","level":"2.5","depth":1,"next":{"title":"JS Remon 클래스","level":"3.1","depth":1,"path":"RemonJsRemon.md","ref":"RemonJsRemon.md","articles":[]},"previous":{"title":"에러코드 유형","level":"2.4","depth":1,"path":"ErrorCode.md","ref":"ErrorCode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"HowToHealthCheck.md","mtime":"2017-07-18T12:38:22.328Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-18T12:40:24.170Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>
