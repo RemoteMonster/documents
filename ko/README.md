@@ -25,6 +25,3 @@
 ## iOS 개발자라면
 - [iOS SDK Getting Started](GettingStartedIosSDK.md)
 - [iOS SDK API reference guide](https://remotemonster.github.io/remon-ios-sdk/)
-
-## 기타
-- [통화품질을 실시간으로 확인하기](HowToHealthCheck.md)

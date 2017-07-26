@@ -7,7 +7,6 @@
 - [Android SDK Getting Started](GettingStartedAndroidSDK.md)
 - [iOS SDK Getting Started](GettingStartedIosSDK.md)
 - [에러코드 유형](ErrorCode.md)
-- [통화품질을 실시간으로 확인하기](HowToHealthCheck.md)
 
 ## Javascript
 - [JS Remon 클래스](RemonJsRemon.md)
