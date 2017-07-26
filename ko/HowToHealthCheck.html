@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JS Config 가이드 · RemoteMonster Documents</title>
+        <title>통화품질을 실시간으로 확인하기 · RemoteMonster Documents</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -71,10 +71,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="JsExamples.html" />
+    <link rel="next" href="RemonJsRemon.html" />
     
     
-    <link rel="prev" href="RemonJsRemon.html" />
+    <link rel="prev" href="ErrorCode.html" />
     
 
     </head>
@@ -232,7 +232,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="HowToHealthCheck.html">
+        <li class="chapter active" data-level="2.5" data-path="HowToHealthCheck.html">
             
                 <a href="HowToHealthCheck.html">
             
@@ -265,7 +265,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.2" data-path="BrowserConfigGuide.html">
+        <li class="chapter " data-level="3.2" data-path="BrowserConfigGuide.html">
             
                 <a href="BrowserConfigGuide.html">
             
@@ -459,7 +459,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >JS Config 가이드</a>
+        <a href="." >통화품질을 실시간으로 확인하기</a>
     </h1>
 </div>
 
@@ -474,83 +474,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#xBE0C;&#xB77C;&#xC6B0;&#xC800;-sdk&#xC758;-config">&#xBE0C;&#xB77C;&#xC6B0;&#xC800; SDK&#xC758; Config</h1>
+                                <h1 id="&#xD1B5;&#xD654;&#xD488;&#xC9C8;&#xC744;-&#xC2E4;&#xC2DC;&#xAC04;&#xC73C;&#xB85C;-&#xD655;&#xC778;&#xD558;&#xAE30;">&#xD1B5;&#xD654;&#xD488;&#xC9C8;&#xC744; &#xC2E4;&#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xD655;&#xC778;&#xD558;&#xAE30;</h1>
 <ul>
-<li>RemoteMonster&#xB294; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131; &#xC804;&#xC5D0; config&#xAC12;&#xC744; &#xC120;&#xD589;&#xC801;&#xC73C;&#xB85C; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC00;&#xC7A5; &#xB2E8;&#xC21C;&#xD558;&#xAC8C;&#xB294;<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
-view: {
-  remote: <span class="hljs-string">&apos;#remoteVideo&apos;</span>, local: <span class="hljs-string">&apos;#localVideo&apos;</span>,
-},
-};
-</code></pre>
+<li>&#xC601;&#xC0C1; &#xBC0F; &#xC74C;&#xC131; &#xD1B5;&#xD654; &#xC911;&#xC5D0; &#xD604;&#xC7AC; &#xD1B5;&#xD654;&#xC758; &#xD488;&#xC9C8;&#xC774; &#xC5B4;&#xB5A0;&#xD55C;&#xC9C0;&#xB97C; 1&#xC5D0;&#xC11C; 5&#xAE4C;&#xC9C0;&#xC758; &#xB2E8;&#xACC4;&#xB85C; &#xD56D;&#xC0C1; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xAC04;&#xD639; &#xC790;&#xC2E0; &#xD639;&#xC740; &#xC0C1;&#xB300;&#xBC29;&#xC758; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xBB38;&#xC81C;&#xB85C; &#xC778;&#xD558;&#xC5EC; &#xD1B5;&#xD654; &#xD488;&#xC9C8;&#xC774; &#xC548;&#xC88B;&#xAC70;&#xB098; &#xB04A;&#xC5B4;&#xC9C4; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB3C4; &#xC11C;&#xBE44;&#xC2A4;&#xD68C;&#xC0AC;&#xC758; &#xBB38;&#xC81C;&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xACE0; &#xBD88;&#xB9CC;&#xC744; &#xC81C;&#xAE30;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB54C;&#xBB38;&#xC5D0; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBB38;&#xC81C;&#xAC00; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC758; &#xBB38;&#xC81C;&#xC784;&#xC744; &#xC0AC;&#xC804;&#xC5D0; &#xC54C;&#xB824;&#xC904; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD604;&#xC7AC; &#xC774; &#xD1B5;&#xD654; &#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB294; 5&#xCD08;&#xC5D0; &#xD55C;&#xBC88;&#xC529; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<h1 id="javascript&#xC5D0;&#xC11C;-&#xD1B5;&#xD654;&#xD488;&#xC9C8;-&#xC815;&#xBCF4;&#xB97C;-&#xC5BB;&#xAE30;">Javascript&#xC5D0;&#xC11C; &#xD1B5;&#xD654;&#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xAE30;</h1>
 </li>
-<li>&#xC640; &#xAC19;&#xC774; &#xC601;&#xC0C1;&#xC744; &#xCD9C;&#xB825;&#xD560; video tag&#xB97C; &#xC124;&#xC815;&#xD558;&#xB294; &#xAC83;&#xB9CC;&#xC73C;&#xB85C; RemoteMonster&#xB294; &#xC798; &#xC54C;&#xC544;&#xB4E3;&#xACE0; config&#xCC98;&#xB9AC;&#xB97C; &#xD569;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC2E4;&#xC81C; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC704;&#xD574;&#xC11C; RemoteMonster&#xB294; &#xB354; &#xB9CE;&#xC740; &#xC124;&#xC815;&#xAC12;&#xC744; &#xC694;&#xAD6C;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C;&#xD14C;&#xBA74; &#xC11C;&#xBE44;&#xC2A4; &#xC778;&#xC99D;&#xC744; &#xC704;&#xD55C; &#xD0A4;&#xAC12;&#xC744; &#xC694;&#xAD6C;&#xD569;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
-credential: {
-  key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
+<li>Remon &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xB54C; &#xC785;&#xB825; &#xC778;&#xC790;&#xB85C; &#xB123;&#xB294; listener&#xC758; &#xBA54;&#xC18C;&#xB4DC; &#xC911; onStat() &#xC744; &#xAD6C;&#xD604;&#xD558;&#xC5EC; &#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-comment">// listener &#xAD6C;&#xD604;</span>
+<span class="hljs-keyword">const</span> rtcListener = {
+onInit(token) {
+  l(<span class="hljs-string">`EVENT FIRED : onInit: <span class="hljs-subst">${token}</span>`</span>);
 },
-view: {
-  remote: <span class="hljs-string">&apos;#remoteVideo&apos;</span>, local: <span class="hljs-string">&apos;#localVideo&apos;</span>,
+onCreateChannel(channelId) {
+  l(<span class="hljs-string">`EVENT FIRED : onCreateChannel: <span class="hljs-subst">${channelId}</span>`</span>);
+  appTitleElement.innerHTML = roomName+<span class="hljs-string">&quot; - &quot;</span>+ <span class="hljs-string">&quot;Waiting&quot;</span>;
 },
-};
-</code></pre>
-</li>
-<li>&#xC704;&#xC640; &#xAC19;&#xC774; config&#xB294; view &#xD56D;&#xBAA9;&#xBFD0; &#xC544;&#xB2C8;&#xB77C; credential&#xAC12;&#xC744; &#xC694;&#xAD6C;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xD1B5;&#xD574; &#xC2E4;&#xC81C;&#xB85C; RemoteMonster&#xC5D0; &#xAC00;&#xC785; &#xC815;&#xBCF4;&#xB97C; &#xD655;&#xC778;&#xD558;&#xACE0; &#xB354; &#xB098;&#xC740; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>key&#xB294; RemoteMonster&#xB85C; &#xBD80;&#xD130; &#xBC1C;&#xAE09;&#xBC1B;&#xB294; &#xBE44;&#xBC00;&#xD0A4;&#xC785;&#xB2C8;&#xB2E4;. serviceId&#xB294; &#xC5EC;&#xB7EC;&#xBD84;&#xC774; RemoteMonster&#xC5D0; &#xC11C;&#xBE44;&#xC2A4; &#xAC00;&#xC785;&#xC744; &#xD560; &#xB54C; &#xC785;&#xB825;&#xD558;&#xB294; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;. &#xC989; &#xB2F9;&#xC2E0;&#xC758; id&#xAC12;&#xC774;&#xB77C;&#xACE0; &#xBCF4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</li>
-<li>&#xC774;&#xC81C; &#xC774; config&#xC5D0; &#xB354;&#xD558;&#xC5EC; &#xC74C;&#xC131;&#xACFC; &#xC601;&#xC0C1;&#xC5D0; &#xB300;&#xD55C; &#xBCF4;&#xB2E4; &#xB2E4;&#xC591;&#xD55C; &#xC635;&#xC158;&#xC744; &#xC0B4;&#xD3B4;&#xBD05;&#xC2DC;&#xB2E4;.<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
-credential: {
-  key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
-},
-view: {
-  <span class="hljs-comment">//remote: &apos;#remoteVideo&apos;</span>
-},
-media: {
-  audio: <span class="hljs-literal">true</span>, video: <span class="hljs-literal">false</span>,
+onStat(result){
+  <span class="hljs-keyword">const</span> stat = <span class="hljs-string">`State: l.cand: <span class="hljs-subst">${result.localCandidate}</span> /r.cand: <span class="hljs-subst">${result.remoteCandidate}</span> /l.res: <span class="hljs-subst">${result.localFrameWidth}</span> x <span class="hljs-subst">${result.localFrameHeight}</span> /r.res: <span class="hljs-subst">${result.remoteFrameWidth}</span> <span class="hljs-subst">${result.remoteFrameHeight}</span> /l.rate: <span class="hljs-subst">${result.localFrameRate}</span> /r.rate: <span class="hljs-subst">${result.remoteFrameRate}</span> / Health: <span class="hljs-subst">${result.rating}</span>`</span>;
+  <span class="hljs-built_in">console</span>.log(stat);
 }
 };
 </code></pre>
 </li>
-<li>&#xC774; media&#xC635;&#xC158; &#xB0B4;&#xC6A9;&#xC740; &#xC74C;&#xC131;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xB2E4;&#xB294; &#xC635;&#xC158;&#xC785;&#xB2C8;&#xB2E4;. &#xC989; video&#xB97C; false&#xD558;&#xBA74; &#xC601;&#xC0C1;&#xD1B5;&#xC2E0;&#xC744; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xC6B0; &#xB9CE;&#xC740; RemoteMonster&#xC758; &#xC11C;&#xBE44;&#xC2A4;&#xB4E4;&#xC740; &#xC74C;&#xC131;&#xC804;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4;&#xC774;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.</li>
-<li>&#xB9CC;&#xC57D; video&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB9E4;&#xC6B0; &#xB9CE;&#xC740; &#xC635;&#xC158;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-javascript">video: {
-width: {max: <span class="hljs-string">&apos;640&apos;</span>, min: <span class="hljs-string">&apos;640&apos;</span>},
-height: {max: <span class="hljs-string">&apos;480&apos;</span>, min: <span class="hljs-string">&apos;480&apos;</span>},
-codec: <span class="hljs-string">&apos;H264&apos;</span>, <span class="hljs-comment">// &apos;VP9&apos; , &apos;VP8&apos; or &apos;H264&apos;</span>
-frameRate: {max:<span class="hljs-number">15</span>, min:<span class="hljs-number">15</span>},
-facingMode: <span class="hljs-string">&apos;user&apos;</span>, <span class="hljs-comment">// &apos;user&apos; or &apos;environment&apos;</span>
-}
-</code></pre>
+<li>&#xC704;&#xC758; result&#xC5D0;&#xC11C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB294; &#xC5EC;&#xB7EC; &#xC815;&#xBCF4; &#xC911; result.rating &#xC774; &#xBC14;&#xB85C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC0C1;&#xD669;&#xC5D0; &#xB530;&#xB978; &#xD1B5;&#xD569;&#xC801;&#xC778; &#xD1B5;&#xD654; &#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>1:&#xB9E4;&#xC6B0; &#xC88B;&#xC74C;, 2: &#xC88B;&#xC74C; 3: &#xB098;&#xC068; 4: &#xB9E4;&#xC6B0; &#xB098;&#xC068; 5: &#xD1B5;&#xD654;&#xBD88;&#xB2A5; &#xC73C;&#xB85C; &#xB098;&#xB204;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.<h1 id="android&#xC5D0;&#xC11C;-&#xD1B5;&#xD654;&#xD488;&#xC9C8;-&#xC815;&#xBCF4;&#xB97C;-&#xC5BB;&#xAE30;">Android&#xC5D0;&#xC11C; &#xD1B5;&#xD654;&#xD488;&#xC9C8; &#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xAE30;</h1>
 </li>
-<li>&#xD56D;&#xBAA9;&#xC744; &#xD558;&#xB098;&#xC529; &#xC0B4;&#xD3B4;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>&#xBA3C;&#xC800; width&#xC640; height&#xB294; &#xC0C1;&#xB300;&#xD3B8;&#xC5D0;&#xAC8C; &#xBCF4;&#xB0BC; &#xC601;&#xC0C1;&#xC758; &#xD574;&#xC0C1;&#xB3C4;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xCD5C;&#xB300; 640 480&#xC758; &#xD574;&#xC0C1;&#xB3C4;&#xB85C; &#xBCF4;&#xB0BC; &#xAC83;&#xC744; &#xC124;&#xC815;&#xD558;&#xC600;&#xC9C0;&#xB9CC; &#xC774;&#xAC83;&#xC774; &#xAF2D; &#xC9C0;&#xCF1C;&#xC9C0;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. WebRTC&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB098; &#xB2E8;&#xB9D0;&#xC758; &#xC0C1;&#xD0DC;&#xC5D0; &#xB530;&#xB77C; &#xD574;&#xC0C1;&#xB3C4;&#xC640; framerate&#xB4F1;&#xC744; &#xC720;&#xC5F0;&#xD558;&#xAC8C; &#xBCC0;&#xD654;&#xC2DC;&#xD0A4;&#xBA74;&#xC11C; &#xD488;&#xC9C8;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xACE0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xD574;&#xC0C1;&#xB3C4;&#xAC00; &#xC2E4;&#xC81C;&#xC640; &#xCC28;&#xC774;&#xAC00; &#xB0A0; &#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC; ratio&#xB294; &#xCD5C;&#xB300;&#xD55C; &#xB9DE;&#xCD94;&#xAE30; &#xC704;&#xD574; &#xB178;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</li>
-<li>Browser&#xB294; H.264&#xC640; VP8, VP9&#xB4F1;&#xC758; &#xC601;&#xC0C1; &#xCF54;&#xB371;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. RemoteMonster&#xB294; H.264&#xB97C; &#xAE30;&#xBCF8; &#xCF54;&#xB371;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC73C;&#xBA70; &#xBCC0;&#xACBD;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;&#xBA74; &#xC774; &#xC124;&#xC815;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>frameRate&#xD56D;&#xBAA9;&#xC740; 1&#xCD08;&#xC5D0; &#xBA87;&#xBC88;&#xC758; frame&#xC73C;&#xB85C; &#xC778;&#xCF54;&#xB529;&#xD560; &#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC601;&#xC0C1;&#xD1B5;&#xD654;&#xC5D0;&#xC11C;&#xB294; 15&#xC815;&#xB3C4;&#xBA74; &#xC801;&#xB2F9;&#xD558;&#xC9C0;&#xB9CC; &#xB354; &#xCD18;&#xCD18;&#xD55C; framerate&#xB97C; &#xC6D0;&#xD55C;&#xB2E4;&#xBA74; &#xB192;&#xC5EC;&#xC904; &#xC218; &#xC788;&#xACA0;&#xC8E0;.</li>
-<li>facingMode&#xB294; &#xAE30;&#xAE30;&#xC758; &#xC55E;&#xACFC; &#xB4A4;&#xC5D0; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC788;&#xC744; &#xB54C; &#xC5B4;&#xB5A4; &#xCABD;&#xC758; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC778;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xD604;&#xC7AC; &#xBAA8;&#xBC14;&#xC77C; &#xBC84;&#xC804;&#xC758; &#xD06C;&#xB86C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C;&#xB294; facingMode&#xAC00; &#xC81C;&#xB300;&#xB85C; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-</ul>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> config = {
-  credential: {
-    key: <span class="hljs-string">&apos;1234567890&apos;</span>, serviceId: <span class="hljs-string">&apos;SERVICEID1&apos;</span>
-  },
-  view: {
-    <span class="hljs-comment">//blah blah</span>
-  },
-  media: {
-    <span class="hljs-comment">// blahblah</span>
-  },
-  dev:{
-    logLevel: <span class="hljs-string">&apos;INFO&apos;</span>,
+<li>RemonObserver&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC740; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; onStatReport &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC;&#xD558;&#xC5EC; &#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xC2B5;&#xB2C8;&#xB2E4;.<pre><code class="lang-java">  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStatReport</span><span class="hljs-params">(RemonStatReport report)</span> </span>{
+      Logger.i(TAG, <span class="hljs-string">&quot;report: &quot;</span> + report.getHealthRating());
+      String stat = <span class="hljs-string">&quot;health:&quot;</span> + report.getHealthRating().getLevel() + <span class="hljs-string">&quot;\n&quot;</span>;
   }
-};
-</code></pre>
-<ul>
-<li>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB85C;&#xADF8;&#xB808;&#xBCA8; &#xC124;&#xC815;&#xC785;&#xB2C8;&#xB2E4;. SILENT, ERROR, WARN, INFO, DEBUG, VERBOSE&#xB97C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xB4A4;&#xB85C; &#xAC08; &#xC218;&#xB85D; &#xB354; &#xC790;&#xC138;&#xD55C; &#xB85C;&#xADF8;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-</ul>
-<h1 id="video-tag-&#xC124;&#xC815;">video tag &#xC124;&#xC815;</h1>
-<ul>
-<li>&#xC601;&#xC0C1; &#xD1B5;&#xD654; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xAD6C;&#xD604; &#xC2DC; HTML5&#xC758; video tag&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.<pre><code class="lang-HTML5">&lt;video id=&quot;remoteVideo&quot; autoplay controls&gt;&lt;/video&gt;
 </code></pre>
 </li>
-<li>controls &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xACBD;&#xC6B0; &#xC601;&#xC0C1;&#xC5D0;&#xC11C; &#xC81C;&#xC5B4; &#xCEE8;&#xD2B8;&#xB864;&#xC744; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li>local video &#xC601;&#xC0C1;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBCF4;&#xD1B5; muted &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xC790;&#xAE30; &#xC74C;&#xC131;&#xC774; &#xB2E4;&#xC2DC; &#xC790;&#xAE30;&#xC5D0;&#xAC8C; &#xB4E4;&#xB9AC;&#xB294; &#xD558;&#xC6B8;&#xB9C1; &#xD604;&#xC0C1;&#xC744; &#xC5C6;&#xC560;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<pre><code class="lang-HTML5">&lt;video id=&quot;localVideo&quot; autoplay controls muted&gt;&lt;/video&gt;
-</code></pre>
-</li>
+<li>RemonStatReport &#xAC1D;&#xCCB4;&#xC758; getHealthRating&#xBA54;&#xC18C;&#xB4DC;&#xC758; getLevel &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; 1&#xC5D0;&#xC11C; 5&#xAE4C;&#xC9C0;&#xC758; &#xC22B;&#xC790;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>1&#xC5D0;&#xC11C; 5&#xAE4C;&#xC9C0;&#xC758; &#xC815;&#xC758;&#xB294; &#xC704;&#xC758; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C;&#xC758; &#xC815;&#xC758;&#xC640; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
 
                                 
@@ -585,7 +542,7 @@ facingMode: <span class="hljs-string">&apos;user&apos;</span>, <span class="hljs
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JS Config 가이드","level":"3.2","depth":1,"next":{"title":"JS 예제 모음","level":"3.3","depth":1,"path":"JsExamples.md","ref":"JsExamples.md","articles":[]},"previous":{"title":"JS Remon 클래스","level":"3.1","depth":1,"path":"RemonJsRemon.md","ref":"RemonJsRemon.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"BrowserConfigGuide.md","mtime":"2017-03-28T12:30:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T08:42:02.659Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"통화품질을 실시간으로 확인하기","level":"2.5","depth":1,"next":{"title":"JS Remon 클래스","level":"3.1","depth":1,"path":"RemonJsRemon.md","ref":"RemonJsRemon.md","articles":[]},"previous":{"title":"에러코드 유형","level":"2.4","depth":1,"path":"ErrorCode.md","ref":"ErrorCode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"HowToHealthCheck.md","mtime":"2017-07-26T08:41:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T08:42:02.659Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>
