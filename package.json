@@ -18,7 +18,12 @@
     "gitbook-cli": "^2.3.0"
   },
   "dependencies": {
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-ga": "^1.0.1",
+    "gitbook-plugin-github": "^2.0.0",
     "gitbook-plugin-language-picker": "^0.1.0",
+    "gitbook-plugin-sitemap": "^1.2.0",
+    "gitbook-plugin-theme-api": "^1.1.2",
     "gitbook-plugin-versions": "^2.1.4"
   }
 }
