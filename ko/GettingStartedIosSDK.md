@@ -15,8 +15,19 @@
 
 ![settings](images/ios_buildsettings.png)
 
+## Cocoapods을 이용한 SDK 설치
+SDK 설치를 원하는 프로젝트의 Podfile에  `pod 'Remon-iOS-SDK', '~> 0.1`을
+추가 하거나
+```
+target 'MyApp' do
+  pod 'Remon-iOS-SDK', '~> 0.1'
+end
+```
+을 추가 합니다.
+그리고 터미널에서 *pod install* 를 실행 합니다.
+만약  *pod install* 이 동작하지 않는 다면 *pod update*를 실행 합니다.
 
-## RemoteMonster iOS SDK import하기
+## 직접 RemoteMonster iOS SDK import하기 (Without Cocoapods)
 - 다운로드받은 RemoteMonster iOS SDK를 압축을 풀면 2개의 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster iOS SDK를 프레임워크로 인식하게 됩니다.
 
 ![framework](images/ios_importframework.png)

@@ -7,7 +7,7 @@
         <title>iOS SDK Getting Started · RemoteMonster Documents</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="GitBook 3.2.3">
         <meta name="author" content="RemoteMonster">
         
         
@@ -493,7 +493,16 @@
 </li>
 </ul>
 <p><img src="images/ios_buildsettings.png" alt="settings"></p>
-<h2 id="remotemonster-ios-sdk-import&#xD558;&#xAE30;">RemoteMonster iOS SDK import&#xD558;&#xAE30;</h2>
+<h2 id="cocoapods&#xC744;-&#xC774;&#xC6A9;&#xD55C;-sdk-&#xC124;&#xCE58;">Cocoapods&#xC744; &#xC774;&#xC6A9;&#xD55C; SDK &#xC124;&#xCE58;</h2>
+<p>SDK &#xC124;&#xCE58;&#xB97C; &#xC6D0;&#xD558;&#xB294; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; Podfile&#xC5D0;  <code>pod &apos;Remon-iOS-SDK&apos;, &apos;~&gt; 0.1</code>&#xC744;
+&#xCD94;&#xAC00; &#xD558;&#xAC70;&#xB098;</p>
+<pre><code>target &apos;MyApp&apos; do
+  pod &apos;Remon-iOS-SDK&apos;, &apos;~&gt; 0.1&apos;
+end
+</code></pre><p>&#xC744; &#xCD94;&#xAC00; &#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB9AC;&#xACE0; &#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; <em>pod install</em> &#xB97C; &#xC2E4;&#xD589; &#xD569;&#xB2C8;&#xB2E4;.
+&#xB9CC;&#xC57D;  <em>pod install</em> &#xC774; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xB2E4;&#xBA74; <em>pod update</em>&#xB97C; &#xC2E4;&#xD589; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC9C1;&#xC811;-remotemonster-ios-sdk-import&#xD558;&#xAE30;-without-cocoapods">&#xC9C1;&#xC811; RemoteMonster iOS SDK import&#xD558;&#xAE30; (Without Cocoapods)</h2>
 <ul>
 <li>&#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xBC1B;&#xC740; RemoteMonster iOS SDK&#xB97C; &#xC555;&#xCD95;&#xC744; &#xD480;&#xBA74; 2&#xAC1C;&#xC758; Framework&#xC774; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;. &#xAC01;&#xAC01;&#xC758; Framework&#xC744; Finder&#xC5D0;&#xC11C; &#xB04C;&#xC5B4;&#xB2E4; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD2B8;&#xB9AC;&#xCC3D;&#xC5D0; &#xB193;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xBA74; RemoteMonster iOS SDK&#xB97C; &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;&#xB85C; &#xC778;&#xC2DD;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</li>
 </ul>
@@ -661,7 +670,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS SDK Getting Started","level":"2.3","depth":1,"next":{"title":"에러코드 유형","level":"2.4","depth":1,"path":"ErrorCode.md","ref":"ErrorCode.md","articles":[]},"previous":{"title":"Android SDK Getting Started","level":"2.2","depth":1,"path":"GettingStartedAndroidSDK.md","ref":"GettingStartedAndroidSDK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"GettingStartedIosSDK.md","mtime":"2017-03-28T12:30:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T08:42:02.659Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"iOS SDK Getting Started","level":"2.3","depth":1,"next":{"title":"에러코드 유형","level":"2.4","depth":1,"path":"ErrorCode.md","ref":"ErrorCode.md","articles":[]},"previous":{"title":"Android SDK Getting Started","level":"2.2","depth":1,"path":"GettingStartedAndroidSDK.md","ref":"GettingStartedAndroidSDK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"GettingStartedIosSDK.md","mtime":"2017-09-05T01:35:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-05T01:39:02.468Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>
