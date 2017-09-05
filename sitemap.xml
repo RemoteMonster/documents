@@ -5,19 +5,19 @@
 <url> <loc>http://docs.remotemonster.com/undefinedAndroid SDK - Getting Started.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedREADME.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedFeatures.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedSdkOverview.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedGettingStartedBrowserSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedGettingStartedAndroidSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedGettingStartedIosSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedOverview.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-BrowserSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-AndroidSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-IosSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedErrorCode.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedHowToHealthCheck.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedRemonJsRemon.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedBrowserConfigGuide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedJsExamples.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedwebrtc-internalGuide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedRemondroidRemon.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedAndroidConfigGuide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://docs.remotemonster.com/undefinedRemondroidLayout.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedHealthCheck.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedBrowserSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedBrowserSDK-Config.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedBrowserSDK-Examples.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedBrowserSDK-InternalStats.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedAndroidSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedAndroidSDK-Config.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedAndroidSDK-Layout.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedAboutUs.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedWebRTC.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
