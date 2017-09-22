@@ -71,10 +71,10 @@
 
 ### 활용 고객
 - [튜터링](http://tutoring.kr/): 모바일 영어회화 어플
-- [설레Go](https://play.google.com/store/apps/details?id=kr.co.seole.tohomedriver&hl=ko): 대리운전 앱
-- [화상운세](https://play.google.com/store/apps/category/GAME): 모바일 화상기반 역술인 채팅 서비스
-- [MakePeopleMeetAgain](https://makepeoplemeetagain.remotemonster.com): 미국인과 중동인간 랜덤 화상채팅서비스
-- [Handchat](https://play.google.com/store/apps/details?id=kr.co.marshmallowstudio.deaf): 농아인들을 위한 랜덤화상채팅 서비스
+- [설레Go](https://play.google.com/store/apps/details?id=net.seole.seolego.user): 대리운전 앱
+- [화상운세](https://play.google.com/store/apps/details?id=kr.co.xitech.www.videounse): 모바일 화상기반 역술인 채팅 서비스
+- [심리상담](https://play.google.com/store/apps/details?id=com.humart.trost2): 트로스트 - 심리상담, 고민상담 서비스
+- [Handchat](https://play.google.com/store/apps/details?id=kr.co.marshmallowstudio.deaf): 랜덤화상채팅 서비스
 - [설레는 아침](https://play.google.com/store/apps/details?id=kr.co.marshmallowstudio.seol_a): 소셜 모닝콜 서비스
 
 ## 적용 가능 서비스
