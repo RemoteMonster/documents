@@ -1,6 +1,6 @@
 # Summary
-- [RemoteMonster API란?](Features.md)
-- [SDK 공통 지식](Overview.md)
+- [개요](Overview.md)
+- [제품 규격](Spec.md)
 
 ## Getting Started
 - [Browser SDK Getting Started](GettingStarted-BrowserSDK.md)

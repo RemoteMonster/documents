@@ -3,9 +3,9 @@
 ## WebRTC의 개념과 기초 지식을 알고 싶다면
 - [WebRTC 링크 모음](WebRTC.md)
 
-## 리모트몬스터 API가 무엇인지 알고 싶다면
+## 리모트몬스터 클라우드가 무엇인지 알고 싶다면
 - [리모트몬스터는?](AboutUs.md)
-- [리모트몬스터 API란?](Features.md)
+- [규격](Spec.md)
 
 ## Javascript 개발자라면
 - [Browser SDK GettingStarted](GettingStarted-BrowserSDK.md)
