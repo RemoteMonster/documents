@@ -22,7 +22,7 @@
     html,body { height:100%; }
   </style>
 
-  <script src="./node_modules/remon-browser-sdk/remon.min.js"></script>
+  <script src="https://remotemonster.com/sdk/remon.min.js"></script>
   <script>
   let isConnected = false;
   const config = { credential: {
