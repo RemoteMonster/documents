@@ -8,8 +8,10 @@
 <url> <loc>http://docs.remotemonster.com/undefinedSpec.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-BrowserSDK-comm.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-AndroidSDK-comm.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-IosSDK-comm.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-BrowserSDK-broadcast.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-AndroidSDK-broadcast.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://docs.remotemonster.com/undefinedGettingStarted-IosSDK-broadcast.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedErrorCode.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedHealthCheck.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://docs.remotemonster.com/undefinedBrowserSDK.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
