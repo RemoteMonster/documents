@@ -3,9 +3,14 @@
 - [제품 규격](Spec.md)
 
 ## Getting Started
-- [Browser SDK Getting Started](GettingStarted-BrowserSDK.md)
-- [Android SDK Getting Started](GettingStarted-AndroidSDK.md)
-- [iOS SDK Getting Started](GettingStarted-IosSDK.md)
+- 통신 서비스 개발
+  - [Browser SDK for comm - Getting Started](GettingStarted-BrowserSDK-comm.md)
+  - [Android SDK for comm - Getting Started](GettingStarted-AndroidSDK-comm.md)
+  - [iOS SDK for comm - Getting Started](GettingStarted-IosSDK-comm.md)
+- 방송 서비스 개발
+  - [Browser SDK for cast - Getting Started](GettingStarted-BrowserSDK-broadcast.md)
+  - [Android SDK for cast - Getting Started](GettingStarted-AndroidSDK-broadcast.md)
+  - [iOS SDK for cast - Getting Started](GettingStarted-IosSDK-broadcast.md)
 - [에러코드 유형](ErrorCode.md)
 - [통화품질을 실시간으로 확인하기](HealthCheck.md)
 

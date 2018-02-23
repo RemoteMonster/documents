@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Browser SDK Getting Started · RemoteMonster Documents</title>
+        <title>Browser SDK for comm - Getting Started · RemoteMonster Documents</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -71,10 +71,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="GettingStarted-AndroidSDK.html" />
+    <link rel="next" href="GettingStarted-AndroidSDK-comm.html" />
     
-    
-    <link rel="prev" href="Spec.html" />
     
 
     </head>
@@ -180,38 +178,26 @@
         
         
     
-        <li class="chapter active" data-level="2.1" data-path="GettingStarted-BrowserSDK.html">
-            
-                <a href="GettingStarted-BrowserSDK.html">
-            
-                    
-                    Browser SDK Getting Started
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="GettingStarted-AndroidSDK.html">
-            
-                <a href="GettingStarted-AndroidSDK.html">
-            
-                    
-                    Android SDK Getting Started
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3" data-path="GettingStarted-IosSDK.md">
+        <li class="chapter " data-level="2.1" >
             
                 <span>
             
                     
-                    iOS SDK Getting Started
+                    통신 서비스 개발
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="GettingStarted-BrowserSDK-comm.html">
+            
+                <a href="GettingStarted-BrowserSDK-comm.html">
+            
+                    
+                    Browser SDK for comm - Getting Started
             
                 </a>
             
@@ -219,7 +205,96 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="ErrorCode.html">
+        <li class="chapter " data-level="2.1.2" data-path="GettingStarted-AndroidSDK-comm.html">
+            
+                <a href="GettingStarted-AndroidSDK-comm.html">
+            
+                    
+                    Android SDK for comm - Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="GettingStarted-IosSDK-comm.md">
+            
+                <span>
+            
+                    
+                    iOS SDK for comm - Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    방송 서비스 개발
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="GettingStarted-BrowserSDK-broadcast.html">
+            
+                <a href="GettingStarted-BrowserSDK-broadcast.html">
+            
+                    
+                    Browser SDK for cast - Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="GettingStarted-AndroidSDK-broadcast.html">
+            
+                <a href="GettingStarted-AndroidSDK-broadcast.html">
+            
+                    
+                    Android SDK for cast - Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="GettingStarted-IosSDK-broadcast.md">
+            
+                <span>
+            
+                    
+                    iOS SDK for cast - Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="ErrorCode.html">
             
                 <a href="ErrorCode.html">
             
@@ -232,7 +307,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="HealthCheck.html">
+        <li class="chapter " data-level="2.4" data-path="HealthCheck.html">
             
                 <a href="HealthCheck.html">
             
@@ -459,7 +534,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Browser SDK Getting Started</a>
+        <a href="." >Browser SDK for comm - Getting Started</a>
     </h1>
 </div>
 
@@ -498,7 +573,7 @@
     <span class="hljs-selector-tag">html</span>,<span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>; }
   </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./node_modules/remon-browser-sdk/remon.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://remotemonster.com/sdk/remon.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
   <span class="hljs-keyword">let</span> isConnected = <span class="hljs-literal">false</span>;
   <span class="hljs-keyword">const</span> config = { credential: {
@@ -637,7 +712,7 @@ remon.connectChannel(<span class="hljs-string">&quot;simpleRemon&quot;</span>);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Browser SDK Getting Started","level":"2.1","depth":1,"next":{"title":"Android SDK Getting Started","level":"2.2","depth":1,"path":"GettingStarted-AndroidSDK.md","ref":"GettingStarted-AndroidSDK.md","articles":[]},"previous":{"title":"제품 규격","level":"1.3","depth":1,"path":"Spec.md","ref":"Spec.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"GettingStarted-BrowserSDK.md","mtime":"2017-11-28T04:15:35.926Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-28T04:34:12.241Z"},"basePath":".","book":{"language":"ko"}});
+            gitbook.page.hasChanged({"page":{"title":"Browser SDK for comm - Getting Started","level":"2.1.1","depth":2,"next":{"title":"Android SDK for comm - Getting Started","level":"2.1.2","depth":2,"path":"GettingStarted-AndroidSDK-comm.md","ref":"GettingStarted-AndroidSDK-comm.md","articles":[]},"previous":{"title":"통신 서비스 개발","level":"2.1","depth":1,"ref":"","articles":[{"title":"Browser SDK for comm - Getting Started","level":"2.1.1","depth":2,"path":"GettingStarted-BrowserSDK-comm.md","ref":"GettingStarted-BrowserSDK-comm.md","articles":[]},{"title":"Android SDK for comm - Getting Started","level":"2.1.2","depth":2,"path":"GettingStarted-AndroidSDK-comm.md","ref":"GettingStarted-AndroidSDK-comm.md","articles":[]},{"title":"iOS SDK for comm - Getting Started","level":"2.1.3","depth":2,"path":"GettingStarted-IosSDK-comm.md","ref":"GettingStarted-IosSDK-comm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-api","sitemap","versions","github","edit-link","language-picker","ga"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/remotemonster/remon-docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://docs.remotemonster.com/"},"theme-api":{"languages":[],"split":true,"theme":"light"},"ga":{"configuration":"auto","token":"UA-84812645-1"},"versions":{"type":"tags","options":[{"value":"https://docs.remotemonster.com/docs/v0.1.0/","text":"0.1.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":{"en":"Edit This Page","ko":"이 페이지를 수정하기"},"base":"https://github.com/RemoteMonster/REMON-Docs/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"RemoteMonster","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"RemoteMonster Documents","language":"ko","gitbook":"*","description":"RemoteMonster document for developers, WebRTC"},"file":{"path":"GettingStarted-BrowserSDK-comm.md","mtime":"2017-11-28T04:52:44.624Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-23T02:03:55.490Z"},"basePath":".","book":{"language":"ko"}});
         });
     </script>
 </div>

@@ -1,4 +1,4 @@
-# Android SDK - Getting Started
+# Android SDK for live communication- Getting Started
 
 ## 준비 사항
 - 안드로이드 스마트폰 2개

@@ -15,6 +15,12 @@ Remon.connectChannel(String channelId)
 - 메소드는 하나이지만 방이름이 이미 존재하는지 여부에 따라 없으면 listener의 onCreateChannel메소드, 있으면 onConnectChannel 메소드가 호출된다고 보면 되며, onConnectChannel메소드 호출시 상대편과 연결이 완료되었음을 의미합니다.
 - 상대편과 통화 연결에 완전히 성공하는 경우 Observer의 onStateChange의 STATE.COMPLETE 상태가 입력값으로 들어옵니다. 이 때 필요한 서비스를 진행하면 됩니다.
 ```javascript
+Remon.createRoom(roomname); // 방송용 방 만들기
+Remon.joinRoom(room id); //방송용 방 시청하기
+```
+- 방송용 방을 만들거나 시청하는 명령입니다. 
+
+```javascript
 // 방을 검색
 Remon.search(String channelId)
 ```
@@ -39,4 +45,4 @@ Remon.close();
 Remon.sendMessage(userMessage)
 ```
 - 연결이 된 상태에서 상대에게 메시지를 전달할 수 있습니다.
-- 메시지를 받는 것은 listener의 onMessage를 통해서 받을 수 있습니다.
+- 메시지를 받는 것은 listener의 onMessage를 통해서 받을 수 있습니다. 주로 통신용으로만 사용합니다

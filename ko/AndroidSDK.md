@@ -11,9 +11,16 @@ public Remon(Context ctx, Config config, RemonObserver observer)
 // 방에 통화 연결
 public void connectChannel(String channelId)
 ```
-- 방에 접속하거나 방을 만드는 명령입니다. 주어진 이름의 방이 없을 경우 방을 만들고 이미 방이 있을 경우 방에 접속합니다. 물론 사전에 방 이름이 있어야 하겠지만 만약 방 이름이 없을 경우 RemoteMonster는 고유한 방 이름을 생성해서 Observer의 onCreateChannel메소드를 통해 방이름을 반환하게 됩니다.
+- 통신용으로 쓰는 기능입니다. 방에 접속하거나 방을 만드는 명령입니다. 주어진 이름의 방이 없을 경우 방을 만들고 이미 방이 있을 경우 방에 접속합니다. 물론 사전에 방 이름이 있어야 하겠지만 만약 방 이름이 없을 경우 RemoteMonster는 고유한 방 이름을 생성해서 Observer의 onCreateChannel메소드를 통해 방이름을 반환하게 됩니다.
 - 메소드는 하나이지만 방이름이 이미 존재하는지 여부에 따라 없으면 Observer의 onCreateChannel메소드, 있으면 onConnectChannel 메소드가 호출된다고 보면 되며, onConnectChannel메소드 호출시 상대편과 연결이 완료되었음을 의미합니다.
 - 상대편과 통화 연결에 완전히 성공하는 경우 Observer의 onStateChange의 STATE.COMPLETE 상태가 입력값으로 들어옵니다. 이 때 필요한 서비스를 진행하면 됩니다.
+```java
+// 방송용 방을 개설
+public void createRoom(String name)
+// 방 시청하기
+public void joinRoom(String channelId)
+```
+
 ```java
 // 방을 검색
 public void searchChannels(String channelId)
