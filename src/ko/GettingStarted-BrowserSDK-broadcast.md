@@ -56,7 +56,7 @@
     if (isConnected === false){
       isConnected = true;
       document.getElementById("connectChannelButton").innerHTML = "Close";
-      remon.createChannel();
+      remon.createRoom('testroom');
     }else{
       isConnected = false;
       document.getElementById("connectChannelButton").innerHTML = "Create";
@@ -68,7 +68,7 @@
 </html>
 ```
 
-- 위의 페이지는 방송을 만드는, 방송하는 쪽 페이지입니다. 통신쪽 소스코드와 다른 점은 localVideo만 태그 정의가 되어있다는 점이고 config에 sendonly 필드가 추가되어 있다는 점. 그리고 createChannel을 할 때 통신때처럼 방 이름을 입력하지 않는 점이 차이입니다.
+- 위의 페이지는 방송을 만드는, 방송하는 쪽 페이지입니다. 통신쪽 소스코드와 다른 점은 localVideo만 태그 정의가 되어있다는 점이고 config에 sendonly 필드가 추가되어 있다는 점입니다.
 - 이제 이 디렉토리를 웹서버를 통해서 접근할 차례입니다. 예를 들어 harp server를 사용했다고 합시다.
 - harp server 라고 실행하면 포트 9000번을 통해 접근할 수 있죠.
 - http://localhost:9000 으로 파이어폭스나 크롬 브라우저를 통해 접근해봅시다. 'Create'를 클릭하면?
@@ -112,9 +112,14 @@
     }
   };
   const listener = {
-    onCreateChannel(channelId) {
-      console.log(`EVENT FIRED: onCreateChannel: ${channelId}`); 
-      chidTextEl.value=channelId;
+    onStateChange(state) {
+      if (state === 'INIT'){
+        remon.search('');
+      }
+    },
+    onSearch(result){
+      var resultObj = JSON.parse(result);
+      chidTextEl.value = resultObj[0].id;
     }
   }
   const remon = new Remon({ config:config, listener:listener });
@@ -123,7 +128,7 @@
     if (isConnected === false){
       isConnected = true;
       document.getElementById("connectChannelButton").innerHTML = "Close";
-      remon.createChannel(chidTextEl.value);
+      remon.joinRoom(chidTextEl.value);
     }else{
       isConnected = false;
       document.getElementById("connectChannelButton").innerHTML = "Create";
@@ -134,54 +139,11 @@
   
 </html>
 ```
+- 위의 페이지는 방송을 시청하는 쪽 페이지입니다. 통신쪽 소스코드와 다른 점은 remoteVideo만 태그 정의가 되어있다는 점이고 config에 recvonly 필드가 추가되어 있다는 점입니다.
+- 한가지 특이한 점은 remon.search() 메소드를 통해 현재 방송중인 방 정보를 질의한다는 점입니다. 현재는 RemoteMonster의 공용 id인 SERVICEID1으로 접근하고 있지만 별도로 id를 발급받으면 별도의 id로 독립적인 서비스 안에서의 방 목록을 받을 수 있을 것입니다.
+- Listener의 onSearch 메소드를 통해서 search메소드의 결과를 받을 수 있습니다. 이 정보를 통해서 해당 방에 접근할 수 있겠죠.
+- 방을 시청하는 메소드는 remon.joinRoom입니다. 이를 통해서 removeView는 시청 내용을 출력합니다.
 
-## 소스를 살펴보기
-### Config
-
-먼저 설정 객체를 만듭니다.
-
-```javascript
-const config = { credential: {
-    key: '1234567890', serviceId: 'SERVICEID1'
-  },
-  view: {
-    remote: '#remoteVideo'
-  },
-};
-```
-
-- key값은 Remote Monster에 회원가입하여 받게 되는 비밀번호입니다. serviceId값은 Remote Monster에 회원가입시 입력한 자신의 서비스 id입니다. 잘 모른다면 `credential` 객체를 설정 않해도 무방합니다.
-- view 항목에 보면 video 태그의 id를 설정합니다. 원격에서 상대방의 영상이 수신되면 그 영상을 출력할 video 태그의 id입니다.
-
-만들어둔 설정을 인자로 하여 Remon 객체를 생성 합니다.
-- `const remon = new Remon({ config:config });`
-
-### Connect
-이제 방에 들어갈 시간입니다. connectChannel 메소드는 입력값에 해당하는 방으로 들어가는 명령을 수행합니다.
-- `remon.connectChannel("simpleRemon");`
-
-혹은 방에서 나옵니다.
-- `remon.disconnect()`
-- 방에 들어가는 명령이 있다면 나오는 명령이 있겠죠. disconnect는 바로 들어갔던 방에서 나오는 명령입니다
-- 이제 모든 것이 끝났습니다. Remote Monster의 Javascript API는 이것만으로도 통신의 모든 것을 완벽히 수행합니다. 물론 더 자세한 조작은 필요하겠죠?
-
-## LocalVideo 생성
-앞서 예제는 상대편 video만 있어서 연결하기 전에는 나의 얼굴을 확인할 수 없었습니다. 이제 나의 video tag를 삽입하고 그 tag의 id를 RemoteMonster에게 알려줍시다.
-
-`html body`에 다음과 같이 `local Video`를 추가합니다.
-- `<video id=\"localVideo\" autoplay controls class=\"video\">`
-
-그리고 config를 다음과 같이 수정합니다.
-```javascript
-const config = {
-  credential: {
-    key: '1234567890', serviceId: 'SERVICEID1'
-  },
-  view: {
-    remote: '#remoteVideo', local:'#localVideo'
-  },
-};
-```
 
 ## Callback 이벤트 처리기 사용하기
 Remon은 수많은 일들을 내부적으로 Remote Monster의 서버와 작업하게 됩니다. 때로는 네트워크 상황이 안좋아서 연결이 안될 수도 있고 특별한 이벤트는 귀기울여 수신해야할 필요도 있습니다. 때문에 Remon은 콜백 이벤트 처리기, Listener를 제공하여 이를 통해 다양한 정보를 개발자가 얻을 수 있도록 하고 있습니다.
@@ -193,21 +155,11 @@ const listener = {
   onConnectChannel(channelId) { ... },
   onComplete() { ... },
   onAddLocalStream(stream) { ... },
-  onAddRemoteStream(stream) { ... },
+  onAddRemoteStream(stream) { ... }, // 상대 영상이 들어왔을 때 처음 발생합니다
   onStateChange(state) { ... },
-  onDisconnectChannel(who) { ... },
-  onMessage(message) { ... },
-  onError(error) { ... },
-  onStat(result) { ... },
-  onSearch(result) { ... },
+  onDisconnectChannel(who) { ... }, // 방을 시청중일 때 방이 종료되면 발생합니다
+  onError(error) { ... }, // 에러 정보를 반환합니다.
+  onStat(result) { ... }, // 방의 품질을 매 5초마다 반환합니다
+  onSearch(result) { ... }, // 검색 결과를 반환합니다
 };
-```
-
-위에서 만든 설정과 리스너를 인자로 하여 다시 시작해봅시다.
-
-```javascript
-remon.init({ config:config, listener:listener });
-...
-remon.connectChannel("simpleRemon");
-
 ```
