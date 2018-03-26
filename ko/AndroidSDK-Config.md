@@ -45,18 +45,4 @@ config.setLogLevel(Log.DEBUG);
 config.setVolumeControlStream(activity, AudioManager.STREAM_MUSIC);
 ```
 - 하드웨어 볼륨컨트롤로 컨트롤하고자 하는 Stream Type을 설정 할 수 있습니다.
-```java
-@Override
-public boolean onKeyDown(int keyCode, KeyEvent event) {
-    switch (keyCode) {
-        case KeyEvent.KEYCODE_VOLUME_DOWN:
-            remon.setAudioVolumeDown();
-            break;
-        case KeyEvent.KEYCODE_VOLUME_UP:
-            remon.setAudioVolumeUp();
-            break;
-    }
-    return super.onKeyDown(keyCode, event);
-}
-```
-- onKeyDown의 볼륨컨트롤 이벤트로 설정된 미디어타입의 Volume을 조절 합니다.
+
