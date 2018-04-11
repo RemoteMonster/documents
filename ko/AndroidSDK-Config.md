@@ -34,15 +34,9 @@ config.setVideoFps(15);
 ```java
 config.setSpeakerPhone("auto"|"true"|"false")
 ```
-
 - Remon은 자동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 false, 계속 유지하고 싶다면 true로 설정하세요.
+
 ```java
 config.setLogLevel(Log.DEBUG);
 ```
-
--  로그레벨 설정입니다. ERROR, WARN, INFO, DEBUG, VERBOSE를 설정할 수 있으며 뒤로 갈 수록 더 자세한 로그를 확인할 수 있습니다.
-```java
-config.setVolumeControlStream(activity, AudioManager.STREAM_MUSIC);
-```
-- 하드웨어 볼륨컨트롤로 컨트롤하고자 하는 Stream Type을 설정 할 수 있습니다.
-
+- 마지막으로 로그레벨 설정입니다. ERROR, WARN, INFO, DEBUG, VERBOSE를 설정할 수 있으며 뒤로 갈 수록 더 자세한 로그를 확인할 수 있습니다.
