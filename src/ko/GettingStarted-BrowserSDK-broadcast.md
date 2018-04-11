@@ -6,7 +6,7 @@
 
 ## 가장 쉬운 방송앱 개발
 - 먼저 웹서버가 서비스할 디렉토리 하나를 선택하거나 만듭니다.
-- 해당 디렉토리에서 `npm install remon-browser-sdk` 실행합니다.
+- 해당 디렉토리에서 `npm install @remotemonster/sdk` 실행합니다.
 - index.html 파일을 생성하고 코드를 작성합니다.
 
 ```html
@@ -28,6 +28,7 @@
     <input type="text" class="btn" id="chidText"></input>
     <button id="connectChannelButton" class="btn btn-sm" onclick="start();">Create</button>
   </body>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
   <script src="https://remotemonster.com/sdk/remon.min.js"></script>
   <script>
   let isConnected = false;
