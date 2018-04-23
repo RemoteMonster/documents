@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "gitbook install",
-    "serve": "gitbook serve",
+    "start": "gitbook serve",
     "build": "npm run clean && gitbook build",
     "clean": "rm -rf _book",
     "deploy": "npm run build && gh-pages --dist _book"
@@ -14,7 +14,7 @@
   "author": "RemoteMonster",
   "license": "UNLICENSED",
   "devDependencies": {
-    "gh-pages": "^1.0.0",
+    "gh-pages": "^1.1.0",
     "gitbook-cli": "^2.3.0"
   },
   "dependencies": {
