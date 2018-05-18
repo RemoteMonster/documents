@@ -1,4 +1,0 @@
-# Browser SDK - Getting Started
-
-
-
