@@ -32,7 +32,7 @@ allprojects {
   repositories {
     jcenter()
     maven {
-      url 'https://remotemonster.com/artifactory/libs-release-local'
+      url 'https://demo.remotemonster.com/artifactory/libs-release-local'
     }
   }
 }

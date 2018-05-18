@@ -19,11 +19,11 @@
 
 ## Cocoapods을 이용한 SDK 설치
 
-SDK 설치를 원하는 프로젝트의 Podfile에 `pod 'Remon-iOS-SDK', '~> 2.0`을 추가 하거나
+SDK 설치를 원하는 프로젝트의 Podfile에 `pod 'RemoteMonster', '~> 2.0`을 추가 하거나
 
 ```text
 target 'MyApp' do
-  pod 'Remon-iOS-SDK', '~> 2.0'
+  pod 'RemoteMonster', '~> 2.0'
 end
 ```
 
