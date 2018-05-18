@@ -36,10 +36,6 @@
 
 ## iOS
 
-* [Livecast](ios/livecast.md)
-* [Communication](ios/communication.md)
-* [Observer](ios/observer.md)
-* [Search](ios/search.md)
 * [SDK Reference](https://remotemonster.github.io/remon-ios-sdk/)
 
 ## Common
