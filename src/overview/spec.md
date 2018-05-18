@@ -9,7 +9,7 @@ description: 제품의 주요 규격과 기능을 소개합니다.
 * 리모트몬스터의 모든 방송 통신기술은 API형태로 제공됩니다. 이제 복잡한 Back-end개발과 방송 통신기술 개발의 부담에서 해방되어 누구나 쉽게 Skype나 Hangout, 스냅챗, 아프리카TV와 같은 방송 통신 서비스를 구현할 수 있습니다. 리모트몬스터가 구축하는 글로벌한 통신 API 백엔드와 SDK를 통해 방송 통신회사에 준하는 자원을 즉시 확보하세요.
 * 리모트몬스터 API는 다음과 같은 형태로 구성되어 있습니다.
 
-  ![RemoteMonster API overview](../.gitbook/assets/remonapioverview%20%281%29.png)
+  ![RemoteMonster API overview](../.gitbook/assets/remonapioverview-1.png)
 
 ### 주요기능
 

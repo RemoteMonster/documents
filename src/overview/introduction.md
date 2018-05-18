@@ -6,7 +6,7 @@ description: 리모트 몬스터를 개발하기 위해 알아야할 기본적�
 
 ## 개발 순서
 
-RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과 같습니다. ![&#xAC1C;&#xBC1C; &#xD750;&#xB984;](../.gitbook/assets/devflow.png) 
+RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과 같습니다. ![&#xAC1C;&#xBC1C; &#xD750;&#xB984;](../.gitbook/assets/devflow%20%281%29.png)
 
 ### 서비스 등록 및 인증키 획득
 

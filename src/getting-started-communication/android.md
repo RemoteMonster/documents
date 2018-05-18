@@ -39,7 +39,7 @@ allprojects {
 }
 ```
 
- **❗❗❗만약 빌드시** `failed to resolve: com.remon:remondroid:x.x.x`**와 같은 에러가 나타난다면** [**여기**](http://community.remotemonster.com/t/topic/34/6?u=seunggi)**를 참고하세요 ❗❗❗**  **결론적으로 오래된 JDK가 새로운 루트 인증서를 인식 못하는 문제로** [**최신 JDK**](http://www.oracle.com/technetwork/java/javase/downloads/index.html)**로 혹은 JDK 8u101 이상으로 업그레이드하면 됩니다** 
+**❗❗❗만약 빌드시** `failed to resolve: com.remon:remondroid:x.x.x`**와 같은 에러가 나타난다면** [**여기**](http://community.remotemonster.com/t/topic/34/6?u=seunggi)**를 참고하세요 ❗❗❗** **결론적으로 오래된 JDK가 새로운 루트 인증서를 인식 못하는 문제로** [**최신 JDK**](http://www.oracle.com/technetwork/java/javase/downloads/index.html)**로 혹은 JDK 8u101 이상으로 업그레이드하면 됩니다**
 
 ### module build.gradle을 수정하기
 

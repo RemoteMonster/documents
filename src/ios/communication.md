@@ -1,10 +1,10 @@
-# 통신하기
+# Communication
 
 ## 기본 설정
 
 통신을 하기 전에 프로젝트 설정을 진행 합니다.
 
-{% page-ref page="gettingstarted-iossdk-comm.md" %}
+{% page-ref page="../getting-started-livecasting/ios.md" %}
 
 ## 개발
 

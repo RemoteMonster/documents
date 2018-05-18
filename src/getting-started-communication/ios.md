@@ -1,4 +1,4 @@
-# iOS SDK - Getting Started
+# iOS
 
 ## 준비 사항
 
@@ -10,12 +10,12 @@
 * Xcode에서 Swift기반의 프로젝트를 하나 생성합니다.
 * 프로젝트 생성 후 Build Settings에서 bitcode에 대하여 No를 설정해야 합니다. \(Remon SDK 0.1.6 부터는 bitcode를 지원함\)
 
-![bitcode](../.gitbook/assets/ios_bitcode.png)
+![bitcode](../.gitbook/assets/ios_bitcode%20%281%29.png)
 
 * 또한 Info.plist에서 다음 항목에 대해 추가 혹은 변경을 해주셔야 합니다.
   * Privacy: Bluetooth, Microphone, Camera
 
-![settings](../.gitbook/assets/ios_buildsettings.png)
+![settings](../.gitbook/assets/ios_buildsettings%20%281%29.png)
 
 ## Cocoapods을 이용한 SDK 설치
 
@@ -52,7 +52,7 @@ Remon은 RemonIBController를 이용하여 InterfaceBuilder를 이용한 설정�
 
 * Remon를 사용하는 ViewContoller에 remonios를 임포트 하고, RemonIBController객체를 아웃렛 변수에 바인딩 합니다.
 
-![](../.gitbook/assets/basic_config2.png)
+![](../.gitbook/assets/basic_config2%20%282%29.png)
 
 ## 개발
 
@@ -62,7 +62,7 @@ Remon은 RemonIBController를 이용하여 InterfaceBuilder를 이용한 설정�
 remonCall.connetChannel("channelID")
 ```
 
-#### InterfaceBuilder를 이용하지 않아도 Remon을 이용할 수 있습니다.
+### InterfaceBuilder를 이용하지 않아도 Remon을 이용할 수 있습니다.
 
 ```text
 let caster = RemonCast()
@@ -84,6 +84,4 @@ config.key = "YourServiceKey"
 config.channelType = "VIEWER"
 caster.joinRoom(config)
 ```
-
-
 

@@ -1,4 +1,4 @@
-# iOS SDK - Getting Started
+# iOS
 
 ## 준비 사항
 
@@ -33,7 +33,7 @@ end
 
 * 다운로드받은 RemoteMonster iOS SDK를 압축을 풀면 2개의 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster iOS SDK를 프레임워크로 인식하게 됩니다.
 
-![framework](../.gitbook/assets/ios_importframework.png)
+![framework](../.gitbook/assets/ios_importframework%20%281%29.png)
 
 ## Remon 설정 및 레이아웃 구성
 
@@ -44,11 +44,11 @@ Remon은 RemonIBController를 이용하여 InterfaceBuilder를 이용한 설정�
   * InterfaceBuilder에서 Utilities 뷰를 이용하여 Remon을 설정 합니다.
   * Service ID와 Service Key를 필수 설정값입니다. 발급 받으신 ID와 Key를 입력 합니다.
 
-![](../.gitbook/assets/basic_config.png)
+![](../.gitbook/assets/basic_config%20%281%29.png)
 
 * 스토리보드에서 원하는 Scene에서 원하는 위치에 Veiw를 배치하고 RemonIBController의 remoteView와 localView에 바인딩 하여 줍니다.
 
-![](../.gitbook/assets/basic_config3.png)
+![](../.gitbook/assets/basic_config3%20%281%29.png)
 
 * Remon를 사용하는 ViewContoller에 remonios를 임포트 하고, RemonIBController객체를 아웃렛 변수에 바인딩 합니다.
 
