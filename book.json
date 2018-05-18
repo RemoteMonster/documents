@@ -1,6 +1,6 @@
 {
 	"title": "RemoteMonster Documents",
 	"description": "RemoteMonster Documents",
-	"author": "RemoteMonster"
-	}
+	"author": "RemoteMonster",
+	"root": "./src"
 }
