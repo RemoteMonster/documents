@@ -1,7 +1,3 @@
----
-description: Observer를 통해 좀 더 상세한 개발 과정을 소개합니다.
----
-
 # iOS - Observer
 
 ## RemonController Observer

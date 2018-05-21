@@ -2,7 +2,7 @@
 description: 뷰와 레이아웃에 대해 소개합니다.
 ---
 
-# View, Layout
+# Android - View
 
 ## Introduction
 

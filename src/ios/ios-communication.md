@@ -1,14 +1,10 @@
----
-description: iOS 통화 기능 개발의 세부적인 내용을 살펴봅니다.
----
-
 # iOS - Communication
 
 ## 기본 설정
 
 통신을 하기 전에 프로젝트 설정을 진행 합니다.
 
-{% page-ref page="ios-communication.md" %}
+{% page-ref page="ios-getting-started.md" %}
 
 ## 개발
 
