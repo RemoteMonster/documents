@@ -4,7 +4,7 @@
 
 통신을 하기 전에 프로젝트 설정을 진행 합니다.
 
-{% page-ref page="ios-communication.md" %}
+{% page-ref page="ios-getting-started.md" %}
 
 ## 개발
 
