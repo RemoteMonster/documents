@@ -1,4 +1,4 @@
-# iOS - Search
+# iOS - Channel
 
 ## 방송 및 통신 목록 검색 하기
 

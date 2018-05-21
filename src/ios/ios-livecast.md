@@ -98,7 +98,7 @@ remonCast.search { (error, results) in
 
 채널 검색에 대한 더  자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="ios-search.md" %}
+{% page-ref page="ios-channel.md" %}
 
 
 

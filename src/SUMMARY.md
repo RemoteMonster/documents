@@ -9,21 +9,25 @@
 
 ## Browser
 
-* [Browser - Communication](browser/browser-communication.md)
-* [Browser - Livecast](browser/browser-livecast.md)
 * [Browser - Overview](browser/browser-overview.md)
+* Browser - Getting Start
+* [Browser - Livecast](browser/browser-livecast.md)
+* [Browser - Communication](browser/browser-communication.md)
 * [Browser - Config](browser/browser-config.md)
-* [Browser - Examples](browser/browser-examples.md)
+* Browser - Channel
 * [Browser - Debug inside](browser/browser-debug-inside.md)
+* [Browser - Examples](browser/browser-examples.md)
 * [Browser - SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
 
 ## Android
 
 * [Android - Overview](android/android-overview.md)
-* [Android - Communication](android/android-communication.md)
+* Android - Getting Start
 * [Android - Livecast](android/android-livecast.md)
+* [Android - Communication](android/android-communication.md)
 * [Android - Config](android/android-config.md)
 * [Android - View](android/android-view.md)
+* Android - Channel
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
 
 ## iOS
@@ -34,7 +38,7 @@
 * [iOS - Communication](ios/ios-communication.md)
 * [iOS - Observer](ios/ios-observer.md)
 * iOS - Config
-* [iOS - Search](ios/ios-search.md)
+* [iOS - Channel](ios/ios-channel.md)
 * [iOS - SDK Reference](https://remotemonster.github.io/remon-ios-sdk/)
 
 ## Common
