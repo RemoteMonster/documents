@@ -54,7 +54,7 @@ $ pod install
 
 ![Framework](../.gitbook/assets/ios_importframework%20%282%29.png)
 
-## 방송 - Remon 설정 및 레이아웃 구성
+## Remon 설정 및 레이아웃 구성
 
 `Remon`은 `RemonIBController`를 이용하여 `InterfaceBuilder`를 이용한 설정이 가능 합니다.
 
@@ -77,23 +77,28 @@ $ pod install
 
 ![](../.gitbook/assets/basic_config2%20%282%29.png)
 
-## 통신 - Remon 설정 및 레이아웃 구성
-
 ## 개발
 
 `Remon` 설정이 완료 되었다면 실제 개발은 쉽습니다. `ViewContoller`에서 방송 또는 통신을 시도 하세요!
 
+### 방송
+
 ```swift
-remonCall.connectChannel()              // communication
 remonCast.createRoom()               // livecast - create
 remonCast.joinRoom("channelID")      // livecast - join
 ```
 
-방송과 통신에 대해 더 자세한 개발을 원하면 아래를 참고하세요.
+혹은 좀더 자세한 내용은 아래를 참고하세요.
 
 {% page-ref page="ios-livecast.md" %}
 
+### 통신
+
+```swift
+remonCall.connectChannel()              // communication
+```
+
+혹은 좀더 자세한 내용은 아래를 참고하세요.
+
 {% page-ref page="ios-communication.md" %}
-
-
 
