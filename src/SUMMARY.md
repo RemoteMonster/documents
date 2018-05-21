@@ -28,7 +28,7 @@
 
 ## iOS
 
-* [iOS - Getting Started](ios/ios-getting-start.md)
+* [iOS - Getting Start](ios/ios-getting-start.md)
 * [iOS - Livecast](ios/ios-livecast.md)
 * [iOS - Communication](ios/ios-communication.md)
 * [iOS - Observer](ios/ios-observer.md)

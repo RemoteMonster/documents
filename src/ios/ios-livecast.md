@@ -4,7 +4,7 @@
 
 방송을 하기 전에 프로젝트 설정을 진행 합니다.
 
-{% page-ref page="ios-getting-started.md" %}
+{% page-ref page="ios-getting-start.md" %}
 
 방송을 만드는 경우에는 `broadcast` 값을 `on`으로 시청인 경우에는 `off`로 설정 합니다.
 
