@@ -1,7 +1,3 @@
----
-description: 간단하게 iOS 개발하는 방법을 살펴봅니다.
----
-
 # iOS - Getting Started
 
 ## 준비 사항

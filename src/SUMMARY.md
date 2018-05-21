@@ -19,9 +19,9 @@
 
 ## Android
 
+* [Android - Overview](android/android-overview.md)
 * [Android - Communication](android/android-communication.md)
 * [Android - Livecast](android/android-livecast.md)
-* [Android - Overview](android/android-overview.md)
 * [Android - Config](android/android-config.md)
 * [Android - View](android/android-view.md)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)

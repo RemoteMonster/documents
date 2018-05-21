@@ -1,7 +1,3 @@
----
-description: iOS 생방송 기능 개발의 세부적인 내용을 살펴봅니다.
----
-
 # iOS - Livecast
 
 ## 기본 설정

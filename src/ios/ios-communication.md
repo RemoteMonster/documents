@@ -1,7 +1,3 @@
----
-description: iOS 통화 기능 개발의 세부적인 내용을 살펴봅니다.
----
-
 # iOS - Communication
 
 ## 기본 설정
