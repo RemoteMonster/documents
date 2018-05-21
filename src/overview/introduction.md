@@ -1,23 +1,38 @@
 ---
-description: 리모트 몬스터를 개발하기 위해 알아야할 기본적인 것들을 소개합니다.
+description: 리모트몬스터를 통한 개발에 대해 소개합니다.
 ---
 
 # Introduction
 
 ## 개발 순서
 
-RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과 같습니다. ![&#xAC1C;&#xBC1C; &#xD750;&#xB984;](../.gitbook/assets/devflow%20%281%29.png)
+RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과 같습니다. 
+
+* 키발급
+* SDK 설치
+* 개발
+* 운영
+* 관리
 
 ### 서비스 등록 및 인증키 획득
 
-* 리모트몬스터 홈페이지에서 여러분의 서비스 개발을 위한 등록을 마칩니다. 리모트몬스터는 메일을 통해 인증키를 발급합니다.
-* 인증키는 2개로 구성됩니다. 테스트키는 개발용이며 운영용은 운영시 사용하게 됩니다. 키가 분리된 이유는 과금과 관리를 위해서입니다. 테스트키는 과금내역에 들어가지 않습니다. 테스트키는 안정성과 품질을 보장하지는 않습니다.
+리모트몬스터 홈페이지에서 여러분의 서비스 개발을 위한 등록을 마칩니다. 리모트몬스터는 메일을 통해 인증키를 발급합니다.
 
-### 개발 환경 설정 및 SDK 다운로드
+* https://remotemonster.com
 
-* 리모트몬스터 API의 SDK는 모두 별도의 SDK 저장소로부터 자동으로 다운로드받을 수 있습니다. 안드로이드는 메이븐 레파지토리 방식을 따르므로 Gradle 빌드 파일에서 손쉽게 설정만으로 최신 버전을 다운로드 받을 수 있고 Javascript SDK는 NPM 레파지토리를 통해서 제공하므로 npm 명령을 통해 다운로드할 수 있습니다.
-* iOS는 xcode, 안드로이드는 Android Studio, Javascript는 NPM환경을 기본적으로 제공합니다.
-* [https://github.com/RemoteMonster](https://github.com/RemoteMonster) 에서 자신에게 맞는 예제를 다운로드받아서 개발하면 빠르게 개발이 가능합니다.
+자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="../common/service-id.md" %}
+
+### SDK 및 개발 환경 설정
+
+Browser - 
+
+리모트몬스터 API의 SDK는 모두 별도의 SDK 저장소로부터 자동으로 다운로드받을 수 있습니다. 안드로이드는 메이븐 레파지토리 방식을 따르므로 Gradle 빌드 파일에서 손쉽게 설정만으로 최신 버전을 다운로드 받을 수 있고 Javascript SDK는 NPM 레파지토리를 통해서 제공하므로 npm 명령을 통해 다운로드할 수 있습니다.
+
+iOS는 xcode, 안드로이드는 Android Studio, Javascript는 NPM환경을 기본적으로 제공합니다.
+
+[https://github.com/RemoteMonster](https://github.com/RemoteMonster) 에서 자신에게 맞는 예제를 다운로드받아서 개발하면 빠르게 개발이 가능합니다.
 
 ### 개발
 
