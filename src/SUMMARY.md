@@ -32,6 +32,7 @@
 * [iOS - Livecast](ios/ios-livecast.md)
 * [iOS - Communication](ios/ios-communication.md)
 * [iOS - Observer](ios/ios-observer.md)
+* iOS - Config
 * [iOS - Search](ios/ios-search.md)
 * [iOS - SDK Reference](https://remotemonster.github.io/remon-ios-sdk/)
 
