@@ -7,16 +7,10 @@
 * [Introduction](overview/introduction.md)
 * [Spec](overview/spec.md)
 
-## Getting Started
-
-* [Getting Started - Browser](browser/getting-started-communication.md)
-* [Getting Started Livecast - Browser](browser/getting-started-livecast.md)
-* [Getting Started - Android](android/getting-started-communication.md)
-* [Getting Started Livecast - Android](android/getting-started-livecast.md)
-* [Getting Started - iOS](ios/getting-started.md)
-
 ## Browser
 
+* [Browser - Communication](browser/getting-started-communication.md)
+* [Browser - Livecast](browser/getting-started-livecast.md)
 * [Browser - Overview](browser/overview.md)
 * [Browser - Config](browser/config.md)
 * [Browser - Examples](browser/examples.md)
@@ -25,6 +19,8 @@
 
 ## Android
 
+* [Android - Communication](android/getting-started-communication.md)
+* [Android - Livecast](android/getting-started-livecast.md)
 * [Android - Overview](android/overview.md)
 * [Android - Config](android/config.md)
 * [Android - View](android/view.md)
@@ -32,6 +28,7 @@
 
 ## iOS
 
+* [iOS - Getting Started](ios/getting-started.md)
 * [iOS - Livecast](ios/livecast.md)
 * [iOS - Communication](ios/communication.md)
 * [iOS - Observer](ios/observer.md)
