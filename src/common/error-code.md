@@ -2,7 +2,7 @@
 description: 에러코드에 대해 설명합니다.
 ---
 
-# ErrorCode
+# Error Code
 
 ## Fail과 Error의 차이
 

@@ -1,10 +1,8 @@
-# Communication
+# iOS - Communication
 
 ## 기본 설정
 
 통신을 하기 전에 프로젝트 설정을 진행 합니다.
-
-{% page-ref page="../getting-started-livecasting/ios.md" %}
 
 ## 개발
 
@@ -34,7 +32,7 @@ remonCall.onComplete {
 
 Remon은 onInit\(\)와 onCreate, onComplete 이외에도 많은 Observer 함수를 제공 합니다. 더 많은 내용은 Observer 가이드 문서를 참조 하세요.
 
-{% page-ref page="observer.md" %}
+{% page-ref page="ios-observer.md" %}
 
 
 

@@ -2,7 +2,7 @@
 description: 안드로이드에서 설정방법을 소개합니다.
 ---
 
-# Config
+# Android - Config
 
 ## Config
 

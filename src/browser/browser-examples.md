@@ -1,8 +1,8 @@
-# Examples
+# Browser - Examples
 
 ## 1:1 영상채팅서비스
 
-![1:1 &#xC601;&#xC0C1;&#xCC44;&#xD305;](.gitbook/assets/chat.png)
+![1:1 &#xC601;&#xC0C1;&#xCC44;&#xD305;](https://github.com/RemoteMonster/documents/tree/21bd0d5a78682db2b5ba95f41b82fedd773c4d9b/src/browser/.gitbook/assets/chat.png)
 
 * 방이름을 입력하여 방을 만들고 다른 사람과 영상채팅을 하는 서비스. 서버없이 Javascript와 HTML, CSS로만 이루어진 앱.
 * 다양한 설정을 테스트할 수 있으며, search 사용법이나 close사용법등에 대해 익힐 수 있음.

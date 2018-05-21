@@ -2,7 +2,7 @@
 description: Android로 간단한 통신 앱을 개발합니다.
 ---
 
-# Android
+# Android - Communication
 
 ## 준비 사항
 

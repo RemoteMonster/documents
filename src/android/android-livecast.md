@@ -2,7 +2,7 @@
 description: Android로 간단한 방송 앱을 개발합니다.
 ---
 
-# Android
+# Android - Livecast
 
 ## 준비 사항
 

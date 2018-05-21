@@ -2,7 +2,7 @@
 description: 브라우저로 간단한 통신 앱을 개발합니다.
 ---
 
-# Browser
+# Browser - Communication
 
 ## 준비사항
 

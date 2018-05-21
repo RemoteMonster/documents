@@ -1,7 +1,3 @@
----
-description: 안녕하세요! 리모트몬스터 입니다.
----
-
 # RemoteMonster
 
 ## **환영합니다.**

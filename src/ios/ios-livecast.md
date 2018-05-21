@@ -1,10 +1,8 @@
-# Livecast
+# iOS - Livecast
 
 ## 기본 설정
 
 방송을 하기 전에 프로젝트 설정을 진행 합니다.
-
-{% page-ref page="../getting-started-livecasting/ios.md" %}
 
 * 방송을 만드는 경우에는 broadcast 값을 on으로 시청인 경우에는 off로 설정 합니다.
 
@@ -59,7 +57,7 @@ rmonCast.onClose {
 
 Remon이 제공하는 Observer 함수에 대한 더 자세한 내용은 Oserver 가이드 문서를 참조 하세요
 
-{% page-ref page="observer.md" %}
+{% page-ref page="ios-observer.md" %}
 
 방송을 시청 하기 위해서는 시청 하려는 채널이 ID가 필요 합니다. 채널 ID는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. Remon는 시청 하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
 
@@ -71,7 +69,7 @@ remonCast.search { (error, results) in
 
 채널 검색에 대한 더 자세한 **'Search'**에 자세히 설명 되어 있습니다.
 
-{% page-ref page="search.md" %}
+{% page-ref page="ios-search.md" %}
 
 
 
