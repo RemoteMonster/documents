@@ -4,7 +4,7 @@
 
 Remon는 편리한 방송 및 통신 참여를 위하여 채널 검색 기능을 제공 합니다. RemonController의 하위 클래스인 RemonCall 또는 RemonCast를 이용하여 방송 및 통신 목록을 검색할 수 있습니다.
 
-```
+```swift
 remonCast.search { (err, results) in 
     if let err = err {
         //검색 중에 발생한 에러는 remonCast.onError()를 호출 하지 않습니다.
@@ -19,7 +19,7 @@ remonCast.search { (err, results) in
 remonCast.joinRoom(chid)
 ```
 
-```text
+```swift
 remonCall.search { (err, results) in 
     if let err = err {
         //검색 중에 발생한 에러는 remonCast.onError()를 호출 하지 않습니다.

@@ -54,7 +54,7 @@ $ pod install
 
 ![Framework](../.gitbook/assets/ios_importframework%20%282%29.png)
 
-## Remon 설정 및 레이아웃 구성
+## 방송 - Remon 설정 및 레이아웃 구성
 
 `Remon`은 `RemonIBController`를 이용하여 `InterfaceBuilder`를 이용한 설정이 가능 합니다.
 
@@ -77,35 +77,23 @@ $ pod install
 
 ![](../.gitbook/assets/basic_config2%20%282%29.png)
 
+## 통신 - Remon 설정 및 레이아웃 구성
+
 ## 개발
 
 `Remon` 설정이 완료 되었다면 실제 개발은 쉽습니다. `ViewContoller`에서 방송 또는 통신을 시도 하세요!
 
 ```swift
-remonCast.createRoom("roomName")     // livecast - create
+remonCall.connectChannel()              // communication
+remonCast.createRoom()               // livecast - create
 remonCast.joinRoom("channelID")      // livecast - join
 ```
 
-### InterfaceBuilder 없이 개발
+방송과 통신에 대해 더 자세한 개발을 원하면 아래를 참고하세요.
 
-```swift
-let caster = RemonCast()
-caster.serviceId = "YourServiceID"
-caster.serviceKey = "YourServiceKey"
-caster.broadcast = true
-caster.localView = localView
-caster.createRoom()
-```
+{% page-ref page="ios-livecast.md" %}
 
-`RemonIBController`에 값을 직접 설정 않고, `connectChannel()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 할 수도 있습니다. 이 경우에는  `RemonIBContoller` 인스턴스에 설정된 값이 무시되고 전달된 `config` 정보를 이용합니다.
+{% page-ref page="ios-communication.md" %}
 
-```swift
-let watcher = RemonCast()
-watcher.remoteView = remoteView
-let config = RemonConfig()
-config.serviceId = "YourServiceID"
-config.key = "YourServiceKey"
-config.channelType = "VIEWER"
-caster.joinRoom(config)
-```
+
 
