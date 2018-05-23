@@ -7,6 +7,7 @@ description: 안드로이드에서 개발개요를 설명합니다.
 ## RemonCall Class
 
 * RemonCall Class는 통신기능을 쉽고 빠르게 만들수있는 메소드를 제공합니다.
+* Remon Class에서 통신과 관련된 메소드는 모두 사용 가능합니다.
 
 ```java
 remonCall = RemonCall.builder()
@@ -20,6 +21,7 @@ remonCall.connectChannel(connectChId);
 ## RemonCast Class
 
 * RemonCast Class를 이용하면 방송송출과 시청기능을 쉽고 빠르게 만들 수 있습니다.
+* Remon Class에서 방송과 관련된 메소드는 모두 사용 가능합니다.
 
 방송 송출의 경
 
