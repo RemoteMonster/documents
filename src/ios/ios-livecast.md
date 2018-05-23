@@ -6,23 +6,6 @@
 
 {% page-ref page="ios-getting-start.md" %}
 
-방송을 만드는 경우에는 `broadcast` 값을 `on`으로 시청인 경우에는 `off`로 설정 합니다.
-
-![broadcast role](../.gitbook/assets/basic_config4.png)
-
-`broadcast` 값을 아래와 같이 코드상으로도 설정할 수 있습니다.
-
-```swift
-remonCast.broadcast = true
-remonCast.createRoom()
-```
-
-```swift
-let config = RemonConfig()
-config.channelType = "BROADCAST"
-remonCast.createRoom(config)
-```
-
 ## 개발
 
 `RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `createRoom()` 함수와 `joinRoom()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다. 
