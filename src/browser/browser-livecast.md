@@ -63,11 +63,11 @@ description: 브라우저로 간단한 방송 앱을 개발합니다.
     if (isConnected === false){
       isConnected = true;
       document.getElementById("connectChannelButton").innerHTML = "Close";
-      remon.createRoom('testroom');
+      remon.createCast('testroom');
     }else{
       isConnected = false;
       document.getElementById("connectChannelButton").innerHTML = "Create";
-      remon.disconnect();
+      remon.close();
     }
   }
   </script>
@@ -134,11 +134,11 @@ description: 브라우저로 간단한 방송 앱을 개발합니다.
     if (isConnected === false){
       isConnected = true;
       document.getElementById("connectChannelButton").innerHTML = "Close";
-      remon.joinRoom(chidTextEl.value);
+      remon.joinCast(chidTextEl.value);
     }else{
       isConnected = false;
       document.getElementById("connectChannelButton").innerHTML = "Create";
-      remon.disconnect();
+      remon.close();
     }
   }
   </script>
