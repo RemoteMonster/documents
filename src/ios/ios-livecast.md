@@ -27,7 +27,13 @@ remonCast.createRoom(config)
 
 `RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `createRoom()` 함수와 `joinRoom()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다. 
 
-`RemonIBController`에 값을 직접 설정 않고, `connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 할 수도 있습니다. 이 경우에는  `RemonIBContoller` 인스턴스에 설정된 값이 무시되고 전달된 `config` 정보를 이용합니다.
+`RemonIBController`에 값을 직접 설정 않고, `connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
+
+{% hint style="info" %}
+`connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 하는 경우에는  `RemonIBContoller` 인스턴스에 설정된 값이 무시되고 전달된 `config` 정보를 이용합니다. 상황에 따라 다양한 설정이 변경이 요구되는 경우 여러개의 RemonConfig를 생성한 후 상에 따라 방송/통신을 생성 하거나 방송/통신 참여가 가능 합니다.
+{% endhint %}
+
+
 
 ### 방송생성
 
