@@ -30,7 +30,7 @@ remonCast.createRoom(config)
 `RemonIBController`에 값을 직접 설정 않고, `connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
 
 {% hint style="info" %}
-`connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 하는 경우에는  `RemonIBContoller` 인스턴스에 설정된 값이 무시되고 전달된 `config` 정보를 이용합니다. 상황에 따라 다양한 설정이 변경이 요구되는 경우 여러개의 RemonConfig를 생성한 후 상에 따라 방송/통신을 생성 하거나 방송/통신 참여가 가능 합니다.
+`connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 하는 경우에는  `RemonContoller` 인스턴스에 설정된 값이 무시되고 전달된 `config` 정보를 이용합니다. 상황에 따라 다양한 설정이 변경이 요구되는 경우 여러개의 RemonConfig를 생성한 후 상에 따라 방송/통신을 생성 하거나 방송/통신 참여가 가능 합니다.
 {% endhint %}
 
 
