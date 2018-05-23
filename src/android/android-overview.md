@@ -4,6 +4,53 @@ description: 안드로이드에서 개발개요를 설명합니다.
 
 # Android - Overview
 
+## RemonCall Class
+
+* RemonCall Class는 통신기능을 쉽고 빠르게 만들수있는 메소드를 제공합니다.
+
+```java
+remonCall = RemonCall.builder()
+        .context(CallActivity.this)        
+        .localView(surfRendererLocal)        //나의 video Renderer
+        .remoteView(surfRendererRemote)      //상대방 video Renderer
+        .build();
+remonCall.connectChannel(connectChId);
+```
+
+## RemonCast Class
+
+* RemonCast Class를 이용하면 방송송출과 시청기능을 쉽고 빠르게 만들 수 있습니다.
+
+방송 송출의 경
+
+{% code-tabs %}
+{% code-tabs-item title="CastActivity.java" %}
+```java
+remonCast = RemonCast.builder()
+        .context(CastActivity.this)
+        .localView(surfRendererlocal)        // 자신 Video Renderer
+        .build();
+remonCast.createRoom(connectChId);              // 들어가고자 하는 channel
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+
+
+방송 시청의 경
+
+{% code-tabs %}
+{% code-tabs-item title="ViewerActivity.java" %}
+```java
+castViewer = RemonCast.builder()
+        .context(ViewerActivity.this)
+        .remoteView(surfRendererRemote)        // 방송자의 video Renderer
+        .build();
+castViewer.joinRoom(connectChId);              // 들어가고자 하는 channel
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ## Remon Class
 
 * Remon클래스는 가장 핵심이 되는 클래스로서 다음과 같은 메소드를 제공합니다.
