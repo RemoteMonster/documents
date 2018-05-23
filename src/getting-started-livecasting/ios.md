@@ -15,7 +15,7 @@
 * 또한 Info.plist에서 다음 항목에 대해 추가 혹은 변경을 해주셔야 합니다.
   * Privacy: Bluetooth, Microphone, Camera
 
-![settings](../.gitbook/assets/ios_buildsettings.png)
+![settings](../.gitbook/assets/ios_buildsettings%20%281%29.png)
 
 ## Cocoapods을 이용한 SDK 설치
 
@@ -44,7 +44,7 @@ Remon은 RemonIBController를 이용하여 InterfaceBuilder를 이용한 설정�
   * InterfaceBuilder에서 Utilities 뷰를 이용하여 Remon을 설정 합니다.
   * Service ID와 Service Key를 필수 설정값입니다. 발급 받으신 ID와 Key를 입력 합니다.
 
-![](../.gitbook/assets/basic_config%20%281%29.png)
+![](../.gitbook/assets/basic_config%20%282%29.png)
 
 * 스토리보드에서 원하는 Scene에서 원하는 위치에 Veiw를 배치하고 RemonIBController의 remoteView와 localView에 바인딩 하여 줍니다.
 
