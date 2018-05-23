@@ -49,7 +49,7 @@ watcher.remoteView = remoteView
 let config = RemonConfig()
 config.serviceId = "YourServiceID"
 config.key = "YourServiceKey"
-config.channelType = "VIEWER"
+config.channelType = .viewer
 caster.joinChannel(config)
 ```
 
