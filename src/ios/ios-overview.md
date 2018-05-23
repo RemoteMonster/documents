@@ -12,6 +12,8 @@ Remon를 클래스는 Remon SDK 에서 가장 핵심이 되는 클래스 입니�
 
 #### ​RemonCall를 이용한 1:1 통신 구현 
 
+RemonCall은 통신 기능을 위한 RemonController의 하위 클래스 입니다.
+
 * connectChannel\(\) 함수는 채널을 생성 하거나 이미 생성된 채널에 접속 하는 함수 입니다. 만약 당신이 채널의 생성자라면 connectChannel\(\) 함수 호출 이후 다른 사용자의 연결이 있을 때까지 대기 하는 상태가 될 것입니다.
 
 ```swift
@@ -23,6 +25,8 @@ remonCall.connectChannel("wantedChannelID")
 ```
 
 #### RemonCast를 이용한 방송 구현
+
+RemonCall은 통신 기능을 위한 RemonController의 하위 클래스 입니다.
 
 * RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
 
