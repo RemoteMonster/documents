@@ -18,12 +18,14 @@ remonCall = RemonCall.builder()
 remonCall.connectChannel(connectChId);
 ```
 
+{% page-ref page="android-communication.md" %}
+
 ## RemonCast Class
 
 * RemonCast Class를 이용하면 방송송출과 시청기능을 쉽고 빠르게 만들 수 있습니다.
 * Remon Class에서 방송과 관련된 메소드는 모두 사용 가능합니다.
 
-방송 송출의 경
+방송 송출의 경우
 
 {% code-tabs %}
 {% code-tabs-item title="CastActivity.java" %}
@@ -37,9 +39,7 @@ remonCast.createRoom(connectChId);           // 들어가고자 하는 channel
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-
-
-방송 시청의 경
+방송 시청의 경우
 
 {% code-tabs %}
 {% code-tabs-item title="ViewerActivity.java" %}
@@ -52,6 +52,8 @@ castViewer.joinRoom(connectChId);              // 들어가고자 하는 channel
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+{% page-ref page="android-livecast.md" %}
 
 ## Remon Class
 
