@@ -22,7 +22,7 @@
 ## Android
 
 * [Android - Overview](android/android-overview.md)
-* Android - Getting Start
+* [Android - Getting Start](android/android-getting-start.md)
 * [Android - Livecast](android/android-livecast.md)
 * [Android - Communication](android/android-communication.md)
 * [Android - Config](android/android-config.md)
