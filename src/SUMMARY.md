@@ -27,7 +27,7 @@
 * [Android - Communication](android/android-communication.md)
 * [Android - Config](android/android-config.md)
 * [Android - View](android/android-view.md)
-* Android - Channel
+* [Android - Channel](android/android-channel.md)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
 
 ## iOS
