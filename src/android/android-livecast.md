@@ -4,11 +4,46 @@ description: Android로 간단한 방송 앱을 개발합니다.
 
 # Android - Livecast
 
+## 기본 설정
+
+방송을 하기 전에 프로젝트 설정을 진행 합니다.
+
+{% page-ref page="android-getting-start.md" %}
+
+
+
+SDK사용을 위한 Permission 요청
+
+* 안드로이드 최신 버전의 경우 앱의 권한에 대해 처음 앱 사용시 사용자에게 직접 묻게 됩니다. 이를 위한 처리도 필요하겠죠.
+* 안드로이드 개발자인 당신이 가장 선호하는 방식으로 이것을 처리하면 됩니다. 처리해야할 권한은 다음과 같습니다.
+
+```java
+public static final String[] MANDATORY_PERMISSIONS = {
+  "android.permission.INTERNET",
+  "android.permission.CAMERA",
+  "android.permission.RECORD_AUDIO",
+  "android.permission.MODIFY_AUDIO_SETTINGS",
+  "android.permission.ACCESS_NETWORK_STATE",
+  "android.permission.CHANGE_WIFI_STATE",
+  "android.permission.ACCESS_WIFI_STATE",
+  "android.permission.READ_PHONE_STATE",
+  "android.permission.BLUETOOTH",
+  "android.permission.BLUETOOTH_ADMIN",
+  "android.permission.WRITE_EXTERNAL_STORAGE"
+};
+```
+
+
+
+
+
+
+
 ## 준비 사항
 
 * 안드로이드 스마트폰 2개
 * Android Studio 개발 환경
-* 롤리팝 이상의 안드로이드 OS
+* 롤리팝 이상의 안드로이드 OS 권장
 
 ## 세상에서 가장 쉬운 안드로이드 통화앱 개발
 
