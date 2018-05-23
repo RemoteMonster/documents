@@ -30,7 +30,7 @@ remonCast = RemonCast.builder()
         .context(CastActivity.this)
         .localView(surfRendererlocal)        // 자신 Video Renderer
         .build();
-remonCast.createRoom(connectChId);              // 들어가고자 하는 channel
+remonCast.createRoom(connectChId);           // 들어가고자 하는 channel
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
