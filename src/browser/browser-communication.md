@@ -49,7 +49,7 @@ description: 브라우저로 간단한 통신 앱을 개발합니다.
     }else{
       isConnected = false;
       document.getElementById("connectChannelButton").innerHTML = "Connect";
-      remon.disconnect();
+      remon.close();
     }
   }
   </script>
@@ -98,7 +98,7 @@ const config = { credential: {
 
 혹은 방에서 나옵니다.
 
-* `remon.disconnect()`
+* `remon.close()`
 * 방에 들어가는 명령이 있다면 나오는 명령이 있겠죠. disconnect는 바로 들어갔던 방에서 나오는 명령입니다
 * 이제 모든 것이 끝났습니다. Remote Monster의 Javascript API는 이것만으로도 통신의 모든 것을 완벽히 수행합니다. 물론 더 자세한 조작은 필요하겠죠?
 
