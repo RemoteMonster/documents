@@ -1,14 +1,18 @@
+---
+description: 리모트몬스터의 기반을 이루는 WebRTC 정보를 확인해 보세요.
+---
+
 # WebRTC 주요 링크 모음
 
 ## 기초
 
-* [WebRTC 시작하기](https://coiiee.com/blog.php?idx=2): Coiiee 대표 정유철님께서 작성하신 알기쉬운 WebRTC 자료
+* WebRTC 시작하기: Coiiee 대표 정유철님께서 작성하신 알기쉬운 WebRTC 자료
 * [HTML5Rocks의 WebRTC가이드](https://www.html5rocks.com/ko/tutorials/webrtc/basics/): WebRTC개발을 처음 시작할 때 개념을 잡기 좋습니다.
 
 ## 주요 블로그 및 커뮤니티
 
 * [RemoteMonster Blog](http://blog.remotemonster.com): 리모트몬스터가 운영하는 WebRTC 블로그
-* [WebRTC 한국 커뮤니티](https://www.facebook.com/groups/rtc.korea/): 한국 최초 최고의 WebRTC 관련 커뮤니티
+* [WebRTC 한국 커뮤니티](https://www.facebook.com/groups/rtc.korea/): 한국에서 가장활발이 활동되고 있는 WebRTC 커뮤니티
 
 ## 최신 트렌드 및 시장조사
 
@@ -24,7 +28,7 @@
 ## 해외 사이트
 
 * [WebRTC github](https://github.com/webrtc): WebRTC 소스코드 저장소
-* [CodeLab](https://bitbucket.org/webrtc/codelab): 따라하기 식으로 WebRTC 코딩을 교육받을 수 있는 사이트
+* [CodeLab](https://bitbucket.org/webrtc/codelab): WebRTC를 코드로 따라하며 배우기
 * [모질라 WebRTC API doc](https://developer.mozilla.org/ko/docs/Web/API/WebRTC_API): 모질라에서 제공하는 WebRTC API 문서. 가장 정확하고 최신의 표준에 입각한 API를 확인할 수 있음.
 * [Bloggeek.me](https://bloggeek.me/): WebRTC에서 가장 유명한 블로거 Tsahi의 블로그
 * [WebRTCHacks](https://webrtchacks.com/): WebRTC계의 가장 유명한 해커 Chad Hart가 운영하는 사이트. 그 외 Victor나 Philipp등도 같이 운영
@@ -33,6 +37,4 @@
 ## 주요 라이브러리 및 개발 정보
 
 * [adapter.js](https://github.com/webrtc/adapter): 표준화가 덜된 관계로 브라우저마다 API조금씩 다른 WebRTC. 그래서 adapter.js를 사용해야 그 호환성을 지킬 수 있습니다.
-
-최근 업데이트: 2017년 3월 17일 by Jinho Choi
 
