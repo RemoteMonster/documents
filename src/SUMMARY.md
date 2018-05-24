@@ -5,6 +5,7 @@
 ## Overview
 
 * [Introduction](overview/introduction.md)
+* [Structure](overview/structure.md)
 * [Spec](overview/spec.md)
 
 ## Browser
@@ -13,6 +14,7 @@
 * Browser - Getting Start
 * [Browser - Livecast](browser/browser-livecast.md)
 * [Browser - Communication](browser/browser-communication.md)
+* Browser - Listeners
 * [Browser - Config](browser/browser-config.md)
 * Browser - Channel
 * [Browser - Debug inside](browser/browser-debug-inside.md)
@@ -25,10 +27,10 @@
 * [Android - Getting Start](android/android-getting-start.md)
 * [Android - Livecast](android/android-livecast.md)
 * [Android - Communication](android/android-communication.md)
+* [Android - Listeners](android/android-callback.md)
 * [Android - Config](android/android-config.md)
 * [Android - View](android/android-view.md)
 * [Android - Channel](android/android-channel.md)
-* [Android - Callback](android/android-callback.md)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
 
 ## iOS
@@ -37,7 +39,7 @@
 * [iOS - Getting Start](ios/ios-getting-start.md)
 * [iOS - Livecast](ios/ios-livecast.md)
 * [iOS - Communication](ios/ios-communication.md)
-* [iOS - Observer](ios/ios-observer.md)
+* [iOS - Listeners](ios/ios-observer.md)
 * [iOS - Config](ios/ios-config.md)
 * [iOS - Channel](ios/ios-channel.md)
 * [iOS - SDK Reference](https://remotemonster.github.io/ios-sdk/)
