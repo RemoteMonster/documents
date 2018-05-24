@@ -6,13 +6,7 @@ description: 리모트몬스터를 통해 개발을 하기위한 주요 절차�
 
 ## 개요
 
-RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과 같습니다. 
-
-* 키발급
-* SDK 설치
-* 개발
-* 운영
-* 관리
+RemoteMonster API의 SDK를 이용하여 다음과 같은 순서로 개발을 하세요.
 
 ### 서비스 등록 및 인증키 획득
 
