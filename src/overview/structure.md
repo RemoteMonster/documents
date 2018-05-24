@@ -131,3 +131,13 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 `Remon.sendMessage` 메소드를 호출하면 `Observer`의 `onMessage`메소드가 결과를 반환합니다.
 
+### 플랫폼별 사용법
+
+{% page-ref page="../browser/browser-listeners.md" %}
+
+{% page-ref page="../android/android-callback.md" %}
+
+{% page-ref page="../ios/ios-observer.md" %}
+
+
+
