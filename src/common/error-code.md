@@ -1,5 +1,5 @@
 ---
-description: 에러코드에 대해 설명합니다.
+description: 리모트몬스터를 사용하면서 만나게 되는 Error 상황에 대한 안내입니다.
 ---
 
 # Error Code
