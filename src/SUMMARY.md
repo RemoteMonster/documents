@@ -18,7 +18,6 @@
 * [Browser - Config](browser/browser-config.md)
 * Browser - Channel
 * [Browser - Debug inside](browser/browser-debug-inside.md)
-* [Browser - Examples](browser/browser-examples.md)
 * [Browser - SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
 
 ## Android
