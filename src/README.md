@@ -1,7 +1,3 @@
----
-description: 리모트 몬스터 개발 문서 입니다.
----
-
 # RemoteMonster
 
 ## **환영합니다.**
