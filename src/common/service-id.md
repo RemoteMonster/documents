@@ -1,7 +1,3 @@
----
-description: 리모트몬스터를 실 사용하기 위한 Service ID 및 Key 발급 절차를 안내합니다.
----
-
 # Service ID
 
 ## Overview

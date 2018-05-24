@@ -44,7 +44,8 @@
 
 ## Common
 
-* [품질 실시간 확인](common/qulity-check.md)
+* [품질 실시간 확인](common/undefined.md)
 * [Error Code](common/error-code.md)
 * [Service ID](common/service-id.md)
 * [WebRTC 주요 링크 모음](common/webrtc.md)
+
