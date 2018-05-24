@@ -1,10 +1,10 @@
 ---
-description: 리모트 몬스터를 개발하기 위해 알아야할 기본적인 것들을 소개합니다.
+description: 리모트몬스터를 통해 개발을 하기위한 주요 절차를 안내합니다.
 ---
 
 # Introduction
 
-## 개발 순서
+## 개요
 
 RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과 같습니다. 
 
@@ -16,9 +16,9 @@ RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과
 
 ### 서비스 등록 및 인증키 획득
 
-리모트몬스터 홈페이지에서 여러분의 서비스 개발을 위한 등록을 마칩니다. 리모트몬스터는 메일을 통해 인증키를 발급합니다.
+리모트몬스터 홈페이지에서 서비스 개발을 위한 등록을 마칩니다. 리모트몬스터는 메일을 통해 인증키를 발급합니다.
 
-* https://remotemonster.com
+{% embed data="{\"url\":\"https://remotemonster.com\",\"type\":\"link\",\"title\":\"RemoteMonster\",\"icon\":{\"type\":\"icon\",\"url\":\"https://uploads-ssl.webflow.com/5ae923e519474e392b0c80fc/5b02226459e4c8782a772e2f\_remon\_logo-09.png\",\"aspectRatio\":0},\"caption\":\"RemoteMonster Homepage\"}" %}
 
 자세한 내용은 아래를 참고하세요.
 
@@ -26,27 +26,41 @@ RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과
 
 ### SDK 및 개발 환경 설정
 
-Browser - 
+Browser, Android, iOS 모두 각각에 맞는 패키매니저를 통해 매우 간단하게 준비 가능합니다.
 
-리모트몬스터 API의 SDK는 모두 별도의 SDK 저장소로부터 자동으로 다운로드받을 수 있습니다. 안드로이드는 메이븐 레파지토리 방식을 따르므로 Gradle 빌드 파일에서 손쉽게 설정만으로 최신 버전을 다운로드 받을 수 있고 Javascript SDK는 NPM 레파지토리를 통해서 제공하므로 npm 명령을 통해 다운로드할 수 있습니다.
+아래를 통해 각 플랫폼별 세부적인 내용을 확인해 보세요.
 
-iOS는 xcode, 안드로이드는 Android Studio, Javascript는 NPM환경을 기본적으로 제공합니다.
+{% page-ref page="../browser/browser-getting-start.md" %}
 
-[https://github.com/RemoteMonster](https://github.com/RemoteMonster) 에서 자신에게 맞는 예제를 다운로드받아서 개발하면 빠르게 개발이 가능합니다.
+{% page-ref page="../android/android-getting-start.md" %}
+
+{% page-ref page="../ios/ios-getting-start.md" %}
 
 ### 개발
 
-* 개발에 필요한 예제와 문서와 함께 어려운 점은 [리모트몬스터 게시판](http://community.remotemonster.com/)을 활용합니다. 2-3시간 안에 질문에 대한 답을 얻을 수 있습니다.
+리모트몬스터는 쉬운 개발을 위해 커뮤니티와 다양한 예제 코드를 제공하고 있습니다.
+
+아래의 리모트 몬스터 Github에서 플랫폼별 예제와 데모 그리고 레퍼런스 문서를 직접 확인해 보세요.
+
+{% embed data="{\"url\":\"https://github.com/remotemonster\",\"type\":\"link\",\"title\":\"remotemonster\",\"description\":\"GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars1.githubusercontent.com/u/20677626?s=280&v=4\",\"width\":280,\"height\":280,\"aspectRatio\":1},\"caption\":\"RemoteMonster Github Repository\"}" %}
+
+혹시 어려운 점이 생기면 리모트 몬스터의 커뮤니티를 둘러보세요. 아래의 커뮤니티에 질문을 올리면 쉽고 빠르게 답변을 얻을 수 있습니다.
+
+{% embed data="{\"url\":\"https://community.remotemonster.com\",\"type\":\"link\",\"title\":\"Community\",\"description\":\"RemoteMonster Community Forums\",\"icon\":{\"type\":\"icon\",\"url\":\"//community.remotemonster.com/uploads/default/original/1X/d10bec2eae130debf322e6198e90175dd7920d72.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"//community.remotemonster.com/uploads/default/original/1X/d10bec2eae130debf322e6198e90175dd7920d72.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"caption\":\"RemoteMonster Community\"}" %}
 
 ### 운영
 
-* 서비스 개발이 끝나면 상용 버전의 서비스 시작 전 리모트몬스터에 통보합니다. 리모트몬스터는 보다 나은 품질과 안정성을 제공하기 위한 서버세팅과 관리자 화면을 제공합니다.
-* 테스트용키가 아니라 운영 키를 사용하여 보안과 품질을 높이세요.
+서비스 개발이 끝나면 상용 버전의 서비스 시작 전 리모트몬스터에 통보합니다. 리모트몬스터는 보다 나은 품질과 안정성을 제공하기 위한 서버세팅과 관리자 화면을 제공합니다.
+
+테스트용키가 아니라 운영 키를 사용하여 보안과 품질을 높이세요.
+
+{% page-ref page="../common/service-id.md" %}
 
 ### 관리
 
-* 리모트몬스터는 상용 서비스에 한하여 별도의 관리자 화면을 제공하여 트래픽 정보와 통화 품질에 대한 정보를 실시간으로 제공합니다.
-* 이를 통해 어떤 고객에게 주로 문제가 발생하는지, 어떻게 개선하면 좋을지 점검할 수 있습니다.
+리모트몬스터는 상용 서비스에 한하여 별도의 관리자 화면을 제공하여 트래픽 정보와 통화 품질에 대한 정보를 실시간으로 제공합니다.
+
+이를 통해 어떤 고객에게 주로 문제가 발생하는지, 어떻게 개선하면 좋을지 점검할 수 있습니다.
 
 ## 핵심 클래스
 
