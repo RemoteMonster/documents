@@ -39,12 +39,12 @@
 * [iOS - Observer](ios/ios-observer.md)
 * [iOS - Config](ios/ios-config.md)
 * [iOS - Channel](ios/ios-channel.md)
-* [iOS - SDK Reference](https://remotemonster.github.io/remon-ios-sdk/)
+* [iOS - SDK Reference](https://remotemonster.github.io/ios-sdk/)
 
 ## Common
 
 * 품질 실시간 확인
 * [Error Code](common/error-code.md)
-* Service ID
+* [Service ID](common/service-id.md)
 * [WebRTC 주요 링크 모음](common/webrtc.md)
 
