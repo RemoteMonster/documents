@@ -119,7 +119,7 @@ const config = {
 {% tab title="Android" %}
 ```java
 // Audio Only
-config.setVideoCall(true);
+config.setVideoCall(false);
 
 // Audio, Video
 config.setVideoCall(true);
@@ -172,10 +172,11 @@ config.setVideoFps(15);
 
 {% tab title="iOS" %}
 ```swift
-let config = RemonConfig()
-config.videoWidth = 640
-config.videoHeight = 480
-config.videoFps = 24
+let remonCall = RemonCall()
+remonCall.onlyAudio = true //default fasle
+remonCall.videoWidth = 640
+remonCall.videoHeight = 480
+remonCall.videoFps = 24
 ```
 {% endtab %}
 {% endtabs %}
