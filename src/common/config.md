@@ -79,7 +79,11 @@ Service Id, Key를 지정 하는 단계로 필수 입니다.
 {% endtab %}
 
 {% tab title="iOS" %}
-
+```text
+let remonCall = RemonCall()
+remonCall.serviceId = "myServiceId"
+remonCall.serviceKey = "myServiceKey"
+```
 {% endtab %}
 {% endtabs %}
 
@@ -123,7 +127,10 @@ config.setVideoCall(true);
 {% endtab %}
 
 {% tab title="iOS" %}
-
+```text
+let remonCall = RemonCall()
+remonCall.onlyAudio = true //default fasle
+```
 {% endtab %}
 {% endtabs %}
 
