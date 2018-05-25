@@ -1,5 +1,5 @@
 ---
-description: 에러코드에 대해 설명합니다.
+description: SDK 사용시 마주하게 되는 Error Code를 안내합니다.
 ---
 
 # Error Code

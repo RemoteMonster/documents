@@ -10,8 +10,6 @@ description: RemoteMonster가 제공하는 SDK의 구성을 전체적으로 살�
 
 ![RemoteMonster SDK overview](../.gitbook/assets/sdkcommonoverview1.png)
 
-## 
-
 ## Remon class
 
 Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통신상태를 초기화하고 방을 개설하고 방에 접속하고 종료하는 일련의 모든 과정에서 이 `Remon` 클래스를 사용합니다. 또한, 메세지 보내기와 같은 추가적인 기능을 수행합니다.

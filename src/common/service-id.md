@@ -1,3 +1,7 @@
+---
+description: RemoteMonster를 실질적으로 사용하기 위한 ID와 Key발급절차를 안내합니다.
+---
+
 # Service ID
 
 ## Overview
