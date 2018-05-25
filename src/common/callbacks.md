@@ -264,7 +264,7 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 
 보다 더 자세한 내용은 아래를 확인하세요.
 
-{% page-ref page="qulity-report.md" %}
+{% page-ref page="qulity-status.md" %}
 
 ### onSearch\(\)
 

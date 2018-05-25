@@ -46,7 +46,7 @@
 * [Config](common/config.md)
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)
-* [Realtime Qulity Report](common/qulity-report.md)
+* [Realtime Qulity Status](common/qulity-status.md)
 * [Error Code](common/error-code.md)
 * [About WebRTC](common/webrtc.md)
 
