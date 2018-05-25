@@ -51,8 +51,9 @@
 
 * [Service ID](common/service-id.md)
 * Config
-* [Observer](common/observer.md)
+* [Callbacks](common/observer.md)
 * Channel
-* [Realtime Qulity Status](common/qulity-status.md)
+* [Realtime Qulity Status](common/realtime-qulity-status.md)
 * [Error Code](common/error-code.md)
 * [WebRTC 주요 링크 모음](common/webrtc.md)
+

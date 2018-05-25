@@ -1,7 +1,3 @@
----
-description: RemoteMonster iOS SDK의 사용에 대해 안내합니다.
----
-
 # iOS - Overview
 
 ## 쉽고 간편하게 방송 또는 통신 기능을 구현 하세요.
