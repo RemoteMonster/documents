@@ -37,7 +37,13 @@ RemoteMonster는 객체 생성 전에 config값을 선행적으로 받습니다.
 {% endtab %}
 
 {% tab title="iOS" %}
-
+```swift
+let myRemoteView:UIView! = UIView()
+let myLocalView:UIView! = UIView()
+let remonCall = RemonCall()
+remonCall.remoteView = myRemoteView
+remonCall.localView = myLocalView
+```
 {% endtab %}
 {% endtabs %}
 
