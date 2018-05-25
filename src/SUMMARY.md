@@ -36,7 +36,7 @@
 * [iOS - Getting Start](ios/ios-getting-start.md)
 * [iOS - Livecast](ios/ios-livecast.md)
 * [iOS - Communication](ios/ios-communication.md)
-* iOS - View
+* [iOS - View](ios/ios-view.md)
 * [iOS - Github](https://github.com/remotemonster/ios-sdk/)
 * [iOS - SDK Reference](https://remotemonster.github.io/ios-sdk/)
 
