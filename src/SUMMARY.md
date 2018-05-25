@@ -32,7 +32,6 @@
 * [Android - Config](android/android-config.md)
 * [Android - View](android/android-view.md)
 * [Android - Channel](android/android-channel.md)
-* [Android - Callback](android/android-callback.md)
 * [Android - Github](https://github.com/remotemonster/android-sdk/)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
 
@@ -57,4 +56,3 @@
 * [Realtime Qulity Status](common/qulity-status.md)
 * [Error Code](common/error-code.md)
 * [WebRTC 주요 링크 모음](common/webrtc.md)
-
