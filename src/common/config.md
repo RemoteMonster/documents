@@ -5,70 +5,65 @@
 RemoteMonster는 객체 생성 전에 config값을 선행적으로 받습니다. 가장 단순하게는 화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
 
 ### View
+
 영상이 표출될 View를 지정하는 설정으로 필수적입니다.
 
-  {% tabs %}
-  {% tab title="Web" %}
-
-  ```html
+{% tabs %}
+{% tab title="Web" %}
+```markup
   <video id="remoteVideo" autoplay controls></video>
   <video id="localVideo" autoplay controls muted></video>
-  ```
+```
 
-  controls 속성을 추가할 경우 영상에서 제어 컨트롤을 추가할 수 있습니다. local video 영상인 경우에는 보통 muted 속성을 추가하여 자기 음성이 다시 자기에게 들리는 하울링 현상을 없애야 합니다.
+controls 속성을 추가할 경우 영상에서 제어 컨트롤을 추가할 수 있습니다. local video 영상인 경우에는 보통 muted 속성을 추가하여 자기 음성이 다시 자기에게 들리는 하울링 현상을 없애야 합니다.
 
-  ```javascript
+```javascript
   const config = {
     view: {
       remote: '#remoteVideo', local: '#localVideo'
     }
   }
-  ```
-  {% endtab %}
+```
+{% endtab %}
 
-  {% tab title="Android" %}
-  ```java
+{% tab title="Android" %}
+```java
   Config config = new com.remotemonster.sdk.Config();
   config.setLocalView((SurfaceViewRenderer) findViewById(R.id.local_video_view));
   config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view));
-  ```
-  {% endtab %}
-
-  {% tab title="iOS" %}
-
-  {% endtab %}
-  {% endtabs %}
+```
+{% endtab %}
+{% endtabs %}
 
 ### Service Id, Key
+
 Service Id, Key를 지정 하는 단계로 필수 입니다.
 
-  {% tabs %}
-  {% tab title="Web" %}
-  ```javascript
+{% tabs %}
+{% tab title="Web" %}
+```javascript
   const config = {
     credential: {
       serviceId: 'MyServiceId', key: 'myKey'}
   }
-  ```
-  {% endtab %}
+```
+{% endtab %}
 
-  {% tab title="Android" %}
-  ```java
+{% tab title="Android" %}
+```java
   Config config = new com.remotemonster.sdk.Config();
   config.setServiceId("myServiceId");
   config.setKey("myKey");
-  ```
-  {% endtab %}
-
-  {% tab title="iOS" %}
-
-  {% endtab %}
-  {% endtabs %}
+```
+{% endtab %}
+{% endtabs %}
 
 ## Media
+
 음성과 영상에 대한 보다 다양한 옵션이 제공됩니다.
 
 ### Select Video, Audio
+
 비디오를 키고 끔으로써 영상방송/통화 혹은 음성방송/통화 컨텐츠 서비스를 만들 수 있습니다.
 
 {% tabs %}
@@ -99,15 +94,9 @@ config.setVideoCall(true);
 
 // Audio, Video
 config.setVideoCall(true);
-
 ```
 {% endtab %}
-
-{% tab title="iOS" %}
-
-{% endtab %}
 {% endtabs %}
-
 
 ### Video Options
 
@@ -144,34 +133,22 @@ config.setVideoCodec("VP8");  // 'VP9', 'VP8', 'H264'
 config.setVideoFps(15);
 ```
 {% endtab %}
-
-{% tab title="iOS" %}
-
-{% endtab %}
 {% endtabs %}
 
 ### Audio Options
+
 동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 false, 계속 유지하고 싶다면 true로 설정하세요.
 
 {% tabs %}
-{% tab title="Web" %}
-
-{% endtab %}
-
 {% tab title="Android" %}
 ```java
 config.setSpeakerPhone("auto"); // auto, true, false
 ```
 {% endtab %}
-
-{% tab title="iOS" %}
-
-{% endtab %}
 {% endtabs %}
 
-
-
 ## Debug
+
 SILENT, ERROR, WARN, INFO, DEBUG, VERBOSE를 설정할 수 있으며 뒤로 갈 수록 더 자세한 로그를 확인할 수 있습니다.
 
 {% tabs %}
@@ -190,8 +167,5 @@ const config = {
 config.setLogLevel(Log.DEBUG);
 ```
 {% endtab %}
-
-{% tab title="iOS" %}
-
-{% endtab %}
 {% endtabs %}
+

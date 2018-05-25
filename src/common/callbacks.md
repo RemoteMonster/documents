@@ -1,7 +1,3 @@
----
-description: Event와 Callback 함수를 통해 개발하세요.
----
-
 # Callbacks
 
 ## Overview

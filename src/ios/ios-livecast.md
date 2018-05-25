@@ -12,8 +12,6 @@
 
 `RemonIBController`에 값을 직접 설정 않고, `connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
 
-{% page-ref page="ios-config.md" %}
-
 ### 방송생성
 
 ```swift
@@ -69,8 +67,6 @@ remonCast.onClose {
 
 `Remon`이 제공하는 `Observer` 함수에 대한 더 자세한 내용은 `Oserver` 가이드 문서를 참조 하세요
 
-{% page-ref page="ios-observer.md" %}
-
 ### Channel
 
 방송을 시청 하기 위해서는 시청 하려는 채널이 ID가 필요 합니다. 채널 ID는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. `Remon`는 시청 하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
@@ -105,8 +101,6 @@ remonCast.joinRoom("chid")
 Remon를 이용하면 보면 Remon의 상태를 확인이 불가피한 경우가 있습니다. 이 경우에는 RemonController 클래스의 Observer 함수들을 이용하여 원하는 상태에 SDK 사용자가 필요한 행동을 정의 할 수 있습니다.
 
 채널 검색에 대한 더 자세한 내용은 아래를 참고하세요.
-
-{% page-ref page="ios-channel.md" %}
 
 #### RemonCast를 이용한 방송 구현
 

@@ -191,7 +191,7 @@ castViewer.joinRoom(connectChId);           // 들어가고자 하는 channel
 {% hint style="info" %}
 `createRoom`, `joinRoom` 함수에 `RemonConfig`를 직접 전달 할 수도있습니다.
 
-[Config 확인하러 가기.](android-config.md)
+[Config 확인하러 가기.]()
 {% endhint %}
 
 ### 
