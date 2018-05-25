@@ -197,7 +197,7 @@ config.setSpeakerPhone("auto"); // auto, true, false
 {% endtab %}
 
 {% tab title="iOS" %}
-
+N/A
 {% endtab %}
 {% endtabs %}
 
@@ -223,7 +223,7 @@ config.setLogLevel(Log.DEBUG);
 {% endtab %}
 
 {% tab title="iOS" %}
-
+2.0.5  이후 지
 {% endtab %}
 {% endtabs %}
 
