@@ -33,6 +33,10 @@ controls 속성을 추가할 경우 영상에서 제어 컨트롤을 추가할 �
   config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view));
 ```
 {% endtab %}
+
+{% tab title="iOS" %}
+
+{% endtab %}
 {% endtabs %}
 
 ### Service Id, Key
@@ -55,6 +59,10 @@ Service Id, Key를 지정 하는 단계로 필수 입니다.
   config.setServiceId("myServiceId");
   config.setKey("myKey");
 ```
+{% endtab %}
+
+{% tab title="iOS" %}
+
 {% endtab %}
 {% endtabs %}
 
@@ -96,6 +104,10 @@ config.setVideoCall(true);
 config.setVideoCall(true);
 ```
 {% endtab %}
+
+{% tab title="iOS" %}
+
+{% endtab %}
 {% endtabs %}
 
 ### Video Options
@@ -133,6 +145,10 @@ config.setVideoCodec("VP8");  // 'VP9', 'VP8', 'H264'
 config.setVideoFps(15);
 ```
 {% endtab %}
+
+{% tab title="iOS" %}
+
+{% endtab %}
 {% endtabs %}
 
 ### Audio Options
@@ -140,10 +156,18 @@ config.setVideoFps(15);
 동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 false, 계속 유지하고 싶다면 true로 설정하세요.
 
 {% tabs %}
+{% tab title="Web" %}
+
+{% endtab %}
+
 {% tab title="Android" %}
 ```java
 config.setSpeakerPhone("auto"); // auto, true, false
 ```
+{% endtab %}
+
+{% tab title="iOS" %}
+
 {% endtab %}
 {% endtabs %}
 
@@ -167,5 +191,11 @@ const config = {
 config.setLogLevel(Log.DEBUG);
 ```
 {% endtab %}
+
+{% tab title="iOS" %}
+
+{% endtab %}
 {% endtabs %}
+
+
 

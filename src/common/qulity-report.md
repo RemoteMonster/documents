@@ -2,7 +2,7 @@
 description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소개합니다.
 ---
 
-# Realtime Qulity Status
+# Realtime Qulity Report
 
 ## Overview
 
@@ -20,26 +20,26 @@ description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소
 | 4 | 매우 나쁨 |  |
 | 5 | 방송, 통화 불능 |  |
 
-## **Web**
+## Usage
 
-`Remon` 객체를 생성할 때 입력 인자로 넣는 listener의 메소드 중 `onStat()` 을 구현하여 품질 정보를 받을 수 있습니다.
+{% tabs %}
+{% tab title="Web" %}
+
 
 ```javascript
-// listener 구현
-
-const rtcListener = {
+const listener = {
   onStat(result){
-    const stat = `State: l.cand: ${result.localCandidate} /r.cand: ${result.remoteCandidate} /l.res: ${result.localFrameWidth} x ${result.localFrameHeight} /r.res: ${result.remoteFrameWidth} ${result.remoteFrameHeight} /l.rate: ${result.localFrameRate} /r.rate: ${result.remoteFrameRate} / Health: ${result.rating}`;
-    console.log(stat);
+    const stat = `State: l.cand: ${result.localCandidate} /r.cand: ${result.remoteCandidate} /l.res: ${result.localFrameWidth} x ${result.localFrameHeight} /r.res: ${result.remoteFrameWidth} ${result.remoteFrameHeight} /l.rate: ${result.localFrameRate} /r.rate: ${result.remoteFrameRate} / Health: ${result.rating}`
+    console.log(stat)
   }
-};
+}
 ```
 
-위의 `result`에서 받을 수 있는 여러 정보 중 `result.rating` 이 바로 네트워크 상황에 따른 통합적인 통화 품질 정보입니다.
+`Remon` 객체를 생성할 때 입력 인자로 넣는 listener의 메소드 중 `onStat()` 을 구현하여 품질 정보를 받을 수 있습니다. 위의 `result`에서 받을 수 있는 여러 정보 중 `result.rating` 이 바로 네트워크 상황에 따른 통합적인 통화 품질 정보입니다.
+{% endtab %}
 
-## **Android**
+{% tab title="Android" %}
 
-`RemonObserver`를 상속받은 클래스에서 `onStatReport` 메소드를 오버라이드하여 정보를 얻습니다.
 
 ```java
   @Override
@@ -49,7 +49,13 @@ const rtcListener = {
   }
 ```
 
-`RemonStatReport` 객체의 `getHealthRating`메소드의 `getLevel` 메소드를 통해 얻어올 수 있습니다.
+`RemonObserver`를 상속받은 클래스에서 `onStatReport` 메소드를 오버라이드하여 정보를 얻습니다. `RemonStatReport` 객체의 `getHealthRating`메소드의 `getLevel` 메소드를 통해 얻어올 수 있습니다.
+{% endtab %}
 
-## iOS
+{% tab title="iOS" %}
+
+{% endtab %}
+{% endtabs %}
+
+
 

@@ -233,6 +233,10 @@ remonCall.sendMessage("msg")
 {% endtab %}
 {% endtabs %}
 
+보다더 자세한 내용은 아래를 확인하세요.
+
+{% page-ref page="error-code.md" %}
+
 ### onStat\(\)
 
 통신 / 방송 상태를 알수있는 `report`를 받습니다. `report`는 사용자가 `remon` 생성시 설정한 `statInterval`간격 마다 들어오게 됩니다.
@@ -258,6 +262,10 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 {% endtab %}
 {% endtabs %}
 
+보다 더 자세한 내용은 아래를 확인하세요.
+
+{% page-ref page="qulity-report.md" %}
+
 ### onSearch\(\)
 
 현재 동일한 serviceId를 가진 방송 또는 통신을 검색결과를 받습니다. `RemonCast`의 경우에는 `RemonCast.searchRooms()`를 `RemonCall`의 경우에는 `RemonCall.searchCalls()`하면 검색을 하게 됩니다.
@@ -282,4 +290,10 @@ remonCast.onSearch(new RemonCast.onSearchCallback() {
 
 {% endtab %}
 {% endtabs %}
+
+보다 더 자세한 내용은 아래를 확인하세요.
+
+{% page-ref page="channel.md" %}
+
+
 

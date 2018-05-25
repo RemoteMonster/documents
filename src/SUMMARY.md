@@ -15,7 +15,7 @@
 * Web - Getting Start
 * [Web - Livecast](web/web-livecast.md)
 * [Web - Communication](web/web-communication.md)
-* Web - View
+* [Web - View](web/web-view.md)
 * [Web - Debug Inside](web/web-debug.md)
 * [Web - Github](https://github.com/remotemonster/browser-sdk/)
 * [Web - SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
@@ -46,7 +46,7 @@
 * [Config](common/config.md)
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)
-* [Realtime Qulity Status](common/realtime-qulity-status.md)
+* [Realtime Qulity Report](common/qulity-report.md)
 * [Error Code](common/error-code.md)
 * [About WebRTC](common/webrtc.md)
 
