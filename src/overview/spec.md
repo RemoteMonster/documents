@@ -30,7 +30,7 @@ description: 제품의 주요 규격과 기능을 소개합니다.
 | Web - Edge | 음성 통신 지원 |
 | Web - Safari | 지원\(11이상\) |
 | Android | 최소 18\(젤리빈\), 권장 21\(롤리팝\) 이상. ARM기반 단말만 지원 |
-| iOS | 지원\(iPad, iPhone\), bitcode 미지원 |
+| iOS | iOS 9.1이상, 64bit Only, bitcode 미지원 |
 
 ## Media and Networks
 
