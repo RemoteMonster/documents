@@ -38,3 +38,17 @@ remonCall.onComplete {
 
 
 
+#### RemonCall를 이용한 1:1 통신 구현 
+
+RemonCall은 통신 기능을 위한 RemonController의 하위 클래스 입니다.
+
+* connectChannel\(\) 함수는 채널을 생성 하거나 이미 생성된 채널에 접속 하는 함수 입니다. 만약 당신이 채널의 생성자라면 connectChannel\(\) 함수 호출 이후 다른 사용자의 연결이 있을 때까지 대기 하는 상태가 될 것입니다.
+
+```swift
+let remonCall = RemonCall()
+remonCall.localView = myLocalView
+remonCall.remoteView = myRemoteView
+// set remonCall config
+remonCall.connectChannel("wantedChannelID")
+```
+

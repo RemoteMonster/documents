@@ -51,7 +51,7 @@ caster.joinChannel(config)
 
 ### Observer
 
-`Remon`은 방송 생성 및 시청 중에  상태 추적을 돕기 위한 `Observer` 함수를 제공 합니다.
+`Remon`은 방송 생성 및 시청 중에 상태 추적을 돕기 위한 `Observer` 함수를 제공 합니다.
 
 ```swift
 remonCast.onInit {
@@ -80,6 +80,7 @@ remonCast.search { (error, results) in
     // 채널 목록 처리
 }
 ```
+
 RemonCast는 방 기능을 위한 RemonController의 하위 클래스 입니다.
 
 * RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
@@ -103,8 +104,32 @@ remonCast.joinRoom("chid")
 
 Remon를 이용하면 보면 Remon의 상태를 확인이 불가피한 경우가 있습니다. 이 경우에는 RemonController 클래스의 Observer 함수들을 이용하여 원하는 상태에 SDK 사용자가 필요한 행동을 정의 할 수 있습니다.
 
-
-
-채널 검색에 대한 더  자세한 내용은 아래를 참고하세요.
+채널 검색에 대한 더 자세한 내용은 아래를 참고하세요.
 
 {% page-ref page="ios-channel.md" %}
+
+#### RemonCast를 이용한 방송 구현
+
+RemonCast는 방 기능을 위한 RemonController의 하위 클래스 입니다.
+
+* RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
+
+```swift
+let remonCast = RemonCast()
+remonCast.localView = myLocalView
+// set remonCall config
+remonCast.createRoom()
+let myChID  = remonCast.channelID // after created room
+```
+
+* RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 있습니다. 
+
+```swift
+let remonCast = RemonCast()
+remonCast.remoteView = myRemoteView
+// set remonCall config
+remonCast.joinRoom("chid")
+```
+
+Remon를 이용하면 보면 Remon의 상태를 확인이 불가피한 경우가 있습니다. 이 경우에는 RemonController 클래스의 Observer 함수들을 이용하여 원하는 상태에 SDK 사용자가 필요한 행동을 정의 할 수 있습니다.
+

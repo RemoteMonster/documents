@@ -1,7 +1,3 @@
----
-description: RemoteMonster를 실질적으로 사용하기 위한 ID와 Key발급절차를 안내합니다.
----
-
 # Service ID
 
 ## Overview
@@ -35,8 +31,6 @@ description: RemoteMonster를 실질적으로 사용하기 위한 ID와 Key발�
 ## 사용
 
 실제 ID 와 Key를 사용하는 방법은 아래 각 플랫폼의 환경설정을 참고하세요.
-
-{% page-ref page="../web/browser-getting-start.md" %}
 
 {% page-ref page="../android/android-getting-start.md" %}
 

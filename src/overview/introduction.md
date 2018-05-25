@@ -1,5 +1,5 @@
 ---
-description: RemoteMonster를 통해 개발을 시작하는 방법을 소개합니다.
+description: 리모트 몬스터를 개발하기 위해 알아야할 기본적인 것들을 소개합니다.
 ---
 
 # Introduction
@@ -29,8 +29,6 @@ RemoteMonster는 실시간 방송통신 기능을 제공하고 있습니다.
 Browser, Android, iOS 모두 각각에 맞는 패키매니저를 통해 매우 간단하게 준비 가능합니다.
 
 아래를 통해 각 플랫폼별 세부적인 내용을 확인해 보세요.
-
-{% page-ref page="../web/browser-getting-start.md" %}
 
 {% page-ref page="../android/android-getting-start.md" %}
 

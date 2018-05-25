@@ -1,7 +1,3 @@
----
-description: 'RemoteMonster의 주요 기능과 장점, 응용처를 소개합니다.'
----
-
 # Features
 
 ## Overview

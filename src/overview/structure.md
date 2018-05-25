@@ -1,7 +1,3 @@
----
-description: RemoteMonster가 제공하는 SDK의 구성을 전체적으로 살펴봅니다.
----
-
 # Structure
 
 ## Overview
@@ -38,9 +34,9 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 ### 플랫폼별 사용법
 
-{% page-ref page="../web/browser-livecast.md" %}
+{% page-ref page="../web/web-livecast.md" %}
 
-{% page-ref page="../web/browser-communication.md" %}
+{% page-ref page="../web/web-communication.md" %}
 
 {% page-ref page="../android/android-livecast.md" %}
 
@@ -80,7 +76,7 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 아래를 통해 각 플랫폼에서 실제 개발시 설정방법을 보다 자세히 알아보세요.
 
-{% page-ref page="../web/browser-config.md" %}
+{% page-ref page="../web/web-config.md" %}
 
 {% page-ref page="../android/android-config.md" %}
 
@@ -130,8 +126,6 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 `Remon.sendMessage` 메소드를 호출하면 `Observer`의 `onMessage`메소드가 결과를 반환합니다.
 
 ### 플랫폼별 사용법
-
-{% page-ref page="../web/browser-observer.md" %}
 
 {% page-ref page="../android/android-observer.md" %}
 

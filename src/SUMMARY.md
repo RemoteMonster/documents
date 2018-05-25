@@ -11,14 +11,14 @@
 
 ## Web
 
-* [Web - Overview](web/browser-overview.md)
+* [Web - Overview](web/web-overview.md)
 * Web - Getting Start
-* [Web - Livecast](web/browser-livecast.md)
-* [Web - Communication](web/browser-communication.md)
+* [Web - Livecast](web/web-livecast.md)
+* [Web - Communication](web/web-communication.md)
 * Web - Observer
-* [Web - Config](web/browser-config.md)
+* [Web - Config](web/web-config.md)
 * Web - Channel
-* [Web - Debug inside](web/browser-debug-inside.md)
+* [Web - Debug inside](web/web-debug-inside.md)
 * [Web - Github](https://github.com/remotemonster/browser-sdk/)
 * [Web - SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
 
@@ -50,7 +50,11 @@
 
 ## Common
 
+* [Service ID](common/service-id.md)
+* Config
+* [Observer](common/observer.md)
+* Channel
 * [Realtime Qulity Status](common/qulity-status.md)
 * [Error Code](common/error-code.md)
-* [Service ID](common/service-id.md)
 * [WebRTC 주요 링크 모음](common/webrtc.md)
+

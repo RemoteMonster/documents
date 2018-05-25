@@ -1,5 +1,5 @@
 ---
-description: RemoteMonster가 제공하는 기능의 주요 규격을 안내합니다.
+description: 제품의 주요 규격과 기능을 소개합니다.
 ---
 
 # Spec

@@ -8,8 +8,6 @@
 
 곧바로 개발을 시작합니다.
 
-{% page-ref page="web/browser-getting-start.md" %}
-
 {% page-ref page="android/android-getting-start.md" %}
 
 {% page-ref page="ios/ios-getting-start.md" %}
