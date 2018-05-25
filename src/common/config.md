@@ -15,8 +15,6 @@ RemoteMonster는 객체 생성 전에 config값을 선행적으로 받습니다.
   <video id="localVideo" autoplay controls muted></video>
 ```
 
-controls 속성을 추가할 경우 영상에서 제어 컨트롤을 추가할 수 있습니다. local video 영상인 경우에는 보통 muted 속성을 추가하여 자기 음성이 다시 자기에게 들리는 하울링 현상을 없애야 합니다.
-
 ```javascript
   const config = {
     view: {
@@ -38,6 +36,14 @@ controls 속성을 추가할 경우 영상에서 제어 컨트롤을 추가할 �
 
 {% endtab %}
 {% endtabs %}
+
+이때 config 설정은 View와 함께 지정되어야 합니다. 아래를 살펴보세요.
+
+{% page-ref page="../web/web-view.md" %}
+
+{% page-ref page="../android/android-view.md" %}
+
+{% page-ref page="../ios/ios-view.md" %}
 
 ### Service Id, Key
 
