@@ -52,6 +52,3 @@ const rtcListener = {
 `RemonStatReport` 객체의 `getHealthRating`메소드의 `getLevel` 메소드를 통해 얻어올 수 있습니다.
 
 ## iOS
-
-
-

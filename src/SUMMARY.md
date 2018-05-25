@@ -50,8 +50,7 @@
 
 ## Common
 
-* [Realtime Qulity Status](common/undefined.md)
+* [Realtime Qulity Status](common/qulity-status.md)
 * [Error Code](common/error-code.md)
 * [Service ID](common/service-id.md)
 * [WebRTC 주요 링크 모음](common/webrtc.md)
-
