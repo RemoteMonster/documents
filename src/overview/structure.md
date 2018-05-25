@@ -56,48 +56,7 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 ## Observer Class
 
-`Remon` 클래스가 명령을 내리는 용도라면 `Observer`는 Callback 메시지를 수신하기 위한 클래스입니다. `Observer`로부터 수신되는 이벤트를 이용하여 보다 세밀한 통신효과와 능동적인 서비스를 구현할 수 있습니다. 다음과 같은 메소드가 호출됩니다.
+`Remon` 클래스가 명령을 내리는 용도라면 `Observer`는 Callback 메시지를 수신하기 위한 클래스입니다. `Observer`로부터 수신되는 이벤트를 이용하여 보다 세밀한 통신효과와 능동적인 서비스를 구현할 수 있습니다. 자세한 내용은 아래를 참고하세요.
 
-### onStateChange
-
-최초 `Remon`객체를 만들고 방을 만들며 접속하고 접속에 성공하고 방송, 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. `RemonState` enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. `RemonState`의 상태는 다음과 같습니다.
-
-| 값 | 내용 | 비고 |
-| --- | --- | --- | --- | --- | --- | --- |
-| INIT | 시작 |  |
-| WAIT | 채널 생성 |  |
-| CONNECT | 채널, 방 접속 |  |
-| COMPLETE | 연결 완료 |  |
-| FAIL | 실패 |  |
-| CLOSE | 종료 |  |
-
-### onError
-
-통신 시도 중 장애 발생시 호출됩니다.
-
-{% page-ref page="../common/error-code.md" %}
-
-### onAddLocalStream
-
-자기 자신의 카메라의 영상이 혹은 음성 스트림을 획득하였을 경우 호출됩니다.
-
-### onAddRemoteStream
-
-상대방의 영상이나 음성 스트림을 획득하였을 경우 호출됩니다. 연결이 되었음을 의미합니다.
-
-### onInit
-
-`Remon`객체가 무사히 생성되었을 경우 불려집니다. 이 `onInit`메소드가 불려지고 바로 `Remon.connectchannel` 메소드를 수행할 수 있습니다.
-
-### onSearch
-
-`Remon.search` 메소드를 호출하면 `Observer`의 `onSearch`메소드가 결과를 반환합니다.
-
-### onMessage
-
-`Remon.sendMessage` 메소드를 호출하면 `Observer`의 `onMessage`메소드가 결과를 반환합니다.
-
-### 플랫폼별 사용법
-
-
+{% page-ref page="../common/callbacks.md" %}
 

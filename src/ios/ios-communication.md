@@ -34,6 +34,8 @@ remonCall.onComplete {
 
 `Remon`은 `onInit()`와 `onCreate`, `onComplete` 이외에도 많은 `Observer` 함수를 제공 합니다. 더 많은 내용은 `Observer` 가이드 문서를 참조 하세요.
 
+{% page-ref page="../common/callbacks.md" %}
+
 
 
 #### RemonCall를 이용한 1:1 통신 구현 

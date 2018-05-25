@@ -1,3 +1,7 @@
+---
+description: '기본적인 설정과 미디어, 네트워크등 상세한 설정을 안내합니다.'
+---
+
 # Config
 
 ## Basics
@@ -154,7 +158,12 @@ config.setVideoFps(15);
 {% endtab %}
 
 {% tab title="iOS" %}
-
+```swift
+let config = RemonConfig()
+config.videoWidth = 640
+config.videoHeight = 480
+config.videoFps = 24
+```
 {% endtab %}
 {% endtabs %}
 

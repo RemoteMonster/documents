@@ -1,3 +1,7 @@
+---
+description: 주요 개념중 하나인 Channel에 대해 소개합니다.
+---
+
 # Channel
 
 ## Overview
@@ -8,8 +12,8 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 
 |  | Name | Id | Methods |
 | --- | --- | --- |
-| Livecast | room | cid | `createRoom`, `joinRoom` |
-| Communication | channel | cid | `connectRoom` |
+| Livecast | room | chid | `createRoom`, `joinRoom` |
+| Communication | channel | chid | `connectRoom` |
 
 ## Livecast
 
