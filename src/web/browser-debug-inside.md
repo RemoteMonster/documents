@@ -1,4 +1,4 @@
-# Browser - Debug inside
+# Web - Debug inside
 
 * webrtc-internals는 WebRTC서비스에서 발생하는 이슈르 해결해야할 때 굉장히 좋은 도구입니다. 이 도구에 익숙하지 않다면 크롬브라우저에서 WebRTC세션을 연결하고 다른 탭을 더 열어서 주소창에서 chrome://webrtc-internals/ 를 입력하면 webrtc-internals를 실행할 수 있습니다.
 * webrtc-internals는 현재 연결되어서 통신하고 있는 여러 stat정보를 덩치 큰 JSON덩어리로 저장할 수 있고 이것을 이용하여 다음과 같이 살펴볼 수도 있습니다.

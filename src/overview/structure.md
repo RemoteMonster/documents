@@ -1,5 +1,5 @@
 ---
-description: SDK의 주요 구성을 안내합니다.
+description: RemoteMonster가 제공하는 SDK의 구성을 전체적으로 살펴봅니다.
 ---
 
 # Structure
@@ -40,9 +40,9 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 ### 플랫폼별 사용법
 
-{% page-ref page="../browser/browser-livecast.md" %}
+{% page-ref page="../web/browser-livecast.md" %}
 
-{% page-ref page="../browser/browser-communication.md" %}
+{% page-ref page="../web/browser-communication.md" %}
 
 {% page-ref page="../android/android-livecast.md" %}
 
@@ -82,7 +82,7 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 아래를 통해 각 플랫폼에서 실제 개발시 설정방법을 보다 자세히 알아보세요.
 
-{% page-ref page="../browser/browser-config.md" %}
+{% page-ref page="../web/browser-config.md" %}
 
 {% page-ref page="../android/android-config.md" %}
 
@@ -133,9 +133,9 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 ### 플랫폼별 사용법
 
-{% page-ref page="../browser/browser-listeners.md" %}
+{% page-ref page="../web/browser-observer.md" %}
 
-{% page-ref page="../android/android-callback.md" %}
+{% page-ref page="../android/android-observer.md" %}
 
 {% page-ref page="../ios/ios-observer.md" %}
 

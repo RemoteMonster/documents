@@ -2,7 +2,7 @@
 description: 브라우저로 간단한 방송 앱을 개발합니다.
 ---
 
-# Browser - Livecast
+# Web - Livecast
 
 ## 준비사항
 

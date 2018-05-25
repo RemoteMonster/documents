@@ -1,4 +1,4 @@
-# Browser - Config
+# Web - Config
 
 ## 브라우저 SDK의 Config
 

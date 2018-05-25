@@ -1,12 +1,18 @@
 ---
-description: 리모트몬스터를 통해 개발을 하기위한 주요 절차를 안내합니다.
+description: RemoteMonster를 통해 개발을 시작하는 방법을 소개합니다.
 ---
 
 # Introduction
 
 ## 개요
 
-RemoteMonster API의 SDK를 이용하여 다음과 같은 순서로 개발을 하세요.
+RemoteMonster는 실시간 방송통신 기능을 제공하고 있습니다.
+
+이 기능을 개발 하기 위해서는  리모트몬스터 서버에서 제공되는 API와 리모트몬스터 서버를 활용하기 위한 클라이언트 SDK를 사용하게 됩니다.  개발시에는 대부분 SDK를 통해 개발을 진행하게 됩니다. SDK의 구성을 전체적으로 살펴보고 싶으면 아래를 참고하세요.
+
+{% page-ref page="structure.md" %}
+
+## 개발 절차
 
 ### 서비스 등록 및 인증키 획득
 
@@ -24,7 +30,7 @@ Browser, Android, iOS 모두 각각에 맞는 패키매니저를 통해 매우 �
 
 아래를 통해 각 플랫폼별 세부적인 내용을 확인해 보세요.
 
-{% page-ref page="../browser/browser-getting-start.md" %}
+{% page-ref page="../web/browser-getting-start.md" %}
 
 {% page-ref page="../android/android-getting-start.md" %}
 

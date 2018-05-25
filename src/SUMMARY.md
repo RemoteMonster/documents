@@ -6,20 +6,21 @@
 
 * [Introduction](overview/introduction.md)
 * [Structure](overview/structure.md)
+* [Features](overview/features.md)
 * [Spec](overview/spec.md)
 
-## Browser
+## Web
 
-* [Browser - Overview](browser/browser-overview.md)
-* Browser - Getting Start
-* [Browser - Livecast](browser/browser-livecast.md)
-* [Browser - Communication](browser/browser-communication.md)
-* Browser - Observer
-* [Browser - Config](browser/browser-config.md)
-* Browser - Channel
-* [Browser - Debug inside](browser/browser-debug-inside.md)
-* [Browser - Github](https://github.com/remotemonster/browser-sdk/)
-* [Browser - SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
+* [Web - Overview](web/browser-overview.md)
+* Web - Getting Start
+* [Web - Livecast](web/browser-livecast.md)
+* [Web - Communication](web/browser-communication.md)
+* Web - Observer
+* [Web - Config](web/browser-config.md)
+* Web - Channel
+* [Web - Debug inside](web/browser-debug-inside.md)
+* [Web - Github](https://github.com/remotemonster/browser-sdk/)
+* [Web - SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
 
 ## Android
 
@@ -27,7 +28,7 @@
 * [Android - Getting Start](android/android-getting-start.md)
 * [Android - Livecast](android/android-livecast.md)
 * [Android - Communication](android/android-communication.md)
-* [Android - Observer](android/android-callback.md)
+* [Android - Observer](android/android-observer.md)
 * [Android - Config](android/android-config.md)
 * [Android - View](android/android-view.md)
 * [Android - Channel](android/android-channel.md)
@@ -53,3 +54,4 @@
 * [Error Code](common/error-code.md)
 * [Service ID](common/service-id.md)
 * [WebRTC 주요 링크 모음](common/webrtc.md)
+

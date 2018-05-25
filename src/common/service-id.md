@@ -32,7 +32,7 @@
 
 실제 ID 와 Key를 사용하는 방법은 아래 각 플랫폼의 환경설정을 참고하세요.
 
-{% page-ref page="../browser/browser-getting-start.md" %}
+{% page-ref page="../web/browser-getting-start.md" %}
 
 {% page-ref page="../android/android-getting-start.md" %}
 
