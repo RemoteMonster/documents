@@ -13,7 +13,7 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 |  | Name | Id | Methods |
 | --- | --- | --- |
 | Livecast | room | chid | `createRoom`, `joinRoom` |
-| Communication | channel | chid | `connectRoom` |
+| Communication | channel | chid | `connectChannel` |
 
 ## Livecast
 
