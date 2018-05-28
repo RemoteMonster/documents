@@ -114,7 +114,7 @@ Remon를 이용하면 보면 Remon의 상태를 확인이 불가피한 경우가
 
 #### RemonCast를 이용한 방송 구현
 
-RemonCast는 방 기능을 위한 RemonController의 하위 클래스 입니다.
+RemonCast는 방송 기능을 위한 RemonController의 하위 클래스 입니다.
 
 * RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
 
