@@ -133,8 +133,7 @@ remonCall.onlyAudio = true //default fasle
 //로컬 비디오 전송 준비가 완료 되면 자동으로 로컬 비디오 캡쳐를 시작 합니다.
 //만약 이 값을 false로 설정 한다면 onComplete() 호출 이후에 startLocalVideoCapture()를 호출 하여야 합니다.
 remonCall.autoCaptureStart = true //default true
-// 이 값이 false 라면 후면 카메라를 사용합니다.
-remonCall.useFrontCamera = true //default true
+remonCall.useFrontCamera = true //default true, 만약 false 라면 후면 카메라를 사용합니다.
 ```
 {% endtab %}
 {% endtabs %}
