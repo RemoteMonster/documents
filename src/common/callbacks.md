@@ -241,7 +241,7 @@ remonCast.onError { (err)
 {% endtab %}
 
 {% tab title="iOS" %}
-
+N/A
 {% endtab %}
 {% endtabs %}
 
@@ -266,7 +266,12 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 {% endtab %}
 
 {% tab title="iOS" %}
+```swift
+let remonCall = RemonCall()
+remoCall.onRemonStatReport{ (stat) in 
 
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -329,7 +334,7 @@ remonCast.onSearch(new RemonCast.onSearchCallback() {
 {% endtab %}
 
 {% tab title="iOS" %}
-
+N/A
 {% endtab %}
 {% endtabs %}
 
