@@ -53,7 +53,7 @@ const listener = {
 {% endtab %}
 
 {% tab title="iOS" %}
-
+Supported by the next version
 {% endtab %}
 {% endtabs %}
 
