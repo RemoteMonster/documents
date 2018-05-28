@@ -62,6 +62,8 @@ Remote View를 Layout에 추가합니다.
 
 ### 방송 생성
 
+RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의 미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
+
 {% code-tabs %}
 {% code-tabs-item title="CastActivity.java" %}
 ```java
@@ -72,6 +74,7 @@ remonCast = RemonCast.builder()
         .key("MyServiceKey")
         .build();
 remonCast.createRoom();
+myId = remonCast.getId();
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -113,6 +116,18 @@ remonCast.onStat(report -> Log(report.getFullStatReport()));
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="../common/callbacks.md" %}
+
+### Channel
+
+방송을 시청 하기 위해서는 시청 하려는 채널이 ID가 필요 합니다. 채널 ID는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. `Remon`는 시청 하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
+
+채널에 대한 더 자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="../common/channel.md" %}
+
 ### 방송 송출, 시청종료 처리
 
 모든 통신이 끝났을 경우 꼭 RemonCast객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
@@ -120,8 +135,6 @@ remonCast.onStat(report -> Log(report.getFullStatReport()));
 ```java
 remonCast.close();
 ```
-
-
 
 ### 설정
 

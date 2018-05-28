@@ -48,7 +48,7 @@ remonCast.createRoom()
 {% endtab %}
 {% endtabs %}
 
-### onCreate\(chid\)
+### onCreate\(chid\) - livecast
 
 만약 사용자가 방송을 생성 했다면 방송이 정상적으로 생성 되고, 방송 서버와 연결 되기 전단계에 호출 됩니다. 사용자가 1:1 통신을 시도 했다면 `onCreate()` 가 호출 된 이후 상대방을 기다리는 상태가 됩니다. 사용자가 방송을 생성 했다면 방송이 생성 되고 미디어 서버와 연결이 완료된 이 후에 호출 됩니다. 사용자가 1:1 통신을 채널을 생성 했다면 상대방과 통신 연결이 완료된 이후에 호출 됩니다.
 
@@ -85,7 +85,7 @@ remonCall.connectChannel("chid")
 {% endtab %}
 {% endtabs %}
 
-### onConnect\(\)
+### onConnect\(chid\) - communication
 
 사용자가 방송을 생성 했다면 방송이 생성 되고 미디어 서버와 연결이 완료된 이 후에 호출 됩니다. 사용자가 1:1 통신을 채널을 생성 했다면 상대방과 통신 연결이 완료된 이후에 호출 됩니다.
 

@@ -10,10 +10,10 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 
 다만 방송과 통신에서의 동작이 다른부분이 있어 아래와 같이 구분지어 사용하도록 되어있습니다.
 
-|  | Name | Id | Methods |
+|  | Name | Id | Methods | Callbacks |
 | --- | --- | --- |
-| Livecast | room | chid | `createRoom`, `joinRoom` |
-| Communication | channel | chid | `connectChannel` |
+| Livecast | room | chid | `createRoom`, `joinRoom` | `onCreate`, `onComplete` |
+| Communication | channel | chid | `connectChannel` | `onConnect`, `onComplete` |
 
 ## Livecast
 

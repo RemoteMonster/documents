@@ -94,6 +94,14 @@ remonCast.search { (error, results) in
 
 {% page-ref page="../common/channel.md" %}
 
+### 방송 송출, 시청종료 처리
+
+모든 통신이 끝났을 경우 꼭 RemonCast객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
+
+```java
+remonCast.close()
+```
+
 ### 설정
 
 방송 생성, 시청시 좀 더 자세한 설정이 필요하다면 아래를 참고하세요.
