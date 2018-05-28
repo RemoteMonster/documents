@@ -74,7 +74,7 @@ $ pod install
 
 ![](../.gitbook/assets/basic_config3%20%282%29.png)
 
-* `Remon`를 사용하는 `ViewContoller`에 `Remon`를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
+* `Remon`를 사용하는 `ViewContoller`에 `RemoteMonster`를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
 
 ![](../.gitbook/assets/config3.png)
 
