@@ -68,13 +68,13 @@ $ pod install
 
 {% page-ref page="../common/service-id.md" %}
 
-![](../.gitbook/assets/config2.png)
+![](../.gitbook/assets/basic_config.png)
 
 * 스토리보드에서 원하는 `Scene`에서 원하는 위치에 `Veiw`를 배치하고 `RemonIBController`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
 
 ![](../.gitbook/assets/basic_config3%20%282%29.png)
 
-* `Remon`를 사용하는 `ViewContoller`에 `RemoteMonster`를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
+* `Remon`를 사용하는 `ViewContoller`에 `Remon`를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
 
 ![](../.gitbook/assets/basic_config2%20%282%29.png)
 

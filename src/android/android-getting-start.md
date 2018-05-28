@@ -1,4 +1,4 @@
-# Android - Getting Start
+# Android- Getting Start
 
 ## 준비사항
 
@@ -75,11 +75,56 @@ public static final String[] MANDATORY_PERMISSIONS = {
 
 ### 방송
 
-{% page-ref page="android-communication.md" %}
+RemonCast Class는 방송 기능을 쉽고 빠르게 만들수있는 메소드를 제공합니다.
+
+#### 방송 송출
+
+{% code-tabs %}
+{% code-tabs-item title="CastActivity.java" %}
+```java
+remonCast = RemonCast.builder()
+        .context(CastActivity.this)
+        .localView(surfRendererlocal)        // 자신 Video Renderer
+        .build();
+remonCast.createRoom();
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+#### 방송 시청
+
+{% code-tabs %}
+{% code-tabs-item title="ViewerActivity.java" %}
+```java
+castViewer = RemonCast.builder()
+        .context(ViewerActivity.this)
+        .remoteView(surfRendererRemote)        // 방송자의 video Renderer
+        .build();
+castViewer.joinRoom("channelId");              // 들어가고자 하는 channel
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+혹은 좀 더 자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="android-livecast.md" %}
 
 ### 통신
 
-{% page-ref page="android-livecast.md" %}
+RemonCall Class는 통신기능을 쉽고 빠르게 만들수있는 메소드를 제공합니다.
+
+```java
+remonCall = RemonCall.builder()
+        .context(CallActivity.this)        
+        .localView(surfRendererLocal)        //나의 video Renderer
+        .remoteView(surfRendererRemote)      //상대방 video Renderer
+        .build();
+remonCall.connectChannel("channelId")
+```
+
+혹은 좀 더 자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="android-communication.md" %}
 
 
 
