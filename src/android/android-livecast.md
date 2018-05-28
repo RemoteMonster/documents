@@ -14,7 +14,7 @@ description: Android로 간단한 방송 앱을 개발합니다.
 
 ### Service Key 등록
 
-아래를 참고하여 ServiceKey
+아래를 참고하여 ServiceKey를 등록하세요.
 
 ### View 등록
 

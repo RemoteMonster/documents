@@ -1,4 +1,4 @@
-# Android- Getting Start
+# Android - Getting Start
 
 ## 준비사항
 
@@ -91,6 +91,8 @@ RemonCast Class는 방송 기능을 쉽고 빠르게 만들수있는 메소드�
 remonCast = RemonCast.builder()
         .context(CastActivity.this)
         .localView(surfRendererlocal)        // 자신 Video Renderer
+        .serviceId("MyServiceId")
+        .key("MyServiceKey")
         .build();
 remonCast.createRoom();
 ```
@@ -105,6 +107,8 @@ remonCast.createRoom();
 castViewer = RemonCast.builder()
         .context(ViewerActivity.this)
         .remoteView(surfRendererRemote)        // 방송자의 video Renderer
+        .serviceId("MyServiceId")
+        .key("MyServiceKey")
         .build();
 castViewer.joinRoom("channelId");              // 들어가고자 하는 channel
 ```
@@ -124,6 +128,8 @@ remonCall = RemonCall.builder()
         .context(CallActivity.this)        
         .localView(surfRendererLocal)        //나의 video Renderer
         .remoteView(surfRendererRemote)      //상대방 video Renderer
+        .serviceId("MyServiceId")
+        .key("MyServiceKey")
         .build();
 remonCall.connectChannel("channelId")
 ```
