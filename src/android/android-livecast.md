@@ -62,40 +62,55 @@ Remote View를 Layout에 추가합니다.
 
 ### 방송 생성
 
-RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의 미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
+RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의 미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다. 이때 onCreate 콜백을 통해 만들어진 방의 chid를 가져 올 수 있습니다.
+
+createRoom\(\) 호출시 인자값이 없으면 자동으로 chid를 생성해서 알려주고, 원하는 id를 입력하면 해당 id로 chid를 만들어서 반환합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="CastActivity.java" %}
 ```java
 remonCast = RemonCast.builder()
         .context(CastActivity.this)
-        .localView(surfRendererlocal)        // 자신 Video Renderer
+        .localView(surfRendererlocal)        // local Video Renderer
         .serviceId("MyServiceId")
         .key("MyServiceKey")
         .build();
 remonCast.createRoom();
-myId = remonCast.getId();
+
+remonCast.onCreate(new RemonCast.onCreateCallback() {
+        @override
+        public void onCreate(String chid) {
+                myChannelId = chid;
+        }
+});
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 ### 방송 시청
 
+방송 생성시 얻은 chid를 joinRoom\(\)에 인자값으로 주어 해당 채널에 접속합니다. 접속이 완료되면 onComplete가 발생되어 이때부터 View에서의 다양한 처리 등을 진행해 주면 됩니다.
+
 {% code-tabs %}
 {% code-tabs-item title="ViewerActivity.java" %}
 ```java
 castViewer = RemonCast.builder()
         .context(ViewerActivity.this)
-        .remoteView(surfRendererRemote)        // 방송자의 video Renderer
+        .remoteView(surfRendererRemote)        // remote video renderer
         .serviceId("MyServiceId")
         .key("MyServiceKey")
         .build();
-castViewer.joinRoom("channelId");              // 들어가고자 하는 channel
+castViewer.joinRoom(myChannelId);
+
+remonCast.onComplete(new RemonCast.onCompleteCallback() {}
+        @override
+        public void onComplete() {
+                // Do something
+        }
+{)
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-RemoteMonster는 임의의 방이름을 생성해서 반환값으로 방이름을 반환합니다. 다음에 그 방으로 입장하고 싶은 이는 그 반환된 값으로 `joinRoom`하면 됩니다. 그렇지 않고 직접 방 이름을 넣어서 방을 생성하거나 방을 접속할 수도 있습니다.
 
 ### Callback
 
@@ -107,7 +122,7 @@ RemoteMonster는 임의의 방이름을 생성해서 반환값으로 방이름�
 {% code-tabs-item title="CastActivity.java" %}
 ```java
 remonCast.onInit(() -> Log("onInit"));
-remonCast.onConnect(() -> Log("onConnect"));
+remonCast.onCreate(() -> Log("onCreate"));
 remonCast.onComplete(() -> Log("onComplete"));
 remonCast.onClose(() -> Log("onClose"));
 remonCast.onError(e -> Log("error code : " + e.getRemonCode().toString()));
