@@ -68,7 +68,7 @@ $ pod install
 
 {% page-ref page="../common/service-id.md" %}
 
-![](../.gitbook/assets/basic_config.png)
+![](../.gitbook/assets/config2.png)
 
 * 스토리보드에서 원하는 `Scene`에서 원하는 위치에 `Veiw`를 배치하고 `RemonIBController`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
 
