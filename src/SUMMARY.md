@@ -42,7 +42,7 @@
 
 ## Common
 
-* [Service ID](common/service-id.md)
+* [Service Key](common/service-key.md)
 * [Config](common/config.md)
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)

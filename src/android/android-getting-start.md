@@ -20,19 +20,6 @@ Open Module Settings에서 Source Compatibility, Target Compatibility를 1.8 이
 
 ![](../.gitbook/assets/image%20%284%29.png)
 
-### Module Gradle 설정
-
-build.gradle\(Module:app\) 의 dependencies에 remon sdk를 추가합니다.
-
-```groovy
-dependencies {
-    ...
-    
-    /* Remote monster WebRTC library */
-    compile 'com.remotemonster.sdk:2.0.4'
-}
-```
-
 ### Project Gradle 설정
 
 build.gradle\(project:name\)의 allproject에 다음 주소를 입력합니다.
@@ -48,6 +35,19 @@ allprojects {
 ```
 
 이제 안드로이드 스튜디오를 동기화하면 자동으로 Remote Monster의 Android SDK를 다운로드 받게 됩니다.
+
+### Module Gradle 설정
+
+build.gradle\(Module:app\) 의 dependencies에 아래와 같이 추가합니다.
+
+```groovy
+dependencies {
+    ...
+    
+    /* Remote monster WebRTC library */
+    compile 'com.remotemonster.sdk:2.0.4'
+}
+```
 
 ### Permission 설정
 
@@ -72,6 +72,12 @@ public static final String[] MANDATORY_PERMISSIONS = {
 ## 개발
 
 이제 모든 준비가 끝났습니다. 아래를 통해 세부적인 개발 방법을 확인하세요.
+
+### Service Key
+
+SDK를 통해 RemoteMonster 방송, 통신 인프라에 접근하려면, Service Id와 Key가 필요합니다. 간단한 테스트와 데모를 위해서라면 이 과정을 넘어가도 좋습니다. 실제 서비스를 개발하고 운영하기 위해서는 아래를 참고하여 Service Id, Key를 발급 받아 적용하도록 합니다.
+
+{% page-ref page="../common/service-key.md" %}
 
 ### 방송
 

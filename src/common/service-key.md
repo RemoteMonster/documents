@@ -2,7 +2,7 @@
 description: 'RemoteMonster를 사용하기 위한 Service Id, Key를 발급받고 사용합니다.'
 ---
 
-# Service ID
+# Service Key
 
 ## Overview
 

@@ -66,7 +66,7 @@ $ pod install
   * 만약 간단하게 테스트를 하기 원한다면, `SERVICEID`와 `1234567890`를 각각 입력합니다.
   * 이 ID와 Key는 테스트용도로 제공되는 것으로,  아래를 참고하여 실제 키를 발급받으세요.
 
-{% page-ref page="../common/service-id.md" %}
+{% page-ref page="../common/service-key.md" %}
 
 ![](../.gitbook/assets/basic_config.png)
 

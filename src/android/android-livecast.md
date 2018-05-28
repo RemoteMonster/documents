@@ -6,15 +6,15 @@ description: Android로 간단한 방송 앱을 개발합니다.
 
 ## 환경구성
 
-아래를 참고하여 개발환경을 설정하세요.
+아래를 참고하여 개발환경을 구성 하세요.
 
 {% page-ref page="android-getting-start.md" %}
 
 ## 개발
 
-### 설정
+### Service Key 등록
 
-
+아래를 참고하여 ServiceKey
 
 ### View 등록
 
