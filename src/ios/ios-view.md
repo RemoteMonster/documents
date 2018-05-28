@@ -18,5 +18,9 @@ remonCall.remoteView = myRemoteView
 remonCall.localView = myLocalView
 ```
 
+{% hint style="info" %}
 RemonController에 remoteView 또는 localView를 지정 했다면 RemonController는 지정된 뷰에 비디오 렌더링뷰를 추가 하고, 지정된 뷰의 변화를 추적하여 지정 뷰의 크기에 맞게 비디오 렌더링뷰를 설정 합니다.
+{% endhint %}
+
+
 
