@@ -269,7 +269,7 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 ```swift
 let remonCall = RemonCall()
 remoCall.onRemonStatReport{ (stat) in 
-
+    //do something
 }
 ```
 {% endtab %}
