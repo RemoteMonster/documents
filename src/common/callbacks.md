@@ -269,6 +269,7 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 ```swift
 let remonCall = RemonCall()
 remoCall.onRemonStatReport{ (stat) in 
+    let rating = stat.getRttRating()
     //do something
 }
 ```
