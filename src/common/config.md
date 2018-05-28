@@ -177,6 +177,7 @@ remonCall.onlyAudio = true //default fasle
 remonCall.videoWidth = 640
 remonCall.videoHeight = 480
 remonCall.videoFps = 24
+remonCall.videoCodec = "H264"
 ```
 {% endtab %}
 {% endtabs %}
@@ -223,7 +224,10 @@ config.setLogLevel(Log.DEBUG);
 {% endtab %}
 
 {% tab title="iOS" %}
-2.0.5  이후 지
+```swift
+let remonCast = RemonCast()
+remonCast.debugMode = true
+```
 {% endtab %}
 {% endtabs %}
 
