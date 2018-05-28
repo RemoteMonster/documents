@@ -284,7 +284,14 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 {% endtab %}
 
 {% tab title="Android" %}
-
+```java
+remonCast.onMessage(new RemonCast.onMessageCallback() {
+    @Override
+    public void onMessage(String var1, String var2) {
+       //do something        
+    }
+});
+```
 {% endtab %}
 
 {% tab title="iOS" %}
