@@ -10,36 +10,7 @@ description: Android로 간단한 방송 앱을 개발합니다.
 
 {% page-ref page="android-getting-start.md" %}
 
-## 준비 사항
-
-* 안드로이드 스마트폰 2개
-* Android Studio 개발 환경
-* 롤리팝 이상의 안드로이드 OS 권장
-
-## Permission
-
-SDK사용을 위한 Permission 요청
-
-* 안드로이드 최신 버전의 경우 앱의 권한에 대해 처음 앱 사용시 사용자에게 직접 묻게 됩니다. 이를 위한 처리도 필요하겠죠.
-* 안드로이드 개발자인 당신이 가장 선호하는 방식으로 이것을 처리하면 됩니다. 처리해야할 권한은 다음과 같습니다.
-
-```java
-public static final String[] MANDATORY_PERMISSIONS = {
-  "android.permission.INTERNET",
-  "android.permission.CAMERA",
-  "android.permission.RECORD_AUDIO",
-  "android.permission.MODIFY_AUDIO_SETTINGS",
-  "android.permission.ACCESS_NETWORK_STATE",
-  "android.permission.CHANGE_WIFI_STATE",
-  "android.permission.ACCESS_WIFI_STATE",
-  "android.permission.READ_PHONE_STATE",
-  "android.permission.BLUETOOTH",
-  "android.permission.BLUETOOTH_ADMIN",
-  "android.permission.WRITE_EXTERNAL_STORAGE"
-};
-```
-
-## 세상에서 가장 쉬운 안드로이드 통화앱 개발
+## 개발
 
 * RemonCast를 활용한 방송은 다음과 같은 순서로 개발이 진행됩니다.
   1. Remon SDK 프로젝트 build.gradle 등록
@@ -51,38 +22,7 @@ public static final String[] MANDATORY_PERMISSIONS = {
   7. 방송 송출,  시청종료 처리
 * 이제 하나씩 따라해봅시다. 예상 소요시간은 약 15분 입니다.
 
-### 
-
-### 1. build.gradle에 Remon SDK 등록
-
-{% page-ref page="android-getting-start.md" %}
-
-### 
-
-### 2. Android Permission 요청
-
-* 안드로이드 최신 버전의 경우 앱의 권한에 대해 처음 앱 사용시 사용자에게 직접 묻게 됩니다. 이를 위한 처리도 필요하겠죠.
-* 안드로이드 개발자인 당신이 가장 선호하는 방식으로 이것을 처리하면 됩니다. 처리해야할 권한은 다음과 같습니다.
-
-```java
-public static final String[] MANDATORY_PERMISSIONS = {
-  "android.permission.INTERNET",
-  "android.permission.CAMERA",
-  "android.permission.RECORD_AUDIO",
-  "android.permission.MODIFY_AUDIO_SETTINGS",
-  "android.permission.ACCESS_NETWORK_STATE",
-  "android.permission.CHANGE_WIFI_STATE",
-  "android.permission.ACCESS_WIFI_STATE",
-  "android.permission.READ_PHONE_STATE",
-  "android.permission.BLUETOOTH",
-  "android.permission.BLUETOOTH_ADMIN",
-  "android.permission.WRITE_EXTERNAL_STORAGE"
-};
-```
-
-
-
-### 3. layout.xml에 영상전용 View 등록
+### layout.xml에 영상전용 View 등록
 
 {% tabs %}
 {% tab title="방송 송출" %}
@@ -132,7 +72,7 @@ public static final String[] MANDATORY_PERMISSIONS = {
 
 
 
-### 4. RemonCast의 초간단 생성
+### RemonCast의 초간단 생성
 
 * 이제 코딩의 시간입니다. Key와 ServiceID는 넣지 않아도 됩니다. 자동으로 테스트용 key와 serviceId로 설정됩니다. 나중에 본격적으로 Remote Monster를 사용하고 싶다면 회원가입을 하고 키를 발급받아서 입력하면 됩니다.
 * RemonCast를 build할 때 여러가지 환경 설정을 할 수 있습니다. 여기서는 일단 제일 간단한 방법으로 진행하겠습니다.
@@ -164,9 +104,7 @@ castViewer = RemonCast.builder()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-
-
-### 5. RemonCast 방송 송출,시청
+### RemonCast 방송 송출,시청
 
 `RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `createRoom` 함수와 `joinRoom` 함수를 이용하여 방송 기능을 이용 할 수 있습니다. 
 
@@ -196,7 +134,7 @@ castViewer.joinRoom(connectChId);           // 들어가고자 하는 channel
 
 ### 
 
-### 6. Callback 메소드 처리하기
+### Callback 메소드 처리하기
 
 `Remon`은 방송 생성 및 시청 중에 상태 추적을 돕기 위한  Callback을 제공 합니다.
 
@@ -217,7 +155,7 @@ remonCast.onStat(report -> Log(report.getFullStatReport()));
 
 
 
-### 7. 방송 송출, 시청종료 처리
+### 방송 송출, 시청종료 처리
 
 * 모든 통신이 끝났을 경우 꼭 RemonCast객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
 
