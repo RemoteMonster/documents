@@ -127,9 +127,12 @@ config.setVideoCall(true);
 {% endtab %}
 
 {% tab title="iOS" %}
-```text
+```swift
 let remonCall = RemonCall()
 remonCall.onlyAudio = true //default fasle
+//로컬 비디오 전송 준비가 완료 되면 자동으로 로컬 비디오 캡쳐를 시작 합니다.
+//만약 이 값을 false로 설정 한다면 onComplete() 호출 이후에 startLocalVideoCapture()를 호출 하여야 합니다.
+remonCall.autoCaptureStart = true //default true
 ```
 {% endtab %}
 {% endtabs %}
