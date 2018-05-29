@@ -17,6 +17,19 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 
 ## Livecast
 
+### Flow
+
+방송시 방은 아래와 같은 이벤트와 콜백의 흐름으로 작동합니다. 자세한 내용은 Callback을 참고하세요.
+
+|  | 방생성 | 방접속 | 해지 |
+| --- | --- | --- | --- | --- |
+| Caster Event | `createRoom()` | - | `close()`, disconnect  |
+| Caster Callback | `onCreate`, `onComplete` | - | `onClose` |
+| Watcher Event | - | `joinRoom('chid')` | `cloase()`, disconnect |
+| Watcher Callback | - | `onComplete` | `onClose` |
+
+### Query
+
 {% tabs %}
 {% tab title="Web" %}
 
@@ -65,6 +78,19 @@ RemonCast의 search\(\) 함수는 방송 목록을 검색 하며 RemonCall의 se
 {% endhint %}
 
 ## Communication
+
+### Flow
+
+통화시 방은 아래와 같은 이벤트와 콜백의 흐름으로 작동합니다. 자세한 내용은 Callback을 참고하세요.
+
+|  | 채널 생성 | 채널 접속 | 통화시작 | 해지 |
+| --- | --- | --- | --- | --- |
+| Caller Event | `connectChannel()` | - |  | `close()`, disconnect  |
+| Caller Callback | `onConnect` | - | `onComplete` | `onClose` |
+| Callee Event | - | `connectChannel('chid')` |  | `cloase()`, disconnect |
+| Callee Callback | - | `onConnect` | `onComplete` | `onClose` |
+
+### Query
 
 {% tabs %}
 {% tab title="Web" %}

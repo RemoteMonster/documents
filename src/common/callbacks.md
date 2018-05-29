@@ -8,11 +8,29 @@ description: 상황에 맞는 기능을 개발할 수 있는 Callback 함수 사
 
 `RemonCast/RemonCall`로 매우 짧은 코드 만으로 통신 및 방송이 가능 합니다. 하지만 `Remon` 상태에 따라 UI처리 및 추가 작업이 필요한 경우가 발생 합니다. `Remon`은 SDK 사용자가 쉽게 `Remon`의 상태 변화를 추적 할 수 있도록 `Callback` 함수를 제공합니다. 각 함수에 해당되는 `Callback`을 적용시키면 됩니다.
 
+### Livecast Flow
+
+|  | 초기화 | 방생성 | 방접속 | 해지 |
+| --- | --- | --- | --- | --- |
+| Caster Event | connect RemoteMonster | `createRoom()` | - | `close()`, disconnect  |
+| Caster Callback | `onInit` | `onCreate`, `onComplete` | - | `onClose` |
+| Watcher Event | connect RemoteMonster | - | `joinRoom('chid')` | `cloase()`, disconnect |
+| Watcher Callback | `onInit` | - | `onComplete` | `onClose` |
+
+### Communication Flow
+
+|  | 초기화 | 채널 생성 | 채널 접속 | 통화시작 | 해지 |
+| --- | --- | --- | --- | --- |
+| Caller Event | connect RemoteMonster | `connectChannel()` | - |  | `close()`, disconnect  |
+| Caller Callback | `onInit` | `onConnect` | - | `onComplete` | `onClose` |
+| Callee Event | connect RemoteMonster | - | `connectChannel('chid')` |  | `cloase()`, disconnect |
+| Callee Callback | `onInit` | - | `onConnect` | `onComplete` | `onClose` |
+
 ## Basics
 
 ### onInit\(\)
 
-`onInit()`는 사용자가 통신 연결 시도를 하거나 방송 생성 및 시청을 시도 했을때 `Remon`이 해당 동작을 하기 위한 준비가 끝났을 때 호출 됩니다.
+`onInit()`은  SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다. 
 
 {% tabs %}
 {% tab title="Web" %}
@@ -50,44 +68,48 @@ remonCast.createRoom()
 
 ### onCreate\(chid\) - livecast
 
-방송의 createRoom 에 대응합니다. 방송이 생성 되고 미디어 서버와 연결이 완료된 이 후에 호출 됩니다.
+방송에서만 사용됩니다. 방송을 하는자가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다. 이후 곧바로 onComplete가 발생하지만, 시청자와 구분을 위해 가급적 방송생성은 onCreate를 사용하는것을 권장합니다.
 
 {% tabs %}
 {% tab title="Web" %}
+```javascript
+const listener = {
+  onCreate(chid) {
+    // Do something
+  }
+}
 
+const rtc = newRemon({ listener })
+rtc.createCast()
+```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
 remonCast.onCreate(new RemonCast.onCreateCallback() {
     @Override
-    public void onCreate() {
-        //do something
+    public void onCreate(chid) {
+        // Do something
     }
 });
+
+remonCast.createRoom();
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
 remonCast.onCreate {
-    // 이 블럭은 createRoom() 함수가 호출된 이후 싱행 되며, onInit가 구현 되어 있다면 onInit{}가 먼저 호출 될 것입니다.
+  // Do something
 }
 remonCast.createRoom()
-```
-
-```swift
-remonCall.onCreate {
-    // 이 블럭은 createChannel() 함수가 호출된 이후에 실행 됩니다.이후 채널 Remon은 WAIT 상가 되며 상대방의 연결을 기다게 됩니다.
-}
-remonCall.connectChannel("chid")
 ```
 {% endtab %}
 {% endtabs %}
 
 ### onConnect\(chid\) - communication
 
-통신의 connectChannel에 해당합니다. 정상적으로 연결후 호출됩니다.
+통신에서만 사용됩니다. 통신 connectChannel에 해당합니다. 정상적으로 연결후 호출됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
