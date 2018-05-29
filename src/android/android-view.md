@@ -64,7 +64,7 @@ description: 뷰와 레이아웃에 대해 소개합니다.
 ## PercentFrameLayout
 
 * 리모트몬스터 안드로이드 SDK에서는 영상관련 View의 배치를 쉽게 하기 위해 PercentFrameLayout을 제공합니다. PercentFrameLayout을 이용하면 영상 관련 View를 RelativeLayout안에서 자유롭게 배치하고 동적으로 움직일 수 있습니다.
-* * PercentFrameLayout은 layout내의 뷰들을 퍼센트 방식으로 배치합니다. 즉,
+* PercentFrameLayout은 layout내의 뷰들을 퍼센트 방식으로 배치합니다. 즉,
 * ```java
   layout.setPosition(0,0,100,100);
   ```

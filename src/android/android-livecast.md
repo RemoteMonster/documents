@@ -14,15 +14,19 @@ description: Android로 간단한 방송 앱을 개발합니다.
 
 `RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `createRoom()` 함수와 `joinRoom()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다.
 
+전체적인 구성과 흐름은 아래를 참고하세요.
+
+{% page-ref page="../overview/flow.md" %}
+
+{% page-ref page="../overview/structure.md" %}
+
 ### View 등록
 
 layout.xml 에 RemoteMonster SDK가 제공하는 전용 View를 지정합니다. 
 
 #### 방송 송출
 
-Local View를 Layout에 추가합니다.
-
-방송 송출자라면 송출되는 자신의 화면을 보고 싶을 것입니다. 때문에 미리 자신이 원하는 View에 다음과 같이 localView 를 추가합니다. PercentFrameLayout은 동적으로 다양한 비율로 화면 크기와 위치를 조절하는 레이아웃이며 실제 영상을 보여주는 뷰는 SurfaceViewRenderer입니다.
+자신의 모습이 보이는 Local View를 Layout에 추가합니다. 이 View는 카메라로부터 직접 가져오는 미디어를 보여주며, 실제 시청자가 볼 화면과는 네트워크상황이나 기타 여건에 의해 품질이 다르거나 시간차가 미세하게 다를 수 있습니다.
 
 ```markup
 <com.remotemonster.sdk.PercentFrameLayout
@@ -38,9 +42,7 @@ Local View를 Layout에 추가합니다.
 
 #### 방송 시청
 
-Remote View를 Layout에 추가합니다.
-
-시청자에겐 방송자의 Video를 제공해야 합니다. 때문에 미리 자신이 원하는 View에 다음과 같이 RemoteView 를 추가합니다. PercentFrameLayout은 동적으로 다양한 비율로 화면 크기와 위치를 조절하는 레이아웃이며 실제 영상을 보여주는 뷰는 SurfaceViewRenderer입니다.
+상대방의 모습이 보이는 Remote View를 Layout에 추가합니다.
 
 ```markup
 <com.remotemonster.sdk.PercentFrameLayout
@@ -86,6 +88,10 @@ remonCast.onCreate(new RemonCast.onCreateCallback() {
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+이 때 Service Id와 Key 를 필요로 하게 되는데 아래를 참고하세요.
+
+{% page-ref page="../common/service-key.md" %}
 
 ### 방송 시청
 
@@ -143,7 +149,7 @@ remonCast.onStat(report -> Log(report.getFullStatReport()));
 
 {% page-ref page="../common/channel.md" %}
 
-### 방송 송출, 시청종료 처리
+### 종료
 
 모든 통신이 끝났을 경우 꼭 RemonCast객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
 

@@ -71,12 +71,16 @@ remonCast.onInit {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 
-remonCast.onComplete {
+remonCast.onCreate {
     // 방송 생성 및 시청 준비 완료
 }
 
+remonCast.onComplete {
+    // 시청 시작
+}
+
 remonCast.onClose {
-    // 방송 종료
+    // 종료
 }
 ```
 
@@ -98,7 +102,7 @@ remonCast.search { (error, results) in
 
 {% page-ref page="../common/channel.md" %}
 
-### 방송 송출, 시청종료 처리
+### 종료
 
 모든 통신이 끝났을 경우 꼭 RemonCast객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
 
