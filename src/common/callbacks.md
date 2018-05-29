@@ -70,6 +70,8 @@ remonCast.createRoom()
 
 방송에서만 사용됩니다. 방송을 하는자가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다. 이후 곧바로 onComplete가 발생하지만, 시청자와 구분을 위해 가급적 방송생성은 onCreate를 사용하는것을 권장합니다.
 
+onCreate는 인자로 chid를 넘겨줍니다. 이것은 이 방의 고유한 구분자로 시청자들이 이 chid를 통해 접속하여 방송을 보게 됩니다.
+
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
@@ -99,9 +101,10 @@ remonCast.createRoom();
 
 {% tab title="iOS" %}
 ```swift
-remonCast.onCreate {
+remonCast.onCreate { (chid) in
   // Do something
 }
+
 remonCast.createRoom()
 ```
 {% endtab %}
