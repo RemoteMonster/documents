@@ -1,3 +1,7 @@
+---
+description: SDK의 기본 구조를 설명합니다.
+---
+
 # Structure
 
 ## Overview

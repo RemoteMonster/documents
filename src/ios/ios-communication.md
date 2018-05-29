@@ -27,7 +27,7 @@ remonCall.onInit {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 
-remonCall.onCreate {
+remonCall.onConnect {
     // 해당 'chid'로 미리 생성된 채널이 없다면 다른 사용자가 해당 'chid'로 연결을 시도 할때 까지 대기 상태가 됩니다. 
 }
 
@@ -36,7 +36,7 @@ remonCall.onComplete {
 }
 ```
 
-`Remon`은 `onInit()`와 `onCreate`, `onComplete` 이외에도 많은 `Observer` 함수를 제공 합니다. 더 많은 내용은 `Observer` 가이드 문서를 참조 하세요.
+`Remon`은 `onInit()`와 `onConnect`, `onComplete` 이외에도 많은 `Observer` 함수를 제공 합니다. 더 많은 내용은 `Observer` 가이드 문서를 참조 하세요.
 
 {% page-ref page="../common/callbacks.md" %}
 

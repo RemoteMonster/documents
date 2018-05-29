@@ -16,7 +16,11 @@ description: 방송 서비스를 개발하는 방법을 안내합니다.
 
 `RemonIBController`에 값을 직접 설정 않고, `connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
 
-{% page-ref page="../common/config.md" %}
+전체적인 구성과 흐름은 아래를 참고하세요.
+
+{% page-ref page="../overview/flow.md" %}
+
+{% page-ref page="../overview/structure.md" %}
 
 ### 방송생성
 
@@ -30,8 +34,8 @@ remonCast.createRoom()
 
 ```swift
 let caster = RemonCast()
-caster.serviceId = "YourServiceID"
-caster.serviceKey = "YourServiceKey"
+caster.serviceId = "MyServiceID"
+caster.serviceKey = "MyServiceKey"
 caster.broadcast = true
 caster.localView = localView
 caster.createRoom()
@@ -52,8 +56,8 @@ remonCast.joinRoom(myChid)
 let watcher = RemonCast()
 watcher.remoteView = remoteView
 let config = RemonConfig()
-config.serviceId = "YourServiceID"
-config.key = "YourServiceKey"
+config.serviceId = "MyServiceID"
+config.key = "MyServiceKey"
 config.channelType viewer
 caster.joinChannel(config)
 ```

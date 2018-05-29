@@ -8,23 +8,11 @@ description: 상황에 맞는 기능을 개발할 수 있는 Callback 함수 사
 
 `RemonCast/RemonCall`로 매우 짧은 코드 만으로 통신 및 방송이 가능 합니다. 하지만 `Remon` 상태에 따라 UI처리 및 추가 작업이 필요한 경우가 발생 합니다. `Remon`은 SDK 사용자가 쉽게 `Remon`의 상태 변화를 추적 할 수 있도록 `Callback` 함수를 제공합니다. 각 함수에 해당되는 `Callback`을 적용시키면 됩니다.
 
-### Livecast Flow
+전체적인 흐름은 아래를 참고하세요.
 
-|  | 초기화 | 방생성 | 방접속 | 해지 |
-| --- | --- | --- | --- | --- |
-| Caster Event | connect RemoteMonster | `createRoom()` | - | `close()`, disconnect  |
-| Caster Callback | `onInit` | `onCreate`, `onComplete` | - | `onClose` |
-| Watcher Event | connect RemoteMonster | - | `joinRoom('chid')` | `cloase()`, disconnect |
-| Watcher Callback | `onInit` | - | `onComplete` | `onClose` |
+{% page-ref page="../overview/flow.md" %}
 
-### Communication Flow
-
-|  | 초기화 | 채널 생성 | 채널 접속 | 통화시작 | 해지 |
-| --- | --- | --- | --- | --- |
-| Caller Event | connect RemoteMonster | `connectChannel()` | - |  | `close()`, disconnect  |
-| Caller Callback | `onInit` | `onConnect` | - | `onComplete` | `onClose` |
-| Callee Event | connect RemoteMonster | - | `connectChannel('chid')` |  | `cloase()`, disconnect |
-| Callee Callback | `onInit` | - | `onConnect` | `onComplete` | `onClose` |
+{% page-ref page="channel.md" %}
 
 ## Basics
 
@@ -68,7 +56,7 @@ remonCast.createRoom()
 
 ### onCreate\(chid\) - livecast
 
-방송에서만 사용됩니다. 방송을 하는자가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다. 이후 곧바로 onComplete가 발생하지만, 시청자와 구분을 위해 가급적 방송생성은 onCreate를 사용하는것을 권장합니다.
+방송에서만 사용됩니다.  Caster가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다. 이후 곧바로 onComplete가 발생하지만, 시청자와 구분을 위해 가급적 방송생성은 onCreate를 사용하는것을 권장합니다.
 
 onCreate는 인자로 chid를 넘겨줍니다. 이것은 이 방의 고유한 구분자로 시청자들이 이 chid를 통해 접속하여 방송을 보게 됩니다.
 
@@ -81,8 +69,10 @@ const listener = {
   }
 }
 
-const rtc = newRemon({ listener })
+const rtc = new Remon({ listener })
 rtc.createCast()
+// Or 
+rtc.createCast('chid')
 ```
 {% endtab %}
 
@@ -96,6 +86,8 @@ remonCast.onCreate(new RemonCast.onCreateCallback() {
 });
 
 remonCast.createRoom();
+// Or
+remonCast.createRoom('chid');
 ```
 {% endtab %}
 
@@ -106,56 +98,87 @@ remonCast.onCreate { (chid) in
 }
 
 remonCast.createRoom()
+// Or
+remonCast.createRoom('chid')
 ```
 {% endtab %}
 {% endtabs %}
 
 ### onConnect\(chid\) - communication
 
-통신에서만 사용됩니다. 통신 connectChannel에 해당합니다. 정상적으로 연결후 호출됩니다.
+통신에서만 사용됩니다.  Caller이거나 Callee일때 동작이 다를 수 있으며 이를 위해서 개발자가 상태를 스스로 관리해야 합니다.
+
+Caller가 connectChannel을 통해 채널을 생성하면 생성됩니다. 이후 Callee가 채널에 접속하기 전까지  RemonState가 WAIT상태가 됩니다. 통화의 상대방을 기다린다는 의미입니다. 이때 connectChannel에서 chid를 지정하지 않으면, 자동으로 chid가 만들어집니다.
+
+Callee는 connectChannel을 통해 이미 만들어진 채널에 접속하게 됩니다. 이때 만들어진 채널의 chid를 필수로 필요하게 됩니다. 정상적으로 완료되면 onConnect가 생기나, Callee라면 곧바로 발생하는 onComplete를 사용하는것을 권장합니다.
 
 {% tabs %}
 {% tab title="Web" %}
+```javascript
+const listener = {
+  onConnect(chid) {
+    if (isCaller) {
+      // Do something
+    }
+  }
+}
 
+const rtc = new Remon({ listener })
+rtc.connectChannel()
+// Or
+rtc.connectChannel('chid')
+```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-remonCast.onConnect(new RemonCast.onConnectCallback() {
+remonCall.onConnect(new RemonCall.onConnectCallback() {
     @Override
-    public void onConnect() {
+    public void onConnect(chid) {
+      if (isCaller) {
         // Do something
+      }
     }
 });
+
+remonCall.connectChannel();
+// Or
+remonCall.connectChannel("chid");
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCast.onConnect {
-    // 연결이 완료 된 상태에서 처리활 작업이 있다면 여기서 하세요.
-    // 문제가 발생 하지 않는 다면 이 상태는 매우 짧을 것입니다.
+remonCall.onConnect { (chid) in
+   if isCaller {
+     // Do something
+   }
 }
-remonCast.createRoom()
-```
 
-```swift
-remonCast.onConnect {
-    // onCreate() 가 호출 된 후에 대기 상태에서 상대방이 연결 되었다면 이 블럭이 실행 됩니다.
-    // 연결이 완료 된 상태에서 처리활 작업이 있다면 여기서 하세요.
-}
-remonCast.joinRoom("chid")
+remonCast.connectChannel()
+// Or
+remonCast.connectChannel("chid")
 ```
 {% endtab %}
 {% endtabs %}
 
 ### onComplete\(\)
 
-연결이 완료 된후 미디어 전송이 가능해 졌을 때 호출 됩니다. 사용자의 방송이 성공적으로 만들어 졌다면 `onInt` &gt; `onCreate` &gt; `onComplete` 가 순차적으로 호출 될 것입니다. 사용자가 1:1 통신을 시도 하였다면 상대방과 연결이 완료 되고 `onComplete`가 호출 될 것입니다.
+방송, 통신을 통틀어 연결이 완료 된후 미디어 전송이 가능해 졌을 때 호출 됩니다. 
+
+방송에서 특히 Watcher거나 통신에서 특히 Callee라면 onComplete를 사용하는것을 권장합니다.
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onComplete(chid) {
+    if (isWatcher || isCallee) {
+      // Do something
+    }
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -163,7 +186,9 @@ remonCast.joinRoom("chid")
 remonCast.onComplete(new RemonCast.onCompleteCallback() {
     @Override
     public void onComplete() {
-        // Do something
+        if (isWatcher || isCallee) {
+            // Do something
+        }
     }
 });
 ```
@@ -172,22 +197,27 @@ remonCast.onComplete(new RemonCast.onCompleteCallback() {
 {% tab title="iOS" %}
 ```swift
 remonCast.onComplte {
-    // 모든 작업이 완료 되고, 영상 전송이 시작 됩니다!!!
+  if (isWatcher || isCallee) {
+    // Do something
+  }
 }
-remonCast.joinRoom("chid")
 ```
 {% endtab %}
 {% endtabs %}
 
 ### onClose\(\)
 
-사용자가 명시적으로 `close()` 함수를 호출 하거나 상대방이 `close()`함수를 호출 했을때 또는 네트워크 이상 등으로 더이상 연결을 유지 하기 어려울 때 등 연결이 종료 되면 호출 됩니다.
-
 사용자가 명시적으로 `close()` 함수를 호출 하거나 상대방이 `close()`함수를 호출 했을때 또는 네트워크 이상 등으로 더이상 연결을 유지 하기 어려울 때 등 연결이 종료 되면 호출 되며, `Remon`에서 사용했던 자원들 해제가 완료된 상태입니다.
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onClose() {
+    // Do something
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -216,7 +246,13 @@ remonCast.onClose {
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onClose() {
+    // Do something
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -233,11 +269,15 @@ remonCast.onError(new RemonCast.onErrorCallback() {
 {% tab title="iOS" %}
 ```swift
 remonCast.onError { (err)
-    print(err.localizedDescription)
+    // Do something
 }
 ```
 {% endtab %}
 {% endtabs %}
+
+좀 더 자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="error-code.md" %}
 
 ## Advanced
 
@@ -293,7 +333,7 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 let remonCall = RemonCall()
 remoCall.onRemonStatReport{ (stat) in 
     let rating = stat.getRttRating()
-    //do something
+    // Do something
 }
 ```
 {% endtab %}
@@ -317,7 +357,7 @@ remoCall.onRemonStatReport{ (stat) in
 remonCast.onMessage(new RemonCast.onMessageCallback() {
     @Override
     public void onMessage(String var1, String var2) {
-       //do something        
+       // Do something        
     }
 });
 ```
@@ -326,16 +366,12 @@ remonCast.onMessage(new RemonCast.onMessageCallback() {
 {% tab title="iOS" %}
 ```swift
 remonCall.onMessage { (msg)
-    print(msg)
+    // Do something
 }
 remonCall.sendMessage("msg")
 ```
 {% endtab %}
 {% endtabs %}
-
-보다더 자세한 내용은 아래를 확인하세요.
-
-{% page-ref page="error-code.md" %}
 
 ### onSearch\(channels\)
 
@@ -358,21 +394,11 @@ remonCast.onSearch(new RemonCast.onSearchCallback() {
 {% endtab %}
 
 {% tab title="iOS" %}
-N/A
+
 {% endtab %}
 {% endtabs %}
 
 보다 더 자세한 내용은 아래를 확인하세요.
 
 {% page-ref page="channel.md" %}
-
-### onAddLocalStream\(stream\)
-
-자기 자신의 카메라의 영상이 혹은 음성 스트림을 획득하였을 경우 호출됩니다.
-
-### onAddRemoteStream\(stream\)
-
-상대방의 영상이나 음성 스트림을 획득하였을 경우 호출됩니다. 연결이 되었음을 의미합니다.
-
-{% page-ref page="qulity-status.md" %}
 
