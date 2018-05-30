@@ -339,7 +339,7 @@ remonCast.onError { (err) in
 {% endtab %}
 
 {% tab title="Android" %}
-
+N/A
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -381,33 +381,4 @@ remoCall.onRemonStatReport{ (stat) in
 보다 더 자세한 내용은 아래를 확인하세요.
 
 {% page-ref page="qulity-status.md" %}
-
-### onSearch\(channels\)
-
-현재 동일한 serviceId를 가진 방송 또는 통신을 검색결과를 받습니다. `RemonCast`의 경우에는 `RemonCast.searchRooms()`를 `RemonCall`의 경우에는 `RemonCall.searchCalls()`하면 검색을 하게 됩니다.
-
-{% tabs %}
-{% tab title="Web" %}
-
-{% endtab %}
-
-{% tab title="Android" %}
-```java
-remonCast.onSearch(new RemonCast.onSearchCallback() {
-    @Override
-    public void onSearch(List<Room> rooms) {
-        //do something
-    }
-});
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-
-{% endtab %}
-{% endtabs %}
-
-채널에 대한 보다 더 자세한 내용은 아래를 확인하세요.
-
-{% page-ref page="channel.md" %}
 

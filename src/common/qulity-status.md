@@ -2,11 +2,11 @@
 description: '방송, 통신 품질을 확인하고 개발에 적용합니다.'
 ---
 
-# Realtime Qulity Status
+# Realtime Quality Statistics Report
 
 ## Overview
 
-영상 및 음성 통화 중에 현재 통화의 품질이 어떠한지를 1에서 5까지의 단계로 항상 확인할 수 있습니다.
+영상 및 음성 통화 중에 현재 통화의 품질이 어떠한지를 통합하여 1에서 5까지의 단계로 확인할 수 있습니다.
 
 사용자는 간혹 자신 혹은 상대방의 네트워크 문제로 인하여 통화 품질이 안좋거나 끊어진 상황에서도 서비스의 문제라고 생각하고 불만을 제기할 수 있습니다. 때문에 사용자의 문제가 네트워크의 문제임을 사전에 알려주거나 다양한 UI 처리가 가능합니다.
 
@@ -39,8 +39,6 @@ const listener = {
 {% endtab %}
 
 {% tab title="Android" %}
-
-
 ```java
   @Override
   public void onStatReport(RemonStatReport report) {
@@ -48,8 +46,6 @@ const listener = {
       String stat = "health:" + report.getHealthRating().getLevel() + "\n";
   }
 ```
-
-`RemonObserver`를 상속받은 클래스에서 `onStatReport` 메소드를 오버라이드하여 정보를 얻습니다. `RemonStatReport` 객체의 `getHealthRating`메소드의 `getLevel` 메소드를 통해 얻어올 수 있습니다.
 {% endtab %}
 
 {% tab title="iOS" %}
