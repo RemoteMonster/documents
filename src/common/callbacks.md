@@ -380,5 +380,5 @@ remoCall.onRemonStatReport{ (stat) in
 
 보다 더 자세한 내용은 아래를 확인하세요.
 
-{% page-ref page="qulity-status.md" %}
+{% page-ref page="stat-report.md" %}
 

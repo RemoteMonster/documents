@@ -49,7 +49,13 @@ const listener = {
 {% endtab %}
 
 {% tab title="iOS" %}
-Supported by the next version
+```swift
+let remonCall = RemonCall()
+remoCall.onRemonStatReport{ (stat) in 
+    let rating = stat.getRttRating()
+    // Do something
+}
+```
 {% endtab %}
 {% endtabs %}
 
