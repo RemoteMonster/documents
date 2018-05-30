@@ -27,8 +27,8 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 
 |  | 초기화 | 채널 생성 | 채널 접속 | 통화시작 | 해지 |
 | --- | --- | --- | --- | --- |
-| Caller Event | ready RemoteMonster | `connect()` | Wait callee |  | `close()`, disconnect  |
+| Caller Event | ready RemoteMonster | `connect()` | Wait callee | Caller, Callee Connected | `close()`, disconnect  |
 | Caller Callback | `onInit` | `onConnect` | - | `onComplete` | `onClose` |
-| Callee Event | ready RemoteMonster | - | `connect('chid')` |  | `cloase()`, disconnect |
+| Callee Event | ready RemoteMonster | - | `connect('chid')` | Caller, Callee Connected | `close()`, disconnect |
 | Callee Callback | `onInit` | - | `onConnect` | `onComplete` | `onClose` |
 
