@@ -83,38 +83,42 @@ Interface Builder를 통해 지정 하게 되며 `iOS - Getting Start`에 따라
 
 {% tab title="Android" %}
 ```java
-remonCall = RemonCall.builder()
+caller = RemonCall.builder()
+    .serviceId("MY_SERVICE_ID")
+    .key("MY_SERVICE_KEY")
     .context(CallActivity.this)
     .localView(surfRendererLocal)
     .remoteView(surfRendererRemote)
     .build();
 ​
-remonCall.onConnect(new RemonCall.onConnectCallbakc() {
+caller.onConnect(new RemonCall.onConnectCallbakc() {
     @Override
     public void onConnect(chid) {
         myChid = chid  // Callee need chid from Caller for connect
     }
 });
 ​
-remonCall.onComplete(new RemonCall.onCompleteCallbakc() {
+caller.onComplete(new RemonCall.onCompleteCallbakc() {
     @Override
     public void onComplete() {
         // Caller-Callee connect each other. Do something
     }
 });
 
-remonCall.connect();
+caller.connect();
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCall.connect()
-​remonCall.onConnect { (chid) in
+let caller = RemonCall()
+
+caller.connect()
+caller.onConnect { (chid) in
     let myChid = chid          // Callee need chid from Caller for connect
 }
 
-remonCall.onComplete { () in
+caller.onComplete {
     // Caller-Callee connect each other. Do something
 }
 ```
@@ -132,24 +136,34 @@ remonCall.onComplete { () in
 
 {% tab title="Android" %}
 ```java
-remonCall.onComplete(new RemonCall.onCompleteCallbakc() {
+callee = RemonCall.builder()
+    .serviceId("MY_SERVICE_ID")
+    .key("MY_SERVICE_KEY")
+    .context(CallActivity.this)
+    .localView(surfRendererLocal)
+    .remoteView(surfRendererRemote)
+    .build();
+
+callee.onComplete(new RemonCall.onCompleteCallbakc() {
     @Override
     public void onComplete() {
         // Caller-Callee connect each other. Do something
     }
 });
 
-remonCall.connect(myChid);
+callee.connect(myChid);
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCall.onComplete { () in
+let callee = RemonCall()
+
+callee.onComplete {
     // Caller-Callee connect each other. Do something
 }
 
-remonCall.connect(myChid)
+callee.connect(myChid)
 ```
 {% endtab %}
 {% endtabs %}
@@ -165,19 +179,21 @@ remonCall.connect(myChid)
 
 {% tab title="Android" %}
 ```java
-remonCast.onInit(() -> {
+remonCall = RemonCall.builder().build();
+
+remonCall.onInit(() -> {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 });
 ​
-remonCast.onConnect((chid) -> {
+remonCall.onConnect((chid) -> {
     // 통화 생성 후 대기 혹은 응답
 });
 ​
-remonCast.onComplete(() -> {
+remonCall.onComplete(() -> {
     // 통화 시작
 });
 ​
-remonCast.onClose(() -> {
+remonCall.onClose(() -> {
     // 종료
 });
 ```
@@ -185,11 +201,13 @@ remonCast.onClose(() -> {
 
 {% tab title="iOS" %}
 ```swift
+let remonCall = RemonCall()
+
 remonCall.onInit {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 ​
-remonCall.onConnect {
+remonCall.onConnect { (chid) in
     // 해당 'chid'로 미리 생성된 채널이 없다면 다른 사용자가 해당 'chid'로 연결을 시도 할때 까지 대기 상태가 됩니다. 
 }
 ​
@@ -219,6 +237,8 @@ remonCast.onClose {
 
 {% tab title="Android" %}
 ```java
+remonCall = RemonCall.builder().build();
+
 remonCall.fetchCalls();
 remonCall.onFetch(calls -> {
     // Do something
@@ -228,6 +248,8 @@ remonCall.onFetch(calls -> {
 
 {% tab title="iOS" %}
 ```swift
+let remonCall = RemonCall()
+
 remonCall.fetchCalls { (error, results) in
     // Do something
 }
@@ -250,12 +272,14 @@ remonCall.fetchCalls { (error, results) in
 
 {% tab title="Android" %}
 ```java
+remonCall = RemonCall.builder().build();
 remonCall.close();
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
+let remonCall = RemonCall()
 remonCall.close()
 ```
 {% endtab %}

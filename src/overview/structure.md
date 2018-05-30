@@ -34,14 +34,6 @@ Remon에서 모든 방송, 통신관련 조작을 수행합니다. 방송, 통�
 
 {% page-ref page="../web/web-communication.md" %}
 
-{% page-ref page="../android/android-livecast.md" %}
-
-{% page-ref page="../android/android-communication.md" %}
-
-{% page-ref page="../ios/ios-livecast.md" %}
-
-{% page-ref page="../ios/ios-communication.md" %}
-
 ## Config Class
 
 `Remon` 객체를 초기화하기 전에 필요한 사전 설정작업은 모두 이 `Config`를 통해서 이루어집니다. Service Id, Key와 같은 인증정보와 미디어, 네트워크와 관련된 다양한 작업을 처리 합니다. 보다 세부적인 내용은 아래를 참고하세요.

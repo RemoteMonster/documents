@@ -13,7 +13,7 @@
 ## Web
 
 * [Web - Overview](web/web-overview.md)
-* Web - Getting Start
+* [Web - Getting Start](web/web-getting-start.md)
 * [Web - Livecast](web/web-livecast.md)
 * [Web - Communication](web/web-communication.md)
 * [Web - View](web/web-view.md)
@@ -25,8 +25,6 @@
 
 * [Android - Overview](android/android-overview.md)
 * [Android - Getting Start](android/android-getting-start.md)
-* [Android - Livecast](android/android-livecast.md)
-* [Android - Communication](android/android-communication.md)
 * [Android - View](android/android-view.md)
 * [Android - Github](https://github.com/remotemonster/android-sdk/)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
@@ -35,8 +33,6 @@
 
 * [iOS - Overview](ios/ios-overview.md)
 * [iOS - Getting Start](ios/ios-getting-start.md)
-* [iOS - Livecast](ios/ios-livecast.md)
-* [iOS - Communication](ios/ios-communication.md)
 * [iOS - View](ios/ios-view.md)
 * [iOS - Github](https://github.com/remotemonster/ios-sdk/)
 * [iOS - SDK Reference](https://remotemonster.github.io/ios-sdk/)

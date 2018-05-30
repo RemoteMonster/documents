@@ -83,15 +83,15 @@ RemonCast의 create\(\) 함수를 이용하여 방송 만들 수 있습니다. c
 
 {% tab title="Android" %}
 ```java
-remonCast = RemonCast.builder()
-    .context(CastActivity.this)
-    .localView(surfRendererlocal)        // local Video Renderer
+caster = RemonCast.builder()
     .serviceId("MY_SERVICE_ID")
     .key("MY_SERVICE_KEY")
+    .context(CastActivity.this)
+    .localView(surfRendererlocal)        // local Video Renderer
     .build();
-remonCast.create();
+caster.create();
 ​
-remonCast.onCreate(new RemonCast.onCreateCallback() {
+caster.onCreate(new RemonCast.onCreateCallback() {
     @override
     public void onCreate(String chid) {
         myChid = chid;
@@ -113,11 +113,12 @@ caster.serviceId = "MY_SERVICE_ID"
 caster.serviceKey = "My_SERVICE_KEY"
 caster.broadcast = true
 caster.localView = localView
-caster.create()
 
 remonCast.onCreate { (chid) in
     let myChid = caster.channelId
 }
+
+caster.create()
 ```
 {% endtab %}
 {% endtabs %}
@@ -133,20 +134,21 @@ RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 �
 
 {% tab title="Android" %}
 ```java
-castViewer = RemonCast.builder()
-    .context(ViewerActivity.this)
-    .remoteView(surfRendererRemote)        // remote video renderer
+watcher = RemonCast.builder()
     .serviceId("MY_SERVICE_ID")
     .key("MY_SERVICE_KEY")
+    .context(ViewerActivity.this)
+    .remoteView(surfRendererRemote)        // remote video renderer
     .build();
-castViewer.join(myChid);
 ​
-remonCast.onJoin(new RemonCast.onJoinCallback() {
+watcher.onJoin(new RemonCast.onJoinCallback() {
     @override
     public void onComplete() {
          // Do something
     }
 });
+
+watcher.join(myChid);
 ```
 {% endtab %}
 
@@ -164,7 +166,12 @@ let config = RemonConfig()
 config.serviceId = "MY_SERVICE_ID"
 config.key = "MY_SERVICE_KEY"
 config.channelType viewer
-caster.join(config)
+
+watcher.onJoin {
+    // Do something
+}
+
+watcher.join(config)
 ```
 {% endtab %}
 {% endtabs %}
@@ -180,6 +187,8 @@ caster.join(config)
 
 {% tab title="Android" %}
 ```java
+remonCast = RemonCast.builder().build();
+
 remonCast.onInit(() -> {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 });
@@ -200,6 +209,8 @@ remonCast.onClose(() -> {
 
 {% tab title="iOS" %}
 ```swift
+let remonCast = RemonCast()
+
 remonCast.onInit {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
@@ -234,6 +245,8 @@ remonCast.onClose {
 
 {% tab title="Android" %}
 ```java
+remonCast = RemonCast.builder().build();
+
 remonCast.featchCasts();
 remonCast.onFetch(casts -> {
     // Do something
@@ -243,6 +256,8 @@ remonCast.onFetch(casts -> {
 
 {% tab title="iOS" %}
 ```swift
+let remonCast = RemonCast()
+
 remonCast.fetchCasts { (error, results) in
     // Do something
 }

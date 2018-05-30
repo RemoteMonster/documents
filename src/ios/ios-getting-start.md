@@ -87,7 +87,7 @@ remonCast.join("channelID")      // Livecast - Watch live
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="ios-livecast.md" %}
+{% page-ref page="../common/livecast.md" %}
 
 ### 통신
 
@@ -97,5 +97,7 @@ remonCall.connect()            // Communication
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="ios-communication.md" %}
+{% page-ref page="../common/untitled.md" %}
+
+
 

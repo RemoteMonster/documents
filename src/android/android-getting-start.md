@@ -91,8 +91,6 @@ RemonCast Class는 방송 기능을 쉽고 빠르게 만들수있는 메소드�
 remonCast = RemonCast.builder()
         .context(CastActivity.this)
         .localView(surfRendererlocal)        // 자신 Video Renderer
-        .serviceId("MyServiceId")
-        .key("MyServiceKey")
         .build();
 remonCast.create();
 ```
@@ -104,20 +102,18 @@ remonCast.create();
 {% code-tabs %}
 {% code-tabs-item title="ViewerActivity.java" %}
 ```java
-castViewer = RemonCast.builder()
+remonCastWatcher = RemonCast.builder()
         .context(ViewerActivity.this)
         .remoteView(surfRendererRemote)        // 방송자의 Video Renderer
-        .serviceId("MyServiceId")
-        .key("MyServiceKey")
         .build();
-castViewer.join("channelId");              // 들어가고자 하는 channel
+remonCastWatcher.join("channelId");              // 들어가고자 하는 channel
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 혹은 좀 더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="android-livecast.md" %}
+{% page-ref page="../common/livecast.md" %}
 
 ### 통신
 
@@ -128,15 +124,13 @@ remonCall = RemonCall.builder()
         .context(CallActivity.this)        
         .localView(surfRendererLocal)        //나의 Video Renderer
         .remoteView(surfRendererRemote)      //상대방 video Renderer
-        .serviceId("MyServiceId")
-        .key("MyServiceKey")
         .build();
 remonCall.connect("channelId")
 ```
 
 혹은 좀 더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="android-communication.md" %}
+{% page-ref page="../common/untitled.md" %}
 
 
 
