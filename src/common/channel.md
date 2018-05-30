@@ -21,7 +21,10 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const remonCast = new Remon()
+const casts = await remonCast.fetchCasts()
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -62,12 +65,17 @@ remonCast.join(chid)
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const remonCall = new Remon()
+const calls = await remonCall.fetchCasts((result) => {
+  result.filter(item => item.status === "WAIT")
+})
+```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-remonCall = RemonCall.builder().context(ListActivity.this).build();
+remonCall = RemonCall.builder().build();
 remonCall.fetchCalls();
 remonCall.onFetch(calls -> {
     for (Channel call : calls) {
@@ -83,6 +91,7 @@ remonCall.connect(chid)
 
 {% tab title="iOS" %}
 ```swift
+let remonCall = RemonCall()
 remonCall.fetchCalls { (err, results) in
     if let err = err {
         //검색 중에 발생한 에러는 remonCall.onError()를 호출 하지 않습니다.

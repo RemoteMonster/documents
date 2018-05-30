@@ -306,8 +306,8 @@ remonCast.onClose {
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
-const remonCall = new Remon({ listener, config })
-const calls = await remonCast.fetchCasts()
+const remonCall = new Remon()
+const calls = await remonCall.fetchCalls()
 ```
 {% endtab %}
 
