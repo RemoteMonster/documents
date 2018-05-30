@@ -1,3 +1,7 @@
+---
+description: View를 구성하고 사용하는 방법을 안내합니다.
+---
+
 # Web - View
 
 ```markup

@@ -1,5 +1,5 @@
 ---
-description: 리모트 몬스터를 개발하기 위해 알아야할 기본적인 것들을 소개합니다.
+description: RemoteMonster를 소개합니다.
 ---
 
 # Introduction

@@ -1,5 +1,5 @@
 ---
-description: 브라우저로 간단한 통신 앱을 개발합니다.
+description: 통신 서비스를 개발하는 방법을 안내합니다.
 ---
 
 # Web - Communication
