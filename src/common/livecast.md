@@ -26,7 +26,15 @@
 
 {% tabs %}
 {% tab title="Web" %}
+```markup
+<!-- Caster - local view -->
+<video id="localVideo" autoplay muted></video>
+```
 
+```markup
+<!-- Watcher - remote view -->
+<video id="remoteVideo" autoplay></video>
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -78,7 +86,32 @@ RemonCast의 create\(\) 함수를 이용하여 방송 만들 수 있습니다. c
 
 {% tabs %}
 {% tab title="Web" %}
+```javascript
+// <video id="localVideo" autoplay muted></video>
+let myChid
 
+const config = {
+  credential: {
+    serviceId: 'MY_SERVICE_ID',
+    key: 'MY_SERVICE_KEY'
+  },
+  view: {
+    local: '#localVideo'
+  },
+  media: {
+    sendonly: true
+  }
+}
+
+const listener = {
+  onCreate(chid) {
+    myChid = chid
+  }
+}
+​
+const caster = new Remon({ listener, config })
+caster.create()
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -110,8 +143,7 @@ remonCast.create()
 ```swift
 let caster = RemonCast()
 caster.serviceId = "MY_SERVICE_ID"
-caster.serviceKey = "My_SERVICE_KEY"
-caster.broadcast = true
+caster.serviceKey = "MY_SERVICE_KEY"
 caster.localView = localView
 
 remonCast.onCreate { (chid) in
@@ -125,11 +157,36 @@ caster.create()
 
 ### 방송시청
 
-RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 있습니다.
+RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 있습니다. 이때 원하는 chid를 알려줘야 하는데 이부분은 원하는 형태로 직접 개발합니다.
 
 {% tabs %}
 {% tab title="Web" %}
+```javascript
+// <video id="remoteVideo" autoplay></video>
+let myChid
 
+const config = {
+  credential: {
+    serviceId: 'MY_SERVICE_ID',
+    key: 'MY_SERVICE_KEY'
+  },
+  view: {
+    local: '#remoteVideo'
+  },
+  media: {
+    recvonly: true
+  }
+}
+
+const listener = {
+  onJoin() {
+    // Do something
+  }
+}
+​
+const watcher = new Remon({ listener, config })
+watcher.join(myChid)                  // myChid from caster
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -148,30 +205,28 @@ watcher.onJoin(new RemonCast.onJoinCallback() {
     }
 });
 
-watcher.join(myChid);
+watcher.join(myChid);                     // myChid from caster
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCast.join(myChid)
+remonCast.join(myChid)               // myChid from caster
 ```
 
 혹은 아래와 같이 Interface Builder 없이 작성 가능합니다.
 
 ```swift
 let watcher = RemonCast()
+watcher.serviceId = "MY_SERVICE_ID"
+watcher.key = "MY_SERVICE_KEY"
 watcher.remoteView = remoteView
-let config = RemonConfig()
-config.serviceId = "MY_SERVICE_ID"
-config.key = "MY_SERVICE_KEY"
-config.channelType viewer
 
 watcher.onJoin {
     // Do something
 }
 
-watcher.join(config)
+watcher.join(myChid)              // myChid from caster
 ```
 {% endtab %}
 {% endtabs %}
@@ -182,7 +237,25 @@ watcher.join(config)
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onInit() {
+    // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
+  },
+​  
+  onCreate(chid) {
+    // 방송 생성 및 시청 준비 완료
+  },
+​
+  onJoin() {
+    // 시청 시작
+  },
+​  
+  onClose() {
+    // 종료
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -240,7 +313,10 @@ remonCast.onClose {
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const remonCast = new Remon()
+const casts = await remonCast.fetchCasts()
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -275,17 +351,22 @@ remonCast.fetchCasts { (error, results) in
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const remonCast = new Remon()
+remonCast.close()
+```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
+remonCast = RemonCast.builder().build();
 remonCast.close();
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
+let remonCast = RemonCast()
 remonCast.close()
 ```
 {% endtab %}

@@ -26,12 +26,17 @@
 
 {% tabs %}
 {% tab title="Web" %}
-
+```markup
+<!-- local view -->
+<video id="localVideo" autoplay muted></video>
+<!-- remote view -->
+<video id="remoteVideo" autoplay></video>
+```
 {% endtab %}
 
 {% tab title="Android" %}
 ```markup
-<!-- Caster - local view -->
+<!-- local view -->
 <com.remotemonster.sdk.PercentFrameLayout
     android:id="@+id/perFrameLocal"
     android:layout_width="match_parent"
@@ -44,7 +49,7 @@
 ```
 
 ```markup
-<!-- Watcher - remote view -->
+<!-- remote view -->
 <com.remotemonster.sdk.PercentFrameLayout
     android:id="@+id/perFrameRemote"
     android:layout_width="match_parent"
@@ -78,7 +83,34 @@ Interface Builder를 통해 지정 하게 되며 `iOS - Getting Start`에 따라
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+// <video id="localVideo" autoplay muted></video>
+// <video id="remoteVideo" autoplay></video>
+let myChid
+​
+const config = {
+  credential: {
+    serviceId: 'MY_SERVICE_ID',
+    key: 'MY_SERVICE_KEY'
+  },
+  view: {
+    local: '#localVideo',
+    remote: '#remoteVideo'
+  }
+}
+​
+const listener = {
+  onConnect(chid) {
+    myChid = chid
+  },
+  onComplete() {
+    // Do something
+  }
+}
+​
+const caller = new Remon({ listener, config })
+caller.connect()
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -113,7 +145,6 @@ caller.connect();
 ```swift
 let caller = RemonCall()
 
-caller.connect()
 caller.onConnect { (chid) in
     let myChid = chid          // Callee need chid from Caller for connect
 }
@@ -121,6 +152,8 @@ caller.onConnect { (chid) in
 caller.onComplete {
     // Caller-Callee connect each other. Do something
 }
+
+caller.connect()
 ```
 {% endtab %}
 {% endtabs %}
@@ -131,7 +164,29 @@ caller.onComplete {
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+// <video id="localVideo" autoplay muted></video>
+// <video id="remoteVideo" autoplay></video>
+const config = {
+  credential: {
+    serviceId: 'MY_SERVICE_ID',
+    key: 'MY_SERVICE_KEY'
+  },
+  view: {
+    local: '#localVideo',
+    remote: '#remoteVideo'
+  }
+}
+​
+const listener = {
+  onComplete() {
+    // Do something
+  }
+}
+​
+const callee = new Remon({ listener, config })
+callee.connect()
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -174,7 +229,25 @@ callee.connect(myChid)
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onInit() {
+    // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
+  },
+​  
+  onConnect(chid) {
+    // 통화 생성 후 대기 혹은 응답
+  },
+​
+  onComplete() {
+    // Caller, Callee간 통화 시작
+  },
+​  
+  onClose() {
+    // 종료
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -190,7 +263,7 @@ remonCall.onConnect((chid) -> {
 });
 ​
 remonCall.onComplete(() -> {
-    // 통화 시작
+    // Caller, Callee간 통화 시작
 });
 ​
 remonCall.onClose(() -> {
@@ -212,7 +285,7 @@ remonCall.onConnect { (chid) in
 }
 ​
 remonCall.onComplete {
-    // 통신 연결 완료. 영상 및 음성 전송이 시작 됩니다.
+    // Caller, Callee간 통화 시작
 }
 ​
 remonCast.onClose {
@@ -232,7 +305,10 @@ remonCast.onClose {
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const remonCall = new Remon({ listener, config })
+const calls = await remonCast.fetchCasts()
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -267,7 +343,10 @@ remonCall.fetchCalls { (error, results) in
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const remonCall = new Remon()
+remonCall.close()
+```
 {% endtab %}
 
 {% tab title="Android" %}

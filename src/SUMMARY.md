@@ -14,8 +14,6 @@
 
 * [Web - Overview](web/web-overview.md)
 * [Web - Getting Start](web/web-getting-start.md)
-* [Web - Livecast](web/web-livecast.md)
-* [Web - Communication](web/web-communication.md)
 * [Web - View](web/web-view.md)
 * [Web - Debug Inside](web/web-debug.md)
 * [Web - Github](https://github.com/remotemonster/browser-sdk/)
