@@ -1,7 +1,3 @@
----
-description: WebRTC의 내부정보를 통해 디버깅 하는 방법을 안내합니다.
----
-
 # Web - Debug Inside
 
 ## WebRTC Internals
