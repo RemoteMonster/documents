@@ -1,7 +1,3 @@
----
-description: 주요 개념중 하나인 Channel에 대해 소개합니다.
----
-
 # Channel
 
 ## Overview

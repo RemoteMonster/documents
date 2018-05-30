@@ -1,7 +1,3 @@
----
-description: 'RemoteMonster의 방송, 통신시 작동 흐름에 대해 설명합니다.'
----
-
 # Flow
 
 ## Overview

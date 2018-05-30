@@ -1,12 +1,8 @@
----
-description: RemoteMonster의 근간이 되는 WebRTC에 대해 소개합니다.
----
-
 # About WebRTC
 
 ## 기초
 
-* WebRTC 시작하기: Coiiee 대표 정유철님께서 작성하신 알기쉬운 WebRTC 자료
+* [WebRTC 시작하기](https://coiiee.com/blog.php?idx=2): Coiiee 대표 정유철님께서 작성하신 알기쉬운 WebRTC 자료
 * [HTML5Rocks의 WebRTC가이드](https://www.html5rocks.com/ko/tutorials/webrtc/basics/): WebRTC개발을 처음 시작할 때 개념을 잡기 좋습니다.
 
 ## 주요 블로그 및 커뮤니티

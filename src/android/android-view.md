@@ -1,5 +1,5 @@
 ---
-description: View를 구성하고 사용하는 방법을 안내합니다.
+description: 뷰와 레이아웃에 대해 소개합니다.
 ---
 
 # Android - View

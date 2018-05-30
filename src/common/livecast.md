@@ -1,10 +1,10 @@
-# iOS - Livecast
+# Livecast
 
 ## 기본 설정
 
-방송을 하기 전에 프로젝트 설정을 진행 합니다.
+방송을 하기 전에 각 플렛폼 별 프로젝트 설정을 진행 합니다.
 
-{% page-ref page="ios-getting-start.md" %}
+{% page-ref page="../ios/ios-getting-start.md" %}
 
 ## 개발
 
@@ -85,7 +85,7 @@ remonCast.onClose {
 
 더 많은 내용은 아래를 참조 하세요.
 
-{% page-ref page="../common/callbacks.md" %}
+{% page-ref page="callbacks.md" %}
 
 ### Channels
 
@@ -99,7 +99,7 @@ remonCast.fetchCasts { (error, results) in
 
 더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="../common/channel.md" %}
+{% page-ref page="channel.md" %}
 
 ### 종료
 
@@ -113,7 +113,7 @@ remonCast.close()
 
 방송 생성, 시청시 좀 더 자세한 설정이 필요하다면 아래를 참고하세요.
 
-{% page-ref page="../common/config.md" %}
+{% page-ref page="config.md" %}
 
 
 

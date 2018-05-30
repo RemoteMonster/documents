@@ -1,7 +1,3 @@
----
-description: 상황에 맞는 기능을 개발할 수 있는 Callback 함수 사용법을 알려드립니다.
----
-
 # Callbacks
 
 ## Overview

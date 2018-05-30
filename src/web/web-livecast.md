@@ -1,5 +1,5 @@
 ---
-description: 방송 서비스를 개발하는 방법을 안내합니다.
+description: 브라우저로 간단한 방송 앱을 개발합니다.
 ---
 
 # Web - Livecast

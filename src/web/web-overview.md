@@ -1,7 +1,3 @@
----
-description: RemoteMonster의 Web SDK 입니다.
----
-
 # Web - Overview
 
 * Remon클래스는 가장 핵심이 되는 클래스로서 다음과 같은 메소드를 제공합니다.

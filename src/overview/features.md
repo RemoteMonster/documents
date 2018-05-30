@@ -1,7 +1,3 @@
----
-description: 주요기능과 장점에 대해 소개합니다.
----
-
 # Features
 
 ## Overview

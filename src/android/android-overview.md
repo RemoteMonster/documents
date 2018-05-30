@@ -1,5 +1,5 @@
 ---
-description: RemoteMonster의 Android SDK 입니다.
+description: 안드로이드에서 개발개요를 설명합니다.
 ---
 
 # Android - Overview

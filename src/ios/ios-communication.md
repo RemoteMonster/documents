@@ -1,7 +1,3 @@
----
-description: 통신 서비스를 개발하는 방법을 안내합니다.
----
-
 # iOS - Communication
 
 ## 기본 설정

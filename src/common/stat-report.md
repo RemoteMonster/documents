@@ -1,5 +1,5 @@
 ---
-description: '방송, 통신 품질을 확인하고 개발에 적용합니다.'
+description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소개합니다.
 ---
 
 # Realtime Quality Statistics Report

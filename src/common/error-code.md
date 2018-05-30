@@ -1,5 +1,5 @@
 ---
-description: 'Error, Fail 상황에 대해 소개합니다.'
+description: 에러코드에 대해 설명합니다.
 ---
 
 # Error Code

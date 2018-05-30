@@ -1,5 +1,5 @@
 ---
-description: 규격과 지원범위를 알립니다.
+description: 제품의 주요 규격과 기능을 소개합니다.
 ---
 
 # Spec
