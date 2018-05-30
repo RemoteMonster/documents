@@ -30,8 +30,11 @@ npm i @remotemonster/sdk
 RemoteMonster가 호스팅중인 CDN을 사용 할 수 있습니다. HTML 파일에 아래와 같이 삽입하세요.
 
 ```markup
+<!-- Latest -->
 <script src="https://cdn.remotemonster.com/sdk/browser/remon.min.js"></script>
-<script src="https://cdn.remotemonster.com/sdk/browser/v2.0.0/remon.min.js"></script>
+
+<!-- Specific version -->
+<script src="https://cdn.remotemonster.com/sdk/browser/2.0.0/remon.min.js"></script>
 ```
 
 ## 개발
