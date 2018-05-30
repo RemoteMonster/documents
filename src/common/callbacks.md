@@ -69,10 +69,10 @@ const listener = {
   }
 }
 
-const rtc = new Remon({ listener })
-rtc.createCast()
+const cast = new Remon({ listener })
+cast.create()
 // Or 
-rtc.createCast('chid')
+cast.create('chid')
 ```
 {% endtab %}
 
@@ -85,9 +85,9 @@ remonCast.onCreate(new RemonCast.onCreateCallback() {
     }
 });
 
-remonCast.createRoom();        // Server generate chid
+remonCast.create();        // Server generate chid
 // Or
-remonCast.createRoom('chid');
+remonCast.create('chid');
 ```
 {% endtab %}
 
@@ -97,9 +97,9 @@ remonCast.onCreate { (chid) in
   // Do something
 }
 
-remonCast.createRoom()           // Server generate chid
+remonCast.create()           // Server generate chid
 // Or
-remonCast.createRoom('chid')
+remonCast.create('chid')
 ```
 {% endtab %}
 {% endtabs %}
@@ -117,8 +117,8 @@ const listener = {
   }
 }
 
-const rtc = new Remon({ listener })
-rtc.joinCast('chid')
+const cast = new Remon({ listener })
+cast.join('chid')
 ```
 {% endtab %}
 
@@ -131,7 +131,7 @@ remonCast.onJoin(new RemonCast.onJoinCallback() {
     }
 });
 
-remonCast.joinRoom('chid');
+remonCast.join('chid');
 ```
 {% endtab %}
 
@@ -141,7 +141,7 @@ remonCast.onJoin {
   // Do something
 }
 
-remonCast.joinRoom('chid')
+remonCast.join('chid')
 ```
 {% endtab %}
 {% endtabs %}
@@ -165,10 +165,10 @@ const listener = {
   }
 }
 
-const rtc = new Remon({ listener })
-rtc.connectChannel()
+const call = new Remon({ listener })
+call.connect()
 // Or
-rtc.connectChannel('chid')
+call.connect('chid')
 ```
 {% endtab %}
 
@@ -181,9 +181,9 @@ remonCall.onConnect(new RemonCall.onConnectCallback() {
     }
 });
 
-remonCall.connectChannel();
+remonCall.connect();
 // Or
-remonCall.connectChannel("chid");
+remonCall.connect("chid");
 ```
 {% endtab %}
 
@@ -193,9 +193,9 @@ remonCall.onConnect { (chid) in
      // Do something
 }
 
-remonCast.connectChannel()
+remonCast.connect()
 // Or
-remonCast.connectChannel("chid")
+remonCast.connect("chid")
 ```
 {% endtab %}
 {% endtabs %}
@@ -247,6 +247,9 @@ const listener = {
     // Do something
   }
 }
+
+const rtc = new Remon({ listener })
+rtc.close()
 ```
 {% endtab %}
 
@@ -258,6 +261,8 @@ remonCast.onClose(new RemonCast.onCloseCallback() {
         // Do something
     }
 });
+
+remonCast.close();
 ```
 {% endtab %}
 
@@ -266,11 +271,13 @@ remonCast.onClose(new RemonCast.onCloseCallback() {
 remonCast.onClose {
     // Do something
 }
+
+remonCast.close()
 ```
 {% endtab %}
 {% endtabs %}
 
-### onErrror\(error\)
+### onError\(error\)
 
 `Remon`이 동작 중에 에러가 발생 할때 호출 됩니다.
 
@@ -278,7 +285,7 @@ remonCast.onClose {
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onClose() {
+  onError() {
     // Do something
   }
 }

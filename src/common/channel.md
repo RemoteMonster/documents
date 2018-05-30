@@ -10,10 +10,10 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 
 다만 방송과 통신에서의 동작이 다른부분이 있어 아래와 같이 구분지어 사용하도록 되어있습니다.
 
-|  | Name | Id | Methods | Callbacks |
+|  | Class | Id | Methods | Callbacks |
 | --- | --- | --- |
-| Livecast | room | chid | `createRoom`, `joinRoom` | `onCreate`, `onJoin` |
-| Communication | channel | chid | `connectChannel` | `onConnect`, `onComplete` |
+| Livecast | remonCast | chid | `create`, `join`, `fetchCasts` | `onCreate`, `onJoin` |
+| Communication | remonCall | chid | `connect`, `fetchCalls` | `onConnect`, `onComplete` |
 
 전체적인 흐름과 여기에 대응하는 Callback은 아래를 참고하세요.
 
@@ -23,54 +23,48 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 
 ## Livecast
 
+방송에서 방송 목록을 얻는 방법입니다. 일반적으로 방송 목록에서 집입할 방송을 찾는 UI에 자주 사용됩니다.
+
 {% tabs %}
 {% tab title="Web" %}
 
 {% endtab %}
 
 {% tab title="Android" %}
-
-
-{% code-tabs %}
-{% code-tabs-item title="CastActivity.java" %}
 ```java
 remonCast = RemonCast.builder().context(ListActivity.this).build();
-remonCast.searchRooms();
-remonCast.onSearch(calls -> {
-    for (Room room : rooms) {
-        id = room.getId;
+remonCast.fetchCasts();
+remonCast.onFetch(casts -> {
+    for (Channel cast : casts) {
+        chid = cast.getId;
     }
 });
+
+remonCast.join(chid);
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 {% endtab %}
 
 {% tab title="iOS" %}
-
-
 ```swift
-remonCast.search { (err, results) in
+remonCast.fetchCast { (err, results) in
     if let err = err {
-        //검색 중에 발생한 에러는 remonCast.onError()를 호출 하지 않습니다.
+        // 검색 중에 발생한 에러는 remonCast.onError()를 호출 하지 않습니다.
         print(err.localizedDescription)
     } else if let results = results {
-        for item:RemonSearchResult in results {
-            chid = item.id
+        for cast:RemonSearchResult in results {
+            chid = cast.id
         }
     }
 }
 
-remonCast.joinRoom(chid)
+remonCast.join(chid)
 ```
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-RemonCast의 search\(\) 함수는 방송 목록을 검색 하며 RemonCall의 search\(\) 함수는 통신 목을 검색 합니다. 검색은 같은 ServiceID를 가지는 채널을 대상으로 합니다.
-{% endhint %}
-
 ## Communication
+
+통신에서 통화 목록을 얻는 방법입니다. 랜덤 채팅과 같은 상황에서 쓰이며 일반적으로는 잘 사용되지 않습니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -78,41 +72,37 @@ RemonCast의 search\(\) 함수는 방송 목록을 검색 하며 RemonCall의 se
 {% endtab %}
 
 {% tab title="Android" %}
-
-
-{% code-tabs %}
-{% code-tabs-item title="CallActivity.java" %}
 ```java
 remonCall = RemonCall.builder().context(ListActivity.this).build();
-remonCall.searchCalls();
-remonCall.onSearch(calls -> {
-    for (Room call : calls) {
-        id = call.getId;
+remonCall.fetchCalls();
+remonCall.onFetch(calls -> {
+    for (Channel call : calls) {
+        if (call.getStatus.equals("WAIT")) {   // Only WAIT channels
+            chid = call.getId;
+        }
     }
 });
+
+remonCall.connect(chid)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 {% endtab %}
 
 {% tab title="iOS" %}
-
-
 ```swift
-remonCall.search { (err, results) in
+remonCall.fetchCalls { (err, results) in
     if let err = err {
-        //검색 중에 발생한 에러는 remonCast.onError()를 호출 하지 않습니다.
+        //검색 중에 발생한 에러는 remonCall.onError()를 호출 하지 않습니다.
         print(err.localizedDescription)
     } else if let results = results {
-        for item:RemonSearchResult in results {
-            if itme.status == "WAIT" {
-                chid = item.id
+        for call:RemonSearchResult in results {
+            if itme.status == "WAIT" {        // Only WAIT channels
+                chid = call.id
             }
         }
     }
 }
 
-remonCall.connectChannel(chid)
+remonCall.connect(chid)
 ```
 {% endtab %}
 {% endtabs %}

@@ -106,53 +106,52 @@ castViewer = RemonCast.builder()
     .build();
 castViewer.joinRoom(myChid);
 
-remonCast.onJoin(new RemonCast.onJoinCallback() {}
+remonCast.onJoin(new RemonCast.onJoinCallback() {
     @override
     public void onComplete() {
          // Do something
     }
-);
+});
 ```
 
-### Callback
+### Callbacks
 
-`Remon`은 방송 생성 및 시청 중에 상태 추적을 돕기 위한  Callback을 제공 합니다.
-
-생성된 remonCast에 eventListener를 등록해 줍니다.
+개발중 다양한 상태 추적을 돕기 위한  Callback을 제공 합니다.
 
 ```java
-remonCast.onInit(() ->
+remonCast.onInit(() -> {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
-);
+});
 
-remonCast.onCreate((chid) ->
+remonCast.onCreate((chid) -> {
     // 방송 생성 및 시청 준비 완료
-);
+});
 
-remonCast.onJoin(() ->
+remonCast.onJoin(() -> {
     // 시청 시작
-);
+});
 
-remonCast.onClose(() ->
+remonCast.onClose(() -> {
     // 종료
-);
+});
 ```
 
-자세한 내용은 아래를 참고하세요.
+더 많은 내용은 아래를 참조 하세요.
 
 {% page-ref page="../common/callbacks.md" %}
 
-### Channel
+### Rooms
 
-방송을 시청 하기 위해서는 시청 하려는 채널이 ID가 필요 합니다. 채널 ID는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. `Remon`는 시청 하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
+방송을 시청 하기 위해서는 시청 하려는 chid가 필요 합니다. chid는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. 전체 채널 목록을 아래와 같이 조회 가능합니다.
 
 ```swift
-remonCast.search(error, results) {
-    // 채널 목록 처리
-}
+remonCast.featchRooms();
+remonCast.onRooms(lives -> {
+    // Do something
+});
 ```
 
-채널에 대한 더 자세한 내용은 아래를 참고하세요.
+더 자세한 내용은 아래를 참고하세요.
 
 {% page-ref page="../common/channel.md" %}
 

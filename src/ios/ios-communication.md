@@ -42,7 +42,7 @@ remonCall.connectChannel(myChid)
 
 ### Observer
 
-통신 기능을 해발 하다 보면 진행 상태를 알아야 하는 경우가 왕왕 발생 합니다. 이때는 `Remon`이 제공 하는 `Observer` 함수를 이용하면 쉽게 진행 상태를 추적할 수 있습니다.
+개발중 다양한 상태 추적을 돕기 위한  Callback을 제공 합니다.
 
 ```swift
 remonCall.onInit {
@@ -62,7 +62,7 @@ remonCast.onClose {
 }
 ```
 
-`Remon`은 `onInit()`와 `onConnect`, `onComplete` 이외에도 많은 `Observer` 함수를 제공 합니다. 더 많은 내용은 아래를 참조 하세요.
+더 많은 내용은 아래를 참조 하세요.
 
 {% page-ref page="../common/callbacks.md" %}
 
@@ -71,7 +71,7 @@ remonCast.onClose {
 랜덤채팅등과 같은 서비스에서는 전체 채널 목록을 필요로 하게 됩니다. 접속하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
 
 ```swift
-remonCall.search { (error, results) in
+remonCall.fetchChannels { (error, results) in
     // Do something
 }
 ```

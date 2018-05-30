@@ -22,7 +22,7 @@ description: Android로 간단한 통신 앱을 개발합니다.
 
 ### View 등록
 
-View구성에 따라 통신을 할 때에, 한 Activity에서 자신과 상대방의 Stream을 동시에 볼수도 있고, 각각 따로 구성 할 수도 있습니다. 때문에 미리 자신이 원하는 View에 다음과 같이 View를 추가합니다. `SurfaceViewRenderer`중 자기자신의 모습은 Local, 인터넷을 통해 온 상대방의 모습은 Remote로 구분됩니다.
+View구성에 따라 통신을 할 때에, 한 Activity에서 자신과 상대방의 Stream을 동시에 볼수도 있고, 각각 따로 구성 할 수도 있습니다. 다음과 같이 View를 추가합니다. `SurfaceViewRenderer`중 자기자신의 모습은 Local, 인터넷을 통해 온 상대방의 모습은 Remote로 구분됩니다.
 
 ```markup
 <com.remotemonster.sdk.PercentFrameLayout
@@ -50,75 +50,78 @@ View구성에 따라 통신을 할 때에, 한 Activity에서 자신과 상대�
 
 {% page-ref page="android-view.md" %}
 
-### RemonCall의 초간단 생성
+### 통화 걸기
 
-* 이제 코딩의 시간입니다. Key와 ServiceID는 넣지 않아도 됩니다. 자동으로 테스트용 key와 serviceId로 설정됩니다. 나중에 본격적으로 Remote Monster를 사용하고 싶다면 회원가입을 하고 키를 발급받아서 입력하면 됩니다.
-* RemonCall를 build할 때 여러가지 Config를 설정을 할 수 있습니다. 여기서는 일단 제일 간단한 방법으로 진행하겠습니다.
-* 필요에 따라서는 영상통화가 아닌 음성통화만 사용하게 할 수도 있고 코덱을 바꾸거나 해상도를 바꿀 수도 있습니다.
+`connectChannel()` 함수에 전달한 `chid` 값에 해당하는 채널이 존재하지 않으면 채널이 생성되고, 다른 사용자가 해당 채널에 연결하기를 대기 하는 상태가 됩니다. 이때 해당 `chid`로 다른 사용자가 연결을 시도 하면 연결이 완료 되고, 통신이 시작 됩니다.
 
-{% code-tabs %}
-{% code-tabs-item title="CallActivity.java" %}
 ```java
 remonCall = RemonCall.builder()
-        .context(CallActivity.this)
-        .localView(surfRendererLocal)
-        .remoteView(surfRendererRemote)
-        .build();
+    .context(CallActivity.this)
+    .localView(surfRendererLocal)
+    .remoteView(surfRendererRemote)
+    .build();
+
+remonCall.onConnect(new RemonCall.onConnectCallbakc() {
+    @Override
+    public void onConnect(chid) {
+        myChid = chid
+    }
+});
+
+remonCall.connectChannel();
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
-### RemonCall Channel 생성 혹은 접속하기
+이 때 Service Id와 Key 를 필요로 하게 되는데 아래를 참고하세요.
 
-* `RemonCall`클래스의 `connectChannel()` 함수를 이용하여 채널 생성 및 접속이 가능합니다.
+{% page-ref page="../common/service-key.md" %}
 
-  `connectChannel()` 함수에 전달한 `chid` 값에 해당하는 채널이 존재하지 않으면 채널이 생성되고, 다른 사용자가 해당 채널에 연결하기를 대기 하는 상태가 됩니다. 이때 해당 `chid`로 다른 사용자가 연결을 시도 하면 연결이 완료 되고, 통신이 시작 됩니다.
+### 통화 받기
 
-{% code-tabs %}
-{% code-tabs-item title="CallActivity.java" %}
+`connectChannel()` 함수에 접속을 원하는 chid값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
+
 ```java
-remonCall.connectChannel("channelId");
+remonCall.connectChannel(myChid);
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-* 자신이 생성한 channel은 `getId()`를 통해 알 수있습니다. 
 
 {% hint style="info" %}
 `connectChannel`함수에 `RemonConfig`를 직접 전달 할 수도있습니다.
 {% endhint %}
 
-### Callback
+### Callbacks
 
-`Remon`은 방송 생성 및 시청 중에 상태 추적을 돕기 위한  Callback을 제공 합니다.
+개발중 다양한 상태 추적을 돕기 위한  Callback을 제공 합니다.
 
-생성된 remonCall에 eventListener를 등록해 줍니다.
-
-{% code-tabs %}
-{% code-tabs-item title="CallActivity.java" %}
 ```java
-remonCall.onInit(() -> Log("onInit"));
-remonCall.onConnect(() -> Log("onConnect"));
-remonCall.onComplete(() -> Log("onComplete"));
-remonCall.onClose(() -> Log("onClose"));
-remonCall.onError(e -> Log("error code : " + e.getRemonCode().toString()));
-remonCall.onStat(report -> Log(report.getFullStatReport()));
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+remonCast.onInit(() -> {
+    // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
+});
 
-좀 더 자세한 내용은 아래를 참고하세요.
+remonCast.onConnect((chid) -> {
+    // 통화 생성 후 대기 혹은 응답
+});
+
+remonCast.onComplete(() -> {
+    // 통화 시작
+});
+
+remonCast.onClose(() -> {
+    // 종료
+});
+```
+
+더 많은 내용은 아래를 참조 하세요.
 
 {% page-ref page="../common/callbacks.md" %}
 
-### Channel
+### Channels
 
-랜덤채팅등과 같은 서비스에서는 전체 채널 목록을 필요로 하게 됩니다. 접속하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
+랜덤채팅등과 같은 서비스에서는 전체 채널 목록을 필요로 하게 됩니다. 아래와 같이 목록을 얻을 수 있습니다.
 
 ```swift
-remonCast.search { (error, results) in
+remonCall.fetchChannels();
+remonCall.onChannels(calls -> {
     // Do something
-}
+});
 ```
 
 채널에 대한 더 자세한 내용은 아래를 참고하세요.
