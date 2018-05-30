@@ -43,8 +43,6 @@ $ pod install
 
 우선 아래의 링크를 통해 iOS SDK의 마지막 버전을 다운로드 받습니다.
 
-{% embed data="{\"url\":\"https://remotemonster.com/developers\",\"type\":\"link\",\"title\":\"Developer\",\"icon\":{\"type\":\"icon\",\"url\":\"https://uploads-ssl.webflow.com/5ae923e519474e392b0c80fc/5b02226459e4c8782a772e2f\_remon\_logo-09.png\",\"aspectRatio\":0}}" %}
-
 {% embed data="{\"url\":\"https://github.com/remotemonster/ios-sdk\",\"type\":\"link\",\"title\":\"RemoteMonster/ios-sdk\",\"description\":\"ios-sdk - RemoteMonster iOS SDK & examples\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/20677626?s=400&v=4\",\"width\":400,\"height\":400,\"aspectRatio\":1}}" %}
 
 다운로드받은 RemoteMonster iOS SDK를 압축을 풀면 2개의 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster SDK를 프레임워크로 인식하게 됩니다.
@@ -59,8 +57,8 @@ $ pod install
   * `RemonCall`를 1:1 통신을 지원 하며 `RemonCast`는 1:N 방송을 지원 합니다.
   * `InterfaceBuilder`에서 `Utilities` 뷰를 이용하여 `Remon`을 설정 합니다.
 * `ServiceID`와 `Service Key`를 설정합니다.
-  * 만약 간단하게 테스트를 하기 원한다면, `SERVICEID`와 `1234567890`를 각각 입력합니다.
-  * 이 ID와 Key는 테스트용도로 제공되는 것으로,  아래를 참고하여 실제 키를 발급받으세요.
+  * 만약 간단하게 테스트를 하기 원한다면 아무것도 입력 안해도 됩니다.
+  * 실제 서비스를 고려한다면 아래를 참고하여 내가 사용할 키를 발급받으세요.
 
 {% page-ref page="../common/service-key.md" %}
 
@@ -76,13 +74,24 @@ $ pod install
 
 ## 개발
 
-`Remon` 설정이 완료 되었다면 실제 개발은 쉽습니다. `ViewContoller`에서 방송 또는 통신을 시도 하세요!
+이제 모든 준비가 끝났습니다. 아래를 통해 세부적인 개발 방법을 확인하세요.
 
 ### 방송
 
+RemonCast Class로 방송 기능을 쉽고 빠르게 만들 수 있습니다.
+
+#### 방송 송출
+
 ```swift
-remonCast.create()               // Livecast - Cast live
-remonCast.join("channelID")      // Livecast - Watch live
+let caster = RemonCast()
+caster.create()
+```
+
+#### 방송 시청
+
+```swift
+let watcher = RemonCast()
+watcher.join("CHANNEL_ID")
 ```
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.
@@ -91,8 +100,11 @@ remonCast.join("channelID")      // Livecast - Watch live
 
 ### 통신
 
+RemonCall Class로 통신 기능을 쉽고 빠르게 만들 수 있습니다.
+
 ```swift
-remonCall.connect()            // Communication
+let remonCall = RemonCall()
+remonCall.connect("CHANNEL_ID")            // Communication
 ```
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.

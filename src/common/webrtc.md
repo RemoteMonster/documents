@@ -15,7 +15,7 @@
 * [WebRTC의 현재와 미래](https://blog.remotemonster.com/webrtc-현재와-미래-8858579a4264): 2016년 WebRTC의 트렌드를 정리한 문서
 * [WebRTC 시장동향 리포트](https://blog.remotemonster.com/webrtc-시장동향-리포트-f880a45a3bce): 국내외 WebRTC 시장 동향 리포트
 
-## 기본이 되는 사이트
+## 표준
 
 * [WebRTC org](https://webrtc.org/): WebRTC 프로젝트를 대표하는 사이트입니다. 여기에서 native 엔진 관련정보를 얻을 수 있습니다.
 * [WebRTC 표준](https://www.w3.org/TR/webrtc/): WebRTC 표준을 이끌고 있는 W3C의 페이지입니다.

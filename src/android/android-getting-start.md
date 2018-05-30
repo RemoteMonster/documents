@@ -81,35 +81,27 @@ SDK를 통해 RemoteMonster 방송, 통신 인프라에 접근하려면, Service
 
 ### 방송
 
-RemonCast Class는 방송 기능을 쉽고 빠르게 만들수있는 메소드를 제공합니다.
+RemonCast Class로 방송 기능을 쉽고 빠르게 만들 수 있습니다.
 
 #### 방송 송출
 
-{% code-tabs %}
-{% code-tabs-item title="CastActivity.java" %}
 ```java
-remonCast = RemonCast.builder()
+caster = RemonCast.builder()
         .context(CastActivity.this)
         .localView(surfRendererlocal)        // 자신 Video Renderer
         .build();
-remonCast.create();
+caster.create();
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 #### 방송 시청
 
-{% code-tabs %}
-{% code-tabs-item title="ViewerActivity.java" %}
 ```java
-remonCastWatcher = RemonCast.builder()
+watcher = RemonCast.builder()
         .context(ViewerActivity.this)
         .remoteView(surfRendererRemote)        // 방송자의 Video Renderer
         .build();
-remonCastWatcher.join("channelId");              // 들어가고자 하는 channel
+watcher.join("CHANNEL_ID");              // 들어가고자 하는 channel
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 혹은 좀 더 자세한 내용은 아래를 참고하세요.
 
@@ -117,7 +109,7 @@ remonCastWatcher.join("channelId");              // 들어가고자 하는 chann
 
 ### 통신
 
-RemonCall Class는 통신기능을 쉽고 빠르게 만들수있는 메소드를 제공합니다.
+RemonCall Class로 통신 기능을 쉽고 빠르게 만들 수 있습니다.
 
 ```java
 remonCall = RemonCall.builder()
@@ -125,7 +117,7 @@ remonCall = RemonCall.builder()
         .localView(surfRendererLocal)        //나의 Video Renderer
         .remoteView(surfRendererRemote)      //상대방 video Renderer
         .build();
-remonCall.connect("channelId")
+remonCall.connect("CHANNEL_ID")
 ```
 
 혹은 좀 더 자세한 내용은 아래를 참고하세요.
