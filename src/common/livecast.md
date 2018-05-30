@@ -307,7 +307,7 @@ remonCast.onClose {
 
 {% page-ref page="callbacks.md" %}
 
-### Channels
+### Channel
 
 방송을 시청 하기 위해서는 시청 하려는 chid가 필요 합니다. chid는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. 전체 채널 목록을 아래와 같이 조회 가능합니다.
 
