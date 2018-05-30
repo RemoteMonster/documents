@@ -12,9 +12,9 @@ description: 방송 서비스를 개발하는 방법을 안내합니다.
 
 ## 개발
 
-`RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `createRoom()` 함수와 `joinRoom()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다.
+`RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `create()` 함수와 `join()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다.
 
-`RemonIBController`에 값을 직접 설정 않고, `connectRoom()`, `createRoom()`, `joinRoom()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
+`RemonIBController`에 값을 직접 설정 않고, `create()`, `join()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
 
 전체적인 구성과 흐름은 아래를 참고하세요.
 
@@ -24,10 +24,10 @@ description: 방송 서비스를 개발하는 방법을 안내합니다.
 
 ### 방송생성
 
-RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
+RemonCast의 create\(\) 함수를 이용하여 방송 만들 수 있습니다. create\(\) 함수가 호출 되면 Remon의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
 
 ```swift
-remonCast.createRoom()
+remonCast.create()
 ```
 
 혹은 아래와 같이 Interface Builder 없이 작성 가능합니다.
@@ -38,7 +38,7 @@ caster.serviceId = "MyServiceID"
 caster.serviceKey = "MyServiceKey"
 caster.broadcast = true
 caster.localView = localView
-caster.createRoom()
+caster.create()
 
 remonCast.onCreate { (chid) in
     let myChid = caster.channelID
@@ -50,7 +50,7 @@ remonCast.onCreate { (chid) in
 RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 있습니다.
 
 ```swift
-remonCast.joinRoom(myChid)
+remonCast.join(myChid)
 ```
 
 혹은 아래와 같이 Interface Builder 없이 작성 가능합니다.
@@ -62,7 +62,7 @@ let config = RemonConfig()
 config.serviceId = "MyServiceID"
 config.key = "MyServiceKey"
 config.channelType viewer
-caster.joinChannel(config)
+caster.join(config)
 ```
 
 ### Observer
@@ -91,7 +91,7 @@ remonCast.onClose {
 
 {% page-ref page="../common/callbacks.md" %}
 
-### Channel
+### Channels
 
 방송을 시청 하기 위해서는 시청 하려는 chid가 필요 합니다. chid는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. 전체 채널 목록을 아래와 같이 조회 가능합니다.
 

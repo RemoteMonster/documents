@@ -12,7 +12,7 @@ description: 통신 서비스를 개발하는 방법을 안내합니다.
 
 ## 개발
 
-통신을 기능은 이용하기 위해서는 `RemonCall` 클래스를 이용합니다. `RemonCall`클래스의 `connectChannel()` 함수를 이용하여 채널 생성 및 접속이 가능합니다. 
+통신을 기능은 이용하기 위해서는 `RemonCall` 클래스를 이용합니다. `RemonCall`클래스의 `connect()` 함수를 이용하여 채널 생성 및 접속이 가능합니다. 
 
 전체적인 구성과 흐름은 아래를 참고하세요.
 
@@ -25,7 +25,7 @@ description: 통신 서비스를 개발하는 방법을 안내합니다.
 `connectChannel()` 함수에 전달한 `chid` 값에 해당하는 채널이 존재하지 않으면 채널이 생성되고, 다른 사용자가 해당 채널에 연결하기를 대기 하는 상태가 됩니다. 이때 해당 `chid`로 다른 사용자가 연결을 시도 하면 연결이 완료 되고, 통신이 시작 됩니다.
 
 ```swift
-remonCall.connectChannel()
+remonCall.connect()
 
 remonCall.onConnect { (chid) in
     let myChid = chid
@@ -37,7 +37,7 @@ remonCall.onConnect { (chid) in
 `connectChannel()` 함수에 접속을 원하는 chid값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
 
 ```swift
-remonCall.connectChannel(myChid)
+remonCall.connect(myChid)
 ```
 
 ### Observer
@@ -66,12 +66,12 @@ remonCast.onClose {
 
 {% page-ref page="../common/callbacks.md" %}
 
-### Channel
+### Channels
 
 랜덤채팅등과 같은 서비스에서는 전체 채널 목록을 필요로 하게 됩니다. 접속하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
 
 ```swift
-remonCall.fetchChannels { (error, results) in
+remonCall.fetchCalls { (error, results) in
     // Do something
 }
 ```

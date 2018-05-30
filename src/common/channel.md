@@ -8,8 +8,6 @@ description: 주요 개념중 하나인 Channel에 대해 소개합니다.
 
 RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Channel이란 이름으로 제공 하고 있습니다. 이 Channel은 각각의 고유한 Id가 있으며 이들의 목록을 보거나 Id를 통해 접속 하게 됩니다.
 
-다만 방송과 통신에서의 동작이 다른부분이 있어 아래와 같이 구분지어 사용하도록 되어있습니다.
-
 |  | Class | Id | Methods | Callbacks |
 | --- | --- | --- |
 | Livecast | remonCast | chid | `create`, `join`, `fetchCasts` | `onCreate`, `onJoin` |
@@ -46,7 +44,7 @@ remonCast.join(chid);
 
 {% tab title="iOS" %}
 ```swift
-remonCast.fetchCast { (err, results) in
+remonCast.fetchCasts { (err, results) in
     if let err = err {
         // 검색 중에 발생한 에러는 remonCast.onError()를 호출 하지 않습니다.
         print(err.localizedDescription)

@@ -94,7 +94,7 @@ remonCast = RemonCast.builder()
         .serviceId("MyServiceId")
         .key("MyServiceKey")
         .build();
-remonCast.createRoom();
+remonCast.create();
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -106,11 +106,11 @@ remonCast.createRoom();
 ```java
 castViewer = RemonCast.builder()
         .context(ViewerActivity.this)
-        .remoteView(surfRendererRemote)        // 방송자의 video Renderer
+        .remoteView(surfRendererRemote)        // 방송자의 Video Renderer
         .serviceId("MyServiceId")
         .key("MyServiceKey")
         .build();
-castViewer.joinRoom("channelId");              // 들어가고자 하는 channel
+castViewer.join("channelId");              // 들어가고자 하는 channel
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -126,12 +126,12 @@ RemonCall Class는 통신기능을 쉽고 빠르게 만들수있는 메소드를
 ```java
 remonCall = RemonCall.builder()
         .context(CallActivity.this)        
-        .localView(surfRendererLocal)        //나의 video Renderer
+        .localView(surfRendererLocal)        //나의 Video Renderer
         .remoteView(surfRendererRemote)      //상대방 video Renderer
         .serviceId("MyServiceId")
         .key("MyServiceKey")
         .build();
-remonCall.connectChannel("channelId")
+remonCall.connect("channelId")
 ```
 
 혹은 좀 더 자세한 내용은 아래를 참고하세요.

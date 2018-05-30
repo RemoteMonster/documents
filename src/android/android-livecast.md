@@ -12,7 +12,7 @@ description: Android로 간단한 방송 앱을 개발합니다.
 
 ## 개발
 
-`RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `createRoom()` 함수와 `joinRoom()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다.
+`RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `create()` 함수와 `join()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다.
 
 전체적인 구성과 흐름은 아래를 참고하세요.
 
@@ -64,12 +64,10 @@ layout.xml 에 RemoteMonster SDK가 제공하는 전용 View를 지정합니다.
 
 ### 방송 생성
 
-RemonCast의 createRoom\(\) 함수를 이용하여 방송 만들 수 있습니다. createRoom\(\) 함수가 호출 되면 Remon의 미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다. 이때 onCreate 콜백을 통해 만들어진 방의 chid를 가져 올 수 있습니다.
+RemonCast의 create\(\) 함수를 이용하여 방송 만들 수 있습니다. create\(\) 함수가 호출 되면 RemoteMonster 서버에서 채널이 만들어 지게 됩니다. 이때 onCreate 콜백을 통해 만들어진 방의 chid를 가져 올 수 있습니다.
 
-createRoom\(\) 호출시 인자값이 없으면 자동으로 chid를 생성해서 알려주고, 원하는 id를 입력하면 해당 id로 chid를 만들어서 반환합니다.
+create\(\) 호출시 인자값이 없으면 자동으로 chid를 생성해서 알려주고, 원하는 id를 입력하면 해당 id로 chid를 만들어서 반환합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="CastActivity.java" %}
 ```java
 remonCast = RemonCast.builder()
     .context(CastActivity.this)
@@ -77,7 +75,7 @@ remonCast = RemonCast.builder()
     .serviceId("MY_SERVICE_ID")
     .key("MY_SERVICE_KEY")
     .build();
-remonCast.createRoom();
+remonCast.create();
 
 remonCast.onCreate(new RemonCast.onCreateCallback() {
     @override
@@ -86,8 +84,6 @@ remonCast.onCreate(new RemonCast.onCreateCallback() {
     }
 });
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 이 때 Service Id와 Key 를 필요로 하게 되는데 아래를 참고하세요.
 
@@ -104,7 +100,7 @@ castViewer = RemonCast.builder()
     .serviceId("MyServiceId")
     .key("MyServiceKey")
     .build();
-castViewer.joinRoom(myChid);
+castViewer.join(myChid);
 
 remonCast.onJoin(new RemonCast.onJoinCallback() {
     @override
@@ -140,13 +136,13 @@ remonCast.onClose(() -> {
 
 {% page-ref page="../common/callbacks.md" %}
 
-### Rooms
+### Channels
 
 방송을 시청 하기 위해서는 시청 하려는 chid가 필요 합니다. chid는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. 전체 채널 목록을 아래와 같이 조회 가능합니다.
 
 ```swift
-remonCast.featchRooms();
-remonCast.onRooms(lives -> {
+remonCast.featchCasts();
+remonCast.onFetch(casts -> {
     // Do something
 });
 ```
