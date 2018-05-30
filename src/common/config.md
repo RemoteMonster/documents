@@ -1,5 +1,9 @@
 # Config
 
+## Overview
+
+`RemonIBController`에 값을 직접 설정 않고, `create()`, `join()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
+
 ## Basics
 
 RemoteMonster는 객체 생성 전에 config값을 선행적으로 받습니다. 가장 단순하게는 화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
