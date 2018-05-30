@@ -111,6 +111,20 @@ remonCall.onStat(report -> Log(report.getFullStatReport()));
 
 {% page-ref page="../common/callbacks.md" %}
 
+### Channel
+
+랜덤채팅등과 같은 서비스에서는 전체 채널 목록을 필요로 하게 됩니다. 접속하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
+
+```swift
+remonCast.search { (error, results) in
+    // Do something
+}
+```
+
+채널에 대한 더 자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="../common/channel.md" %}
+
 ### 종료
 
 모든 통신이 끝났을 경우 꼭 RemonCall객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.

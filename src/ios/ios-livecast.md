@@ -39,7 +39,10 @@ caster.serviceKey = "MyServiceKey"
 caster.broadcast = true
 caster.localView = localView
 caster.createRoom()
-let myChid = caster.channelID
+
+remonCast.onCreate { (chid) in
+    let myChid = caster.channelID
+}
 ```
 
 ### 방송시청
@@ -71,11 +74,11 @@ remonCast.onInit {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 
-remonCast.onCreate {
+remonCast.onCreate { (chid) in
     // 방송 생성 및 시청 준비 완료
 }
 
-remonCast.onComplete {
+remonCast.onJoin {
     // 시청 시작
 }
 
@@ -84,7 +87,7 @@ remonCast.onClose {
 }
 ```
 
-`Remon`이 제공하는 `Observer` 함수에 대한 더 자세한 내용은 `Oserver` 가이드 문서를 참조 하세요
+`Remon`이 제공하는 `Observer` 함수에 대한 더 자세한 내용은 아래를 참조 하세요
 
 {% page-ref page="../common/callbacks.md" %}
 

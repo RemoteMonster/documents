@@ -6,9 +6,9 @@ description: 상황에 맞는 기능을 개발할 수 있는 Callback 함수 사
 
 ## Overview
 
-`RemonCast/RemonCall`로 매우 짧은 코드 만으로 통신 및 방송이 가능 합니다. 하지만 `Remon` 상태에 따라 UI처리 및 추가 작업이 필요한 경우가 발생 합니다. `Remon`은 SDK 사용자가 쉽게 `Remon`의 상태 변화를 추적 할 수 있도록 `Callback` 함수를 제공합니다. 각 함수에 해당되는 `Callback`을 적용시키면 됩니다.
+`RemonCast`, `RemonCall`의 간단한 코드 만으로 통신 및 방송이 가능 합니다. 사용자의 필요에 따라 UI처리 및 추가 작업이 필요한 경우가 발생 합니다. 아래의 다양한 Callback을 통해 보다 세부적인 개발이 가능합니다.
 
-전체적인 흐름은 아래를 참고하세요.
+방송과 통신은 각각에 적합한 이벤트와 흐름을 가지고 있습니다. 이를 알아두면 Callback를 활용하는데 도움이 됩니다. 이에 대한 내용은 아래를 참고하세요.
 
 {% page-ref page="../overview/flow.md" %}
 
@@ -25,7 +25,7 @@ description: 상황에 맞는 기능을 개발할 수 있는 Callback 함수 사
 ```javascript
 const listener = {
   onInit() {
-     // Do something
+    // Do something
   }
 }
 
@@ -56,7 +56,7 @@ remonCast.createRoom()
 
 ### onCreate\(chid\) - livecast
 
-방송에서만 사용됩니다.  Caster가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다. 이후 곧바로 onComplete가 발생하지만, 시청자와 구분을 위해 가급적 방송생성은 onCreate를 사용하는것을 권장합니다.
+방송에서 송출자만 사용합니다.  송출자가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
 
 onCreate는 인자로 chid를 넘겨줍니다. 이것은 이 방의 고유한 구분자로 시청자들이 이 chid를 통해 접속하여 방송을 보게 됩니다.
 
@@ -85,7 +85,7 @@ remonCast.onCreate(new RemonCast.onCreateCallback() {
     }
 });
 
-remonCast.createRoom();
+remonCast.createRoom();        // Server generate chid
 // Or
 remonCast.createRoom('chid');
 ```
@@ -97,18 +97,60 @@ remonCast.onCreate { (chid) in
   // Do something
 }
 
-remonCast.createRoom()
+remonCast.createRoom()           // Server generate chid
 // Or
 remonCast.createRoom('chid')
 ```
 {% endtab %}
 {% endtabs %}
 
+### onJoin\(\) - livecast
+
+방송에서 시청자만 사용됩니다. 시청자가 joinRoom을 통해 연결이 완료 된후 미디어 시청이 가능해 졌을 때 호출 됩니다. 
+
+{% tabs %}
+{% tab title="Web" %}
+```javascript
+const listener = {
+  onJoin(chid) {
+    // Do something
+  }
+}
+
+const rtc = new Remon({ listener })
+rtc.joinCast('chid')
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```java
+remonCast.onJoin(new RemonCast.onJoinCallback() {
+    @Override
+    public void onJoin() {
+        // Do something
+    }
+});
+
+remonCast.joinRoom('chid');
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+```swift
+remonCast.onJoin {
+  // Do something
+}
+
+remonCast.joinRoom('chid')
+```
+{% endtab %}
+{% endtabs %}
+
 ### onConnect\(chid\) - communication
 
-통신에서만 사용됩니다.  Caller이거나 Callee일때 동작이 다를 수 있으며 이를 위해서 개발자가 상태를 스스로 관리해야 합니다.
+통신에서만 사용됩니다.  실질적으로 채널을 만들어 통화를 요청하는 Caller이거나 만들어진 채널에 접속하여 요청에 응답하는 Callee일때의 동작을 달리 하는 경우가 많으며 위해서 개발자가 Caller, Callee여부에 대한 상태를 관리해야 합니다.
 
-Caller가 connectChannel을 통해 채널을 생성하면 생성됩니다. 이후 Callee가 채널에 접속하기 전까지  RemonState가 WAIT상태가 됩니다. 통화의 상대방을 기다린다는 의미입니다. 이때 connectChannel에서 chid를 지정하지 않으면, 자동으로 chid가 만들어집니다.
+Caller는 connectChannel을 통해 채널을 새로 만들고 상대방이 입장하기를 기다립니다.
 
 Callee는 connectChannel을 통해 이미 만들어진 채널에 접속하게 됩니다. 이때 만들어진 채널의 chid를 필수로 필요하게 됩니다. 정상적으로 완료되면 onConnect가 생기나, Callee라면 곧바로 발생하는 onComplete를 사용하는것을 권장합니다.
 
@@ -135,9 +177,7 @@ rtc.connectChannel('chid')
 remonCall.onConnect(new RemonCall.onConnectCallback() {
     @Override
     public void onConnect(chid) {
-      if (isCaller) {
         // Do something
-      }
     }
 });
 
@@ -150,9 +190,7 @@ remonCall.connectChannel("chid");
 {% tab title="iOS" %}
 ```swift
 remonCall.onConnect { (chid) in
-   if isCaller {
      // Do something
-   }
 }
 
 remonCast.connectChannel()
@@ -162,20 +200,16 @@ remonCast.connectChannel("chid")
 {% endtab %}
 {% endtabs %}
 
-### onComplete\(\)
+### onComplete\(\) - communication
 
-방송, 통신을 통틀어 연결이 완료 된후 미디어 전송이 가능해 졌을 때 호출 됩니다. 
-
-방송에서 특히 Watcher거나 통신에서 특히 Callee라면 onComplete를 사용하는것을 권장합니다.
+통신에만 사용됩니다. 상호간 연결이 완료 된후 미디어 전송이 가능해 졌을 때 호출 됩니다. 
 
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
 const listener = {
   onComplete(chid) {
-    if (isWatcher || isCallee) {
-      // Do something
-    }
+    // Do something
   }
 }
 ```
@@ -183,12 +217,10 @@ const listener = {
 
 {% tab title="Android" %}
 ```java
-remonCast.onComplete(new RemonCast.onCompleteCallback() {
+remonCall.onComplete(new RemonCast.onCompleteCallback() {
     @Override
     public void onComplete() {
-        if (isWatcher || isCallee) {
-            // Do something
-        }
+         // Do something
     }
 });
 ```
@@ -196,10 +228,8 @@ remonCast.onComplete(new RemonCast.onCompleteCallback() {
 
 {% tab title="iOS" %}
 ```swift
-remonCast.onComplte {
-  if (isWatcher || isCallee) {
+remonCall.onComplte {
     // Do something
-  }
 }
 ```
 {% endtab %}
@@ -268,7 +298,7 @@ remonCast.onError(new RemonCast.onErrorCallback() {
 
 {% tab title="iOS" %}
 ```swift
-remonCast.onError { (err)
+remonCast.onError { (err) in
     // Do something
 }
 ```
@@ -283,7 +313,9 @@ remonCast.onError { (err)
 
 ### onStateChange\(state\)
 
-최초 `Remon`객체를 만들고 방을 만들며 접속하고 접속에 성공하고 방송, 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. `RemonState` enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. `RemonState`의 상태는 다음과 같습니다.
+최초 `Remon`객체를 만들고 방을 만들며 접속하고 접속에 성공하고 방송, 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. `RemonState` enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. 일반적으로는 사용되지 않으며 디버깅에 유용합니다.
+
+`RemonState`의 상태는 다음과 같습니다.
 
 | 값 | 내용 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -310,7 +342,7 @@ N/A
 
 ### onStat\(report\)
 
-통신 / 방송 상태를 알수있는 `report`를 받습니다. `report`는 사용자가 `remon` 생성시 설정한 `statInterval`간격 마다 들어오게 됩니다.
+통신 / 방송 상태를 알수있는 `report`를 받습니다. `report`는 사용자가 `remon` 생성시 설정한 `statInterval`간격 마다 들어오게 됩니다. 네트워크 상황등에 따른 미디어 품질을 나타냄으로 사용자에게 로딩 UI 처리등 안내를 하는데 유용합니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -343,36 +375,6 @@ remoCall.onRemonStatReport{ (stat) in
 
 {% page-ref page="qulity-status.md" %}
 
-### onMessage\(message\)
-
-`Remon`은 연결이 완료된 이후에 간단한 메세지 전송 기능을 지원 합니다. 상대방으로 부터 메세지가 전달 되었을 때 호춯 됩니다.
-
-{% tabs %}
-{% tab title="Web" %}
-
-{% endtab %}
-
-{% tab title="Android" %}
-```java
-remonCast.onMessage(new RemonCast.onMessageCallback() {
-    @Override
-    public void onMessage(String var1, String var2) {
-       // Do something        
-    }
-});
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-```swift
-remonCall.onMessage { (msg)
-    // Do something
-}
-remonCall.sendMessage("msg")
-```
-{% endtab %}
-{% endtabs %}
-
 ### onSearch\(channels\)
 
 현재 동일한 serviceId를 가진 방송 또는 통신을 검색결과를 받습니다. `RemonCast`의 경우에는 `RemonCast.searchRooms()`를 `RemonCall`의 경우에는 `RemonCall.searchCalls()`하면 검색을 하게 됩니다.
@@ -398,7 +400,7 @@ remonCast.onSearch(new RemonCast.onSearchCallback() {
 {% endtab %}
 {% endtabs %}
 
-보다 더 자세한 내용은 아래를 확인하세요.
+채널에 대한 보다 더 자세한 내용은 아래를 확인하세요.
 
 {% page-ref page="channel.md" %}
 

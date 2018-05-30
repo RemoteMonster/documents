@@ -85,8 +85,8 @@ $ pod install
 ### 방송
 
 ```swift
-remonCast.createRoom()               // livecast - create
-remonCast.joinRoom("channelID")      // livecast - join
+remonCast.createRoom()               // Livecast - Cast live
+remonCast.joinRoom("channelID")      // Livecast - Watch live
 ```
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.
@@ -96,7 +96,7 @@ remonCast.joinRoom("channelID")      // livecast - join
 ### 통신
 
 ```swift
-remonCall.connectChannel()              // communication
+remonCall.connectChannel()            // Communication
 ```
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.

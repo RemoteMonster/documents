@@ -12,7 +12,7 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 
 |  | Name | Id | Methods | Callbacks |
 | --- | --- | --- |
-| Livecast | room | chid | `createRoom`, `joinRoom` | `onCreate`, `onComplete` |
+| Livecast | room | chid | `createRoom`, `joinRoom` | `onCreate`, `onJoin` |
 | Communication | channel | chid | `connectChannel` | `onConnect`, `onComplete` |
 
 전체적인 흐름과 여기에 대응하는 Callback은 아래를 참고하세요.

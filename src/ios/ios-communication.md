@@ -26,6 +26,10 @@ description: 통신 서비스를 개발하는 방법을 안내합니다.
 
 ```swift
 remonCall.connectChannel()
+
+remonCall.onConnect { (chid) in
+    let myChid = chid
+}
 ```
 
 ### 통화 받기
@@ -33,7 +37,7 @@ remonCall.connectChannel()
 `connectChannel()` 함수에 접속을 원하는 chid값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
 
 ```swift
-remonCall.connectChannel("chid")
+remonCall.connectChannel(myChid)
 ```
 
 ### Observer
@@ -61,6 +65,20 @@ remonCast.onClose {
 `Remon`은 `onInit()`와 `onConnect`, `onComplete` 이외에도 많은 `Observer` 함수를 제공 합니다. 더 많은 내용은 아래를 참조 하세요.
 
 {% page-ref page="../common/callbacks.md" %}
+
+### Channel
+
+랜덤채팅등과 같은 서비스에서는 전체 채널 목록을 필요로 하게 됩니다. 접속하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
+
+```swift
+remonCall.search { (error, results) in
+    // Do something
+}
+```
+
+채널에 대한 더 자세한 내용은 아래를 참고하세요.
+
+{% page-ref page="../common/channel.md" %}
 
 ### 종료
 

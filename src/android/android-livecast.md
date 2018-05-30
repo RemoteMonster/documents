@@ -72,18 +72,18 @@ createRoom\(\) 호출시 인자값이 없으면 자동으로 chid를 생성해�
 {% code-tabs-item title="CastActivity.java" %}
 ```java
 remonCast = RemonCast.builder()
-        .context(CastActivity.this)
-        .localView(surfRendererlocal)        // local Video Renderer
-        .serviceId("MyServiceId")
-        .key("MyServiceKey")
-        .build();
+    .context(CastActivity.this)
+    .localView(surfRendererlocal)        // local Video Renderer
+    .serviceId("MY_SERVICE_ID")
+    .key("MY_SERVICE_KEY")
+    .build();
 remonCast.createRoom();
 
 remonCast.onCreate(new RemonCast.onCreateCallback() {
-        @override
-        public void onCreate(String chid) {
-                myChannelId = chid;
-        }
+    @override
+    public void onCreate(String chid) {
+        myChid = chid;
+    }
 });
 ```
 {% endcode-tabs-item %}
@@ -97,26 +97,22 @@ remonCast.onCreate(new RemonCast.onCreateCallback() {
 
 방송 생성시 얻은 chid를 joinRoom\(\)에 인자값으로 주어 해당 채널에 접속합니다. 접속이 완료되면 onComplete가 발생되어 이때부터 View에서의 다양한 처리 등을 진행해 주면 됩니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewerActivity.java" %}
 ```java
 castViewer = RemonCast.builder()
-        .context(ViewerActivity.this)
-        .remoteView(surfRendererRemote)        // remote video renderer
-        .serviceId("MyServiceId")
-        .key("MyServiceKey")
-        .build();
-castViewer.joinRoom(myChannelId);
+    .context(ViewerActivity.this)
+    .remoteView(surfRendererRemote)        // remote video renderer
+    .serviceId("MyServiceId")
+    .key("MyServiceKey")
+    .build();
+castViewer.joinRoom(myChid);
 
-remonCast.onComplete(new RemonCast.onCompleteCallback() {}
-        @override
-        public void onComplete() {
-                // Do something
-        }
-{)
+remonCast.onJoin(new RemonCast.onJoinCallback() {}
+    @override
+    public void onComplete() {
+         // Do something
+    }
+);
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### Callback
 
@@ -124,18 +120,23 @@ remonCast.onComplete(new RemonCast.onCompleteCallback() {}
 
 생성된 remonCast에 eventListener를 등록해 줍니다.
 
-{% code-tabs %}
-{% code-tabs-item title="CastActivity.java" %}
 ```java
-remonCast.onInit(() -> Log("onInit"));
-remonCast.onCreate(() -> Log("onCreate"));
-remonCast.onComplete(() -> Log("onComplete"));
-remonCast.onClose(() -> Log("onClose"));
-remonCast.onError(e -> Log("error code : " + e.getRemonCode().toString()));
-remonCast.onStat(report -> Log(report.getFullStatReport()));
+remonCast.onInit(() ->
+    // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
+);
+
+remonCast.onCreate((chid) ->
+    // 방송 생성 및 시청 준비 완료
+);
+
+remonCast.onJoin(() ->
+    // 시청 시작
+);
+
+remonCast.onClose(() ->
+    // 종료
+);
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 자세한 내용은 아래를 참고하세요.
 
@@ -144,6 +145,12 @@ remonCast.onStat(report -> Log(report.getFullStatReport()));
 ### Channel
 
 방송을 시청 하기 위해서는 시청 하려는 채널이 ID가 필요 합니다. 채널 ID는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. `Remon`는 시청 하려는 채널에 쉽게 접근 할 수 있도록 돕는 검색 기능을 제공 합니다.
+
+```swift
+remonCast.search(error, results) {
+    // 채널 목록 처리
+}
+```
 
 채널에 대한 더 자세한 내용은 아래를 참고하세요.
 
