@@ -27,19 +27,19 @@
 {% tabs %}
 {% tab title="Web" %}
 ```markup
-<!-- Caster - local view -->
+<!-- Caster : local view -->
 <video id="localVideo" autoplay muted></video>
 ```
 
 ```markup
-<!-- Watcher - remote view -->
+<!-- Watcher : remote view -->
 <video id="remoteVideo" autoplay></video>
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```markup
-<!-- Caster - local view -->
+<!-- Caster : local view -->
 <com.remotemonster.sdk.PercentFrameLayout
     android:id="@+id/perFrameLocal"
     android:layout_width="match_parent"
@@ -52,7 +52,7 @@
 ```
 
 ```markup
-<!-- Watcher - remote view -->
+<!-- Watcher : remote view -->
 <com.remotemonster.sdk.PercentFrameLayout
     android:id="@+id/perFrameRemote"
     android:layout_width="match_parent"
