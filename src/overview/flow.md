@@ -13,9 +13,9 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 
 |  | 초기화 | 방생성 | 방접속 | 해지 |
 | --- | --- | --- | --- | --- |
-| Caster Event | connect RemoteMonster | `createRoom()` | - | `close()`, disconnect  |
+| Caster Event | ready RemoteMonster | `create()` | - | `close()`, disconnect  |
 | Caster Callback | `onInit` | `onCreate` | - | `onClose` |
-| Watcher Event | connect RemoteMonster | - | `joinRoom('chid')` | `cloase()`, disconnect |
+| Watcher Event | ready RemoteMonster | - | `join('chid')` | `cloase()`, disconnect |
 | Watcher Callback | `onInit` | - | `onJoin` | `onClose` |
 
 ## Communication
@@ -27,8 +27,8 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 
 |  | 초기화 | 채널 생성 | 채널 접속 | 통화시작 | 해지 |
 | --- | --- | --- | --- | --- |
-| Caller Event | connect RemoteMonster | `connectChannel()` | Wait callee |  | `close()`, disconnect  |
+| Caller Event | ready RemoteMonster | `connect()` | Wait callee |  | `close()`, disconnect  |
 | Caller Callback | `onInit` | `onConnect` | - | `onComplete` | `onClose` |
-| Callee Event | connect RemoteMonster | - | `connectChannel('chid')` |  | `cloase()`, disconnect |
+| Callee Event | ready RemoteMonster | - | `connect('chid')` |  | `cloase()`, disconnect |
 | Callee Callback | `onInit` | - | `onConnect` | `onComplete` | `onClose` |
 
