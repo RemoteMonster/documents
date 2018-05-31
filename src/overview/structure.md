@@ -4,7 +4,7 @@
 
 리모트몬스터의 SDK를 사용하는 것은 매우 간단합니다. 크게 3가지의 클래스 사용법만 익히면 됩니다.
 
-![RemoteMonster SDK overview](../.gitbook/assets/sdkcommonoverview1.png)
+![](../.gitbook/assets/overview_structure.png)
 
 ## Remon class
 

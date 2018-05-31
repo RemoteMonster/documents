@@ -6,7 +6,7 @@ description: 안드로이드에서 개발개요를 설명합니다.
 
 ## Overview
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/android-overview.png)
 
 `Remon Class`는 Remon SDK 에서 가장 핵심이 되는 클래스 입니다. `Remon Config` 와 `Remon Observer`를 통해서 직접 방송과 통신을 만들 수 있으며 복잡 하고, 반복적인 기본 작업을 포함 하고 있는 `RemonCall Class` 와 `RemonCast Class`를 제공 합니다. 이를 통해 방송, 통신 기능을 구현할 수 있습니다.
 
