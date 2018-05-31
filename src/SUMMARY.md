@@ -16,8 +16,8 @@
 * [Web - Getting Start](web/web-getting-start.md)
 * [Web - View](web/web-view.md)
 * [Web - Debug Inside](web/web-debug.md)
-* [Web - Github](https://github.com/remotemonster/browser-sdk/)
-* [Web - SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
+* [Web - Github](https://github.com/remotemonster/web-sdk/)
+* [Web - SDK Reference](https://remotemonster.github.io/web-sdk/docs/)
 
 ## Android
 

@@ -8,6 +8,8 @@
 
 곧바로 개발을 시작합니다.
 
+{% page-ref page="web/web-getting-start.md" %}
+
 {% page-ref page="android/android-getting-start.md" %}
 
 {% page-ref page="ios/ios-getting-start.md" %}
@@ -18,7 +20,7 @@ RemoteMonster Github 저장소의 다양한 예제를 살펴보고 확인합니�
 
 ### Web SDK & Examples
 
-{% embed data="{\"url\":\"https://github.com/remotemonster/browser-sdk/\",\"type\":\"link\",\"title\":\"RemoteMonster/browser-sdk\",\"description\":\"browser-sdk - RemoteMonster browser SDK & examples\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/20677626?s=400&v=4\",\"width\":400,\"height\":400,\"aspectRatio\":1}}" %}
+{% embed data="{\"url\":\"https://github.com/remotemonster/web-sdk/\",\"type\":\"link\",\"title\":\"RemoteMonster/web-sdk\",\"description\":\"web-sdk - RemoteMonster web SDK & examples\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/20677626?s=400&v=4\",\"width\":400,\"height\":400,\"aspectRatio\":1}}" %}
 
 ### Android SDK & Examples
 
