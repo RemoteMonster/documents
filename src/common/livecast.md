@@ -110,7 +110,7 @@ const listener = {
 }
 ​
 const caster = new Remon({ listener, config })
-caster.create()
+caster.createCast()
 ```
 {% endtab %}
 
@@ -185,7 +185,7 @@ const listener = {
 }
 ​
 const watcher = new Remon({ listener, config })
-watcher.join(myChid)                  // myChid from caster
+watcher.joinCast(myChid)                  // myChid from caster
 ```
 {% endtab %}
 
