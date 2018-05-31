@@ -11,10 +11,10 @@ RemoteMonster의 SDK는 브라우저 환경에서 작동합니다. 간단하게 
 
 ```bash
 npm init
-npm i serve
+npm i http-server
 touch index.html
-npx serve
-# Open browser "localhost:3000"
+npx http-server
+# Open browser "localhost:8081"
 ```
 
 ## SDK 설치 - npm {#undefined-1}
