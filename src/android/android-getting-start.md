@@ -42,9 +42,7 @@ build.gradle\(Module:app\) 의 dependencies에 아래와 같이 추가합니다.
 
 ```groovy
 dependencies {
-    ...
-    
-    /* Remote monster WebRTC library */
+    /* RemoteMonster SDK */
     compile 'com.remotemonster.sdk:2.0.4'
 }
 ```
@@ -87,9 +85,9 @@ RemonCast Class로 방송 기능을 쉽고 빠르게 만들 수 있습니다.
 
 ```java
 caster = RemonCast.builder()
-        .context(CastActivity.this)
-        .localView(surfRendererlocal)        // 자신 Video Renderer
-        .build();
+    .context(CastActivity.this)
+    .localView(surfRendererlocal)        // 자신 Video Renderer
+    .build();
 caster.create();
 ```
 
@@ -97,9 +95,9 @@ caster.create();
 
 ```java
 watcher = RemonCast.builder()
-        .context(ViewerActivity.this)
-        .remoteView(surfRendererRemote)        // 방송자의 Video Renderer
-        .build();
+    .context(ViewerActivity.this)
+    .remoteView(surfRendererRemote)        // 방송자의 Video Renderer
+    .build();
 watcher.join("CHANNEL_ID");              // 들어가고자 하는 channel
 ```
 
@@ -113,10 +111,10 @@ RemonCall Class로 통신 기능을 쉽고 빠르게 만들 수 있습니다.
 
 ```java
 remonCall = RemonCall.builder()
-        .context(CallActivity.this)        
-        .localView(surfRendererLocal)        //나의 Video Renderer
-        .remoteView(surfRendererRemote)      //상대방 video Renderer
-        .build();
+    .context(CallActivity.this)        
+    .localView(surfRendererLocal)        //나의 Video Renderer
+    .remoteView(surfRendererRemote)      //상대방 video Renderer
+    .build();
 remonCall.connect("CHANNEL_ID")
 ```
 
