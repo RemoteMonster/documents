@@ -27,10 +27,6 @@ npm i @remotemonster/sdk
 
 ```markup
 <script src="node_modules/@remotemonster/sdk/remon.min.js"></script>
-<script src="node_modules/@remotemonster/sdk/remon.min.mjs" type="module"></script>
-<script type="module">
-  import Remon from './node_modules/@remotemonster/sdk/remon.min.mjs'
-</script>
 ```
 
 ## SDK 설치 - Static Import {#undefined-1}
