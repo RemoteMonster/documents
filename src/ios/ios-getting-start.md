@@ -111,5 +111,17 @@ remonCall.connect("CHANNEL_ID")            // Communication
 
 {% page-ref page="../common/untitled.md" %}
 
+## Known Caveats
+
+### Background Mode Support
+
+백그라운드에서 SDK 연결을 지속적으로 필요하면 아래의 옵션을 Project &gt; Targets &gt; Capabilities &gt; Background Modes 에서 설정하면 됩니다. 백그라운드 설정을 안할 경우 앱이 백그라운드로 진입시 RemoteMonster와의 연결이 종료되어 방송 및 통화가 종료됩니다.
+
+![](../.gitbook/assets/2018-06-01-10.36.28.png)
+
+백그라운드 모드는 아래를 참고하세요
+
+{% embed data="{\"url\":\"https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html\",\"type\":\"link\",\"title\":\"Background Execution\",\"description\":\"Introduces iOS and describes the development process for iOS applications.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://developer.apple.com/favicon.ico\",\"aspectRatio\":0}}" %}
+
 
 
