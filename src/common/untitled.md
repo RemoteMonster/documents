@@ -109,7 +109,7 @@ const listener = {
 }
 ​
 const caller = new Remon({ listener, config })
-caller.connect()
+caller.connectCall()
 ```
 {% endtab %}
 
@@ -185,7 +185,7 @@ const listener = {
 }
 ​
 const callee = new Remon({ listener, config })
-callee.connect()
+callee.connectCall()
 ```
 {% endtab %}
 

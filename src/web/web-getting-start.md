@@ -67,7 +67,7 @@ const config = {
 }
 
 const caster = new Remon({ config })
-caster.create()
+caster.createCast()
 </script>
 ```
 
@@ -83,7 +83,7 @@ const config = {
 }
 
 const watcher = new Remon({ config })
-watcher.join('CHANNEL_ID')
+watcher.joinCast('CHANNEL_ID')
 </script>
 ```
 
@@ -107,7 +107,7 @@ const config = {
 }
 
 const remonCall = new Remon({ config })
-remonCall.connect('CHANNEL_ID')
+remonCall.connectCall('CHANNEL_ID')
 </script>
 ```
 
