@@ -157,7 +157,7 @@ caster.create()
 
 ### 방송시청
 
-RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 있습니다. 이때 원하는 chid를 알려줘야 하는데 이부분은 원하는 형태로 직접 개발합니다.
+RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 있습니다. 이때 원하는 chid를 알려줘야 하는데 보통 아래의 channel을 참고하여 전체 목록을 통해 사용자가 선택하는 방식이 많이 사용됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
