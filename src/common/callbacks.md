@@ -12,6 +12,41 @@
 
 ## Basics
 
+### onInit\(\)
+
+`onInit()`은  SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다. 
+
+{% tabs %}
+{% tab title="Web" %}
+```javascript
+const listener = {
+  onInit() {
+    // Do something
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```java
+remonCast.onInit(new RemonCast.onInitCallback() {
+    @Override
+    public void onInit() {
+        // Do something
+    }
+});
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+```swift
+remonCast.onInit {
+  // Do something
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ### onCreate\(chid\) - livecast
 
 방송에서 송출자만 사용합니다.  송출자가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
@@ -302,24 +337,6 @@ N/A
 
 {% tab title="iOS" %}
 N/A
-{% endtab %}
-{% endtabs %}
-
-### onInit\(\)
-
-`onInit()`은  SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다. 
-
-{% tabs %}
-{% tab title="Web" %}
-```javascript
-const listener = {
-  onInit() {
-    // Do something
-  }
-}
-
-const rtc = new Remon({ listener })
-```
 {% endtab %}
 {% endtabs %}
 
