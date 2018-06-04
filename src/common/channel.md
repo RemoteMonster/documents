@@ -23,7 +23,7 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Cha
 {% tab title="Web" %}
 ```javascript
 const remonCast = new Remon()
-const casts = await remonCast.fetchCasts()
+const casts = await remonCast.fetchCasts()    // Return Promise
 ```
 {% endtab %}
 
@@ -69,7 +69,7 @@ remonCast.join(chid)
 const remonCall = new Remon()
 const calls = await remonCall.fetchCasts((result) => {
   result.filter(item => item.status === "WAIT")
-})
+})                                           // Return Promise
 ```
 {% endtab %}
 
