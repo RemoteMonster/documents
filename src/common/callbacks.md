@@ -12,44 +12,6 @@
 
 ## Basics
 
-### onInit\(\)
-
-`onInit()`은  SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다. 
-
-{% tabs %}
-{% tab title="Web" %}
-```javascript
-const listener = {
-  onInit() {
-    // Do something
-  }
-}
-
-const rtc = new Remon({ listener })
-```
-{% endtab %}
-
-{% tab title="Android" %}
-```java
-remonCast.onInit(new RemonCast.onInitCallback() {
-    @Override
-    public void onInit() {
-        // Do something
-    }
-});
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-```swift
-remonCast.onInit {
-    // Do something
-}
-remonCast.createRoom()
-```
-{% endtab %}
-{% endtabs %}
-
 ### onCreate\(chid\) - livecast
 
 방송에서 송출자만 사용합니다.  송출자가 createRoom을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
@@ -66,9 +28,7 @@ const listener = {
 }
 
 const cast = new Remon({ listener })
-cast.create()
-// Or 
-cast.create('chid')
+cast.createCast()                          // Server generate chid
 ```
 {% endtab %}
 
@@ -81,9 +41,7 @@ remonCast.onCreate(new RemonCast.onCreateCallback() {
     }
 });
 
-remonCast.create();        // Server generate chid
-// Or
-remonCast.create('chid');
+remonCast.create();             // Server generate chid
 ```
 {% endtab %}
 
@@ -93,9 +51,7 @@ remonCast.onCreate { (chid) in
   // Do something
 }
 
-remonCast.create()           // Server generate chid
-// Or
-remonCast.create('chid')
+remonCast.create()               // Server generate chid
 ```
 {% endtab %}
 {% endtabs %}
@@ -114,7 +70,7 @@ const listener = {
 }
 
 const cast = new Remon({ listener })
-cast.join('chid')
+cast.joinCast('chid')                    // 'chid' is mandatory
 ```
 {% endtab %}
 
@@ -127,7 +83,7 @@ remonCast.onJoin(new RemonCast.onJoinCallback() {
     }
 });
 
-remonCast.join('chid');
+remonCast.join('chid');             // 'chid' is mandatory
 ```
 {% endtab %}
 
@@ -137,7 +93,7 @@ remonCast.onJoin {
   // Do something
 }
 
-remonCast.join('chid')
+remonCast.join('chid')            // 'chid' is mandatory
 ```
 {% endtab %}
 {% endtabs %}
@@ -162,9 +118,9 @@ const listener = {
 }
 
 const call = new Remon({ listener })
-call.connect()
+call.connectCall()
 // Or
-call.connect('chid')
+call.connectCall('chid')
 ```
 {% endtab %}
 
@@ -204,7 +160,7 @@ remonCast.connect("chid")
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onComplete(chid) {
+  onComplete() {
     // Do something
   }
 }
@@ -281,7 +237,7 @@ remonCast.close()
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onError() {
+  onError(error) {
     // Do something
   }
 }
@@ -331,7 +287,13 @@ remonCast.onError { (err) in
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onStateChange(state) {
+    // Do something
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -343,13 +305,37 @@ N/A
 {% endtab %}
 {% endtabs %}
 
+### onInit\(\)
+
+`onInit()`은  SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다. 
+
+{% tabs %}
+{% tab title="Web" %}
+```javascript
+const listener = {
+  onInit() {
+    // Do something
+  }
+}
+
+const rtc = new Remon({ listener })
+```
+{% endtab %}
+{% endtabs %}
+
 ### onStat\(report\)
 
 통신 / 방송 상태를 알수있는 `report`를 받습니다. `report`는 사용자가 `remon` 생성시 설정한 `statInterval`간격 마다 들어오게 됩니다. 네트워크 상황등에 따른 미디어 품질을 나타냄으로 사용자에게 로딩 UI 처리등 안내를 하는데 유용합니다.
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onStat(result) {
+    // Do something
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -357,7 +343,7 @@ N/A
 remonCast.onStat(new RemonCast.onStatCallback() {
     @Override
     public void onStat(RemonStatReport statReport) {
-        //do something
+        // Do something
     }
 });
 ```
