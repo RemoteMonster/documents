@@ -67,9 +67,9 @@ remonCast.join(chid)
 {% tab title="Web" %}
 ```javascript
 const remonCall = new Remon()
-const calls = await remonCall.fetchCasts((result) => {
-  result.filter(item => item.status === "WAIT")
-})                                           // Return Promise
+const calls = await remonCall
+  .fetchCasts()                             // Return Promise
+  .filter(item => item.status === "WAIT")
 ```
 {% endtab %}
 
