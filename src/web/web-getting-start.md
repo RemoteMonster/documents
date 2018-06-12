@@ -31,16 +31,14 @@ npm i @remotemonster/sdk
 
 ## SDK 설치 - Static Import {#undefined-1}
 
-[jsdelivr CDN](https://www.jsdelivr.com)을 사용 할 수 있습니다. HTML 파일에 아래와 같이 삽입하세요.
+[jsDelivr CDN](https://www.jsdelivr.com)을 사용 할 수 있습니다. HTML 파일에 아래와 같이 삽입하세요.
 
 ```markup
 <!-- Latest -->
 <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk/remon.min.js"></script>
 
 <!-- Specific version -->
-<script src="
-https://cdn.jsdelivr.net/npm/@remotemonster/sdk@2.0.8/remon.min.js
-"></script>
+<script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk@2.0.8/remon.min.js"></script>
 ```
 
 ## 개발
