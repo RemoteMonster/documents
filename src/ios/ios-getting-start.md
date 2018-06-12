@@ -51,11 +51,11 @@ $ pod install
 
 ## Remon 설정 및 레이아웃 구성
 
-`Remon`은 `RemonIBController`를 이용하여 `InterfaceBuilder`를 이용한 설정이 가능 합니다.
+`Remon`은 `RemonIBController`를 이용하여 InterfaceBuilder를 이용한 설정이 가능 합니다.
 
 * 스토리보드에 `RemonIBController`의 하위객체인 `RemonCall` 또는 `RemonCast`를 추가합니다.
   * `RemonCall`를 1:1 통신을 지원 하며 `RemonCast`는 1:N 방송을 지원 합니다.
-  * `InterfaceBuilder`에서 `Utilities` 뷰를 이용하여 `Remon`을 설정 합니다.
+  * InterfaceBuilder에서 `Utilities` 뷰를 이용하여 `Remon`을 설정 합니다.
 * `ServiceID`와 `Service Key`를 설정합니다.
   * 만약 간단하게 테스트를 하기 원한다면 아무것도 입력 안해도 됩니다.
   * 실제 서비스를 고려한다면 아래를 참고하여 내가 사용할 키를 발급받으세요.
@@ -64,11 +64,11 @@ $ pod install
 
 ![](../.gitbook/assets/basic_config.png)
 
-* 스토리보드에서 원하는 `Scene`에서 원하는 위치에 `Veiw`를 배치하고 `RemonIBController`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
+* 스토리보드에서 원하는 Scene에서 원하는 위치에 `Veiw`를 배치하고 `RemonIBController`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
 
 ![](../.gitbook/assets/basic_config3%20%282%29.png)
 
-* `Remon`를 사용하는 `ViewContoller`에 `RemoteMonster`를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
+* `Remon`를 사용하는 `ViewContoller`에 RemoteMonster SDK를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
 
 ![](../.gitbook/assets/config3.png)
 
@@ -78,7 +78,7 @@ $ pod install
 
 ### 방송
 
-RemonCast Class로 방송 기능을 쉽고 빠르게 만들 수 있습니다.
+`RemonCast`로 방송 기능을 쉽고 빠르게 만들 수 있습니다.
 
 #### 방송 송출
 
@@ -100,7 +100,7 @@ watcher.join("CHANNEL_ID")
 
 ### 통신
 
-RemonCall Class로 통신 기능을 쉽고 빠르게 만들 수 있습니다.
+`RemonCall`로 통신 기능을 쉽고 빠르게 만들 수 있습니다.
 
 ```swift
 let remonCall = RemonCall()

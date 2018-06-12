@@ -6,13 +6,13 @@ description: 뷰와 레이아웃에 대해 소개합니다.
 
 ## Introduction
 
-레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 org.webrtc.SurfaceViewRender와 이 SurfaceViewRender를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 PercentFrameLayout으로 이루어져 있습니다. 이 중에서도 SurfaceViewRender가 가장 핵심이므로 먼저 살펴보겠습니다.
+레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `org.webrtc.SurfaceViewRender`와 이 `SurfaceViewRender`를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRender`가 가장 핵심이므로 먼저 살펴보겠습니다.
 
 ## SurfaceViewRender
 
 ### Basic
 
-android layout 파일에서 다음과 같이 layout에 배치함으로써 SurfaceViewRender를 사용할 수 있습니다.
+Android layout 파일에서 다음과 같이 layout에 배치함으로써 `SurfaceViewRender`를 사용할 수 있습니다.
 
 ```markup
 <RelativeLayout
@@ -41,13 +41,13 @@ SurfaceViewRender remoteRender =
   (SurfaceViewRenderer) findViewById(R.id.remote_video_view);
 ```
 
-이제 이 뷰를 사용할 기본 준비가 완료되었습니다. Remon 클래스의 객체를 생성하고 생성할 때 Config 객체에 이 두 쌍의 뷰를 설정하면 통신이 시작됨과 함께 이 뷰에 카메라나 원격의 영상 스트림이 출력됩니다.
+이제 이 뷰를 사용할 기본 준비가 완료되었습니다. `Remon` 클래스의 객체를 생성하고 생성할 때 `Config`객체에 이 두 쌍의 뷰를 설정하면 통신이 시작됨과 함께 이 뷰에 카메라나 원격의 영상 스트림이 출력됩니다.
 
 ### Advenced
 
-몇가지 이 SurfaceViewRender의 메소드를 살펴보겠습니다.
+몇가지 이 `SurfaceViewRender`의 메소드를 살펴보겠습니다.
 
-뷰간의 ZOrder를 설정할 수 있습니다. 즉 이 뷰를 다른 뷰보다 위 위치하도록 설정합니다. 겹치는 뷰가 있을 경우 다른 뷰는 false로 하고 해당 뷰만 true로 설정해야 합니다.
+뷰간의 Z-Order를 설정할 수 있습니다. 즉 이 뷰를 다른 뷰보다 위 위치하도록 설정합니다. 겹치는 뷰가 있을 경우 다른 뷰는 false로 하고 해당 뷰만 true로 설정해야 합니다.
 
 ```java
 localRender.setZOrderMediaOverlay(true/false);
@@ -67,7 +67,7 @@ localRender.setScalingType(RendererCommon.ScalingType);
 
 ## PercentFrameLayout
 
-리모트몬스터 안드로이드 SDK에서는 영상관련 View의 배치를 쉽게 하기 위해 PercentFrameLayout을 제공합니다. PercentFrameLayout을 이용하면 영상 관련 View를 RelativeLayout안에서 자유롭게 배치하고 동적으로 움직일 수 있습니다. PercentFrameLayout은 layout내의 뷰들을 퍼센트 방식으로 배치합니다.
+리모트몬스터 안드로이드 SDK에서는 영상관련 View의 배치를 쉽게 하기 위해 `PercentFrameLayout`을 제공합니다. `PercentFrameLayout`을 이용하면 영상 관련 View를 RelativeLayout안에서 자유롭게 배치하고 동적으로 움직일 수 있습니다. `PercentFrameLayout`은 layout내의 뷰들을 퍼센트 방식으로 배치합니다.
 
 해당 레이아웃을 relativeLayout상에서 가로세로 100%채워서 배치 합니다.
 

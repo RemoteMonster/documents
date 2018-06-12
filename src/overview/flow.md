@@ -11,7 +11,7 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 * Caster: 방송을 송출하는 행위자
 * Watcher: 방송을 시청하는 행위자
 
-|  | 초기화 | 방생성 | 방접속 | 해지 |
+|  | 초기화 | 채널 생성 | 채널 접속 | 해지 |
 | --- | --- | --- | --- | --- |
 | Caster Event | ready RemoteMonster | `create()` | - | `close()`, disconnect  |
 | Caster Callback | `onInit` | `onCreate` | - | `onClose` |

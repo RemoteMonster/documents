@@ -7,7 +7,7 @@
 
 ## 프로젝트 생성 및 설정
 
-RemoteMonster의 SDK는 브라우저 환경에서 작동합니다. 간단하게 일반적인 웹프론트 엔드 개발 준비를 하면 됩니다.
+RemoteMonster의 SDK는 브라우저 환경에서 작동합니다. 간단하게 일반적인 웹 프론트엔드 개발 준비를 하면 됩니다.
 
 ```bash
 npm init
@@ -53,7 +53,7 @@ SDK를 통해 RemoteMonster 방송, 통신 인프라에 접근하려면, Service
 
 ### 방송
 
-Remon을 통해 방송 기능을 쉽고 빠르게 만들 수 있습니다.
+`Remon`을 통해 방송 기능을 쉽고 빠르게 만들 수 있습니다.
 
 #### 방송 송출
 
@@ -93,7 +93,7 @@ watcher.joinCast('CHANNEL_ID')
 
 ### 통신
 
-Remon을 통해 통신 기능을 쉽고 빠르게 만들 수 있습니다.
+`Remon`을 통해 통신 기능을 쉽고 빠르게 만들 수 있습니다.
 
 ```javascript
 <video id="localVideo" autoplay muted></video>

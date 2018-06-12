@@ -63,7 +63,7 @@
 {% endtab %}
 
 {% tab title="iOS" %}
-Interface Builder를 통해 지정 하게 되며 `iOS - Getting Start`에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
+Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
 
 {% page-ref page="../ios/ios-getting-start.md" %}
 {% endtab %}
@@ -160,7 +160,7 @@ caller.connect()
 
 ### 통화 받기 {#undefined-3}
 
-`connectChannel()` 함수에 접속을 원하는 chid값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
+`connectChannel()` 함수에 접속을 원하는 `chid`값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -231,7 +231,7 @@ callee.connect(myChid)
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onInit() {
+  onInit(token) {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
   },
 ​  
@@ -254,7 +254,7 @@ const listener = {
 ```java
 remonCall = RemonCall.builder().build();
 
-remonCall.onInit(() -> {
+remonCall.onInit((token) -> {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 });
 ​
@@ -276,7 +276,7 @@ remonCall.onClose(() -> {
 ```swift
 let remonCall = RemonCall()
 
-remonCall.onInit {
+remonCall.onInit { (token) in
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 ​

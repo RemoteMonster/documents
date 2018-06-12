@@ -63,7 +63,7 @@ SDK를 통해 RemoteMonster 방송, 통신 인프라에 접근하려면, Service
 
 ### 방송
 
-RemonCast Class로 방송 기능을 쉽고 빠르게 만들 수 있습니다.
+`RemonCast`로 방송 기능을 쉽고 빠르게 만들 수 있습니다.
 
 #### 방송 송출
 
@@ -91,7 +91,7 @@ watcher.join("CHANNEL_ID");              // 들어가고자 하는 channel
 
 ### 통신
 
-RemonCall Class로 통신 기능을 쉽고 빠르게 만들 수 있습니다.
+`RemonCall`로 통신 기능을 쉽고 빠르게 만들 수 있습니다.
 
 ```java
 remonCall = RemonCall.builder()

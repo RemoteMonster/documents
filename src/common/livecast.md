@@ -66,7 +66,7 @@
 {% endtab %}
 
 {% tab title="iOS" %}
-Interface Builder를 통해 지정 하게 되며 `iOS - Getting Start`에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
+Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
 
 {% page-ref page="../ios/ios-getting-start.md" %}
 {% endtab %}
@@ -82,7 +82,7 @@ Interface Builder를 통해 지정 하게 되며 `iOS - Getting Start`에 따라
 
 ### 방송생성
 
-RemonCast의 create\(\) 함수를 이용하여 방송 만들 수 있습니다. create\(\) 함수가 호출 되면 Remon의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
+`RemonCast`의 `create()` 함수를 이용하여 방송 만들 수 있습니다. `create()` 함수가 호출 되면 `Remon`의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -157,7 +157,7 @@ caster.create()
 
 ### 방송시청
 
-RemonCast의 joinRoom\(chid\) 함수를 이용하면 방송에 참여 할 수 있습니다. 이때 원하는 chid를 알려줘야 하는데 보통 아래의 channel을 참고하여 전체 목록을 통해 사용자가 선택하는 방식이 많이 사용됩니다.
+`RemonCast`의 `joinRoom(chid)` 함수를 이용하면 방송에 참여 할 수 있습니다. 이때 원하는 `chid`를 알려줘야 하는데 보통 아래의 `channel`을 참고하여 전체 목록을 통해 사용자가 선택하는 방식이 많이 사용됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -347,7 +347,7 @@ remonCast.fetchCasts { (error, results) in
 
 ### 종료
 
-모든 통신이 끝났을 경우 꼭 RemonCast객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
+모든 통신이 끝났을 경우 꼭 `RemonCast`객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
 
 {% tabs %}
 {% tab title="Web" %}

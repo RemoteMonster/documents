@@ -23,7 +23,7 @@ getUserMedia를 통해 전달된 constraints값들이 기록되어 있습니다.
 ![From testRTC, Copyright 2018 testRTC](../.gitbook/assets/201612-webrtc-internals-structure.png)
 
 1. RTCPeerConnection이 어떻게 설정되어 있는지, 어떤 STUN, TURN서버가 사용되고 그 옵션은 어떻게 설정되어 있는지 알려줍니다.
-2. 왼쪽편은 PeerConnection 객체가 호출된 trace입니다. 즉, PeerConnection객체의 메소드가 호출된 순서대로 나열되어 있고 그 인자값\(예: createOffer\)등과 callback 이벤트 이를테면 onicecandidate 등도 모조리 기록합니다. 이것은 정말 강력하기 때문에 ICE 실패가 어디서 왜 일어났는지를 확인하거나 TURN서버를 어디에 설치해야하는 지 결정하는데에도 많은 영감을 줄 수 있습니다.
+2. 왼쪽편은 PeerConnection 객체가 호출된 trace입니다. 즉, PeerConnection객체의 메소드가 호출된 순서대로 나열되어 있고 그 인자값\(예: createOffer\)등과 callback 이벤트 이를테면 onicecandidate 등도 전부 기록합니다. 이것은 정말 강력하기 때문에 ICE 실패가 어디서 왜 일어났는지를 확인하거나 TURN서버를 어디에 설치해야하는 지 결정하는데에도 많은 영감을 줄 수 있습니다.
 3. Stats Tables: getStats\(\) 메소드로부터 받은 통계정보를 보여줍니다.
 4. getStats\(\) 의 값들을 그래프로 보여줍니다. webrtc-internals의 통계값들은 사실 크롬브라우저의 내부의 포맷이어서 현재의 표준과는 조금 다릅니다. 하지만 크게 다르지는 않고 점점 이 통계치들은 표준과 유사하게 맞춰지고 있는 상황입니다.
 

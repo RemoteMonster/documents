@@ -6,7 +6,7 @@
 
 ## Basics
 
-RemoteMonster는 객체 생성 전에 config값을 선행적으로 받습니다. 가장 단순하게는 화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
+RemoteMonster는 객체 생성 전에 `config`값을 선행적으로 받습니다. 가장 단순하게는 화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
 
 ### View
 
