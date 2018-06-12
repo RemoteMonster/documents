@@ -22,9 +22,9 @@
 ## Browser
 
 * [Overview](browser/overview.md)
-* Config
-* Examples
-* Debug inside
+* [Config](browser/config.md)
+* [Examples](browser/examples.md)
+* [Debug inside](browser/debug-inside.md)
 * [SDK Reference](https://remotemonster.github.io/browser-sdk/doc/)
 
 ## Android
