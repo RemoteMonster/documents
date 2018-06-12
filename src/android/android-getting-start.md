@@ -20,22 +20,6 @@ Open Module Settings에서 Source Compatibility, Target Compatibility를 1.8 이
 
 ![](../.gitbook/assets/image%20%284%29.png)
 
-### Project Gradle 설정
-
-build.gradle\(project:name\)의 allproject에 다음 주소를 입력합니다.
-
-```groovy
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url 'https://demo.remotemonster.com/artifactory/libs-release-local' }
-    }
-}
-```
-
-이제 안드로이드 스튜디오를 동기화하면 자동으로 Remote Monster의 Android SDK를 다운로드 받게 됩니다.
-
 ### Module Gradle 설정
 
 build.gradle\(Module:app\) 의 dependencies에 아래와 같이 추가합니다.
@@ -43,7 +27,7 @@ build.gradle\(Module:app\) 의 dependencies에 아래와 같이 추가합니다.
 ```groovy
 dependencies {
     /* RemoteMonster SDK */
-    compile 'com.remotemonster.sdk:2.0.4'
+    compile 'com.remotemonster.sdk:2.0.12'
 }
 ```
 
