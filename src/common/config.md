@@ -2,11 +2,11 @@
 
 ## Overview
 
-`RemonIBController`에 값을 직접 설정 않고, `create()`, `join()` 함수에 `RemonConfig`를 전달 할 수도 있습니다.
+RemoteMonster는 객체 생성 전에 `config`값을 선행적으로 받습니다.
 
 ## Basics
 
-RemoteMonster는 객체 생성 전에 `config`값을 선행적으로 받습니다. 가장 단순하게는 화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
+가장 기본적으로  화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
 
 ### View
 
@@ -191,7 +191,7 @@ remonCall.autoCaptureStart = true     // default true
 
 ### Audio Options
 
-동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 false, 계속 유지하고 싶다면 true로 설정하세요.
+자동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 false, 계속 유지하고 싶다면 true로 설정하세요.
 
 {% tabs %}
 {% tab title="Web" %}
