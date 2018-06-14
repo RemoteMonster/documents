@@ -20,7 +20,7 @@
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onInit() {
+  onInit(token) {
     // Do something
   }
 }
