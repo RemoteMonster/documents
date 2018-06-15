@@ -63,7 +63,7 @@ Service Id, Key를 지정 하는 단계로 필수 입니다.
 ```javascript
   const config = {
     credential: {
-      serviceId: 'MyServiceId', key: 'myKey'
+      serviceId: 'myServiceId', key: 'myKey'
     }
   }
 ```
