@@ -79,7 +79,7 @@ Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 �
 
 ### 통화 걸기
 
-`connectChannel()` 함수에 전달한 `chid` 값에 해당하는 채널이 존재하지 않으면 채널이 생성되고, 다른 사용자가 해당 채널에 연결하기를 대기 하는 상태가 됩니다. 이때 해당 `chid`로 다른 사용자가 연결을 시도 하면 연결이 완료 되고, 통신이 시작 됩니다.
+`connectChannel()` 함수에 전달한 `channelId` 값에 해당하는 채널이 존재하지 않으면 채널이 생성되고, 다른 사용자가 해당 채널에 연결하기를 대기 하는 상태가 됩니다. 이때 해당 `channelId`로 다른 사용자가 연결을 시도 하면 연결이 완료 되고, 통신이 시작 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -100,8 +100,8 @@ const config = {
 }
 ​
 const listener = {
-  onConnect(chid) {
-    myChid = chid
+  onConnect(channelId) {
+    myChannelId = channelId
   },
   onComplete() {
     // Do something
@@ -123,18 +123,12 @@ caller = RemonCall.builder()
     .remoteView(surfRendererRemote)
     .build();
 ​
-caller.onConnect(new RemonCall.onConnectCallbakc() {
-    @Override
-    public void onConnect(chid) {
-        myChid = chid  // Callee need chid from Caller for connect
-    }
+caller.onConnect((channelId) -> {
+    myChannelId = channelId  // Callee need chid from Caller for connect
 });
 ​
-caller.onComplete(new RemonCall.onCompleteCallbakc() {
-    @Override
-    public void onComplete() {
-        // Caller-Callee connect each other. Do something
-    }
+caller.onComplete(() -> {
+    // Caller-Callee connect each other. Do something
 });
 
 caller.connect();
@@ -145,8 +139,8 @@ caller.connect();
 ```swift
 let caller = RemonCall()
 
-caller.onConnect { (chid) in
-    let myChid = chid          // Callee need chid from Caller for connect
+caller.onConnect { (channelId) in
+    let myChannelId = channelId          // Callee need channelId from Caller for connect
 }
 
 caller.onComplete {
@@ -160,7 +154,7 @@ caller.connect()
 
 ### 통화 받기 {#undefined-3}
 
-`connectChannel()` 함수에 접속을 원하는 `chid`값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
+`connectChannel()` 함수에 접속을 원하는 `channelId`값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -185,7 +179,7 @@ const listener = {
 }
 ​
 const callee = new Remon({ listener, config })
-callee.connectCall()
+callee.connectCall('MY_CHANNEL_ID')
 ```
 {% endtab %}
 
@@ -199,14 +193,11 @@ callee = RemonCall.builder()
     .remoteView(surfRendererRemote)
     .build();
 
-callee.onComplete(new RemonCall.onCompleteCallbakc() {
-    @Override
-    public void onComplete() {
-        // Caller-Callee connect each other. Do something
-    }
+callee.onComplete(() -> {
+    // Caller-Callee connect each other. Do something
 });
 
-callee.connect(myChid);
+callee.connect("MY_CHANNEL_ID");
 ```
 {% endtab %}
 
@@ -218,7 +209,7 @@ callee.onComplete {
     // Caller-Callee connect each other. Do something
 }
 
-callee.connect(myChid)
+callee.connect("MY_CHANNEL_ID")
 ```
 {% endtab %}
 {% endtabs %}
@@ -235,7 +226,7 @@ const listener = {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
   },
 ​  
-  onConnect(chid) {
+  onConnect(channelId) {
     // 통화 생성 후 대기 혹은 응답
   },
 ​
@@ -258,7 +249,7 @@ remonCall.onInit((token) -> {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 });
 ​
-remonCall.onConnect((chid) -> {
+remonCall.onConnect((channelId) -> {
     // 통화 생성 후 대기 혹은 응답
 });
 ​
@@ -280,7 +271,7 @@ remonCall.onInit { (token) in
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 ​
-remonCall.onConnect { (chid) in
+remonCall.onConnect { (channelId) in
     // 해당 'chid'로 미리 생성된 채널이 없다면 다른 사용자가 해당 'chid'로 연결을 시도 할때 까지 대기 상태가 됩니다. 
 }
 ​

@@ -2,12 +2,12 @@
 
 ## Overview
 
-RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 Channel이란 이름으로 제공 하고 있습니다. 이 Channel은 각각의 고유한 Id가 있으며 이들의 목록을 보거나 Id를 통해 접속 하게 됩니다.
+RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 채널이란 이름으로 제공 하고 있습니다. 이 채널은 처음 만들때 생성되어 각각의 고유한 Id를 제공하며, 이들의 목록을 가져오거나 검색하여 특정 채널에 접속 하게 됩니다. 추가적으로 채널에 Name을 별칭으로 지정하여 좀 더 편하게 사용할 수 있습니다.
 
-|  | Class | Id | Methods | Callbacks |
+|  | Class | Id\(unique\) | Name | Methods | Callbacks |
 | --- | --- | --- |
-| Livecast | remonCast | chid | `create`, `join`, `fetchCasts` | `onCreate`, `onJoin` |
-| Communication | remonCall | chid | `connect`, `fetchCalls` | `onConnect`, `onComplete` |
+| Livecast | remonCast | ChannelId | ChannelName | `create`, `join`, `fetchCasts` | `onCreate`, `onJoin` |
+| Communication | remonCall | ChannelId | ChannelName | `connect`, `fetchCalls` | `onConnect`, `onComplete` |
 
 전체적인 흐름과 여기에 대응하는 Callback은 아래를 참고하세요.
 
@@ -33,11 +33,11 @@ remonCast = RemonCast.builder().context(ListActivity.this).build();
 remonCast.fetchCasts();
 remonCast.onFetch(casts -> {
     for (Channel cast : casts) {
-        chid = cast.getId;
+        myChannelId = cast.getId;
     }
 });
 
-remonCast.join(chid);
+remonCast.join(myChannelId);
 ```
 {% endtab %}
 
@@ -49,12 +49,12 @@ remonCast.fetchCasts { (err, results) in
         print(err.localizedDescription)
     } else if let results = results {
         for cast:RemonSearchResult in results {
-            chid = cast.id
+            myChannelId = cast.id
         }
     }
 }
 
-remonCast.join(chid)
+remonCast.join(myChannelId)
 ```
 {% endtab %}
 {% endtabs %}
@@ -80,12 +80,12 @@ remonCall.fetchCalls();
 remonCall.onFetch(calls -> {
     for (Channel call : calls) {
         if (call.getStatus.equals("WAIT")) {   // Only WAIT channels
-            chid = call.getId;
+            myChannelId = call.getId;
         }
     }
 });
 
-remonCall.connect(chid)
+remonCall.connect(myChannelId)
 ```
 {% endtab %}
 
@@ -99,13 +99,13 @@ remonCall.fetchCalls { (err, results) in
     } else if let results = results {
         for call:RemonSearchResult in results {
             if itme.status == "WAIT" {        // Only WAIT channels
-                chid = call.id
+                myChannelId = call.id
             }
         }
     }
 }
 
-remonCall.connect(chid)
+remonCall.connect(myChannelId)
 ```
 {% endtab %}
 {% endtabs %}

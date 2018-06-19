@@ -29,11 +29,8 @@ const listener = {
 
 {% tab title="Android" %}
 ```java
-remonCast.onInit(new RemonCast.onInitCallback() {
-    @Override
-    public void onInit(token) {
-        // Do something
-    }
+remonCast.onInit(() -> {
+    // Do something
 });
 ```
 {% endtab %}
@@ -47,17 +44,17 @@ remonCast.onInit { (token) in
 {% endtab %}
 {% endtabs %}
 
-### onCreate\(chid\) - livecast
+### onCreate\(channelId\) - livecast
 
 방송에서 송출자만 사용합니다.  송출자가 `createRoom`을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
 
-`onCreate`는 인자로 `chid`를 넘겨줍니다. 이것은 이 방의 고유한 구분자로 시청자들이 이 `chid`를 통해 접속하여 방송을 보게 됩니다.
+`onCreate`는 인자로 `channelId`를 넘겨줍니다. 이것은 이 방의 고유한 구분자로 시청자들이 이 `channelId`를 통해 접속하여 방송을 보게 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onCreate(chid) {
+  onCreate(channelId) {
     // Do something
   }
 }
@@ -69,20 +66,17 @@ cast.createCast()                          // Server generate chid
 
 {% tab title="Android" %}
 ```java
-remonCast.onCreate(new RemonCast.onCreateCallback() {
-    @Override
-    public void onCreate(chid) {
-        // Do something
-    }
+remonCast.onCreate((channelId) -> {
+    // Do something
 });
 
-remonCast.create();             // Server generate chid
+remonCast.create();             // Server generate channelId
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCast.onCreate { (chid) in
+remonCast.onCreate { (channelId) in
   // Do something
 }
 
@@ -99,26 +93,23 @@ remonCast.create()               // Server generate chid
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onJoin(chid) {
+  onJoin(channelId) {
     // Do something
   }
 }
 
 const cast = new Remon({ listener })
-cast.joinCast('chid')                    // 'chid' is mandatory
+cast.joinCast('MY_CHANNEL_ID')                    // 'chid' is mandatory
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-remonCast.onJoin(new RemonCast.onJoinCallback() {
-    @Override
-    public void onJoin() {
-        // Do something
-    }
+remonCast.onJoin(() ->
+    // Do something
 });
 
-remonCast.join('chid');             // 'chid' is mandatory
+remonCast.join('MY_CHANNEL_ID');             // channelId is mandatory
 ```
 {% endtab %}
 
@@ -128,24 +119,24 @@ remonCast.onJoin {
   // Do something
 }
 
-remonCast.join('chid')            // 'chid' is mandatory
+remonCast.join('MY_CHANNEL_ID')            // 'chid' is mandatory
 ```
 {% endtab %}
 {% endtabs %}
 
-### onConnect\(chid\) - communication
+### onConnect\(channelId\) - communication
 
 통신에서만 사용됩니다.  실질적으로 채널을 만들어 통화를 요청하는 Caller이거나 만들어진 채널에 접속하여 요청에 응답하는 Callee일때의 동작을 달리 하는 경우가 많으며 위해서 개발자가 Caller, Callee여부에 대한 상태를 관리해야 합니다.
 
 Caller는 `connectChannel`을 통해 채널을 새로 만들고 상대방이 입장하기를 기다립니다.
 
-Callee는 `connectChannel`을 통해 이미 만들어진 채널에 접속하게 됩니다. 이때 만들어진 채널의 `chid`를 필수로 필요하게 됩니다. 정상적으로 완료되면 `onConnect`가 생기나, Callee라면 곧바로 발생하는 `onComplete`를 사용하는것을 권장합니다.
+Callee는 `connectChannel`을 통해 이미 만들어진 채널에 접속하게 됩니다. 이때 만들어진 채널의 `channelId`를 필수로 필요하게 됩니다. 정상적으로 완료되면 `onConnect`가 생기나, Callee라면 곧바로 발생하는 `onComplete`를 사용하는것을 권장합니다.
 
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onConnect(chid) {
+  onConnect(channelId) {
     if (isCaller) {
       // Do something
     }
@@ -155,34 +146,31 @@ const listener = {
 const call = new Remon({ listener })
 call.connectCall()
 // Or
-call.connectCall('chid')
+call.connectCall('MY_CHANNEL_ID')
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-remonCall.onConnect(new RemonCall.onConnectCallback() {
-    @Override
-    public void onConnect(chid) {
-        // Do something
-    }
+remonCall.onConnect((channelId) -> {
+    // Do something
 });
 
 remonCall.connect();
 // Or
-remonCall.connect("chid");
+remonCall.connect("MY_CHANNEL_ID");
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCall.onConnect { (chid) in
+remonCall.onConnect { (channelId) in
      // Do something
 }
 
 remonCast.connect()
 // Or
-remonCast.connect("chid")
+remonCast.connect("MY_CHANNEL_ID")
 ```
 {% endtab %}
 {% endtabs %}
@@ -204,11 +192,8 @@ const listener = {
 
 {% tab title="Android" %}
 ```java
-remonCall.onComplete(new RemonCast.onCompleteCallback() {
-    @Override
-    public void onComplete() {
-         // Do something
-    }
+remonCall.onComplete(() -> {
+    // Do something
 });
 ```
 {% endtab %}
@@ -242,11 +227,8 @@ remon.close()
 
 {% tab title="Android" %}
 ```java
-remonCast.onClose(new RemonCast.onCloseCallback() {
-    @Override
-    public void onClose() {
-        // Do something
-    }
+remonCast.onClose(() -> {
+    // Do something
 });
 
 remonCast.close();
@@ -281,18 +263,15 @@ const listener = {
 
 {% tab title="Android" %}
 ```java
-remonCast.onError(new RemonCast.onErrorCallback() {
-    @Override
-    public void onError(RemonException remonException) {
-        // Do something
-    }
+remonCast.onError((error) -> {
+    // Do something
 });
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCast.onError { (err) in
+remonCast.onError { (error) in
     // Do something
 }
 ```
@@ -307,7 +286,7 @@ remonCast.onError { (err) in
 
 ### onStateChange\(state\)
 
-최초 `Remon`객체를 만들고 방을 만들며 접속하고 접속에 성공하고 방송, 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. `RemonState` enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. 일반적으로는 사용되지 않으며 디버깅에 유용합니다.
+최초 `Remon`객체를 만들고 방을 만들며 접속하고 접속에 성공하고 방송, 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. `RemonState` Enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. 일반적으로는 사용되지 않으며 디버깅에 유용합니다.
 
 `RemonState`의 상태는 다음과 같습니다.
 
@@ -357,11 +336,8 @@ const listener = {
 
 {% tab title="Android" %}
 ```java
-remonCast.onStat(new RemonCast.onStatCallback() {
-    @Override
-    public void onStat(RemonStatReport statReport) {
-        // Do something
-    }
+remonCast.onStat((result) -> {
+    // Do something
 });
 ```
 {% endtab %}
@@ -369,8 +345,8 @@ remonCast.onStat(new RemonCast.onStatCallback() {
 {% tab title="iOS" %}
 ```swift
 let remonCall = RemonCall()
-remoCall.onRemonStatReport{ (stat) in 
-    let rating = stat.getRttRating()
+remoCall.onRemonStatReport{ (result) in 
+    let rating = result.getRttRating()
     // Do something
 }
 ```

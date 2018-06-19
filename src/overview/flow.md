@@ -15,7 +15,7 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 | --- | --- | --- | --- | --- |
 | Caster Event | ready RemoteMonster | `create()` | - | `close()`, disconnect  |
 | Caster Callback | `onInit` | `onCreate` | - | `onClose` |
-| Watcher Event | ready RemoteMonster | - | `join('chid')` | `cloase()`, disconnect |
+| Watcher Event | ready RemoteMonster | - | `join('channelId')` | `cloase()`, disconnect |
 | Watcher Callback | `onInit` | - | `onJoin` | `onClose` |
 
 ## Communication
@@ -29,6 +29,6 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 | --- | --- | --- | --- | --- |
 | Caller Event | ready RemoteMonster | `connect()` | Wait callee | Caller, Callee Connected | `close()`, disconnect  |
 | Caller Callback | `onInit` | `onConnect` | - | `onComplete` | `onClose` |
-| Callee Event | ready RemoteMonster | - | `connect('chid')` | Caller, Callee Connected | `close()`, disconnect |
+| Callee Event | ready RemoteMonster | - | `connect('channelId')` | Caller, Callee Connected | `close()`, disconnect |
 | Callee Callback | `onInit` | - | `onConnect` | `onComplete` | `onClose` |
 

@@ -25,14 +25,20 @@ npm을 통해 간단하게 설치가 가능합니다.
 npm i @remotemonster/sdk
 ```
 
+{% code-tabs %}
+{% code-tabs-item title="index.html" %}
 ```markup
 <script src="node_modules/@remotemonster/sdk/remon.min.js"></script>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## SDK 설치 - Static Import {#undefined-1}
 
 [jsDelivr CDN](https://www.jsdelivr.com)을 사용 할 수 있습니다. HTML 파일에 아래와 같이 삽입하세요.
 
+{% code-tabs %}
+{% code-tabs-item title="index.html" %}
 ```markup
 <!-- Latest -->
 <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk/remon.min.js"></script>
@@ -40,6 +46,8 @@ npm i @remotemonster/sdk
 <!-- Specific version -->
 <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk@2.0.8/remon.min.js"></script>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 개발
 

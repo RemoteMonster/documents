@@ -82,13 +82,13 @@ Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 �
 
 ### 방송생성
 
-`RemonCast`의 `create()` 함수를 이용하여 방송 만들 수 있습니다. `create()` 함수가 호출 되면 `Remon`의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 만들어 지게 됩니다.
+`RemonCast`의 `create()` 함수를 이용하여 방송 만들 수 있습니다. `create()` 함수가 호출 되면 `Remon`의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 채널로써 만들어 지게 됩니다. 이때 채널이 만들어 지면서 `channelId`를 반환하게 되고, 이를 통해 시청자가 접근할 수 있습니다.
 
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
 // <video id="localVideo" autoplay muted></video>
-let myChid
+let myChannelId
 
 const config = {
   credential: {
@@ -104,8 +104,8 @@ const config = {
 }
 
 const listener = {
-  onCreate(chid) {
-    myChid = chid
+  onCreate(channelId) {
+    myChannelId = channelId
   }
 }
 ​
@@ -122,14 +122,12 @@ caster = RemonCast.builder()
     .context(CastActivity.this)
     .localView(surfRendererlocal)        // local Video Renderer
     .build();
-caster.create();
-​
-caster.onCreate(new RemonCast.onCreateCallback() {
-    @override
-    public void onCreate(String chid) {
-        myChid = chid;
-    }
+
+caster.onCreate((channelId) -> {
+    myChannelId = channelId;
 });
+
+caster.create();
 ```
 {% endtab %}
 
@@ -146,8 +144,8 @@ caster.serviceId = "MY_SERVICE_ID"
 caster.serviceKey = "MY_SERVICE_KEY"
 caster.localView = localView
 
-remonCast.onCreate { (chid) in
-    let myChid = caster.channelId
+remonCast.onCreate { (channelId) in
+    let myChannelId = caster.channelId
 }
 
 caster.create()
@@ -157,13 +155,13 @@ caster.create()
 
 ### 방송시청
 
-`RemonCast`의 `joinRoom(chid)` 함수를 이용하면 방송에 참여 할 수 있습니다. 이때 원하는 `chid`를 알려줘야 하는데 보통 아래의 `channel`을 참고하여 전체 목록을 통해 사용자가 선택하는 방식이 많이 사용됩니다.
+`RemonCast`의 `joinRoom(channelId)` 함수를 이용하면 방송에 참여 할 수 있습니다. 이때 원하는 `channelId`를 알려줘야 하는데 보통 아래의 Channel을 참고하여 전체 목록을 통해 사용자가 선택하는 방식이 많이 사용됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
 // <video id="remoteVideo" autoplay></video>
-let myChid
+let myChannelId
 
 const config = {
   credential: {
@@ -185,7 +183,7 @@ const listener = {
 }
 ​
 const watcher = new Remon({ listener, config })
-watcher.joinCast(myChid)                  // myChid from caster
+watcher.joinCast('MY_CHANNEL_ID')                  // myChnnelId from caster
 ```
 {% endtab %}
 
@@ -198,20 +196,15 @@ watcher = RemonCast.builder()
     .remoteView(surfRendererRemote)        // remote video renderer
     .build();
 ​
-watcher.onJoin(new RemonCast.onJoinCallback() {
-    @override
-    public void onComplete() {
-         // Do something
-    }
-});
+watcher.onJoin(() -> {});
 
-watcher.join(myChid);                     // myChid from caster
+watcher.join("MY_CHANNEL_ID");                     // myChid from caster
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```swift
-remonCast.join(myChid)               // myChid from caster
+remonCast.join(myChannelId)                  // myChannelId from caster
 ```
 
 혹은 아래와 같이 Interface Builder 없이 작성 가능합니다.
@@ -226,7 +219,7 @@ watcher.onJoin {
     // Do something
 }
 
-watcher.join(myChid)              // myChid from caster
+watcher.join("MY_CHANNEL_ID")              // myChannelId from caster
 ```
 {% endtab %}
 {% endtabs %}
@@ -243,7 +236,7 @@ const listener = {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
   },
 ​  
-  onCreate(chid) {
+  onCreate(channelId) {
     // 방송 생성 및 시청 준비 완료
   },
 ​
@@ -266,7 +259,7 @@ remonCast.onInit(() -> {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 });
 ​
-remonCast.onCreate((chid) -> {
+remonCast.onCreate((channelId) -> {
     // 방송 생성 및 시청 준비 완료
 });
 ​
@@ -288,7 +281,7 @@ remonCast.onInit {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 
-remonCast.onCreate { (chid) in
+remonCast.onCreate { (channelId) in
     // 방송 생성 및 시청 준비 완료
 }
 
@@ -309,7 +302,7 @@ remonCast.onClose {
 
 ### Channel
 
-방송을 시청 하기 위해서는 시청 하려는 chid가 필요 합니다. chid는 방송이 생성 될 때 마다 변경 되는 유니크 값입니다. 전체 채널 목록을 아래와 같이 조회 가능합니다.
+방송을 만들면 채널이 생성되고 고유한 `channelId`가 생성 됩니다.  이 `channelId`를 통해 시청자가 생성된 방송에 접근가능합니다. 이때 방송중인 전체 채널 목록을 아래와 같이 조회 가능합니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -324,7 +317,7 @@ const casts = await remonCast.fetchCasts()
 remonCast = RemonCast.builder().build();
 
 remonCast.featchCasts();
-remonCast.onFetch(casts -> {
+remonCast.onFetch((casts) -> {
     // Do something
 });
 ```
