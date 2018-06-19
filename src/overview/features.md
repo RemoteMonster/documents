@@ -26,7 +26,7 @@ RemoteMonster의 방송 통신기술은 API형태로 제공됩니다. 복잡한 
 * WebRTC Edge Engine
   * WebRTC 엔진인 Chrominum 최신 버전을 제공하여 높은 호환성과 성능, 품질 제공
 * Latest Standard
-  * WebRTC 1.0 CR Based API
+  * WebRTC 1.0 Based API
 * 다양한 플랫폼 및 최신의 언어 지원
   * Android
   * iOS\(Objective C, Swift\)
