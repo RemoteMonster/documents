@@ -111,6 +111,12 @@ remonCall.connect("CHANNEL_ID")            // Communication
 
 {% page-ref page="../common/untitled.md" %}
 
+### 오디오 타입
+
+Remon에는 'voice'와 'music' 2가지의 오디오 타입이 존재 합니다. voice 모드를 기본값으로 동작 하며, 목소리 중심이 아닌 다양 음성을 이용 하기를 원하시면 'music'모드를 이용 할 수 있습니다.
+
+![RemonSettings.plist &#xD30C;&#xC77C;&#xC5D0; AudioType &#xAC12;&#xC744; &#xC6D0;&#xD558;&#xB294; &#xBAA8;&#xB4DC;&#xB85C; &#xBCC0;&#xACBD;&#xD574; &#xC8FC;&#xC138;&#xC694;.](../.gitbook/assets/remonsettings.png)
+
 ## Known Caveats
 
 ### Background Mode Support
