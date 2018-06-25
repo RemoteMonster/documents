@@ -41,7 +41,7 @@ npm i @remotemonster/sdk
 {% code-tabs-item title="index.html" %}
 ```markup
 <!-- Latest -->
-<script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk/remon.min.js"></script>
+<script src=""></script>
 
 <!-- Specific version -->
 <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk@2.0.8/remon.min.js"></script>
@@ -121,5 +121,5 @@ remonCall.connectCall('CHANNEL_ID')
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="../common/untitled.md" %}
+{% page-ref page="../common/communication.md" %}
 

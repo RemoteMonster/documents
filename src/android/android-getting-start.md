@@ -104,7 +104,7 @@ remonCall.connect("CHANNEL_ID")
 
 혹은 좀 더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="../common/untitled.md" %}
+{% page-ref page="../common/communication.md" %}
 
 
 

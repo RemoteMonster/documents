@@ -32,7 +32,7 @@ RemoteMonster의 SDK를 사용하는 것은 매우 간단합니다. 크게 3가�
 
 {% page-ref page="../common/livecast.md" %}
 
-{% page-ref page="../common/untitled.md" %}
+{% page-ref page="../common/communication.md" %}
 
 ## Config Class
 
