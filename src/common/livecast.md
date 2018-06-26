@@ -52,7 +52,7 @@
 ```
 
 ```markup
-<!-- Watcher : remote view -->
+<!-- Viewer : remote view -->
 <com.remotemonster.sdk.PercentFrameLayout
     android:id="@+id/perFrameRemote"
     android:layout_width="match_parent"
@@ -182,23 +182,23 @@ const listener = {
   }
 }
 ​
-const watcher = new Remon({ listener, config })
-watcher.joinCast('MY_CHANNEL_ID')                  // myChnnelId from caster
+const viewer = new Remon({ listener, config })
+viewer.joinCast('MY_CHANNEL_ID')                  // myChnnelId from caster
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-watcher = RemonCast.builder()
+viewer = RemonCast.builder()
     .serviceId("MY_SERVICE_ID")
     .key("MY_SERVICE_KEY")
     .context(ViewerActivity.this)
     .remoteView(surfRendererRemote)        // remote video renderer
     .build();
 ​
-watcher.onJoin(() -> {});
+viewer.onJoin(() -> {});
 
-watcher.join("MY_CHANNEL_ID");                     // myChid from caster
+viewer.join("MY_CHANNEL_ID");                     // myChid from caster
 ```
 {% endtab %}
 
@@ -210,16 +210,16 @@ remonCast.join(myChannelId)                  // myChannelId from caster
 혹은 아래와 같이 Interface Builder 없이 작성 가능합니다.
 
 ```swift
-let watcher = RemonCast()
-watcher.serviceId = "MY_SERVICE_ID"
-watcher.key = "MY_SERVICE_KEY"
-watcher.remoteView = remoteView
+let viewer = RemonCast()
+viewer.serviceId = "MY_SERVICE_ID"
+viewer.key = "MY_SERVICE_KEY"
+viewer.remoteView = remoteView
 
-watcher.onJoin {
+viewer.onJoin {
     // Do something
 }
 
-watcher.join("MY_CHANNEL_ID")              // myChannelId from caster
+viewer.join("MY_CHANNEL_ID")              // myChannelId from caster
 ```
 {% endtab %}
 {% endtabs %}

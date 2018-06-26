@@ -78,11 +78,11 @@ caster.create();
 #### 방송 시청
 
 ```java
-watcher = RemonCast.builder()
+viewer = RemonCast.builder()
     .context(ViewerActivity.this)
     .remoteView(surfRendererRemote)        // 방송자의 Video Renderer
     .build();
-watcher.join("CHANNEL_ID");              // 들어가고자 하는 channel
+viewer.join("CHANNEL_ID");              // 들어가고자 하는 channel
 ```
 
 혹은 좀 더 자세한 내용은 아래를 참고하세요.

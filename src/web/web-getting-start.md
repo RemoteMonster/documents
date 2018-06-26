@@ -90,8 +90,8 @@ const config = {
   }
 }
 
-const watcher = new Remon({ config })
-watcher.joinCast('CHANNEL_ID')
+const viewer = new Remon({ config })
+viewer.joinCast('CHANNEL_ID')
 </script>
 ```
 

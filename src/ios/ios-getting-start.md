@@ -90,8 +90,8 @@ caster.create()
 #### 방송 시청
 
 ```swift
-let watcher = RemonCast()
-watcher.join("CHANNEL_ID")
+let viewer = RemonCast()
+viewer.join("CHANNEL_ID")
 ```
 
 혹은 좀더 자세한 내용은 아래를 참고하세요.
