@@ -1,0 +1,53 @@
+.book .book-summary #book-search-input {
+  border-top: 0;
+}
+
+.book .book-body .book-header {
+  position: static;
+  top: 27px;
+}
+
+.navbar {
+  padding-top: 1.9rem;
+  padding-left: 2rem;
+  padding-right: .5rem;
+  padding-bottom: 1.9rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .07);
+  position: relative;
+  background-color: #f7f7f9;
+}
+
+.navbar-brand {
+  text-align: left;
+}
+
+.navbar .navbar-nav {
+  margin: 0;
+  list-style: none;
+  float: right;
+}
+
+.navbar .navbar-nav .nav-item ~ .nav-item::before {
+  content: '  ';
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: rgb(128, 195, 255);
+}
+
+.nav-link{
+    color: rgba(0,0,0,.5);
+    font-family: var(--exo2);
+    padding-top: .425rem;
+    padding-bottom: .425rem;
+    font-size:1.3em;
+}
+
+.navbar .navbar-nav .nav-item {
+  display: inline-block;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    display: none;
+  }
+}
