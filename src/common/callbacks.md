@@ -14,7 +14,7 @@
 
 ### onInit\(token\)
 
-`onInit()`은 SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 이때 인증 정보인 `token`을 돌려 받습니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다.
+`onInit`은 SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 이때 인증 정보인 `token`을 돌려 받습니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -46,7 +46,7 @@ remonCast.onInit { (token) in
 
 ### onCreate\(channelId\) - livecast
 
-방송에서 송출자만 사용합니다. 송출자가 `create`을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
+방송에서 송출자만 사용합니다. 송출자가 `create()`을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
 
 `onCreate`는 인자로 `channelId`를 넘겨줍니다. 이것은 이 방의 고유한 구분자로 시청자들이 이 `channelId`를 통해 접속하여 방송을 보게 됩니다.
 
@@ -87,7 +87,7 @@ remonCast.create()               // Server generate chid
 
 ### onJoin\(\) - livecast
 
-방송에서 시청자만 사용됩니다. 시청자가 `join`을 통해 연결이 완료 된후 미디어 시청이 가능해 졌을 때 호출 됩니다.
+방송에서 시청자만 사용됩니다. 시청자가 `join()`을 통해 연결이 완료 된후 미디어 시청이 가능해 졌을 때 호출 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -128,9 +128,9 @@ remonCast.join('MY_CHANNEL_ID')            // 'chid' is mandatory
 
 통신에서만 사용됩니다. 실질적으로 채널을 만들어 통화를 요청하는 Caller이거나 만들어진 채널에 접속하여 요청에 응답하는 Callee일때의 동작을 달리 하는 경우가 많으며 위해서 개발자가 Caller, Callee여부에 대한 상태를 관리해야 합니다.
 
-Caller는 `connectChannel`을 통해 채널을 새로 만들고 상대방이 입장하기를 기다립니다.
+Caller는 `connect()`을 통해 채널을 새로 만들고 상대방이 입장하기를 기다립니다.
 
-Callee는 `connectChannel`을 통해 이미 만들어진 채널에 접속하게 됩니다. 이때 만들어진 채널의 `channelId`를 필수로 필요하게 됩니다. 정상적으로 완료되면 `onConnect`가 생기나, Callee라면 곧바로 발생하는 `onComplete`를 사용하는것을 권장합니다.
+Callee는 `connect()`을 통해 이미 만들어진 채널에 접속하게 됩니다. 이때 만들어진 채널의 `channelId`를 필수로 필요하게 됩니다. 정상적으로 완료되면 `onConnect`가 생기나, Callee라면 곧바로 발생하는 `onComplete`를 사용하는것을 권장합니다.
 
 {% tabs %}
 {% tab title="Web" %}
