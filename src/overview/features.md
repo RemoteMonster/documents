@@ -30,7 +30,7 @@ RemoteMonster의 방송 통신기술은 API형태로 제공됩니다. 복잡한 
 * 다양한 플랫폼 및 최신의 언어 지원
   * Android
   * iOS\(Objective C, Swift\)
-  * Chrome/Firefox/Edge/Safari/Whale \( Promise way, ES6\)
+  * Chrome/Firefox/Edge/Safari/Whale \(Promise API, ES6\)
 
 ### 품질
 
@@ -42,7 +42,9 @@ RemoteMonster의 방송 통신기술은 API형태로 제공됩니다. 복잡한 
 * 품질
   * 모바일 기기의 성능에 따른 다양한 성능 옵션 선택 가능
   * 네트워크 상황에 따른 지능적인 동적 품질 적용 엔진
-  * 다양한 코덱 선택 가능\(영상: VP8, VP9, H.264, 음성: G.711, Opus\(Stereo\), ISAC\(Mono\)
+  * 다양한 코덱 선택 가능
+    * 영상: VP8, VP9, H.264
+    * 음성: G.711, Opus\(Stereo\), ISAC\(Mono\)
 
 ### 개발 용이성
 
