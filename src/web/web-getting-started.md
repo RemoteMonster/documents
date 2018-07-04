@@ -1,4 +1,4 @@
-# Web - Getting Start
+# Web - Getting Started
 
 ## 준비사항
 

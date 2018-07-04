@@ -1,4 +1,4 @@
-# Android - Getting Start
+# Android - Getting Started
 
 ## 준비사항
 

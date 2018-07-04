@@ -4,11 +4,11 @@
 
 통신을 하기 전에 프로젝트 설정을 진행 합니다.​
 
-{% page-ref page="../web/web-getting-start.md" %}
+{% page-ref page="../web/web-getting-started.md" %}
 
-{% page-ref page="../android/android-getting-start.md" %}
+{% page-ref page="../android/android-getting-started.md" %}
 
-{% page-ref page="../ios/ios-getting-start.md" %}
+{% page-ref page="../ios/ios-getting-started.md" %}
 
 ## 개발 {#undefined-1}
 
@@ -59,7 +59,7 @@
 
 Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
 
-{% page-ref page="../ios/ios-getting-start.md" %}
+{% page-ref page="../ios/ios-getting-started.md" %}
 
 보다 더 자세한 내용은 아래를 참고하세요.
 

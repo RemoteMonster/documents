@@ -4,7 +4,7 @@ Interface Builder를 통해 StoryBoard를 이용하여 환경설정과 개발을
 
 Interface Builder를 통한 기본적인 사용은 아래를 참고하세요.
 
-{% page-ref page="ios-getting-start.md" %}
+{% page-ref page="ios-getting-started.md" %}
 
 Interface Builder 빌더를 사용하지 않는 다면 아래 코드를 참조 하세요.
 

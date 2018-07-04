@@ -1,4 +1,4 @@
-# iOS - Getting Start
+# iOS - Getting Started
 
 ## 준비 사항
 

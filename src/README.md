@@ -24,11 +24,11 @@ Browser, Android, iOS 모두 각각에 맞는 패키매니저를 통해 매우 �
 
 아래를 통해 각 플랫폼별 세부적인 내용을 확인해 보세요.
 
-{% page-ref page="web/web-getting-start.md" %}
+{% page-ref page="web/web-getting-started.md" %}
 
-{% page-ref page="android/android-getting-start.md" %}
+{% page-ref page="android/android-getting-started.md" %}
 
-{% page-ref page="ios/ios-getting-start.md" %}
+{% page-ref page="ios/ios-getting-started.md" %}
 
 ### 개발
 
