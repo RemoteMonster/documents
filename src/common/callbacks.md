@@ -46,7 +46,7 @@ remonCast.onInit { (token) in
 
 ### onCreate\(channelId\) - livecast
 
-방송에서 송출자만 사용합니다. 송출자가 `createRoom`을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
+방송에서 송출자만 사용합니다. 송출자가 `create`을 통해 방송을 정상적으로 생성하여 송출이 될때입니다.
 
 `onCreate`는 인자로 `channelId`를 넘겨줍니다. 이것은 이 방의 고유한 구분자로 시청자들이 이 `channelId`를 통해 접속하여 방송을 보게 됩니다.
 
@@ -87,7 +87,7 @@ remonCast.create()               // Server generate chid
 
 ### onJoin\(\) - livecast
 
-방송에서 시청자만 사용됩니다. 시청자가 `joinRoom`을 통해 연결이 완료 된후 미디어 시청이 가능해 졌을 때 호출 됩니다.
+방송에서 시청자만 사용됩니다. 시청자가 `join`을 통해 연결이 완료 된후 미디어 시청이 가능해 졌을 때 호출 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
