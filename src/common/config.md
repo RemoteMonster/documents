@@ -15,23 +15,23 @@ RemoteMonster는 객체 생성 전에 `config`값을 선행적으로 받습니�
 {% tabs %}
 {% tab title="Web" %}
 ```markup
-  <video id="remoteVideo" autoplay controls></video>
-  <video id="localVideo" autoplay controls muted></video>
-  <script>
-    const config = {
-      view: {
-        remote: '#remoteVideo', local: '#localVideo'
-      }
+<video id="remoteVideo" autoplay controls></video>
+<video id="localVideo" autoplay controls muted></video>
+<script>
+  const config = {
+    view: {
+      remote: '#remoteVideo', local: '#localVideo'
     }
-  </script>
+  }
+</script>
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-  Config config = new com.remotemonster.sdk.Config();
-  config.setLocalView((SurfaceViewRenderer) findViewById(R.id.local_video_view));
-  config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view));
+Config config = new com.remotemonster.sdk.Config();
+config.setLocalView((SurfaceViewRenderer) findViewById(R.id.local_video_view));
+config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view));
 ```
 {% endtab %}
 
@@ -61,19 +61,19 @@ Service Id, Key를 지정 하는 단계로 필수 입니다.
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
-  const config = {
-    credential: {
-      serviceId: 'myServiceId', key: 'myKey'
-    }
+const config = {
+  credential: {
+    serviceId: 'myServiceId', key: 'myKey'
   }
+}
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-  Config config = new com.remotemonster.sdk.Config();
-  config.setServiceId("myServiceId");
-  config.setKey("myKey");
+Config config = new com.remotemonster.sdk.Config();
+config.setServiceId("myServiceId");
+config.setKey("myKey");
 ```
 {% endtab %}
 
