@@ -4,12 +4,6 @@
 
 방송을 하기 전에 각 플렛폼 별 프로젝트 설정을 진행 합니다.
 
-{% page-ref page="../web/web-getting-start.md" %}
-
-{% page-ref page="../android/android-getting-start.md" %}
-
-{% page-ref page="../ios/ios-getting-start.md" %}
-
 ## 개발
 
 `RemonCast` 클래스는 방송 생성 및 시청을 위한 기능을 제공합니다. `RemonCast` 클래스의 `create()` 함수와 `join()` 함수를 이용하여 방송 기능을 이용 할 수 있습니다.
@@ -32,7 +26,7 @@
 ```
 
 ```markup
-<!-- Watcher : remote view -->
+<!-- Viewer : remote view -->
 <video id="remoteVideo" autoplay></video>
 ```
 {% endtab %}
@@ -68,7 +62,7 @@
 {% tab title="iOS" %}
 Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
 
-{% page-ref page="../ios/ios-getting-start.md" %}
+{% page-ref page="../ios/ios-getting-started.md" %}
 {% endtab %}
 {% endtabs %}
 
@@ -82,7 +76,7 @@ Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 �
 
 ### 방송생성
 
-`RemonCast`의 `create()` 함수를 이용하여 방송 만들 수 있습니다. `create()` 함수가 호출 되면 `Remon`의  미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 채널로써 만들어 지게 됩니다. 이때 채널이 만들어 지면서 `channelId`를 반환하게 되고, 이를 통해 시청자가 접근할 수 있습니다.
+`RemonCast`의 `create()` 함수를 이용하여 방송 만들 수 있습니다. `create()` 함수가 호출 되면 `Remon`의 미디어 서버에다른 사용자들이 접속 할 수 있는 방송이 채널로써 만들어 지게 됩니다. 이때 채널이 만들어 지면서 `channelId`를 반환하게 되고, 이를 통해 시청자가 접근할 수 있습니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -226,7 +220,7 @@ viewer.join("MY_CHANNEL_ID")              // myChannelId from caster
 
 ### Observer
 
-개발중 다양한 상태 추적을 돕기 위한  Callback을 제공 합니다.
+개발중 다양한 상태 추적을 돕기 위한 Callback을 제공 합니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -302,7 +296,7 @@ remonCast.onClose {
 
 ### Channel
 
-방송을 만들면 채널이 생성되고 고유한 `channelId`가 생성 됩니다.  이 `channelId`를 통해 시청자가 생성된 방송에 접근가능합니다. 이때 방송중인 전체 채널 목록을 아래와 같이 조회 가능합니다.
+방송을 만들면 채널이 생성되고 고유한 `channelId`가 생성 됩니다. 이 `channelId`를 통해 시청자가 생성된 방송에 접근가능합니다. 이때 방송중인 전체 채널 목록을 아래와 같이 조회 가능합니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -370,6 +364,4 @@ remonCast.close()
 방송 생성, 시청시 좀 더 자세한 설정이 필요하다면 아래를 참고하세요.
 
 {% page-ref page="config.md" %}
-
-
 
