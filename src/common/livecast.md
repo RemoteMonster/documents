@@ -334,7 +334,7 @@ remonCast.fetchCasts { (error, results) in
 
 ### 종료
 
-모든 통신이 끝났을 경우 꼭 `RemonCast`객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
+방송의 송출, 시청이 끝났을 경우 꼭 `RemonCast`객체를 `close()`해주어야 합니다. close를 통해서 모든 방송 자원과 미디어 스트림 자원이 해제됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
