@@ -129,5 +129,3 @@ bandwidth를 예측합니다. 다음과 같은 정보를 가지고 있습니다.
 * googRetransmitBitrate: RTX가 사용된다면 재전송의 bitrate을 측정을 허용합니다. 패킷손실을 측정하는 데 유용합니다.
 * googBucketDelay: 큰 프레임과 관련된 구글의 "leaky bucket" 전략의 측정입니다. 크게 중요하지 않습니다.
 
-
-

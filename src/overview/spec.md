@@ -38,12 +38,10 @@ description: 제품의 주요 규격과 기능을 소개합니다.
 | --- | --- | --- |
 | Video | Codec | H.264\(기본\), VP8, VP9 |
 |  | Networks | 최소 300kbps 이상 |
-|  | Processing Power |  듀얼코어 이상. CPU 벤치마크 PassMark Software 제시점수 1000점 이상의 PC |
+|  | Processing Power | 듀얼코어 이상. CPU 벤치마크 PassMark Software 제시점수 1000점 이상의 PC |
 | Audio | Codec | G.711, Opus, ISAC |
 |  | Networks | 최소 50kbps 이상 |
 | Etc | Latency | 최소 0.2초 - 최대 1초. 네트워크와 환경에 따라 다를 수 있음 |
 |  | Setup time | 웹: 1초 미만, 모바일: 1.5초 미만. 네트워크와 기타 환경에 따라 다를 수 있음 |
 |  | Region | 전세계 |
-
-
 

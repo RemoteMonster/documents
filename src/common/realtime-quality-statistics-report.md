@@ -24,8 +24,6 @@ description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소
 
 {% tabs %}
 {% tab title="Web" %}
-
-
 ```javascript
 const listener = {
   onStat(result){
@@ -58,6 +56,4 @@ remoCall.onRemonStatReport{ (stat) in
 ```
 {% endtab %}
 {% endtabs %}
-
-
 

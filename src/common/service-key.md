@@ -16,7 +16,7 @@ RemoteMonster를 실제 사용하기 위해서는 Service ID와 Key를 발급 �
 
 신청시 기입한 메일을 통해 아래의 정보가 발급되어 발송됩니다.
 
-### Service ID 
+### Service ID
 
 내 서비스에 사용되는 ID입니다. 다른 서비스와 구분됩니다.
 
@@ -37,6 +37,4 @@ RemoteMonster를 실제 사용하기 위해서는 Service ID와 Key를 발급 �
 {% page-ref page="../android/android-getting-start.md" %}
 
 {% page-ref page="../ios/ios-getting-start.md" %}
-
-
 

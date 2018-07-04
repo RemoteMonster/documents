@@ -12,13 +12,13 @@
 
 API Level 18이상으로 설정 합니다.
 
-![](../.gitbook/assets/image.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
-### Compatibility 설정 
+### Compatibility 설정
 
 Open Module Settings에서 Source Compatibility, Target Compatibility를 1.8 이상으로 설정해줍니다.
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image-4.png)
 
 ### Module Gradle 설정
 
@@ -105,6 +105,4 @@ remonCall.connect("CHANNEL_ID")
 혹은 좀 더 자세한 내용은 아래를 참고하세요.
 
 {% page-ref page="../common/communication.md" %}
-
-
 

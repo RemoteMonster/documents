@@ -6,7 +6,7 @@ RemoteMonster는 객체 생성 전에 `config`값을 선행적으로 받습니�
 
 ## Basics
 
-가장 기본적으로  화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
+가장 기본적으로 화면이 보일 View와 Service Id, Key를 지정하는 것이 필요합니다.
 
 ### View
 
@@ -237,6 +237,4 @@ remonCast.debugMode = true
 ```
 {% endtab %}
 {% endtabs %}
-
-
 

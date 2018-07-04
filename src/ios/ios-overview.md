@@ -20,5 +20,3 @@ RemoteMonster iOS SDK에 대한 모든 정보를 얻을 수 있습니다. 다양
 
 SDK의 기능을 세부적으로 안내합니다.
 
-
-

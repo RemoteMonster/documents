@@ -4,7 +4,7 @@
 
 RemoteMonster의 방송 통신기술은 API형태로 제공됩니다. 복잡한 Back-end, Infra, 방송, 통신기술 개발이 필요없이 쉽게 Skype나 Hangout, Snapchat, 아프리카TV와 같은 방송 통신 서비스를 구현할 수 있습니다. RemoteMonster가 구축하는 글로벌한 통신 API와 SDK를 통해 즉시 서비스를 시작하세요.
 
-![](../.gitbook/assets/overview_features.png)
+![](../.gitbook/assets/overview_features%20%282%29.png)
 
 ## Highlights
 

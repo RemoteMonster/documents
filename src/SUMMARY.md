@@ -6,7 +6,7 @@
 
 * [Flow](overview/flow.md)
 * [Structure](overview/structure.md)
-* [Examples](overview/introduction.md)
+* [Examples](overview/examples.md)
 * [Features](overview/features.md)
 * [Spec](overview/spec.md)
 
@@ -15,7 +15,7 @@
 * [Web - Overview](web/web-overview.md)
 * [Web - Getting Start](web/web-getting-start.md)
 * [Web - View](web/web-view.md)
-* [Web - Debug Inside](web/web-debug.md)
+* [Web - Debug Inside](web/web-debug-inside.md)
 * [Web - Github](https://github.com/remotemonster/web-sdk/)
 * [Web - SDK Reference](https://remotemonster.github.io/web-sdk/docs/)
 
@@ -43,7 +43,7 @@
 * [Communication](common/communication.md)
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)
-* [Realtime Quality Statistics Report](common/stat-report.md)
+* [Realtime Quality Statistics Report](common/realtime-quality-statistics-report.md)
 * [Error Code](common/error-code.md)
-* [About WebRTC](common/webrtc.md)
+* [About WebRTC](common/about-webrtc.md)
 

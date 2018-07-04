@@ -11,13 +11,13 @@ Xcode에서 Swift기반의 프로젝트를 생성합니다.
 
 프로젝트 생성 후 `Build Settings`에서 `Enable Bitcode`에 대하여 `No`를 설정해야 합니다.
 
-![Bitcode](../.gitbook/assets/ios_bitcode%20%281%29.png)
+![Bitcode](../.gitbook/assets/ios_bitcode-1.png)
 
 또한 Info.plist에서 다음 항목에 대해 추가 혹은 변경을 해주셔야 합니다.
 
 * Privacy: Bluetooth, Microphone, Camera
 
-![Settings](../.gitbook/assets/ios_buildsettings.png)
+![Settings](../.gitbook/assets/ios_buildsettings%20%284%29.png)
 
 ## SDK 설치 - Cocoapods
 
@@ -47,7 +47,7 @@ $ pod install
 
 다운로드받은 RemoteMonster iOS SDK를 압축을 풀면 2개의 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster SDK를 프레임워크로 인식하게 됩니다.
 
-![Framework](../.gitbook/assets/ios_importframework%20%282%29.png)
+![Framework](../.gitbook/assets/ios_importframework-2.png)
 
 ## Remon 설정 및 레이아웃 구성
 
@@ -62,11 +62,11 @@ $ pod install
 
 {% page-ref page="../common/service-key.md" %}
 
-![](../.gitbook/assets/basic_config.png)
+![](../.gitbook/assets/basic_config%20%283%29.png)
 
 * 스토리보드에서 원하는 Scene에서 원하는 위치에 `Veiw`를 배치하고 `RemonIBController`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
 
-![](../.gitbook/assets/basic_config3%20%282%29.png)
+![](../.gitbook/assets/basic_config3-2.png)
 
 * `Remon`를 사용하는 `ViewContoller`에 RemoteMonster SDK를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
 
@@ -117,7 +117,7 @@ remonCall.connect("CHANNEL_ID")            // Communication
 
 `Remon`에는 voice와 music 2가지의 오디오 타입이 존재 합니다. voice 모드를 기본값으로 동작 하며, 목소리 중심이 아닌 다양 소리을 이용 하기를 원하시면 music모드를 이용 할 수 있습니다. music모드는 특히 방송에 더 잘 어울리는 경향이 있습니다.
 
-![](../.gitbook/assets/remonsettings.png)
+![](../.gitbook/assets/remonsettings%20%281%29.png)
 
 `RemonSettings.plist` 파일을 프로젝트에 추가하고, AudioType 값을 원하는 모드로 변경해 주세요.
 
@@ -125,11 +125,9 @@ remonCall.connect("CHANNEL_ID")            // Communication
 
 백그라운드에서 SDK 연결을 지속적으로 필요하면 아래의 옵션을 Project &gt; Targets &gt; Capabilities &gt; Background Modes 에서 설정하면 됩니다. 백그라운드 설정을 안할 경우 앱이 백그라운드로 진입시 RemoteMonster와의 연결이 종료되어 방송 및 통화가 종료됩니다.
 
-![](../.gitbook/assets/2018-06-01-10.36.28.png)
+![](../.gitbook/assets/2018-06-01-10.36.28%20%281%29.png)
 
 백그라운드 모드는 아래를 참고하세요
 
 {% embed data="{\"url\":\"https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html\",\"type\":\"link\",\"title\":\"Background Execution\",\"description\":\"Introduces iOS and describes the development process for iOS applications.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://developer.apple.com/favicon.ico\",\"aspectRatio\":0}}" %}
-
-
 
