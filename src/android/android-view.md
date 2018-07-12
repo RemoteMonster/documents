@@ -6,7 +6,7 @@ description: 뷰와 레이아웃에 대해 소개합니다.
 
 ## Introduction
 
-레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `org.webrtc.SurfaceViewRender`와 이 `SurfaceViewRender`를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRender`가 가장 핵심이므로 먼저 살펴보겠습니다.
+레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `SurfaceViewRender`를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRender`가 가장 핵심이므로 먼저 살펴보겠습니다.
 
 ## SurfaceViewRender
 
