@@ -26,6 +26,7 @@
 * [Android - View](android/android-view.md)
 * [Android - Github](https://github.com/remotemonster/android-sdk/)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
+* [Android - ProGuard Setting](android/android-proguard-setting.md)
 
 ## iOS
 

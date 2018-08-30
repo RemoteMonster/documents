@@ -5,7 +5,7 @@
 RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 채널이란 이름으로 제공 하고 있습니다. 이 채널은 처음 만들때 생성되어 각각의 고유한 Id를 제공하며, 이들의 목록을 가져오거나 검색하여 특정 채널에 접속 하게 됩니다. 추가적으로 채널에 Name을 별칭으로 지정하여 좀 더 편하게 사용할 수 있습니다.
 
 |  | Class | Id\(unique\) | Name | Methods | Callbacks |
-| --- | --- | --- |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Livecast | remonCast | ChannelId | ChannelName | `create`, `join`, `fetchCasts` | `onCreate`, `onJoin` |
 | Communication | remonCall | ChannelId | ChannelName | `connect`, `fetchCalls` | `onConnect`, `onComplete` |
 

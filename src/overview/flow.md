@@ -12,7 +12,7 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 * Viewer: 방송을 시청하는 행위자
 
 |  | 초기화 | 채널 생성 | 채널 접속 | 해지 |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- | :--- |
 | Caster Event | ready RemoteMonster | `create()` | - | `close()`, disconnect |
 | Caster Callback | `onInit` | `onCreate` | - | `onClose` |
 | Viewer Event | ready RemoteMonster | - | `join('channelId')` | `cloase()`, disconnect |
@@ -26,7 +26,7 @@ RemoteMonster를 사용하는 전반에 있어서 보편적인 흐름이 있습�
 * Callee : 통신을 응답하는 행위자
 
 |  | 초기화 | 채널 생성 | 채널 접속 | 통화시작 | 해지 |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Caller Event | ready RemoteMonster | `connect()` | Wait callee | Caller, Callee Connected | `close()`, disconnect |
 | Caller Callback | `onInit` | `onConnect` | - | `onComplete` | `onClose` |
 | Callee Event | ready RemoteMonster | - | `connect('channelId')` | Caller, Callee Connected | `close()`, disconnect |

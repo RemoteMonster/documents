@@ -7,7 +7,7 @@ description: 제품의 주요 규격과 기능을 소개합니다.
 ## Features
 
 | 항목 | 내용 |
-| --- | --- | --- |
+| :--- | :--- |
 | 1:1 음성 통화 | 지원 |
 | 1:1 영상 통화 | 지원 |
 | N:N 영상/음성 통화 | 최소 4:4에서 최대 8:8까지 지원. 기기 성능과 품질 정의에 따라 다름 |
@@ -23,7 +23,7 @@ description: 제품의 주요 규격과 기능을 소개합니다.
 ## Environments
 
 | 항목 | 내용 |
-| --- | --- | --- |
+| :--- | :--- |
 | Web - Chrome | Desktop, Android 모두 지원 |
 | Web - Firefox | Desktop, Android 모두 지원 |
 | Web - Whale | 지원 |
@@ -35,7 +35,7 @@ description: 제품의 주요 규격과 기능을 소개합니다.
 ## Media and Networks
 
 | 구분 | 항목 | 내용 |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | Video | Codec | H.264\(기본\), VP8, VP9 |
 |  | Networks | 최소 300kbps 이상 |
 |  | Processing Power | 듀얼코어 이상. CPU 벤치마크 PassMark Software 제시점수 1000점 이상의 PC |
