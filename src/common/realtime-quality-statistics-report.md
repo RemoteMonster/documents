@@ -50,10 +50,15 @@ const listener = {
 ```swift
 let remonCall = RemonCall()
 remoCall.onRemonStatReport{ (stat) in 
-    let rating = stat.getRttRating()
-    // Do something
+    let rating:RatingValue = stat.getRttRating()
+    let level = rating.levle
 }
+self.showRemoteVideoStat = true //stat 정보가 영상 위에 오버레이 됩니다.
 ```
+
+onRemonStatReport 함수는 RemonStatReport 객체를 인자로 전달 합니다. 
 {% endtab %}
 {% endtabs %}
+
+
 
