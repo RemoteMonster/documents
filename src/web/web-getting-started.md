@@ -25,6 +25,10 @@ npm을 통해 간단하게 설치가 가능합니다.
 npm i @remotemonster/sdk
 ```
 
+```javascript
+import Remon from '@remotemonster/sdk'
+```
+
 {% code-tabs %}
 {% code-tabs-item title="index.html" %}
 ```markup
