@@ -35,11 +35,19 @@ remonCast.onInit(() -> {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCast.onInit { (token) in
   // Do something
 }
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[remonCast onInitWithBlock:^{
+    // Do something
+}];
 ```
 {% endtab %}
 {% endtabs %}
@@ -74,13 +82,21 @@ remonCast.create();             // Server generate channelId
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCast.onCreate { (channelId) in
   // Do something
 }
 
 remonCast.create()               // Server generate chid
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[remonCast onCreateWithBlock:^(NSString * _Nullable chId) {
+    // Do something
+}];
 ```
 {% endtab %}
 {% endtabs %}
@@ -113,13 +129,26 @@ remonCast.join('MY_CHANNEL_ID');             // channelId is mandatory
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCast.onJoin {
   // Do something
 }
 
 remonCast.join('MY_CHANNEL_ID')            // 'chid' is mandatory
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```javascript
+const listener = {
+  onJoin(channelId) {
+    // Do something
+  }
+}
+
+const cast = new Remon({ listener })
+cast.joinCast('MY_CHANNEL_ID')                    // 'channelId' is mandatory
 ```
 {% endtab %}
 {% endtabs %}
@@ -162,7 +191,7 @@ remonCall.connect("MY_CHANNEL_ID");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCall.onConnect { (channelId) in
      // Do something
@@ -171,6 +200,16 @@ remonCall.onConnect { (channelId) in
 remonCast.connect()
 // Or
 remonCast.connect("MY_CHANNEL_ID")
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[remonCall onConnectWithBlock:^(NSString * _Nullable chId) {
+    // Do something
+}];
+
+[remonCall connect:@"MY_CHANNEL_ID" :nil];
 ```
 {% endtab %}
 {% endtabs %}
@@ -198,11 +237,18 @@ remonCall.onComplete(() -> {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCall.onComplte {
     // Do something
 }
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[remonCall onCompleteWithBlock:^{
+    // Do something
 ```
 {% endtab %}
 {% endtabs %}
@@ -235,13 +281,21 @@ remonCast.close();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCast.onClose {
     // Do something
 }
 
 remonCast.close()
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[remonCast onCloseWithBlock:^{
+    // Do something
+}];
 ```
 {% endtab %}
 {% endtabs %}
@@ -269,12 +323,16 @@ remonCast.onError((error) -> {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCast.onError { (error) in
     // Do something
 }
 ```
+{% endtab %}
+
+{% tab title="Objc" %}
+Sorry next version supported
 {% endtab %}
 {% endtabs %}
 

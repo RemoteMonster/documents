@@ -41,7 +41,7 @@ remonCast.join(myChannelId);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 remonCast.fetchCasts { (err, results) in
     if let err = err {
@@ -55,6 +55,19 @@ remonCast.fetchCasts { (err, results) in
 }
 
 remonCast.join(myChannelId)
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+RemonCast *remonCast = [[RemonCast alloc]init];
+[remonCast fetchCastsWithIsTest:YES complete:^(NSArray<RemonSearchResult *> * _Nullable chs) {
+     if (chs != nil) {
+          for (RemonSearchResult *item in chs) {
+               // Do Somethig                         
+           }
+     }                       
+}];
 ```
 {% endtab %}
 {% endtabs %}
@@ -89,7 +102,7 @@ remonCall.connect(myChannelId)
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 let remonCall = RemonCall()
 remonCall.fetchCalls { (err, results) in
@@ -106,6 +119,21 @@ remonCall.fetchCalls { (err, results) in
 }
 
 remonCall.connect(myChannelId)
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+RemonCall *remonCall = [[RemonCall alloc]init];
+[remonCall fetchCastsWithIsTest:YES complete:^(NSArray<RemonSearchResult *> * _Nullable chs) {
+     if (chs != nil) {
+          for (RemonSearchResult *item in chs) {
+               if ([item.status isEqualToString@"WAIT"]) {
+                    // Do Somethig
+               }                  
+           }          
+     }                       
+}];
 ```
 {% endtab %}
 {% endtabs %}

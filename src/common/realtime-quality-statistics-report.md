@@ -46,7 +46,7 @@ const listener = {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 let remonCall = RemonCall()
 remoCall.onRemonStatReport{ (stat) in 
@@ -57,6 +57,15 @@ self.showRemoteVideoStat = true //stat 정보가 영상 위에 오버레이 됩�
 ```
 
 onRemonStatReport 함수는 RemonStatReport 객체를 인자로 전달 합니다. 
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[self.remonCast onRemonStatReportWithBlock:^(RemonStatReport * _Nonnull stat) {
+    RatingValue *rating = [stat getRttRating];
+    // Do something
+}];
+```
 {% endtab %}
 {% endtabs %}
 

@@ -35,11 +35,21 @@ config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view))
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 let myRemoteView:UIView! = UIView()
 let myLocalView:UIView! = UIView()
 let remonCall = RemonCall()
+remonCall.remoteView = myRemoteView
+remonCall.localView = myLocalView
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+UIView *myRemoteView = [UIView new];
+UIView *myLocalView = [UIView new];
+RemonCall *remonCall = [[RemonCall alloc] init];
 remonCall.remoteView = myRemoteView
 remonCall.localView = myLocalView
 ```
@@ -77,11 +87,19 @@ config.setKey("myKey");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 let remonCall = RemonCall()
 remonCall.serviceId = "myServiceId"
 remonCall.serviceKey = "myServiceKey"
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+RemonCall *remonCall = [[RemonCall alloc] init];
+remonCall.serviceId = @"myServiceId"
+remonCall.serviceKey = @"myServiceKey"
 ```
 {% endtab %}
 {% endtabs %}
@@ -125,13 +143,23 @@ config.setVideoCall(true);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 // Audio Only
 remonCall.onlyAudio = true
 
 // Audio, Video
 remonCall.onlyAudio = false             //default fasle
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+// Audio Only
+remonCall.onlyAudio = YES;
+
+// Audio, Video
+remonCall.onlyAudio = NO;             //default fasle
 ```
 {% endtab %}
 {% endtabs %}
@@ -172,7 +200,7 @@ config.setVideoFps(15);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Swift" %}
 ```swift
 let remonCall = RemonCall()
 
@@ -185,6 +213,21 @@ remonCall.useFrontCamera = true       // default true, 만약 false 라면 후�
 // 로컬 비디오 전송 준비가 완료 되면 자동으로 로컬 비디오 캡쳐를 시작 합니다.
 // 만약 이 값을 false로 설정 한다면 onComplete() 호출 이후에 startLocalVideoCapture()를 호출 하여야 합니다.
 remonCall.autoCaptureStart = true     // default true
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+RemonCall *remonCall = [[RemonCall alloc] init];
+​
+remonCall.videoWidth = 640;
+remonCall.videoHeight = 480;
+remonCall.videoFps = 24;
+remonCall.videoCodec = @"H264";
+remonCall.useFrontCamera = YES;       // this is true by default, if this is false, use the rear camera.
+// Start local video capture automatically when it is ready to transmit a local video.
+// If you set this value to false, you must call startLocalVideoCapture() after the onComplete() call.
+remonCall.autoCaptureStart = YES;     // default true
 ```
 {% endtab %}
 {% endtabs %}
@@ -236,5 +279,14 @@ let remonCast = RemonCast()
 remonCast.debugMode = true
 ```
 {% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+RemonCall *remonCall = [[RemonCall alloc] init];
+remonCall.debugMode = YES;
+```
+{% endtab %}
 {% endtabs %}
+
+
 

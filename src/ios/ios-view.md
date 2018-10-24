@@ -8,11 +8,23 @@ Interface Builder를 통한 기본적인 사용은 아래를 참고하세요.
 
 Interface Builder 빌더를 사용하지 않는 다면 아래 코드를 참조 하세요.
 
+{% tabs %}
+{% tab title="Swift" %}
 ```swift
 let remonCall = RemonCall()
 remonCall.remoteView = myRemoteView
 remonCall.localView = myLocalView
 ```
+{% endtab %}
+
+{% tab title="Objc" %}
+```text
+RemonCall *remonCall = [[RemonCall alloc] init];
+remonCall.remoteView = myRemoteView;
+remonCall.localView = myLocalView;
+```
+{% endtab %}
+{% endtabs %}
 
 영상 크기값을 얻기 원하신다면 onRemoteVideoSizeChanged 함수와 onLocalVideoSizeChanged 함수를 구현하여 줍니다.
 
