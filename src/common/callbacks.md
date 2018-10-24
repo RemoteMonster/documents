@@ -284,6 +284,37 @@ remonCast.onError { (error) in
 
 ## Advanced
 
+### onRemoteVideoSizeChanged\(view, size\)/onLocalVideoSizeChanged\(view, size\)
+
+영상의 사이즈는 네트워크 상태에 따라 시시각각 변화 하며, 영상의 비율은 영상장치에 따라 다릅니다. 영상 송출자가 고정된 사이즈와 비율 보장해 주지 않는 환경이라면 onRemoteVideoSizeChanged와 onLocalVideoSizeChanged 함수를 구현 하여 변화 하는 영상크기에 반응 하도록 구현합니다.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+let remonCall = RemonCall()
+remonCall.onRemoteVideoSizeChanged {(view, size) in 
+    let raito = size.height / size.width
+    let oldSize = view.frame.size
+    let newFrame = 
+    CGRect(x: 0.0, y: 0.0, width: oldSize.width, height: oldSize.width * raito)
+    view.frame = newFrame
+}
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```text
+[self.remonCall onLocalVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
+        CGFloat raito = size.height / size.width;
+        CGRect oldFrame = view.frame;
+        CGSize oldSize = oldFrame.size;
+        CGRect newFrame = CGRectMake(0, 0, oldSize.width, oldSize.width * raito);
+        view.frame = newFrame;
+    }];
+```
+{% endtab %}
+{% endtabs %}
+
 ### onStateChange\(state\)
 
 최초 `Remon`객체를 만들고 방을 만들며 접속하고 접속에 성공하고 방송, 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. `RemonState` Enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. 일반적으로는 사용되지 않으며 디버깅에 유용합니다.

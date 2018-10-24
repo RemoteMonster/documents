@@ -8,7 +8,7 @@ webrtc-internals는 현재 연결되어서 통신하고 있는 여러 stat정보
 
 아래를 참고하여 작성되었습니다.
 
-{% embed data="{\"url\":\"https://testrtc.com/webrtc-internals-documentation/\",\"type\":\"link\",\"title\":\"The Missing chrome://webrtc-internals Documentation • testRTC\",\"description\":\"There’s a wealth of information tucked into the chrome://webrtc-internals tab, but there was up until recently very little documentation about it. So we set out to solve that, and with the assistance of Philipp Hancke wrote a series of articles on what you can find in webrtc-internals and how to make use of it. The...\",\"icon\":{\"type\":\"icon\",\"url\":\"https://testrtc.com/wp-content/uploads/2015/11/cropped-testRTC\_logo\_512x512-192x192.png\",\"width\":192,\"height\":192,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://testrtc.com/wp-content/uploads/2016/12/201612-getstats.jpg\",\"width\":799,\"height\":420,\"aspectRatio\":0.5256570713391739}}" %}
+{% embed url="https://testrtc.com/webrtc-internals-documentation/" %}
 
 ## getUserMedia Requests
 

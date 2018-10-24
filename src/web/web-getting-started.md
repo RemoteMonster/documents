@@ -17,7 +17,7 @@ npx http-server
 # Open browser "localhost:8081"
 ```
 
-## SDK 설치 - npm {#undefined-1}
+## SDK 설치 - npm <a id="undefined-1"></a>
 
 npm을 통해 간단하게 설치가 가능합니다.
 
@@ -37,7 +37,7 @@ import Remon from '@remotemonster/sdk'
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## SDK 설치 - Static Import {#undefined-1}
+## SDK 설치 - Static Import <a id="undefined-1"></a>
 
 [jsDelivr CDN](https://www.jsdelivr.com)을 사용 할 수 있습니다. HTML 파일에 아래와 같이 삽입하세요.
 

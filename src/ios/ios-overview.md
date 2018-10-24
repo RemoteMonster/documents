@@ -10,13 +10,13 @@
 
 ### Downloads, Change Log, Examples
 
-{% embed data="{\"url\":\"https://github.com/remotemonster/ios-sdk\",\"type\":\"link\",\"title\":\"RemoteMonster/ios-sdk\",\"description\":\"ios-sdk - RemoteMonster iOS SDK & examples\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/20677626?s=400&v=4\",\"width\":400,\"height\":400,\"aspectRatio\":1}}" %}
+{% embed url="https://github.com/remotemonster/ios-sdk" %}
 
 RemoteMonster iOS SDK에 대한 모든 정보를 얻을 수 있습니다. 다양한 예제를 코드로 검토하세요.
 
 ### Reference Document
 
-{% embed data="{\"url\":\"https://remotemonster.github.io/ios-sdk/\",\"type\":\"link\",\"title\":\"  Reference\"}" %}
+{% embed url="https://remotemonster.github.io/ios-sdk/" %}
 
 SDK의 기능을 세부적으로 안내합니다.
 

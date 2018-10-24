@@ -13,6 +13,10 @@ Xcode에서 Swift기반의 프로젝트를 생성합니다.
 
 ![Bitcode](../.gitbook/assets/ios_bitcode-1.png)
 
+Objc 환경이라면 ALWAYS\_EMBED\_SWIFT\_STANDARD\_LIBRARIES 값을 Yes로 설정해야 합니다.
+
+![ALWAYS\_EMBED\_SWIFT\_STANDARD\_LIBRARIES](../.gitbook/assets/2018-10-24-9.38.26.png)
+
 또한 Info.plist에서 다음 항목에 대해 추가 혹은 변경을 해주셔야 합니다.
 
 * Privacy: Bluetooth, Microphone, Camera
@@ -43,11 +47,15 @@ $ pod install
 
 우선 아래의 링크를 통해 iOS SDK의 마지막 버전을 다운로드 받습니다.
 
-{% embed data="{\"url\":\"https://github.com/remotemonster/ios-sdk\",\"type\":\"link\",\"title\":\"RemoteMonster/ios-sdk\",\"description\":\"ios-sdk - RemoteMonster iOS SDK & examples\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/20677626?s=400&v=4\",\"width\":400,\"height\":400,\"aspectRatio\":1}}" %}
+{% embed url="https://github.com/remotemonster/ios-sdk" %}
 
-다운로드받은 RemoteMonster iOS SDK를 압축을 풀면 2개의 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster SDK를 프레임워크로 인식하게 됩니다.
+다운로드받은 RemoteMonster iOS SDK를 폴더에는 3개의 관련 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster SDK를 프레임워크로 인식하게 됩니다.
 
 ![Framework](../.gitbook/assets/ios_importframework-2.png)
+
+Build Phases에 copy file 항목을 추가 하고, 위 단계에서 추가한 Frameworks를 복사 대상으로 추가 하여 줍니다.
+
+![Copy Frameworks](../.gitbook/assets/copy_frameworks.png)
 
 ## Remon 설정 및 레이아웃 구성
 
@@ -129,5 +137,5 @@ remonCall.connect("CHANNEL_ID")            // Communication
 
 백그라운드 모드는 아래를 참고하세요
 
-{% embed data="{\"url\":\"https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html\",\"type\":\"link\",\"title\":\"Background Execution\",\"description\":\"Introduces iOS and describes the development process for iOS applications.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://developer.apple.com/favicon.ico\",\"aspectRatio\":0}}" %}
+{% embed url="https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html" %}
 

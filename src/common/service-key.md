@@ -8,7 +8,7 @@ RemoteMonster를 실제 사용하기 위해서는 Service ID와 Key를 발급 �
 
 아래의 홈페이지에서 `사용신청` 버튼을 클릭하여 사용신청 입력 폼을 작성합니다.
 
-{% embed data="{\"url\":\"https://remotemonster.com\",\"type\":\"link\",\"title\":\"RemoteMonster\",\"icon\":{\"type\":\"icon\",\"url\":\"https://uploads-ssl.webflow.com/5ae923e519474e392b0c80fc/5b02226459e4c8782a772e2f\_remon\_logo-09.png\",\"aspectRatio\":0},\"caption\":\"RemoteMonster Homepage\"}" %}
+{% embed url="https://remotemonster.com" caption="RemoteMonster Homepage" %}
 
 사용신청 폼을 작성한 이후로 24시간 이내에 신청한 메일로 Service ID와 Key를 발급받게 됩니다. 신청시 꼭 메일 응답가능한 메일로 작성해 주세요.
 

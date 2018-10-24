@@ -14,6 +14,19 @@ remonCall.remoteView = myRemoteView
 remonCall.localView = myLocalView
 ```
 
+영상 크기값을 얻기 원하신다면 onRemoteVideoSizeChanged 함수와 onLocalVideoSizeChanged 함수를 구현하여 줍니다.
+
+```swift
+let remonCall = RemonCall()
+remonCall.onRemoteVideoSizeChanged {(view, size) in 
+    let raito = size.height / size.width
+    let oldSize = view.frame.size
+    let newFrame = 
+    CGRect(x: 0.0, y: 0.0, width: oldSize.width, height: oldSize.width * raito)
+    view.frame = newFram
+}
+```
+
 {% hint style="info" %}
 `RemonController`에 `remoteView` 또는 `localView`를 지정 했다면 `RemonController`는 지정된 뷰에 비디오 렌더링뷰를 추가 하고, 지정된 뷰의 변화를 추적하여 지정 뷰의 크기에 맞게 비디오 렌더링뷰를 설정 합니다.
 {% endhint %}

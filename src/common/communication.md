@@ -1,10 +1,10 @@
 # Communication
 
-## 기본 설정 {#undefined}
+## 기본 설정 <a id="undefined"></a>
 
 통신을 하기 전에 프로젝트 설정을 진행 합니다.​
 
-## 개발 {#undefined-1}
+## 개발 <a id="undefined-1"></a>
 
 통신을 기능은 이용하기 위해서는 `RemonCall` 클래스를 이용합니다. `RemonCall`클래스의 `connect()` 함수를 이용하여 채널 생성 및 접속이 가능합니다.
 
@@ -146,7 +146,7 @@ caller.connect()
 {% endtab %}
 {% endtabs %}
 
-### 통화 받기 {#undefined-3}
+### 통화 받기 <a id="undefined-3"></a>
 
 `connectChannel()` 함수에 접속을 원하는 `channelId`값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
 
@@ -208,7 +208,7 @@ callee.connect("MY_CHANNEL_ID")
 {% endtab %}
 {% endtabs %}
 
-### Callbacks {#observer}
+### Callbacks <a id="observer"></a>
 
 개발중 다양한 상태 추적을 돕기 위한 Callback을 제공 합니다.
 
@@ -284,7 +284,7 @@ remonCast.onClose {
 
 {% page-ref page="callbacks.md" %}
 
-### Channel {#channels}
+### Channel <a id="channels"></a>
 
 랜덤채팅등과 같은 서비스에서는 전체 채널 목록을 필요로 하게 됩니다. 이를 위한 전체 채널 목록을 제공합니다.
 
@@ -322,7 +322,7 @@ remonCall.fetchCalls { (error, results) in
 
 {% page-ref page="channel.md" %}
 
-### 종료 {#undefined-4}
+### 종료 <a id="undefined-4"></a>
 
 모든 통신이 끝났을 경우 꼭 RemonCast객체를 `close()`해주어야 합니다. close를 통해서 모든 통신자원과 미디어 스트림 자원이 해제됩니다.
 
@@ -349,7 +349,7 @@ remonCall.close()
 {% endtab %}
 {% endtabs %}
 
-### 설정 {#undefined-5}
+### 설정 <a id="undefined-5"></a>
 
 통신시 좀 더 자세한 설정이 필요하다면 아래를 참고하세요.​
 

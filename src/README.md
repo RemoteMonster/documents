@@ -12,7 +12,7 @@ RemoteMonster는 방송 통신을 응용하는 서비스를 쉽고 빠르게 개
 
 RemoteMonster 홈페이지에서 서비스 개발을 위한 등록을 마칩니다. RemoteMonster는 메일을 통해 인증키를 발급합니다.
 
-{% embed data="{\"url\":\"https://remotemonster.com\",\"type\":\"link\",\"title\":\"RemoteMonster\",\"icon\":{\"type\":\"icon\",\"url\":\"https://uploads-ssl.webflow.com/5ae923e519474e392b0c80fc/5b02226459e4c8782a772e2f\_remon\_logo-09.png\",\"aspectRatio\":0},\"caption\":\"RemoteMonster Homepage\"}" %}
+{% embed url="https://remotemonster.com" caption="RemoteMonster Homepage" %}
 
 자세한 내용은 아래를 참고하세요.
 
@@ -36,11 +36,11 @@ RemoteMonster는 쉬운 개발을 위해 커뮤니티와 다양한 예제 코드
 
 아래의 RemoteMonster Github에서 플랫폼별 예제와 데모 그리고 레퍼런스 문서를 직접 확인해 보세요.
 
-{% embed data="{\"url\":\"https://github.com/remotemonster\",\"type\":\"link\",\"title\":\"remotemonster\",\"description\":\"GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars1.githubusercontent.com/u/20677626?s=280&v=4\",\"width\":280,\"height\":280,\"aspectRatio\":1},\"caption\":\"RemoteMonster Github Repository\"}" %}
+{% embed url="https://github.com/remotemonster" caption="RemoteMonster Github Repository" %}
 
 혹시 어려운 점이 생기면 RemoteMonster의 커뮤니티를 둘러보세요. 아래의 커뮤니티에 질문을 올리면 쉽고 빠르게 답변을 얻을 수 있습니다.
 
-{% embed data="{\"url\":\"https://community.remotemonster.com\",\"type\":\"link\",\"title\":\"Community\",\"description\":\"RemoteMonster Community Forums\",\"icon\":{\"type\":\"icon\",\"url\":\"//community.remotemonster.com/uploads/default/original/1X/d10bec2eae130debf322e6198e90175dd7920d72.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"//community.remotemonster.com/uploads/default/original/1X/d10bec2eae130debf322e6198e90175dd7920d72.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"caption\":\"RemoteMonster Community\"}" %}
+{% embed url="https://community.remotemonster.com" caption="RemoteMonster Community" %}
 
 ### 운영
 
