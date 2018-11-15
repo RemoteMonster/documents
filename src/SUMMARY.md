@@ -44,6 +44,7 @@
 * [Communication](common/communication.md)
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)
+* [Record](common/record.md)
 * [Realtime Quality Statistics Report](common/realtime-quality-statistics-report.md)
 * [Error Code](common/error-code.md)
 * [About WebRTC](common/about-webrtc.md)
