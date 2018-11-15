@@ -46,7 +46,9 @@
 REST GET이 호출될 URL 주소를 리모트몬스터에게 알립니다. 리모트몬스터에서 해당 설정이 완료 아래와 같이 지정된 주소로 GET이 호출됩니다. URL Parameter로 해당 방송의 Channel ID와 다운로드 URL이 제공됩니다. 이 Channel ID를 통해 어떤 방송인지를 구분가능합니다.
 
 ```text
-GET http://MYWEBHOOKURL/slug?chid=CHANNELID&url=https://s3.amazonaws.com/__SERVICEID__/__CHANNELID__.mp4
+GET http://MYWEBHOOKURL/MYSLUG
+         ?chid=__CHANNELID__
+         &url=https://s3.amazonaws.com/__SERVICEID__/__CHANNELID__.mp4
 ```
 
 만약 채널에 대한 것이 궁금하면 아래를 참고하세요.
