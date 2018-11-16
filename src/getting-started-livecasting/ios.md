@@ -15,7 +15,7 @@
 * 또한 Info.plist에서 다음 항목에 대해 추가 혹은 변경을 해주셔야 합니다.
   * Privacy: Bluetooth, Microphone, Camera
 
-![settings](../.gitbook/assets/ios_buildsettings%20%281%29.png)
+![settings](../.gitbook/assets/ios_buildsettings%20%282%29.png)
 
 ## Cocoapods을 이용한 SDK 설치
 
@@ -33,7 +33,7 @@ end
 
 * 다운로드받은 RemoteMonster iOS SDK를 압축을 풀면 2개의 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster iOS SDK를 프레임워크로 인식하게 됩니다.
 
-![framework](../.gitbook/assets/ios_importframework%20%281%29.png)
+![framework](../.gitbook/assets/ios_importframework%20%282%29.png)
 
 ## Remon 설정 및 레이아웃 구성
 

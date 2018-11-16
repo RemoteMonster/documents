@@ -37,7 +37,7 @@ RemoteMonster API의 SDK를 이용하여 개발하는 순서는 크게 다음과
 
 리모트몬스터 API의 SDK를 사용하는 것은 매우 간단합니다. 크게 3가지의 클래스 사용법만 익히면 됩니다.
 
-![RemoteMonster API SDK overview](../.gitbook/assets/sdkcommonoverview1.png)
+![RemoteMonster API SDK overview](../.gitbook/assets/sdkcommonoverview1%20%281%29.png)
 
 ### Remon class
 

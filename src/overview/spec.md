@@ -42,7 +42,7 @@ description: 제품의 주요 규격과 기능을 소개합니다.
 ### 세부 기능표
 
 | 분류 | 기능 | 설명 |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 지원 플랫폼 | Chrome Browser | Desktop, Android 모두 지원 |
 |  | Firefox Browser | Desktop, Android 모두 지원 |
 |  | Naver Whale | 지원 |
