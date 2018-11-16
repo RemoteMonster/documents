@@ -102,13 +102,17 @@ remonCast.simulcast("LOW", chId);
 
 {% tab title="Swift" %}
 ```swift
-
+let remonCast = RemonCast()
+remonCast.switchBandWidth(bandwidth:.HIGH) // .HIGH || .MEDIUM || .LOW 
 ```
 {% endtab %}
 
 {% tab title="Objc" %}
 ```objectivec
-
+// 2.4.21 부터 지
+RemonCast *remonCast = [RemonCast new];
+// .HIGH || .MEDIUM || .LOW
+[remonCast objc_switchBandWidthWithBandwidth:objc_RemonBandwidth.HIGH];
 ```
 {% endtab %}
 {% endtabs %}
