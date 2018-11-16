@@ -32,5 +32,5 @@
 
 ## 주요 라이브러리 및 개발 정보
 
-* [adapter.js](https://github.com/webrtc/adapter): 표준화가 덜된 관계로 브라우저마다 API조금씩 다른 WebRTC. 그래서 adapter.js를 사용해야 그 호환성을 지킬 수 있습니다.
+* [adapter.js](https://github.com/webrtc/adapter): 표준화가 덜된 관계로 브라우저마다 API조금씩 다른 WebRTC. 그래서 adapter.js를 사용해야 그 호환성을 지킬 수 있습니다. 다만 최근 1.0이 지정되면서 필요성이 많이 감소하였고 더이상 유지 보수가 되지 않을 예정입니다.
 

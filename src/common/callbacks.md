@@ -444,5 +444,5 @@ remoCall.onRemonStatReport{ (result) in
 
 보다 더 자세한 내용은 아래를 확인하세요.
 
-{% page-ref page="realtime-quality-statistics-report.md" %}
+{% page-ref page="media-health-report.md" %}
 

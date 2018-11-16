@@ -1,6 +1,6 @@
 # Livecast
 
-## 기본 설정
+## ㄹ기본 설정
 
 방송을 하기 전에 각 플렛폼 별 프로젝트 설정을 진행 합니다.
 
@@ -448,9 +448,11 @@ RemonCast *remonCast = [[RemonCast alloc]init];
 {% endtab %}
 {% endtabs %}
 
-### 설정
+### 기타
 
-방송 생성, 시청시 좀 더 자세한 설정이 필요하다면 아래를 참고하세요.
+아래를 통해 보다 자세한 설정, 실 서비스를 위한 프렉티스등 다양한 내용을 확인해 보세요.
 
 {% page-ref page="config.md" %}
+
+{% page-ref page="workaround.md" %}
 

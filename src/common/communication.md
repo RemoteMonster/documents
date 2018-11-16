@@ -417,9 +417,11 @@ RemonCall *remonCall = [[RemonCall alloc]init];
 {% endtab %}
 {% endtabs %}
 
-### 설정 <a id="undefined-5"></a>
+### 기타 <a id="undefined-5"></a>
 
-통신시 좀 더 자세한 설정이 필요하다면 아래를 참고하세요.​
+아래를 통해 보다 자세한 설정,  실 서비스를 위한 프렉티스등 다양한 내용을 확인해 보세요.
 
 {% page-ref page="config.md" %}
+
+{% page-ref page="workaround.md" %}
 

@@ -2,7 +2,7 @@
 description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소개합니다.
 ---
 
-# Realtime Quality Statistics Report
+# Media Health Report
 
 ## Overview
 
