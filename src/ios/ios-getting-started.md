@@ -119,23 +119,3 @@ remonCall.connect("CHANNEL_ID")            // Communication
 
 {% page-ref page="../common/communication.md" %}
 
-## Known Caveats
-
-### 오디오 타입
-
-`Remon`에는 voice와 music 2가지의 오디오 타입이 존재 합니다. voice 모드를 기본값으로 동작 하며, 목소리 중심이 아닌 다양 소리을 이용 하기를 원하시면 music모드를 이용 할 수 있습니다. music모드는 특히 방송에 더 잘 어울리는 경향이 있습니다.
-
-![](../.gitbook/assets/remonsettings%20%281%29.png)
-
-`RemonSettings.plist` 파일을 프로젝트에 추가하고, AudioType 값을 원하는 모드로 변경해 주세요.
-
-### Background Mode Support
-
-백그라운드에서 SDK 연결을 지속적으로 필요하면 아래의 옵션을 Project &gt; Targets &gt; Capabilities &gt; Background Modes 에서 설정하면 됩니다. 백그라운드 설정을 안할 경우 앱이 백그라운드로 진입시 RemoteMonster와의 연결이 종료되어 방송 및 통화가 종료됩니다.
-
-![](../.gitbook/assets/2018-06-01-10.36.28%20%281%29.png)
-
-백그라운드 모드는 아래를 참고하세요
-
-{% embed url="https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html" %}
-

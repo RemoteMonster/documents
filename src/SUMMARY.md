@@ -45,7 +45,7 @@
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)
 * [Record - beta](common/record.md)
-* [Simulcast - beta](common/simulcast-beta.md)
+* [Simulcast - beta](common/simulcast.md)
 * [Media Health Report](common/media-health-report.md)
 * [Workaround](common/workaround.md)
 * [Error Code](common/error-code.md)

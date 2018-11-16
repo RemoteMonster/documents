@@ -60,7 +60,7 @@ Quality Statistics Report는 다양한 값을 참조하고 경우에 따라서�
 
 자세한 내용은 아래 링크를 참고하세요.
 
-{% page-ref page="simulcast-beta.md" %}
+{% page-ref page="simulcast.md" %}
 
 ## Background Policy
 
@@ -77,6 +77,14 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 
 ### iOS
 
+백그라운드에서 SDK 연결을 지속적으로 필요하면 아래의 옵션을 Project &gt; Targets &gt; Capabilities &gt; Background Modes 에서 설정하면 됩니다. 백그라운드 설정을 안할 경우 앱이 백그라운드로 진입시 RemoteMonster와의 연결이 종료되어 방송 및 통화가 종료됩니다. 
+
+![](../.gitbook/assets/2018-06-01-10.36.28%20%281%29.png)
+
+{% embed url="https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html" %}
+
+아래는 지속적으로 연결이 되어있을때 작동 이며 위 옵션을 키지 않으면 백그라운드시 모든 경우에 영상, 음성의 송출, 수신이 중단됩니다.
+
 | 상황 | 미디어 | 내용 |
 | :--- | :--- | :--- |
 | 송출 | 영상 | 수신측 정지화면\(마지막 프레임, FPS 0\)이나 음성은 들림 |
@@ -89,8 +97,4 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 ```text
 if (background) { remon.mute() } else { remon.unmute() }
 ```
-
-{% embed url="https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html" %}
-
-
 
