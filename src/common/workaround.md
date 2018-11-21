@@ -107,3 +107,9 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 if (background) { remon.mute() } else { remon.unmute() }
 ```
 
+## Resolution
+
+### Android
+
+
+
