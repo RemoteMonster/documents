@@ -35,7 +35,7 @@ config.setRemoteView((SurfaceViewRenderer) findViewById(R.id.remote_video_view))
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let myRemoteView:UIView! = UIView()
 let myLocalView:UIView! = UIView()
@@ -45,7 +45,7 @@ remonCall.localView = myLocalView
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 UIView *myRemoteView = [UIView new];
 UIView *myLocalView = [UIView new];
@@ -87,7 +87,7 @@ config.setKey("myKey");
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 remonCall.serviceId = "myServiceId"
@@ -95,7 +95,7 @@ remonCall.serviceKey = "myServiceKey"
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - Objc" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc] init];
 remonCall.serviceId = @"myServiceId"
@@ -143,7 +143,7 @@ config.setVideoCall(true);
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 // Audio Only
 remonCall.onlyAudio = true
@@ -153,7 +153,7 @@ remonCall.onlyAudio = false             //default fasle
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - Objc" %}
 ```objectivec
 // Audio Only
 remonCall.onlyAudio = YES;
@@ -200,7 +200,7 @@ config.setVideoFps(15);
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 
@@ -216,7 +216,7 @@ remonCall.autoCaptureStart = true     // default true
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - Objc" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc] init];
 ​
@@ -247,8 +247,34 @@ config.setSpeakerPhone("auto"); // auto, true, false
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
 N/A
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
+N/A
+{% endtab %}
+{% endtabs %}
+
+### Volume Control
+
+안드로이드, iOS의경우 볼륨 컨트롤 작동방식을 지정할 필요가 종종 있습니다. 아래를 참고하세요.
+
+{% tabs %}
+{% tab title="Web" %}
+N/A
+{% endtab %}
+
+{% tab title="Android" %}
+
+{% endtab %}
+
+{% tab title="iOS -Swift" %}
+
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
+
 {% endtab %}
 {% endtabs %}
 
@@ -265,7 +291,15 @@ N/A
 
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS-Swift" %}
+iOS는 동적으로 해당기능을 제공하지 않으며 다음과 같이 설정하여야 합니다.
+
+![](../.gitbook/assets/remonsettings%20%281%29.png)
+
+`RemonSettings.plist` 파일을 프로젝트에 추가하고, AudioType 값을 원하는 모드로 변경해 주세요.
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
 iOS는 동적으로 해당기능을 제공하지 않으며 다음과 같이 설정하여야 합니다.
 
 ![](../.gitbook/assets/remonsettings%20%281%29.png)
@@ -295,14 +329,14 @@ config.setLogLevel(Log.DEBUG);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCast = RemonCast()
 remonCast.debugMode = true
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc] init];
 remonCall.debugMode = YES;

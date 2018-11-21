@@ -35,7 +35,7 @@ remonCast.onInit(() -> {
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.onInit { (token) in
   // Do something
@@ -43,7 +43,7 @@ remonCast.onInit { (token) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [remonCast onInitWithBlock:^{
     // Do something
@@ -82,7 +82,7 @@ remonCast.create();             // Server generate channelId
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.onCreate { (channelId) in
   // Do something
@@ -92,7 +92,7 @@ remonCast.create()               // Server generate chid
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [remonCast onCreateWithBlock:^(NSString * _Nullable chId) {
     // Do something
@@ -129,7 +129,7 @@ remonCast.join('MY_CHANNEL_ID');             // channelId is mandatory
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.onJoin {
   // Do something
@@ -139,7 +139,7 @@ remonCast.join('MY_CHANNEL_ID')            // 'chid' is mandatory
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```javascript
 const listener = {
   onJoin(channelId) {
@@ -191,7 +191,7 @@ remonCall.connect("MY_CHANNEL_ID");
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCall.onConnect { (channelId) in
      // Do something
@@ -203,7 +203,7 @@ remonCast.connect("MY_CHANNEL_ID")
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [remonCall onConnectWithBlock:^(NSString * _Nullable chId) {
     // Do something
@@ -237,7 +237,7 @@ remonCall.onComplete(() -> {
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCall.onComplte {
     // Do something
@@ -245,7 +245,7 @@ remonCall.onComplte {
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [remonCall onCompleteWithBlock:^{
     // Do something
@@ -281,7 +281,7 @@ remonCast.close();
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.onClose {
     // Do something
@@ -291,7 +291,7 @@ remonCast.close()
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [remonCast onCloseWithBlock:^{
     // Do something
@@ -323,7 +323,7 @@ remonCast.onError((error) -> {
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.onError { (error) in
     // Do something
@@ -331,7 +331,7 @@ remonCast.onError { (error) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 Sorry next version supported
 {% endtab %}
 {% endtabs %}
@@ -347,7 +347,15 @@ Sorry next version supported
 영상의 사이즈는 네트워크 상태에 따라 시시각각 변화 하며, 영상의 비율은 영상장치에 따라 다릅니다. 영상 송출자가 고정된 사이즈와 비율 보장해 주지 않는 환경이라면 onRemoteVideoSizeChanged와 onLocalVideoSizeChanged 함수를 구현 하여 변화 하는 영상크기에 반응 하도록 구현합니다.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="Web" %}
+N/A
+{% endtab %}
+
+{% tab title="Android" %}
+N/A
+{% endtab %}
+
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 remonCall.onRemoteVideoSizeChanged {(view, size) in 
@@ -360,7 +368,7 @@ remonCall.onRemoteVideoSizeChanged {(view, size) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```text
 [self.remonCall onLocalVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
         CGFloat raito = size.height / size.width;
@@ -403,7 +411,11 @@ const listener = {
 N/A
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
+N/A
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
 N/A
 {% endtab %}
 {% endtabs %}
@@ -431,7 +443,7 @@ remonCast.onStat((result) -> {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 remoCall.onRemonStatReport{ (result) in 
@@ -439,6 +451,10 @@ remoCall.onRemonStatReport{ (result) in
     // Do something
 }
 ```
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
+
 {% endtab %}
 {% endtabs %}
 

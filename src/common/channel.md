@@ -41,7 +41,7 @@ remonCast.join(myChannelId);
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.fetchCasts { (err, results) in
     if let err = err {
@@ -58,7 +58,7 @@ remonCast.join(myChannelId)
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCast *remonCast = [[RemonCast alloc]init];
 [remonCast fetchCastsWithIsTest:YES complete:^(NSArray<RemonSearchResult *> * _Nullable chs) {
@@ -102,7 +102,7 @@ remonCall.connect(myChannelId)
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 remonCall.fetchCalls { (err, results) in
@@ -122,7 +122,7 @@ remonCall.connect(myChannelId)
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc]init];
 [remonCall fetchCastsWithIsTest:YES complete:^(NSArray<RemonSearchResult *> * _Nullable chs) {

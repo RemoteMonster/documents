@@ -56,7 +56,13 @@
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
+Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
+
+{% page-ref page="../ios/ios-getting-started.md" %}
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
 Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
 
 {% page-ref page="../ios/ios-getting-started.md" %}
@@ -129,7 +135,7 @@ caller.connect();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let caller = RemonCall()
 
@@ -212,7 +218,7 @@ callee.connect("MY_CHANNEL_ID");
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let callee = RemonCall()
 
@@ -224,7 +230,7 @@ callee.connect("MY_CHANNEL_ID")
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *callee = [[RemonCall alloc] init];
 ​
@@ -286,7 +292,7 @@ remonCall.onClose(() -> {
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 
@@ -308,7 +314,7 @@ remonCast.onClose {
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - Objc" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc] init];
 
@@ -358,7 +364,7 @@ remonCall.onFetch(calls -> {
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 
@@ -368,7 +374,7 @@ remonCall.fetchCalls { (error, results) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc]init];
 [remonCall fetchCastsWithIsTest:YES
@@ -402,14 +408,14 @@ remonCall.close();
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
 remonCall.close()
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc]init];
 [remonCall closeRemon:YES];

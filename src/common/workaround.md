@@ -39,6 +39,10 @@ e.g. FPS가 0일시 방송화면 전체를 가리는 로딩 인디케이터
 {% tab title="iOS - Swift" %}
 
 {% endtab %}
+
+{% tab title="iOS - ObjC" %}
+
+{% endtab %}
 {% endtabs %}
 
 ### Media Health Report 감시 - 방송/통신 - 영상/음성

@@ -1,6 +1,6 @@
 # Livecast
 
-## ㄹ기본 설정
+## 기본 설정
 
 방송을 하기 전에 각 플렛폼 별 프로젝트 설정을 진행 합니다.
 
@@ -59,7 +59,15 @@
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
+Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
+
+{% page-ref page="../ios/ios-getting-started.md" %}
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
+
+
 Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
 
 {% page-ref page="../ios/ios-getting-started.md" %}
@@ -125,7 +133,7 @@ caster.create();
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.create()
 ```
@@ -146,7 +154,7 @@ caster.create()
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [remonCast create:nil];
 ```
@@ -218,7 +226,7 @@ viewer.join("MY_CHANNEL_ID");                     // myChid from caster
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.join(myChannelId)                  // myChannelId from caster
 ```
@@ -239,7 +247,7 @@ viewer.join("MY_CHANNEL_ID")              // myChannelId from caster
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```javascript
 // <video id="remoteVideo" autoplay></video>
 let myChannelId
@@ -318,7 +326,7 @@ remonCast.onClose(() -> {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCast = RemonCast()
 
@@ -340,7 +348,7 @@ remonCast.onClose {
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCast *caster = [[RemonCast alloc]init];
 [caster onInitWithBlock:^{
@@ -389,7 +397,7 @@ remonCast.onFetch((casts) -> {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCast = RemonCast()
 
@@ -399,7 +407,7 @@ remonCast.fetchCasts { (error, results) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCast *remonCast = [[RemonCast alloc]init];
  [remonCast fetchCastsWithIsTest:YES
@@ -433,14 +441,14 @@ remonCast.close();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCast = RemonCast()
 remonCast.close()
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCast *remonCast = [[RemonCast alloc]init];
 [remonCast closeRemon:YES];

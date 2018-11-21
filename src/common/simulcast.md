@@ -17,6 +17,15 @@ Simulcast는 영상방송만 지원합니다. 송출은 여러 품질의 미디�
 | iOS - 송출 | X |
 | iOS - 수신 | O |
 
+현재 지원하는 코덱은 VP8 입니다.
+
+| 코 | 지원여부 |
+| :--- | :--- |
+| VP8 | O |
+| VP9 | X |
+| AV1 | X |
+| H.264 | X |
+
 ## 송출 \(beta\)
 
 현재는 브라우저에서만 가능하며 아직은 모든 브라우저가 지원하고 있지 않습니다. 최신 Chrome, Firefox에서 실험적인 기능으로 제공중입니다.
@@ -54,14 +63,14 @@ remonCast.simulcast("LOW", chId);
 ```
 {% endtab %}
 
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 let remonCast = RemonCast()
 remonCast.switchBandWidth(bandwidth:.HIGH) // .HIGH || .MEDIUM || .LOW 
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 // 2.4.21 부터 지원
 RemonCast *remonCast = [RemonCast new];
