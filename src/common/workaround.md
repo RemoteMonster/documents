@@ -107,9 +107,49 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 if (background) { remon.mute() } else { remon.unmute() }
 ```
 
-## Resolution
+## View Scaling
 
 ### Android
 
+Video를 보여주는 SurfaceViewRenderer의 ScalingType을 통해 비디오소스가 보이는 방식을 지정 할 수 있습니다. 
 
+![Video Source](../.gitbook/assets/background2.png)
+
+{% tabs %}
+{% tab title="Fit" %}
+**SCALE\_ASPECT\_FIT** 
+
+뷰의 크기에 맞게 비디오 프레임의 크기가 조정됩니다. 가로 세로 비율을 유지합니다. \(검은 색 테두리가 표시 될 수 있음\)
+
+```java
+surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
+```
+
+![](../.gitbook/assets/fit.png)
+{% endtab %}
+
+{% tab title="Fill" %}
+**SCALE\_ASPECT\_FILL**
+
+비디오 프레임이 뷰의 크기를 채우기 위해 크기가 조정됩니다.종횡비 유지. 비디오 프레임의 일부는 ****Clipping 됩니다.
+
+```java
+surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FILL);
+```
+
+![](../.gitbook/assets/fill.png)
+{% endtab %}
+
+{% tab title="Balanced" %}
+**SCALE\_ASPECT\_BALANCED**
+
+FIT와 FILL 간의 절충. 비디오 프레임은 다음과 같이 채울 것입니다. 적어도 가로 세로 비율을 유지하면서 뷰를 가능하게 합니다.
+
+```java
+surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
+```
+
+![](../.gitbook/assets/balance.png)
+{% endtab %}
+{% endtabs %}
 
