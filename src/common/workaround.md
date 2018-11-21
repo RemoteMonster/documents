@@ -111,7 +111,7 @@ if (background) { remon.mute() } else { remon.unmute() }
 
 ### Android
 
-Video를 보여주는 SurfaceViewRenderer의 ScalingType을 통해 비디오소스가 보이는 방식을 지정 할 수 있습니다. 
+Video를 보여주는 `SurfaceViewRenderer`의 `ScalingType`을 통해 비디오소스가 보이는 방식을 지정 할 수 있습니다. 
 
 ![Video Source](../.gitbook/assets/background2.png)
 
