@@ -37,11 +37,30 @@ e.g. FPS가 0일시 방송화면 전체를 가리는 로딩 인디케이터
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
-
+```swift
+self.remonCast.onRemonStatReport { (report) in
+    if report.remoteFrameRate == 0 {
+        print("Remote frame rate is zero")
+    } 
+    if report.localFrameRate == 0 {
+        print("Local frame rate is zero")
+    }
+}
+```
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
-
+```objectivec
+[self.remonCast onRemonStatReportWithBlock:^(RemonStatReport * _Nonnull stat) {
+    if ( [stat remoteFrameRate] == 0 ) {
+        NSLog(@"Remote frame rate is zero");
+    }
+        
+    if ( [stat localFrameRate] == 0 ) {
+        NSLog(@"Local frame rate is zero");
+    }
+}];
+```
 {% endtab %}
 {% endtabs %}
 
