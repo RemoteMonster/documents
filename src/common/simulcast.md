@@ -30,8 +30,14 @@ Simulcast는 영상방송만 지원합니다. 송출은 여러 품질의 미디�
 
 현재는 브라우저에서만 가능하며 아직은 모든 브라우저가 지원하고 있지 않습니다. 최신 Chrome, Firefox에서 실험적인 기능으로 제공중입니다.
 
-```text
+```javascript
+const config = {
+  rtc: {
+    simulcast: true
+  }
+}
 
+const remon = new Remon({ config })
 ```
 
 ## 수신 \(beta\)
@@ -41,7 +47,10 @@ High 과 Low 두 단계가 있으며 선택이 합니다. 기본 동작은 High�
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
+const remon = new Remon()
 
+remon.setVideoQulity('HIGH')
+remon.setVideoQulity('LOW')
 ```
 {% endtab %}
 
