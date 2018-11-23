@@ -223,3 +223,16 @@ Aduio Session에 대한 모드와 일반적인 사용은 아래 링크를 확인
 
 {% embed url="https://developer.apple.com/library/archive/documentation/Audio/Conceptual/AudioSessionProgrammingGuide/AudioSessionCategoriesandModes/AudioSessionCategoriesandModes.html" %}
 
+#### iOS 방송/통화 중 효과음 재생
+
+webRTC가 동작을 시작 하면  webRTC가 AVAudioSession을 점 합니다. 그로 인하여 AVAudioSession을 이용한 효과음 재생에 문제가 발생 합니다. 이 문제를 해결 하기 위하여 OpenAL과 같은 저수준의 효과음 재생 라이브러리 사용을 권장 드리며 OpenAl을 좀 더 쉽게 사용할 수 있게 만들어진 ObjectAL과 같은 라이브러리를 사용 할 수 있습니다.
+
+```objectivec
+#import "ObjectAL.h"
+#define SHOOT_SOUND @"shoot.caf"
+
+[[OALSimpleAudio sharedInstance] playEffect:SHOOT_SOUND];
+```
+
+{% embed url="http://kstenerud.github.io/ObjectAL-for-iPhone/documentation/index.html" %}
+
