@@ -172,3 +172,9 @@ surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
 {% endtab %}
 {% endtabs %}
 
+## Audio Session
+
+### iOS
+
+
+
