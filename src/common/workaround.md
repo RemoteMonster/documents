@@ -111,7 +111,7 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 
 {% embed url="https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html" %}
 
-아래는 지속적으로 연결이 되어있을때 작동 이며 위 옵션을 키지 않으면 백그라운드시 모든 경우에 영상, 음성의 송출, 수신이 중단됩니다.
+아래는 지속적으로 연결이 되어있을때 작동이며 위 옵션을 키지 않으면 백그라운드시 모든 경우에 영상, 음성의 송출, 수신이 중단됩니다. 단  아래의 동작은 `Audio Session Category`가 `AVAudioSessionCategoryPlayback` 일 경우의 동작입니다.
 
 | 상황 | 미디어 | 내용 |
 | :--- | :--- | :--- |
@@ -119,12 +119,6 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 | 송출 백그라운드 | 음성 | 수신측 음성들림 |
 | 수신 백그라운드 | 영상 | 음성은 들을 수 있으며 개발을 통해 백그라운드시 음성을 키거나 끌 수있음 |
 | 수신 백그라운드 | 음성 | 음성은 들을 수 있으며 개발을 통해 백그라운드시 음성을 키거나 끌 수있음 |
-
-수신시 음성 들림 여부는 아래와 같이 기능 구현이 가능합니다.
-
-```text
-if (background) { remon.mute() } else { remon.unmute() }
-```
 
 ## View Scaling
 
@@ -176,10 +170,12 @@ surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
 
 ### iOS
 
-오디오 세션 설정을 바꾸시려면 onJoin/onConnnect/onComplte 에서 오디오세션 설정을 변경 하시면 됩니다.
+iOS에서 `Audio Session Category` 설정에 따라 스피커출력, 음소거 스위치의 작동, 이어폰 연결 작동, 블루투스 등이 상이 하게 작동할 수 있습니다. SDK에서는 기본적으로 `AVAudioSessionCategoryPlayback`를 권장하며 위에 설명된 Background Policy는 `AVAudioSessionCategoryPlayback`를 사용시에 동작입니다. 대부분의 방송, 통신에 대해서는 기본값을 권장합니다. 다만 개발자가 필요에 따라 다양한 세션을 사용하여 원하는 작동을 구현 가능합니다.
+
+경우에 따라서 Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. 실제 미디어가 사용자에게 보여주는 시점인 onJoin/onConnnect/onComplte 에서 오디오세션 설정을 변경 하시면 됩니다.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 //  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
 self.remonCast.onJoin { (chid) in 
@@ -200,7 +196,7 @@ self.remonCast.onJoin { (chid) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 //  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
 [self.remonCast onJoinWithBlock:^(NSString * _Nullable chid) {
@@ -216,4 +212,8 @@ self.remonCast.onJoin { (chid) in
 ```
 {% endtab %}
 {% endtabs %}
+
+Aduio Session에 대한 모드와 일반적인 사용은 아래 링크를 확인하세요.
+
+{% embed url="https://developer.apple.com/library/archive/documentation/Audio/Conceptual/AudioSessionProgrammingGuide/AudioSessionCategoriesandModes/AudioSessionCategoriesandModes.html" %}
 
