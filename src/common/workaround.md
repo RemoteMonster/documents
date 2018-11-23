@@ -176,5 +176,44 @@ surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
 
 ### iOS
 
+오디오 세션 설정을 바꾸시려면 onJoin/onConnnect/onComplte 에서 오디오세션 설정을 변경 하시면 됩니다.
 
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+//  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
+self.remonCast.onJoin { (chid) in 
+	do {
+	    if #available(iOS 10.0, *) {
+	        try AVAudioSession.sharedInstance().setCategory(.soloAmbient, mode: .default)
+	    }
+	    else {
+	        AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSession.Category.soloAmbient)
+	    }
+	    
+	    try AVAudioSession.sharedInstance().setActive(true, options: [])
+	    try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+	} catch {
+	    print(error)
+	}
+}
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+//  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
+[self.remonCast onJoinWithBlock:^(NSString * _Nullable chid) {
+	@try {
+	    NSError *error = nil;
+	    [AVAudioSession.sharedInstance setCategory:AVAudioSessionCategorySoloAmbient error:&error];
+	    [AVAudioSession.sharedInstance setActive:YES error:&error];
+	    [AVAudioSession.sharedInstance overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
+	} @catch (NSException *exception) {
+	    NSLog(@"error is %@",[exception description]);
+	}
+}];
+```
+{% endtab %}
+{% endtabs %}
 
