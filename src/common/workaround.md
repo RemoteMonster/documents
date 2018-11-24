@@ -126,59 +126,13 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 | 수신 백그라운드 | 영상 | 음성은 들을 수 있으며 개발을 통해 백그라운드시 음성을 키거나 끌 수있음 |
 | 수신 백그라운드 | 음성 | 음성은 들을 수 있으며 개발을 통해 백그라운드시 음성을 키거나 끌 수있음 |
 
-## View Scaling
-
-### Android
-
-Video를 보여주는 `SurfaceViewRenderer`의 `ScalingType`을 통해 비디오소스가 보이는 방식을 지정 할 수 있습니다. 
-
-![Video Source](../.gitbook/assets/background2.png)
-
-{% tabs %}
-{% tab title="Fit" %}
-**SCALE\_ASPECT\_FIT** 
-
-뷰의 크기에 맞게 비디오 프레임의 크기가 조정됩니다. 가로 세로 비율을 유지합니다. \(검은 색 테두리가 표시 될 수 있음\)
-
-```java
-surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-```
-
-![](../.gitbook/assets/fit.png)
-{% endtab %}
-
-{% tab title="Fill" %}
-**SCALE\_ASPECT\_FILL**
-
-비디오 프레임이 뷰의 크기를 채우기 위해 크기가 조정됩니다.종횡비 유지. 비디오 프레임의 일부는 ****Clipping 됩니다.
-
-```java
-surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FILL);
-```
-
-![](../.gitbook/assets/fill.png)
-{% endtab %}
-
-{% tab title="Balanced" %}
-**SCALE\_ASPECT\_BALANCED**
-
-FIT와 FILL 간의 절충. 비디오 프레임은 다음과 같이 채울 것입니다. 적어도 가로 세로 비율을 유지하면서 뷰를 가능하게 합니다.
-
-```java
-surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
-```
-
-![](../.gitbook/assets/balance.png)
-{% endtab %}
-{% endtabs %}
-
 ## Audio Session
 
 ### iOS
 
 iOS에서 `Audio Session Category` 설정에 따라 스피커출력, 음소거 스위치의 작동, 이어폰 연결 작동, 블루투스 등이 상이 하게 작동할 수 있습니다. SDK에서는 기본적으로 `AVAudioSessionCategoryPlayback`를 권장하며 위에 설명된 Background Policy는 `AVAudioSessionCategoryPlayback`를 사용시에 동작입니다. 대부분의 방송, 통신에 대해서는 기본값을 권장합니다. 다만 개발자가 필요에 따라 다양한 세션을 사용하여 원하는 작동을 구현 가능합니다.
 
-경우에 따라서 Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. 실제 미디어가 사용자에게 보여주는 시점인 onJoin/onConnnect/onComplte 에서 오디오세션 설정을 변경 하시면 됩니다.
+경우에 따라서 Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. 실제 미디어가 사용자에게 보여주는 시점인 `onJoin`/`onConnnect`/`onComplte`와 같은 콜백에서 오디오세션 설정을 변경 하시면 됩니다.
 
 {% tabs %}
 {% tab title="iOS - Swift" %}
