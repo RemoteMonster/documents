@@ -28,7 +28,14 @@ e.g. FPS가 0일시 방송화면 전체를 가리는 로딩 인디케이터
 
 {% tabs %}
 {% tab title="Web" %}
-
+```javascript
+const listener = {
+  onStat(result){
+    const stat = `l.rate: ${result.localFrameRate} /r.rate: ${result.remoteFrameRate}`
+    console.log(stat)
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Android" %}
