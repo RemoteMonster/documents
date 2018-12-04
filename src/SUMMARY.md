@@ -47,6 +47,7 @@
 * [Record - beta](common/record.md)
 * [Simulcast - beta](common/simulcast.md)
 * [Media Health Report](common/media-health-report.md)
+* [Admin API - beta](common/admin-api.md)
 * [Workaround](common/workaround.md)
 * [Error Code](common/error-code.md)
 * [About WebRTC](common/about-webrtc.md)
