@@ -36,6 +36,11 @@
 * [iOS - Github](https://github.com/remotemonster/ios-sdk/)
 * [iOS - SDK Reference](https://remotemonster.github.io/ios-sdk/)
 
+## api
+
+* [Admin API - Livecast - beta](api/admin-livecast.md)
+* [Webhook API - Livecast - beta](api/webhook-livecast.md)
+
 ## Common
 
 * [Service Key](common/service-key.md)
@@ -47,7 +52,6 @@
 * [Record - beta](common/record.md)
 * [Simulcast - beta](common/simulcast.md)
 * [Media Health Report](common/media-health-report.md)
-* [Admin API - beta](common/admin-api.md)
 * [Workaround](common/workaround.md)
 * [Error Code](common/error-code.md)
 * [About WebRTC](common/about-webrtc.md)
