@@ -145,16 +145,12 @@ async function getDeviceCapabilities(kind, deviceId) {
   const videoConstraints = {
     audio: false,
     video: {
-      deviceId: deviceId ? {
-        exact: deviceId
-      } : undefined
+      deviceId: deviceId ? { exact: deviceId } : undefined
     }
   }
   const audioConstraints = {
     audio: {
-      deviceId: deviceId ? {
-        exact: deviceId
-      } : undefined
+      deviceId: deviceId ? { exact: deviceId } : undefined
     },
     video: false
   }
@@ -174,7 +170,7 @@ async function getDeviceCapabilities(kind, deviceId) {
   }
 }
 
-const capabilities = await Promise.all(devices.map(d => return getCapabilities(d.kind, d.deviceId))) 
+const capabilities = await Promise.all(devices.map(d => getCapabilities(d.kind, d.deviceId))) 
 ```
 
 {% embed url="https://w3c.github.io/mediacapture-main/\#media-track-capabilities" %}
