@@ -369,7 +369,7 @@ remonCall.onRemoteVideoSizeChanged {(view, size) in
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
-```text
+```objectivec
 [self.remonCall onLocalVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
         CGFloat raito = size.height / size.width;
         CGRect oldFrame = view.frame;

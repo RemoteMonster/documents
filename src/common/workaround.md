@@ -99,7 +99,7 @@ Quality Statistics Report는 다양한 값을 참조하고 경우에 따라서�
 
 자세한 내용은 아래 링크를 참고하세요.
 
-{% page-ref page="simulcast.md" %}
+{% page-ref page="livecast-simulcast.md" %}
 
 ## Background Policy
 
@@ -139,7 +139,7 @@ iOS, Android의 플렛폼 정책에 따라 앱이 백그라운드에 있을때 �
 
 iOS에서 `Audio Session Category` 설정에 따라 스피커출력, 음소거 스위치의 작동, 이어폰 연결 작동, 블루투스 등이 상이 하게 작동할 수 있습니다. SDK에서는 기본적으로 `AVAudioSessionCategoryPlayback`를 권장하며 위에 설명된 Background Policy는 `AVAudioSessionCategoryPlayback`를 사용시에 동작입니다. 대부분의 방송, 통신에 대해서는 기본값을 권장합니다. 다만 개발자가 필요에 따라 다양한 세션을 사용하여 원하는 작동을 구현 가능합니다.
 
-경우에 따라서 Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. 실제 미디어가 사용자에게 보여주는 시점인 `onJoin`/`onConnnect`/`onComplte`와 같은 콜백에서 오디오세션 설정을 변경 하시면 됩니다.
+Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. 실제 미디어가 사용자에게 보여주는 시점인 `onJoin`/`onConnnect`/`onComplte`와 같은 콜백에서 오디오세션 설정을 변경 하시면 됩니다.
 
 {% tabs %}
 {% tab title="iOS - Swift" %}
@@ -186,7 +186,7 @@ Aduio Session에 대한 모드와 일반적인 사용은 아래 링크를 확인
 
 #### iOS 방송/통화 중 효과음 재생
 
-webRTC가 동작을 시작 하면  webRTC가 AVAudioSession을 점 합니다. 그로 인하여 AVAudioSession을 이용한 효과음 재생에 문제가 발생 합니다. 이 문제를 해결 하기 위하여 OpenAL과 같은 저수준의 효과음 재생 라이브러리 사용을 권장 드리며 OpenAl을 좀 더 쉽게 사용할 수 있게 만들어진 ObjectAL과 같은 라이브러리를 사용 할 수 있습니다.
+WebRTC가 동작을 시작 하면  WebRTC가 AVAudioSession을 점유 합니다. 그로 인하여 AVAudioSession을 이용한 효과음 재생에 문제가 발생 합니다. 이 문제를 해결 하기 위하여 OpenAL과 같은 저수준의 효과음 재생 라이브러리 사용을 권장 드리며 OpenAL을 좀 더 쉽게 사용할 수 있게 만들어진 ObjectAL과 같은 라이브러리를 사용 할 수 있습니다.
 
 ```objectivec
 #import "ObjectAL.h"

@@ -68,11 +68,11 @@
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
-{% api-method-parameter name="chid" type="string" required=false %}
+{% api-method-parameter name="chid" type="string" required=true %}
 Channel ID
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="action" type="string" required=false %}
+{% api-method-parameter name="action" type="string" required=true %}
 close
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}

@@ -14,11 +14,11 @@
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="enable" type="string" required=false %}
+{% api-method-parameter name="enable" type="string" required=true %}
 0 \|\| 1. 활성화 여부
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="serviceid" type="string" required=false %}
+{% api-method-parameter name="serviceid" type="string" required=true %}
  접근하고자하는 Service Id
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -56,7 +56,7 @@
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="serviceid" type="string" required=false %}
+{% api-method-parameter name="serviceid" type="string" required=true %}
  접근하고자하는 Service Id
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -72,7 +72,7 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="url" type="string" required=false %}
+{% api-method-parameter name="url" type="string" required=true %}
  웹훅을 받고자 하는 url
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -106,7 +106,7 @@ application/json
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="serviceid" type="string" required=false %}
+{% api-method-parameter name="serviceid" type="string" required=true %}
  접근하고자하는 Service Id
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -122,7 +122,7 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="url" type="string" required=false %}
+{% api-method-parameter name="url" type="string" required=true %}
  웹훅을 받고자 하는 url
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
