@@ -111,28 +111,25 @@ Win/DirectShow/Samples/bin/DecklinkCapture.exe
 브라우저가 인식할 수 있는 장치를 열거하고 장치의 ID를 얻어올 수 있습니다. 이때 지금 페이지에서 브라우저가 사용자에게 권한을 얻어오면 사용자가 선택하기 쉽도록 라벨명도 얻어올 수 있습니다.
 
 ```javascript
-async getDevices() {
-  const devices = []
+async function getDevices() {
   try {
     // NOTE: 퍼미션 없으면 기기의 ID만 받아옴. 라벨명을 받으려면 퍼미션 필요
-    // Promise.all[
+    // Promise.all([
     //  navigator.permission.query({ name: 'camera'}),
     //  navigator.permission.query({ name: 'microphone'})
-    // ]
+    // ])
 
     // NOTE: getUserMedia로도 permission 얻을 수 있음
     const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     const userDevices = await navigator.mediaDevices.enumerateDevices()
-    userDevices.map((device) => {
-      devices.push(device)
-      console.log('device:', device)
-    })
     mediaStream.getTracks().forEach(track => track.stop()) // getUserMedia 때문에 자원을 반환해야함
+    return userDevices
   } catch (err) {
     console.error(err)
   }
-  return devices
 }
+
+const devices = await getDevices()
 ```
 
 {% embed url="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices" %}
@@ -144,7 +141,7 @@ async getDevices() {
 획득한 장치 ID를 갖고 해당장치의 기능을 미리 확인 가능합니다. 이때도 마찬가지로 권한이 있어야 합니다. 아래와 같이 ID와 장치 type을 통해 기능을 확인 가능합니다. 얻을 수 있는 정보는 아래의 링크를 확인하세요.
 
 ```javascript
-async getDeviceCapabilities(type, deviceId) {
+async function getDeviceCapabilities(kind, deviceId) {
   const videoConstraints = {
     audio: false,
     video: {
@@ -153,35 +150,31 @@ async getDeviceCapabilities(type, deviceId) {
       } : undefined
     }
   }
-
   const audioConstraints = {
     audio: {
       deviceId: deviceId ? {
         exact: deviceId
-          } : undefined
-      },
+      } : undefined
+    },
     video: false
   }
-
-  const constraints = !type ? undefined :
-    type === 'audio' ? audioConstraints :
-    type === 'video' ? videoConstraints :
-    new Error('getDeviceCapabilities/unexpected_args', type)
-
-  let capa
+  const constraints = !kind ? undefined :
+    kind === 'audioinput' ? audioConstraints :
+    kind === 'videoinput' ? videoConstraints :
+    new Error('getDeviceCapabilities/unexpected_args', kind)
 
   try {
+    if (constraints instanceof Error) return
     const mediaStream = await navigator.mediaDevices.getUserMedia(constraints)
-    mediaStream.getTracks().forEach((track) => {
-      capa = mediaStream.getTrackById(track.id).getCapabilities()
-      console.log('device capa:', capa)
-      track.stop()
-    })
+    const capabilities = mediaStream.getTracks().map(track => track.getCapabilities())
+    mediaStream.getTracks().forEach(track => track.stop())
+    return capabilities
   } catch (err) {
-    console.error('getDeviceCapabilities/getUserMedia', err) 
+    console.error('getDeviceCapabilities/getUserMedia', err)
   }
-  return capa
 }
+
+const capabilities = await Promise.all(devices.map(d => return getCapabilities(d.kind, d.deviceId))) 
 ```
 
 {% embed url="https://w3c.github.io/mediacapture-main/\#media-track-capabilities" %}
@@ -212,6 +205,6 @@ const remon = new Remon({ config })
 만들어진 미디어에 대해 지정된 설정값이 반영되었는지를 확인할 수 있습니다.
 
 ```javascript
-remon.cofig.rtc.localStream.getTracks().map(track => track.getSettings())
+const settings = remon.cofig.rtc.localStream.getTracks().map(track => track.getSettings())
 ```
 
