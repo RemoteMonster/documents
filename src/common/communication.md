@@ -151,7 +151,7 @@ caller.connect()
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *caller = [[RemonCall alloc] init];
 ​
