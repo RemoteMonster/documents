@@ -24,10 +24,6 @@
 녹화된 시간. 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="thumbnail" type="string" required=false %}
-대표 이미지
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="url" type="string" required=true %}
 녹화파일이 저장된 URL
 {% endapi-method-parameter %}
