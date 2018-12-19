@@ -1,6 +1,6 @@
 # Workaround
 
-## Network Environment
+##  Network Environment
 
 영상, 음성등 미디어를 전송하는데 있어서 네트워크 환경은 절대적인 영향을 미칩니다. 리모트몬스터의 방송과 통신기능은 기본적으로 실시간에 준하는 빠른 전송을 하기위한 다양한 기술이 접목되어 있습니다. 다만, 이러한것과는 별개로 최상의 사용자 경험을 위해 몇가지 추가적인 작업을 하는것을 권장드립니다.
 
@@ -117,7 +117,34 @@ n/a
 {% endtab %}
 
 {% tab title="Android" %}
+```java
+private ConnectivityManager manager;
+private final ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback() {
+    @Override
+    public void onAvailable(Network network) {
+        super.onAvailable(network);
+        Log.i("ConnectivityManager", "Network Type : " + (manager.isActiveNetworkMetered() ? "LTE" : "WIFI"));
+    }
 
+    @Override
+    public void onLost(Network network) {
+        super.onLost(network);
+    }
+};
+
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    ...
+    manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    manager.registerDefaultNetworkCallback(networkCallback);
+}
+
+protected void onDestroy() {
+    ...
+    manager.unregisterNetworkCallback(networkCallback);
+}
+```
+
+[ConnectivityManager.NetworkCallback](https://developer.android.com/reference/android/net/ConnectivityManager.NetworkCallback.html#ConnectivityManager.NetworkCallback%28%29)\(\) 의 [onAvailable](https://developer.android.com/reference/android/net/ConnectivityManager.NetworkCallback.html#onAvailable%28android.net.Network%29)\([Network](https://developer.android.com/reference/android/net/Network.html) network\)을 활용해 네트워크 변경시 재연결을 시키는 로직을 구현할 수도 있습니다.
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
