@@ -239,6 +239,24 @@ Aduio Session에 대한 모드와 일반적인 사용은 아래 링크를 확인
 
 {% embed url="https://developer.apple.com/library/archive/documentation/Audio/Conceptual/AudioSessionProgrammingGuide/AudioSessionCategoriesandModes/AudioSessionCategoriesandModes.html" %}
 
+#### AudioSession outputVolume 대비 Remon audio volume 비율 조정
+
+RemonCast 또는 RemonCall를 music 모드로 이용할 경우 outputVolume이 크게 느껴질 수 있습니다. 이럴 경우 volumeRatio 값을 조정 하여 AudioSession outputVolume 과의 출력 비율 조정 할 수 있습니다. 예를 들어 outputVolume이 1.0\(MAX\) 일때 volumeRatio를 0.8로 설정 한다면 RemonCast 또는 RemonCall은 outputVolume의 80%의 크기로 출력 되어 집니다.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+self.remonCall.volumeRatio = 0.8
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[self.remonCall setVolumeRatio:0.8]
+```
+{% endtab %}
+{% endtabs %}
+
 #### iOS 방송/통화 중 효과음 재생
 
 WebRTC가 동작을 시작 하면  WebRTC가 AVAudioSession을 점유 합니다. 그로 인하여 AVAudioSession을 이용한 효과음 재생에 문제가 발생 합니다. 이 문제를 해결 하기 위하여 OpenAL과 같은 저수준의 효과음 재생 라이브러리 사용을 권장 드리며 OpenAL을 좀 더 쉽게 사용할 수 있게 만들어진 ObjectAL과 같은 라이브러리를 사용 할 수 있습니다.
