@@ -47,6 +47,8 @@ const listener = {
 ```
 
 `report.getRemoteFrameRate()` / `report.getLocalFrameRate()`를 통해 해당 연결의 fps를 확인 할 수 있습니다.
+
+방송 SDK를 사용하는 경우, receive fps가 0이 됐을때 자동으로 로딩 인디케이터를 띄워주고 원활하게 방송이 나올경우 사라지게 됩니다.
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
