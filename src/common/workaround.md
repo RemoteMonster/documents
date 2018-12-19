@@ -111,7 +111,7 @@ RemoteMonster의 SDK는 모바일 네트워크 연결에서 자동으로 WiFi-�
 
 {% tabs %}
 {% tab title="Web" %}
-
+n/a
 {% endtab %}
 
 {% tab title="Android" %}
