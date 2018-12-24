@@ -37,13 +37,35 @@
 
 ### References
 
+#### Intel
+
 {% embed url="https://github.com/intel/media-driver" %}
 
-{% embed url="https://caniuse.com/\#feat=webm" %}
+{% embed url="https://en.wikipedia.org/wiki/Intel\_Quick\_Sync\_Video" %}
+
+#### Nvidia
+
+{% embed url="https://developer.nvidia.com/video-encode-decode-gpu-support-matrix" %}
+
+#### AMD
+
+{% embed url="https://en.wikipedia.org/wiki/Video\_Coding\_Engine" %}
+
+{% embed url="https://en.wikipedia.org/wiki/Video\_Core\_Next" %}
+
+#### Encoders
 
 {% embed url="https://trac.ffmpeg.org/wiki/HWAccelIntro" %}
 
+#### Browser
+
+{% embed url="https://caniuse.com/\#feat=webm" %}
+
+#### Codecs
+
 {% embed url="https://en.wikipedia.org/wiki/VP9" %}
+
+#### Articles
 
 {% embed url="https://bloggeek.me/webrtc-h264-video-codec-hardware-support/" %}
 
