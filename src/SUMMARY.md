@@ -54,6 +54,7 @@
 * [Record - beta](common/record.md)
 * [Media Health Report](common/media-health-report.md)
 * [Workaround](common/workaround.md)
+* [Codec](common/codec.md)
 * [Error Code](common/error-code.md)
 * [About WebRTC](common/about-webrtc.md)
 
