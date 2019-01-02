@@ -270,3 +270,71 @@ WebRTC가 동작을 시작 하면  WebRTC가 AVAudioSession을 점유 합니다.
 
 {% embed url="http://kstenerud.github.io/ObjectAL-for-iPhone/documentation/index.html" %}
 
+#### iOS 화면비율 조정
+
+RemonController에는 onRemoteVideoSizeChanged와 onLocalVideoSizeChanged 라는 영상의 크기 변화를 감지 할 수 있는 함수가 존재하며 이 함수를 이용하여 화면비율을 조절 할 수 있습니다. 아래 예제코드는 방송자의 영상이 '세로' 이고, 시청자의 뷰가 '세로' 일때 화면 시청자 뷰의 높이값을 기준으로 화면 비율을 변경 하는 코드 입니다.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+remonCast.onRemoteVideoSizeChanged { (view, size) in
+    print("Debug onRemoteVideoSizeChanged", size)
+    print("Debug self.remonCast\(self.remonCast.remoteView.hashValue) and view\(view.hashValue) is same")
+    
+    let videoHeight = size.height
+    let videoWidth = size.width
+    let videoRatio:CGFloat = videoWidth / videoHeight
+    
+    guard let myView = view else { return }
+    
+    let myViewWidth:CGFloat = myView.frame.size.width
+    let myViewHeight:CGFloat = myView.frame.size.height
+    let myViewRatio:CGFloat = myViewWidth / myViewHeight
+    
+    if videoRatio < 1.0 { // 방송 영상이 세로입니다.
+        if myViewRatio < 1.0 { // 시청자 뷰가 세로 입니다.
+            let computedWidth:CGFloat = myViewHeight * videoRatio
+            print("Debug computedWidth", computedWidth)
+            DispatchQueue.main.async {
+                myView.frame = CGRect(x: 0.0, y: 0.0, width: computedWidth, height: myViewHeight)
+                myView.center = self.view.center
+            }
+        } else {
+//                    NOOP
+        }
+    } else {
+//                NOOP
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[self.remonCast onRemoteVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
+    CGFloat videoHeight = size.height;
+    CGFloat videoWidth = size.width;
+    CGFloat videoRatio = videoWidth / videoHeight;
+    
+    CGFloat myViewWidth = view.frame.size.width;
+    CGFloat myViewHeight = view.frame.size.height;
+    CGFloat myViewRatio = myViewWidth / myViewHeight;
+    
+    if (videoRatio < 1.0) { // 방송 영상이 세로입니다.
+        if (myViewRatio < 1.0) { // 시청자 뷰가 세로 입니다.
+            CGFloat computedWidth = myViewHeight * videoRatio;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                view.frame = CGRectMake(0.0, 0.0, computedWidth, myViewHeight);
+                view.center = self.view.center;
+            });
+        } else {
+            //                    NOOP
+        }
+    } else {
+        //                NOOP
+    }
+}];
+```
+{% endtab %}
+{% endtabs %}
+
