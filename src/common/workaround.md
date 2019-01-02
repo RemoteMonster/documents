@@ -270,6 +270,8 @@ WebRTC가 동작을 시작 하면  WebRTC가 AVAudioSession을 점유 합니다.
 
 {% embed url="http://kstenerud.github.io/ObjectAL-for-iPhone/documentation/index.html" %}
 
+## Aspect ratio
+
 #### iOS 화면비율 조정
 
 RemonController에는 onRemoteVideoSizeChanged와 onLocalVideoSizeChanged 라는 영상의 크기 변화를 감지 할 수 있는 함수가 존재하며 이 함수를 이용하여 화면비율을 조절 할 수 있습니다. 아래 예제코드는 방송자의 영상이 '세로' 이고, 시청자의 뷰가 '세로' 일때 화면 시청자 뷰의 높이값을 기준으로 화면 비율을 변경 하는 코드 입니다.
