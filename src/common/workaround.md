@@ -281,7 +281,7 @@ RemonController에는 onRemoteVideoSizeChanged와 onLocalVideoSizeChanged 라는
 ```swift
 remonCast.onRemoteVideoSizeChanged { (view, size) in
     print("Debug onRemoteVideoSizeChanged", size)
-    print("Debug self.remonCast\(self.remonCast.remoteView.hashValue) and view\(view.hashValue) is same")
+    print("Debug self.remonCast.remoteView(\(self.remonCast.remoteView.hashValue)) and view(\(view.hashValue)) is same")
     
     let videoHeight = size.height
     let videoWidth = size.width
