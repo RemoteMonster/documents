@@ -340,6 +340,38 @@ Sorry next version supported
 
 {% page-ref page="error-code.md" %}
 
+### onRetry\(completed\) - Beta
+
+Remon 이 동작 중에 네트워크 환경의 변경이 감지되면 재연결을 시도 합니다. 이 때 재연결 상태를 알려주는 onRetry\(\) 함수가 호출 되며 재연결이 시도가 시작 될 때는 completed 값을 false로 호출 되고, 재연결이 완료 되면 completed 값을 true로 호출 됩니다. 만약 재연결 시도중 재연결이 실패 하거나 에러가 발생 한다면 onRetry\(\)가 아닌 onError\(\) 또는 onClose\(\)가 호출 될 수도 있습니다.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+self.remonCast.onRetry { (completed) in
+    if completed {
+        // 재연결이 완료 되었습니다.
+        // 재연결 시도 중 실패가 발생 한다면 호출 되지 않을 수 있습니다.
+    } else {
+        // 재연결을 시도 합니다. 재연결이 시도가 시작 되면 항상 호출 됩니다.
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+[self.remonCall onRetryWithBlock:^(BOOL completed) {
+    if (completed) {
+        // 재연결이 완료 되었습니다.
+        // 재연결 시도 중 실패가 발생 한다면 호출 되지 않을 수 있습니다.
+    } else {
+        // 재연결을 시도 합니다. 재연결이 시도가 시작 되면 항상 호출 됩니다.
+    }        
+}];
+```
+{% endtab %}
+{% endtabs %}
+
 ## Advanced
 
 ### onRemoteVideoSizeChanged\(view, size\)/onLocalVideoSizeChanged\(view, size\)
