@@ -1,4 +1,4 @@
-# Livecast - Studio environment
+# Studio Environment
 
 방송을 송출시 스튜디오 구성에 대한 안내입니다. 일반적으로 모바일이나, 간단하게 카메라가 있는 노트북을 통해 방송 송출이 가능하지만, 경우에 따라서 1인 방송환경이나, 전문 스튜디오 환경에서 방송송출이 필요할 수 있습니다. 이런 환경에서 방송시 아래와 같은 구성을 할 수 있습니다.
 
@@ -113,13 +113,6 @@ Win/DirectShow/Samples/bin/DecklinkCapture.exe
 ```javascript
 async function getDevices() {
   try {
-    // NOTE: 퍼미션 없으면 기기의 ID만 받아옴. 라벨명을 받으려면 퍼미션 필요
-    // Promise.all([
-    //  navigator.permission.query({ name: 'camera'}),
-    //  navigator.permission.query({ name: 'microphone'})
-    // ])
-
-    // NOTE: getUserMedia로도 permission 얻을 수 있음
     const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     const userDevices = await navigator.mediaDevices.enumerateDevices()
     mediaStream.getTracks().forEach(track => track.stop()) // getUserMedia 때문에 자원을 반환해야함

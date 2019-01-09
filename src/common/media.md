@@ -2,9 +2,11 @@
 description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소개합니다.
 ---
 
-# Media Health Report
+# Media
 
 ## Overview
+
+## Health
 
 영상 및 음성 통화 중에 현재 통화의 품질이 어떠한지를 통합하여 1에서 5까지의 단계로 확인할 수 있습니다.
 

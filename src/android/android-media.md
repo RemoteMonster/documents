@@ -2,15 +2,23 @@
 description: 뷰와 레이아웃에 대해 소개합니다.
 ---
 
-# Android - View
+# Android - Media
 
-## Introduction
+## Overview
+
+영상, 음성 미디어의 표출과 사용에 대해 안내합니다.
+
+공통적인 부분은 아래를 참고하세요.
+
+{% page-ref page="../common/media.md" %}
+
+## View
 
 레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `SurfaceViewRender`를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRender`가 가장 핵심이므로 먼저 살펴보겠습니다.
 
-## SurfaceViewRender
+### SurfaceViewRender
 
-### Basic
+#### Basic
 
 Android layout 파일에서 다음과 같이 layout에 배치함으로써 `SurfaceViewRender`를 사용할 수 있습니다.
 
@@ -43,7 +51,7 @@ SurfaceViewRender remoteRender =
 
 이제 이 뷰를 사용할 기본 준비가 완료되었습니다. `Remon` 클래스의 객체를 생성하고 생성할 때 `Config`객체에 이 두 쌍의 뷰를 설정하면 통신이 시작됨과 함께 이 뷰에 카메라나 원격의 영상 스트림이 출력됩니다.
 
-### Advenced
+#### Advanced
 
 몇가지 이 `SurfaceViewRender`의 메소드를 살펴보겠습니다.
 
@@ -65,7 +73,7 @@ layout에 어떻게 채울지를 결정합니다.
 localRender.setScalingType(RendererCommon.ScalingType);
 ```
 
-## PercentFrameLayout
+### PercentFrameLayout
 
 리모트몬스터 안드로이드 SDK에서는 영상관련 View의 배치를 쉽게 하기 위해 `PercentFrameLayout`을 제공합니다. `PercentFrameLayout`을 이용하면 영상 관련 View를 RelativeLayout안에서 자유롭게 배치하고 동적으로 움직일 수 있습니다. `PercentFrameLayout`은 layout내의 뷰들을 퍼센트 방식으로 배치합니다.
 
@@ -81,47 +89,52 @@ layout.setPosition(0,0,100,100);
 layout.setPosition(0,50,50,50);
 ```
 
-## View Scaling
+### Fill Policy
 
 Video를 보여주는 `SurfaceViewRenderer`의 `ScalingType`을 통해 비디오소스가 보이는 방식을 지정 할 수 있습니다. 
 
 ![Video Source](../.gitbook/assets/background2.png)
 
-{% tabs %}
-{% tab title="Fit" %}
-**SCALE\_ASPECT\_FIT** 
+#### Fit
 
-뷰의 크기에 맞게 비디오 프레임의 크기가 조정됩니다. 가로 세로 비율을 유지합니다. \(검은 색 테두리가 표시 될 수 있음\)
+뷰의 크기에 맞게 비디오 프레임의 크기가 조정됩니다. 가로 세로 비율을 유지합니다. 검은 색 테두리가 표시 될 수 있습니다.
 
 ```java
 surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
 ```
 
 ![](../.gitbook/assets/fit.png)
-{% endtab %}
 
-{% tab title="Fill" %}
-**SCALE\_ASPECT\_FILL**
+#### Fill
 
-비디오 프레임이 뷰의 크기를 채우기 위해 크기가 조정됩니다.종횡비 유지. 비디오 프레임의 일부는 ****Clipping 됩니다.
+비디오 프레임이 뷰의 크기를 채우기 위해 크기가 조정됩니다.종횡비 유지. 비디오 프레임의 일부는 Clipping 됩니다.
 
 ```java
 surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FILL);
 ```
 
 ![](../.gitbook/assets/fill.png)
-{% endtab %}
 
-{% tab title="Balanced" %}
-**SCALE\_ASPECT\_BALANCED**
+#### Balanced
 
-FIT와 FILL 간의 절충. 비디오 프레임은 다음과 같이 채울 것입니다. 적어도 가로 세로 비율을 유지하면서 뷰를 가능하게 합니다.
+FIT와 FILL 간의 절충입니. 비디오 프레임은 다음과 같이 채울 것입니다. 적어도 가로 세로 비율을 유지하면서 뷰를 가능하게 합니다.
 
 ```java
 surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
 ```
 
 ![](../.gitbook/assets/balance.png)
-{% endtab %}
-{% endtabs %}
+
+
+
+## Background Policy
+
+안드로이드는 특별한 설정이 없으면 백그라운드시 모든 미디어가 송출 및 수신이 됩니다. 만약 수신등에서 백그라운드로 진입시 음소거가 필요하다면, 시스템 이벤트등을 통해 별도 처리하면 됩니다.
+
+| 상황 | 미디어 | 내용 |
+| :--- | :--- | :--- |
+| 송출 백그라운드 | 영상 | 수신측에서 영상/음성 정상 수 |
+| 송출 백그라운드 | 음성 | 수신측에서 음성 정상 수신 |
+| 수신 백그라운 | 영상 | 음성을 들을 수 있음 |
+| 수신 백그라운드 | 음성 | 음성을 들을 수 있음 |
 

@@ -338,7 +338,7 @@ Sorry next version supported
 
 좀 더 자세한 내용은 아래를 참고하세요.
 
-{% page-ref page="error-code.md" %}
+{% page-ref page="error.md" %}
 
 ### onRetry\(completed\) - Beta
 
@@ -500,5 +500,5 @@ remoCall.onRemonStatReport{ (result) in
 
 보다 더 자세한 내용은 아래를 확인하세요.
 
-{% page-ref page="media-health-report.md" %}
+{% page-ref page="media.md" %}
 

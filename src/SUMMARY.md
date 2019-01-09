@@ -14,7 +14,7 @@
 
 * [Web - Overview](web/web-overview.md)
 * [Web - Getting Started](web/web-getting-started.md)
-* [Web - View](web/web-view.md)
+* [Web - Media](web/web-view.md)
 * [Web - Github](https://github.com/remotemonster/web-sdk/)
 * [Web - SDK Reference](https://remotemonster.github.io/web-sdk/docs/)
 * [Web - Debug Inside](web/web-debug-inside.md)
@@ -23,16 +23,16 @@
 
 * [Android - Overview](android/android-overview.md)
 * [Android - Getting Started](android/android-getting-started.md)
-* [Android - View](android/android-view.md)
+* [Android - Media](android/android-media.md)
 * [Android - Github](https://github.com/remotemonster/android-sdk/)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
-* [Android - ProGuard Setting](android/android-proguard-setting.md)
+* [Android - ProGuard](android/android-proguard-setting.md)
 
 ## iOS
 
 * [iOS - Overview](ios/ios-overview.md)
 * [iOS - Getting Started](ios/ios-getting-started.md)
-* [iOS - View](ios/ios-view.md)
+* [iOS - Media](ios/ios-media.md)
 * [iOS - Github](https://github.com/remotemonster/ios-sdk/)
 * [iOS - SDK Reference](https://remotemonster.github.io/ios-sdk/)
 
@@ -46,15 +46,15 @@
 * [Service Key](common/service-key.md)
 * [Config](common/config.md)
 * [Livecast](common/livecast.md)
-* [Livecast - Simulcast - beta](common/livecast-simulcast.md)
-* [Livecast - Studio environment](common/livecast-studio-environment.md)
 * [Communication](common/communication.md)
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)
+* [Network Environment](common/network-environment.md)
+* [Studio Environment](common/studio-environment.md)
+* [Media](common/media.md)
+* [Simulcast - beta](common/livecast-simulcast.md)
 * [Record - beta](common/record.md)
-* [Media Health Report](common/media-health-report.md)
-* [Workaround](common/workaround.md)
 * [Codec](common/codec.md)
-* [Error Code](common/error-code.md)
+* [Error](common/error.md)
 * [About WebRTC](common/about-webrtc.md)
 

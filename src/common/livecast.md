@@ -78,9 +78,9 @@ Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 �
 
 {% page-ref page="../web/web-view.md" %}
 
-{% page-ref page="../android/android-view.md" %}
+{% page-ref page="../android/android-media.md" %}
 
-{% page-ref page="../ios/ios-view.md" %}
+{% page-ref page="../ios/ios-media.md" %}
 
 ### 방송생성
 
@@ -462,5 +462,5 @@ RemonCast *remonCast = [[RemonCast alloc]init];
 
 {% page-ref page="config.md" %}
 
-{% page-ref page="workaround.md" %}
+{% page-ref page="network-environment.md" %}
 

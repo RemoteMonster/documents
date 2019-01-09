@@ -2,7 +2,7 @@
 description: 에러코드에 대해 설명합니다.
 ---
 
-# Error Code
+# Error
 
 ## 개요
 

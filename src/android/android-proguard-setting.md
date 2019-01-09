@@ -2,7 +2,7 @@
 description: ProGuard 설정시 RemonSDK의 Setting이 필요합니다.  SDK에서 쓰이는 옵션과 종류에대해 정리합니다.
 ---
 
-# Android - ProGuard Setting
+# Android - ProGuard
 
 ## gradle.build
 
