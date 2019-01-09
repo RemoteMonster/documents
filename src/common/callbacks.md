@@ -345,7 +345,15 @@ Sorry next version supported
 Remon 이 동작 중에 네트워크 환경의 변경이 감지되면 재연결을 시도 합니다. 이 때 재연결 상태를 알려주는 onRetry\(\) 함수가 호출 되며 재연결이 시도가 시작 될 때는 completed 값을 false로 호출 되고, 재연결이 완료 되면 completed 값을 true로 호출 됩니다. 만약 재연결 시도중 재연결이 실패 하거나 에러가 발생 한다면 onRetry\(\)가 아닌 onError\(\) 또는 onClose\(\)가 호출 될 수도 있습니다.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="Web" %}
+N/A
+{% endtab %}
+
+{% tab title="Android" %}
+N/A
+{% endtab %}
+
+{% tab title="iOS - Swift" %}
 ```swift
 self.remonCast.onRetry { (completed) in
     if completed {
@@ -358,7 +366,7 @@ self.remonCast.onRetry { (completed) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - Objc" %}
 ```objectivec
 [self.remonCall onRetryWithBlock:^(BOOL completed) {
     if (completed) {
