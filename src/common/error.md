@@ -4,7 +4,7 @@ description: 에러코드에 대해 설명합니다.
 
 # Error
 
-## 개요
+## Overview
 
 RemoteMonster API는 크게 두가지의 예외상황을 전달합니다. Fail과 Error입니다.
 
