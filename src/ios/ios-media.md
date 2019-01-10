@@ -61,7 +61,7 @@ remonCall.onRemoteVideoSizeChanged {(view, size) in
 
 ### Aspect ratio
 
-RemonController에는 onRemoteVideoSizeChanged와 onLocalVideoSizeChanged 라는 영상의 크기 변화를 감지 할 수 있는 함수가 존재하며 이 함수를 이용하여 화면비율을 조절 할 수 있습니다. 아래 예제코드는 방송자의 영상이 '세로' 이고, 시청자의 뷰가 '세로' 일때 화면 시청자 뷰의 높이값을 기준으로 화면 비율을 변경 하는 코드 입니다.
+`RemonController`에는 `onRemoteVideoSizeChanged`와 `onLocalVideoSizeChanged` 라는 영상의 크기 변화를 감지 할 수 있는 함수가 존재하며 이 함수를 이용하여 화면비율을 조절 할 수 있습니다. 아래 예제코드는 방송자의 영상이 '세로' 이고, 시청자의 뷰가 '세로' 일때 화면 시청자 뷰의 높이값을 기준으로 화면 비율을 변경 하는 코드 입니다.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -98,7 +98,7 @@ remonCast.onRemoteVideoSizeChanged { (view, size) in
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [self.remonCast onRemoteVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
     CGFloat videoHeight = size.height;
@@ -180,16 +180,16 @@ Aduio Session에 대한 모드와 일반적인 사용은 아래 링크를 확인
 
 ### Volume Ratio
 
-RemonCast 또는 RemonCall를 music 모드로 이용할 경우 outputVolume이 크게 느껴질 수 있습니다. 이럴 경우 volumeRatio 값을 조정 하여 AudioSession outputVolume 과의 출력 비율 조정 할 수 있습니다. 예를 들어 outputVolume이 1.0\(MAX\) 일때 volumeRatio를 0.8로 설정 한다면 RemonCast 또는 RemonCall은 outputVolume의 80%의 크기로 출력 되어 집니다.
+`RemonCast` 또는 `RemonCall`를 `music mode`로 이용할 경우 `outputVolume`이 크게 느껴질 수 있습니다. 이럴 경우 `volumeRatio` 값을 조정 하여 `AudioSession outputVolume` 과의 출력 비율 조정 할 수 있습니다. 예를 들어 `outputVolume`이 1.0 \(최대값\) 일때 `volumeRatio`를 0.8로 설정 한다면 `RemonCast` 또는 `RemonCall`은 `outputVolume`의 80%의 크기로 출력 되어 집니다.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 self.remonCall.volumeRatio = 0.8
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [self.remonCall setVolumeRatio:0.8]
 ```
@@ -198,7 +198,7 @@ self.remonCall.volumeRatio = 0.8
 
 ### Mixing Sound
 
-WebRTC가 동작을 시작 하면  WebRTC가 AVAudioSession을 점유 합니다. 그로 인하여 AVAudioSession을 이용한 효과음 재생에 문제가 발생 합니다. 이 문제를 해결 하기 위하여 OpenAL과 같은 저수준의 효과음 재생 라이브러리 사용을 권장 드리며 OpenAL을 좀 더 쉽게 사용할 수 있게 만들어진 ObjectAL과 같은 라이브러리를 사용 할 수 있습니다.
+WebRTC가 동작을 시작 하면  WebRTC가 `AVAudioSession`을 점유 합니다. 그로 인하여 `AVAudioSession`을 이용한 효과음 재생에 문제가 발생 합니다. 이 문제를 해결 하기 위하여 `OpenAL`과 같은 저수준의 효과음 재생 라이브러리 사용을 권장 드리며 `OpenAL`을 좀 더 쉽게 사용할 수 있게 만들어진 `ObjectAL`과 같은 라이브러리를 사용 할 수 있습니다.
 
 ```objectivec
 #import "ObjectAL.h"

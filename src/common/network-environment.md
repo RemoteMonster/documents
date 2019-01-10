@@ -79,13 +79,15 @@ self.remonCast.onRemonStatReport { (report) in
 {% endtab %}
 {% endtabs %}
 
+{% page-ref page="callbacks.md" %}
+
 ### Media Health Report 감시 - 방송/통신 - 영상/음성
 
 방송/통신의 영상/음성 수신에 관련된 방법입니다. SDK 내부에서 자체적인 품질값을 제공하고 있습니다. 특히 이 값이 최저 일때, 간단하게는 안내, 토스트등의 사용자 경험을 보호하는 UI를 제공하는것이 의미 있습니다. 다만, 이값이 꼭 미디어가 안보이는 상황을 의미하는 것은 아니기 때문에 간단한 안내가 적합합니다. 또는 일정 시간동안 이 값의 추이를 감시하여 별도의 처리를 하는 방법이 있을 수 있습니다. 실제 사용은 아래의 링크를 참고하세요.
 
 e.g. 품질이 나쁠 때, 네트워크 불안정으로 인해 품질이 안 좋음을 안내하는 toast UI
 
-{% page-ref page="media.md" %}
+{% page-ref page="callbacks.md" %}
 
 {% hint style="info" %}
 Fps와 Quality Statistics Report는 어떻게 다른가요?
@@ -148,11 +150,15 @@ protected void onDestroy() {
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
+새로운 `onRetry` 콜백을 통해 제공 됩니다. 아래를 확인하세요.
 
+{% page-ref page="callbacks.md" %}
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
+새로운 `onRetry` 콜백을 통해 제공 됩니다. 아래를 확인하세요.
 
+{% page-ref page="callbacks.md" %}
 {% endtab %}
 {% endtabs %}
 
