@@ -24,6 +24,20 @@ description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소
 
 {% page-ref page="config.md" %}
 
+코덱별로 적합한 bitrate가 다릅니다. 아래를 참고하세요
+
+### 일반
+
+{% embed url="https://help.netflix.com/ko/node/306" %}
+
+### VP9
+
+{% embed url="https://developers.google.com/media/vp9/settings/vod/" %}
+
+### h.264
+
+{% embed url="https://bitmovin.com/video-bitrate-streaming-hls-dash/" %}
+
 ## Simulcast
 
 여러 품질의 영상을 제공하고 수신자가 품질을 선택할 수 있도록 합니다.
