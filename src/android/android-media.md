@@ -127,6 +127,14 @@ surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
 
 
 
+## Audio
+
+자동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 `false`, 계속 유지하고 싶다면 `true`로 설정하세요.
+
+```java
+config.setSpeakerPhone("auto"); // auto, true, false
+```
+
 ## Background Policy
 
 안드로이드는 특별한 설정이 없으면 백그라운드시 모든 미디어가 송출 및 수신이 됩니다. 만약 수신등에서 백그라운드로 진입시 음소거가 필요하다면, 시스템 이벤트등을 통해 별도 처리하면 됩니다.

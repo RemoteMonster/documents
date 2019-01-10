@@ -54,7 +54,6 @@
 * [Media](common/media.md)
 * [Simulcast - beta](common/livecast-simulcast.md)
 * [Record - beta](common/record.md)
-* [Codec](common/codec.md)
 * [Error](common/error.md)
 * [About WebRTC](common/about-webrtc.md)
 

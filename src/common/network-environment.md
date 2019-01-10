@@ -150,13 +150,13 @@ protected void onDestroy() {
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
-새로운 `onRetry` 콜백을 통해 제공 됩니다. 아래를 확인하세요.
+`onRetry` 콜백을 통해 제공 됩니다. 아래를 확인하세요.
 
 {% page-ref page="callbacks.md" %}
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
-새로운 `onRetry` 콜백을 통해 제공 됩니다. 아래를 확인하세요.
+`onRetry` 콜백을 통해 제공 됩니다. 아래를 확인하세요.
 
 {% page-ref page="callbacks.md" %}
 {% endtab %}
