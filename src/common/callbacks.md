@@ -366,7 +366,7 @@ self.remonCast.onRetry { (completed) in
 ```
 {% endtab %}
 
-{% tab title="iOS - Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 [self.remonCall onRetryWithBlock:^(BOOL completed) {
     if (completed) {
