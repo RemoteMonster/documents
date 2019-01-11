@@ -56,3 +56,23 @@ RemoteMonster는 상용 서비스에 한하여 별도의 관리자 화면을 제
 
 이를 통해 어떤 고객에게 주로 문제가 발생하는지, 어떻게 개선하면 좋을지 점검할 수 있습니다.
 
+## Advanced
+
+최적의 네트워크 환경, 송출 스튜디오 환경, 코덱/비트레이트등 미디어 설정에 대해서는 아래를 찾아보세요.
+
+{% page-ref page="common/network-environment.md" %}
+
+{% page-ref page="common/studio-environment.md" %}
+
+{% page-ref page="common/media.md" %}
+
+미디어를 녹화하거나, 동시에 여러 품질의 미디어를 송출하여 선택적으로 품질을 선택하는 방법을 알아보세요.
+
+{% page-ref page="common/livecast-simulcast.md" %}
+
+{% page-ref page="common/record.md" %}
+
+에러상황의 종류와 처리에 대해 확인하세요.
+
+{% page-ref page="common/error.md" %}
+
