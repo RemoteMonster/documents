@@ -87,6 +87,8 @@ const SimulcastFormat kSimulcastFormats[] = {
 
 `fps`를 낮추어 정해진 대역폭에서 움직임을 떨어뜨리고 고품질의 이미지를 보여주거나 `maxBandwidth`를 조절하여 대역폭을 저감하는 등의 최적화를 시도할 수 있으나, 이런 변화는 전부 추가적인 인코더의 연산을 필요로 하며 가급적 변경하지 않거나 입력 신호단에서 최적의 값을 제공하는것이 좋습니다.
 
+{% tabs %}
+{% tab title="Web" %}
 ```javascript
 const config = {
   rtc: {
@@ -102,6 +104,20 @@ const config = {
 
 const remon = new Remon({ config })
 ```
+{% endtab %}
+
+{% tab title="Android" %}
+N/A
+{% endtab %}
+
+{% tab title="iOS - Swift" %}
+N/A
+{% endtab %}
+
+{% tab title="iOS - ObjC" %}
+N/A
+{% endtab %}
+{% endtabs %}
 
 ## 수신 \(beta\)
 
