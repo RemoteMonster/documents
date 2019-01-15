@@ -136,7 +136,7 @@ remonCast.onRemoteVideoSizeChanged { (view, size) in
 ```swift
 remonCast.useExternalCapturer = true
 
-remonCast.onJoin { (chid) in
+remonCast.onCreate { (chid) in
     self.startCapter()
 }
 
@@ -158,7 +158,7 @@ func startCapture() {
 ```objectivec
 remonCast.useExternalCapturer = YES;
 
-[remonCast onJoinWithBlock:^(NSString * _Nullable chId) {
+[remonCast onCreateWithBlock:^(NSString * _Nullable chId) {
     [self startCapture];    
 }];
 
