@@ -127,6 +127,53 @@ remonCast.onRemoteVideoSizeChanged { (view, size) in
 {% endtab %}
 {% endtabs %}
 
+### Use External Capturer
+
+2.4.43 버전 부터 기본 RTCCameraCapturer가 아닌 외부 Capturer를 이용 할 수 있도록 지원합니다. 이 기능을 사용하기 위해서는 RemonController의 useExternalCapturer  값을 true로 설정 하고, RemonController의 localExternalCaptureDelegator에게 외부 Capturer로 부터 얻어온 Frame를 넘겨주시면 됩니다.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+remonCast.useExternalCapturer = true
+
+remonCast.onJoin { (chid) in
+    self.startCapter()
+}
+
+func startCapture() {
+    YourExCapturer.captureBlock { (pixelBuffer, comTime) in
+        if let rtcCaptureDelegate = 
+            remonCall.localExternalCaptureDelegator {
+                rtcCaptureDelegate.didCaptureFrame(
+                    pixelBuffer: pixelBuffer,
+                    timeStamp: cmTime, 
+                    videoRetation: ._0)
+        }
+    }
+} 
+```
+{% endtab %}
+
+{% tab title="Objc" %}
+```objectivec
+remonCast.useExternalCapturer = YES;
+
+[remonCast onJoinWithBlock:^(NSString * _Nullable chId) {
+    [self startCapture];    
+}];
+
+- (void)startCapture {
+    [yourExCapturer captureBlock: ^(CVPixelBuffer *pixelBuffer, CMTime *cmTime) {
+       [remonCast.localExternalCaptureDelegator 
+           didCaptureFrameWithPixelBuffer:pixelBuffer 
+           timeStamp:cmTime 
+           videoRetation:RemonVideoRotation_0]; 
+    }];
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## Audio
 
 ### Session
