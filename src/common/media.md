@@ -30,6 +30,8 @@ description: RemoteMonster가 제공하는 실시간 품질 체크 방법을 소
 
 {% embed url="https://help.netflix.com/ko/node/306" %}
 
+{% embed url="https://support.google.com/youtube/answer/2853702?hl=en" %}
+
 ### VP9
 
 {% embed url="https://developers.google.com/media/vp9/settings/vod/" %}
