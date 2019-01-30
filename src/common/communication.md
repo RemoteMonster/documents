@@ -314,7 +314,7 @@ remonCast.onClose {
 ```
 {% endtab %}
 
-{% tab title="iOS - Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc] init];
 

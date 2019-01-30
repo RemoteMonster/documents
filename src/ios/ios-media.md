@@ -64,7 +64,7 @@ remonCall.onRemoteVideoSizeChanged {(view, size) in
 `RemonController`에는 `onRemoteVideoSizeChanged`와 `onLocalVideoSizeChanged` 라는 영상의 크기 변화를 감지 할 수 있는 함수가 존재하며 이 함수를 이용하여 화면비율을 조절 할 수 있습니다. 아래 예제코드는 방송자의 영상이 '세로' 이고, 시청자의 뷰가 '세로' 일때 화면 시청자 뷰의 높이값을 기준으로 화면 비율을 변경 하는 코드 입니다.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.onRemoteVideoSizeChanged { (view, size) in
     print("Debug onRemoteVideoSizeChanged", size)
@@ -132,7 +132,7 @@ remonCast.onRemoteVideoSizeChanged { (view, size) in
 2.4.43 버전 부터 기본 RTCCameraCapturer가 아닌 외부 Capturer를 이용 할 수 있도록 지원합니다. 이 기능을 사용하기 위해서는 RemonController의 useExternalCapturer  값을 true로 설정 하고, RemonController의 localExternalCaptureDelegator에게 외부 Capturer로 부터 얻어온 Frame를 넘겨주시면 됩니다.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS - Swift" %}
 ```swift
 remonCast.useExternalCapturer = true
 
@@ -154,7 +154,7 @@ func startCapture() {
 ```
 {% endtab %}
 
-{% tab title="Objc" %}
+{% tab title="iOS - ObjC" %}
 ```objectivec
 remonCast.useExternalCapturer = YES;
 
