@@ -6,7 +6,7 @@
 
 {% api-method method="post" host="https://YOUR\_DOMAIN.COM/SLUG/" path="" %}
 {% api-method-summary %}
- 녹화 완료
+ record done
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -52,9 +52,9 @@
 
 {% page-ref page="../common/record.md" %}
 
-{% api-method method="post" host="https://YOUR\_DOMAIN.COM/SLUG/" path="" %}
+{% api-method method="get" host="https://YOUR\_DOMAIN.COM/SLUG/" path="" %}
 {% api-method-summary %}
- 방송 종료
+ channel create, close
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -63,15 +63,15 @@
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="action" type="string" required=true %}
+close \|\| create
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="chid" type="string" required=true %}
 Channel ID
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="action" type="string" required=true %}
-close
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -87,4 +87,6 @@ close
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 
