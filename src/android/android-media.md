@@ -129,11 +129,20 @@ surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
 
 ## Audio
 
-자동으로 사용자의 접근성을 감지하여 이어링모드로 할지 스피커폰모드로 할지 동적으로 변화합니다. 만약 이 기능을 해제하고 싶다면 `false`, 계속 유지하고 싶다면 `true`로 설정하세요.
+RemonCall의 setSpeakerphone\(boolean\)을 이용하여,  스피커폰을 사용할지 Earpiece 모드를 사용할 지 설정 할 수 있습니다. 
 
+{% code-tabs %}
+{% code-tabs-item title="CallActivity.java" %}
 ```java
-config.setSpeakerPhone("auto"); // auto, true, false
+btnSpeakerPhoneOnOff.setOnClickListener(view -> {
+            if (remonCall != null) {
+                isSpeakerPhone = isSpeakerPhone ? (isSpeakerPhone = false) : (isSpeakerPhone = true);
+                remonCall.setSpeakerphoneOn(isSpeakerPhone);
+            }
+        });
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## Background Policy
 
