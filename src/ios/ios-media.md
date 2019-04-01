@@ -180,13 +180,14 @@ remonCast.useExternalCapturer = YES;
 
 iOS에서 `Audio Session Category` 설정에 따라 스피커출력, 음소거 스위치의 작동, 이어폰 연결 작동, 블루투스 등이 상이 하게 작동할 수 있습니다. SDK에서는 기본적으로 `AVAudioSessionCategoryPlayback`를 권장하며 위에 설명된 Background Policy는 `AVAudioSessionCategoryPlayback`를 사용시에 동작입니다. 대부분의 방송, 통신에 대해서는 기본값을 권장합니다. 다만 개발자가 필요에 따라 다양한 세션을 사용하여 원하는 작동을 구현 가능합니다.
 
-Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. 실제 미디어가 사용자에게 보여주는 시점인 `onJoin`/`onConnnect`/`onComplte`와 같은 콜백에서 오디오세션 설정을 변경 하시면 됩니다.
+Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다.
 
 {% tabs %}
 {% tab title="iOS - Swift" %}
 ```swift
 //  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
-self.remonCast.onJoin { (chid) in 
+override func viewDidLoad() {
+	super.viewDidLoad()
 	do {
 	    if #available(iOS 10.0, *) {
 	        try AVAudioSession.sharedInstance().setCategory(.soloAmbient, mode: .default)
@@ -207,7 +208,8 @@ self.remonCast.onJoin { (chid) in
 {% tab title="iOS - ObjC" %}
 ```objectivec
 //  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
-[self.remonCast onJoinWithBlock:^(NSString * _Nullable chid) {
+- (void)viewDidLoad {
+    [super viewDidLoad];
 	@try {
 	    NSError *error = nil;
 	    [AVAudioSession.sharedInstance setCategory:AVAudioSessionCategorySoloAmbient error:&error];
@@ -216,7 +218,7 @@ self.remonCast.onJoin { (chid) in
 	} @catch (NSException *exception) {
 	    NSLog(@"error is %@",[exception description]);
 	}
-}];
+}
 ```
 {% endtab %}
 {% endtabs %}
