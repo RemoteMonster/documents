@@ -63,6 +63,8 @@ Build Phases에 copy file 항목을 추가 하고, 위 단계에서 추가한 Fr
 
 * 스토리보드에 `RemonIBController`의 하위객체인 `RemonCall` 또는 `RemonCast`를 추가합니다.
   * `RemonCall`를 1:1 통신을 지원 하며 `RemonCast`는 1:N 방송을 지원 합니다.
+  * xcode의 한계상 직접 RemonCall이나 RemonCast를 삽입이 불가능합니다. 따라서 RemonCall이나 RemonCast 객체를 Designer에 삽입할 수 없으므로 Library에서 Object 컴포넌트로 먼저 삽입후 해당 Object의 class를 아래 그림과 같이 직접 수정해 주세요. module은 remonios로 설정하시면 됩니다.
+  ![](../.gitbook/assets/ios_insertClass.png)
   * InterfaceBuilder에서 `Utilities` 뷰를 이용하여 `Remon`을 설정 합니다.
 * `ServiceID`와 `Service Key`를 설정합니다.
   * 만약 간단하게 테스트를 하기 원한다면 아무것도 입력 안해도 됩니다.
