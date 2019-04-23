@@ -21,7 +21,7 @@ Objc 환경이라면 ALWAYS\_EMBED\_SWIFT\_STANDARD\_LIBRARIES 값을 Yes로 설
 
 * Privacy: Bluetooth, Microphone, Camera
 
-![Settings](../.gitbook/assets/ios_buildsettings%20%284%29.png)
+![Settings](../.gitbook/assets/ios_buildsettings-4.png)
 
 ## SDK 설치 - Cocoapods
 
@@ -31,6 +31,8 @@ SDK 설치를 원하는 프로젝트의 `Podfile`에 `pod 'RemoteMonster', '~> 2
 {% code-tabs-item title="Podfile" %}
 ```text
 target 'MyApp' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
   pod 'RemoteMonster', '~> 2.0'
 end
 ```
@@ -47,11 +49,11 @@ $ pod install
 
 우선 아래의 링크를 통해 iOS SDK의 마지막 버전을 다운로드 받습니다.
 
-{% embed url="https://github.com/remotemonster/ios-sdk" %}
+{% embed url="https://github.com/remotemonster/ios-sdk" caption="" %}
 
 다운로드받은 RemoteMonster iOS SDK를 폴더에는 3개의 관련 Framework이 존재합니다. 각각의 Framework을 Finder에서 끌어다 프로젝트 트리창에 놓습니다. 그러면 RemoteMonster SDK를 프레임워크로 인식하게 됩니다.
 
-![Framework](../.gitbook/assets/ios_importframework-2.png)
+![Framework](../.gitbook/assets/ios_importframework-2%20%281%29.png)
 
 Build Phases에 copy file 항목을 추가 하고, 위 단계에서 추가한 Frameworks를 복사 대상으로 추가 하여 줍니다.
 
@@ -63,9 +65,7 @@ Build Phases에 copy file 항목을 추가 하고, 위 단계에서 추가한 Fr
 
 * 스토리보드에 `RemonIBController`의 하위객체인 `RemonCall` 또는 `RemonCast`를 추가합니다.
   * `RemonCall`를 1:1 통신을 지원 하며 `RemonCast`는 1:N 방송을 지원 합니다.
-  * xcode의 한계상 직접 RemonCall이나 RemonCast를 삽입이 불가능합니다. 따라서 RemonCall이나 RemonCast 객체를 Designer에 삽입할 수 없으므로 Library에서 Object 컴포넌트로 먼저 삽입후 해당 Object의 class를 아래 그림과 같이 직접 수정해 주세요. module은 remonios로 설정하시면 됩니다.
-  ![](../.gitbook/assets/ios_insertClass.png)
-  
+  * xcode의 한계상 직접 RemonCall이나 RemonCast를 삽입이 불가능합니다. 따라서 RemonCall이나 RemonCast 객체를 Designer에 삽입할 수 없으므로 Library에서 Object 컴포넌트로 먼저 삽입후 해당 Object의 class를 아래 그림과 같이 직접 수정해 주세요. module은 remonios로 설정하시면 됩니다. ![](../.gitbook/assets/ios_insertclass.png)
   * InterfaceBuilder에서 `Utilities` 뷰를 이용하여 `Remon`을 설정 합니다.
 * `ServiceID`와 `Service Key`를 설정합니다.
   * 만약 간단하게 테스트를 하기 원한다면 아무것도 입력 안해도 됩니다.
@@ -73,7 +73,7 @@ Build Phases에 copy file 항목을 추가 하고, 위 단계에서 추가한 Fr
 
 {% page-ref page="../common/service-key.md" %}
 
-![](../.gitbook/assets/basic_config%20%283%29.png)
+![](../.gitbook/assets/assets_-lalxanhbadmg35tjnme_-ld6qhxe4uifrqyin4nc_-ld6qipiwo_7ear1le04_basic_config__3_.png)
 
 * 스토리보드에서 원하는 Scene에서 원하는 위치에 `Veiw`를 배치하고 `RemonIBController`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
 
