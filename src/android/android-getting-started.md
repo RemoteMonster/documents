@@ -27,7 +27,7 @@ build.gradle\(Module:app\) 의 dependencies에 아래와 같이 추가합니다.
 ```groovy
 dependencies {
     /* RemoteMonster SDK */
-    api 'com.remotemonster:sdk:2.0.12'
+    api 'com.remotemonster:sdk:2.2.14'
 }
 ```
 
