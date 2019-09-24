@@ -401,7 +401,12 @@ remonCall.onError { error: RemonException ->
 {% tab title="iOS - Swift" %}
 ```swift
 remonCast.onError { (error) in
-    // Do something
+    // RemonError
+    switch error {
+    case .ConnectChannelFailed(_)
+    break;
+    }
+    
 }
 ```
 {% endtab %}
@@ -411,7 +416,11 @@ N/A
 {% endtab %}
 {% endtabs %}
 
+Error 코드에 대해 자세히 알고 싶으시면 아래 내용을 참고하시기 바랍니다.
+
 {% page-ref page="error.md" %}
+
+
 
 ### onRetry\(completed\) - Beta
 
