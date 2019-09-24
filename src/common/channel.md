@@ -17,7 +17,7 @@ RemoteMonster에서는 방송, 통신중 접속자가 공유하는 자원을 채
 
 ## Livecast
 
-방송에서 방송 목록을 얻는 방법입니다. 일반적으로 방송 목록에서 집입할 방송을 찾는 UI에 자주 사용됩니다.
+방송에서 방송 목록을 얻는 방법입니다. 일반적으로 방송 목록에서 진입할 방송을 찾는 UI에 자주 사용됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -27,17 +27,35 @@ const casts = await remonCast.fetchCasts()    // Return Promise
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
-remonCast = RemonCast.builder().context(ListActivity.this).build();
-remonCast.fetchCasts();
-remonCast.onFetch(casts -> {
-    for (Channel cast : casts) {
+remonCast = RemonCast.builder()
+        .context(ListActivity.this)
+        .build();
+
+remonCast.onFetch( List<Room> casts -> {
+    for (Room cast : casts) {
         myChannelId = cast.getId;
     }
 });
 
-remonCast.join(myChannelId);
+remonCast.fetchCasts();
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCast = RemonCast.builder()
+        .context(ListActivity.this)
+        .build()
+    
+remonCast.onFetch { casts:List<Room> -> 
+    for ( Room cast in casts) {
+        myChannelId = cast.getId;
+    }
+}
+
+remonCast.fetchCasts()
 ```
 {% endtab %}
 
@@ -86,19 +104,37 @@ const calls = await remonCall
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
-remonCall = RemonCall.builder().build();
-remonCall.fetchCalls();
-remonCall.onFetch(calls -> {
-    for (Channel call : calls) {
+remonCall = RemonCall.builder()
+        .build();
+
+remonCall.onFetch( List<Room> calls -> {
+    for ( Room call : calls) {
         if (call.getStatus.equals("WAIT")) {   // Only WAIT channels
             myChannelId = call.getId;
         }
     }
 });
 
-remonCall.connect(myChannelId)
+remonCall.fetchCalls();
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCall = RemonCall.builder()
+        .build();
+
+remonCall.onFetch { calls:List<Room> ->
+    for (Room call in calls) {
+        if (call.status == "WAIT" ) {   // Only WAIT channels
+            myChannelId = call.getId
+        }
+    }
+}
+
+remonCall.fetchCalls()
 ```
 {% endtab %}
 

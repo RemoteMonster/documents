@@ -56,76 +56,10 @@ remonCall.onRemoteVideoSizeChanged {(view, size) in
 ```
 
 {% hint style="info" %}
-`RemonController`에 `remoteView` 또는 `localView`를 지정 했다면 `RemonController`는 지정된 뷰에 비디오 렌더링뷰를 추가 하고, 지정된 뷰의 변화를 추적하여 지정 뷰의 크기에 맞게 비디오 렌더링뷰를 설정 합니다.
+`RemonCall/RemonCast 에서는 사이즈에 대한 정보만 제공하고, 실제 뷰의 비율을 조정하지않습니다. 특정 비율로 영상을 보여주기 위해서는 LayoutConstraint 등을 사용해 원하는 뷰 크로 조정해야 합니다.`
 {% endhint %}
 
-### Aspect ratio
-
-`RemonController`에는 `onRemoteVideoSizeChanged`와 `onLocalVideoSizeChanged` 라는 영상의 크기 변화를 감지 할 수 있는 함수가 존재하며 이 함수를 이용하여 화면비율을 조절 할 수 있습니다. 아래 예제코드는 방송자의 영상이 '세로' 이고, 시청자의 뷰가 '세로' 일때 화면 시청자 뷰의 높이값을 기준으로 화면 비율을 변경 하는 코드 입니다.
-
-{% tabs %}
-{% tab title="iOS - Swift" %}
-```swift
-remonCast.onRemoteVideoSizeChanged { (view, size) in
-    print("Debug onRemoteVideoSizeChanged", size)
-    print("Debug self.remonCast.remoteView(\(self.remonCast.remoteView.hashValue)) and view(\(view.hashValue)) is same")
-    
-    let videoHeight = size.height
-    let videoWidth = size.width
-    let videoRatio:CGFloat = videoWidth / videoHeight
-    
-    guard let myView = view else { return }
-    
-    let myViewWidth:CGFloat = myView.frame.size.width
-    let myViewHeight:CGFloat = myView.frame.size.height
-    let myViewRatio:CGFloat = myViewWidth / myViewHeight
-    
-    if videoRatio < 1.0 { // 방송 영상이 세로입니다.
-        if myViewRatio < 1.0 { // 시청자 뷰가 세로 입니다.
-            let computedWidth:CGFloat = myViewHeight * videoRatio
-            print("Debug computedWidth", computedWidth)
-            DispatchQueue.main.async {
-                myView.frame = CGRect(x: 0.0, y: 0.0, width: computedWidth, height: myViewHeight)
-                myView.center = self.view.center
-            }
-        } else {
-//                    NOOP
-        }
-    } else {
-//                NOOP
-    }
-}
-```
-{% endtab %}
-
-{% tab title="iOS - ObjC" %}
-```objectivec
-[self.remonCast onRemoteVideoSizeChangedWithBlock:^(UIView * _Nullable view, CGSize size) {
-    CGFloat videoHeight = size.height;
-    CGFloat videoWidth = size.width;
-    CGFloat videoRatio = videoWidth / videoHeight;
-    
-    CGFloat myViewWidth = view.frame.size.width;
-    CGFloat myViewHeight = view.frame.size.height;
-    CGFloat myViewRatio = myViewWidth / myViewHeight;
-    
-    if (videoRatio < 1.0) { // 방송 영상이 세로입니다.
-        if (myViewRatio < 1.0) { // 시청자 뷰가 세로 입니다.
-            CGFloat computedWidth = myViewHeight * videoRatio;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                view.frame = CGRectMake(0.0, 0.0, computedWidth, myViewHeight);
-                view.center = self.view.center;
-            });
-        } else {
-            //                    NOOP
-        }
-    } else {
-        //                NOOP
-    }
-}];
-```
-{% endtab %}
-{% endtabs %}
+### 
 
 ### Use External Capturer
 
@@ -176,7 +110,7 @@ remonCast.useExternalCapturer = YES;
 
 ## Audio
 
-### Session
+### Session Category
 
 iOS에서 `Audio Session Category` 설정에 따라 스피커출력, 음소거 스위치의 작동, 이어폰 연결 작동, 블루투스 등이 상이 하게 작동할 수 있습니다. SDK에서는 기본적으로 `AVAudioSessionCategoryPlayback`를 권장하며 위에 설명된 Background Policy는 `AVAudioSessionCategoryPlayback`를 사용시에 동작입니다. 대부분의 방송, 통신에 대해서는 기본값을 권장합니다. 다만 개발자가 필요에 따라 다양한 세션을 사용하여 원하는 작동을 구현 가능합니다.
 

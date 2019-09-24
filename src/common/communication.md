@@ -79,7 +79,7 @@ Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 �
 
 ### 통화 걸기
 
-`connectChannel()` 함수에 전달한 `channelId` 값에 해당하는 채널이 존재하지 않으면 채널이 생성되고, 다른 사용자가 해당 채널에 연결하기를 대기 하는 상태가 됩니다. 이때 해당 `channelId`로 다른 사용자가 연결을 시도 하면 연결이 완료 되고, 통신이 시작 됩니다.
+`connect()` 함수에 전달한 `channelId` 값에 해당하는 채널이 존재하지 않으면 채널이 생성되고, 다른 사용자가 해당 채널에 연결 하기를 대기 하는 상태가 됩니다. 이때 해당 `channelId`로 다른 사용자가 연결을 시도 하면 연결이 완료 되고, 통신이 시작 됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -113,7 +113,7 @@ caller.connectCall()
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 caller = RemonCall.builder()
     .serviceId("MY_SERVICE_ID")
@@ -131,7 +131,29 @@ caller.onComplete(() -> {
     // Caller-Callee connect each other. Do something
 });
 
-caller.connect();
+caller.connect("CHANNEL_NAME");
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+caller = RemonCall.builder()
+    .serviceId("MY_SERVICE_ID")
+    .key("MY_SERVICE_KEY")
+    .context(CallActivity.this)
+    .localView(surfRendererLocal)
+    .remoteView(surfRendererRemote)
+    .build()
+​
+caller.onConnect { channelId -> 
+    myChannelId = channelId  // Callee need chid from Caller for connect
+}
+​
+caller.onComplete {
+    // Caller-Callee connect each other. Do something
+}
+
+caller.connect("CHANNEL_NAME")
 ```
 {% endtab %}
 
@@ -139,15 +161,11 @@ caller.connect();
 ```swift
 let caller = RemonCall()
 
-caller.onConnect { (channelId) in
+caller.onConnect { [weak self](channelId) in
     let myChannelId = channelId          // Callee need channelId from Caller for connect
 }
 
-caller.onComplete {
-    // Caller-Callee connect each other. Do something
-}
-
-caller.connect()
+caller.connect("MY_CHANNEL_ID")
 ```
 {% endtab %}
 
@@ -160,18 +178,14 @@ RemonCall *caller = [[RemonCall alloc] init];
     [self setMyChannelId:channelId];
 }];
 ​
-[caller onCompleteWithBlock:^{
-    // Caller-Callee connect each other. Do something
-}];
-​
-[caller connect:chId :nil];
+[caller connect:chId :@"MY_CHANNEL_ID"];
 ```
 {% endtab %}
 {% endtabs %}
 
 ### 통화 받기 <a id="undefined-3"></a>
 
-`connectChannel()` 함수에 접속을 원하는 `channelId`값을 넣습니다. 이로서 간단하게 통화연결이 됩니다.
+`connect()` 함수에 접속을 원하는 `channelId`값을 넣습니다. 대기상태에 있던 사용자와 연결을 진행하고, 정상 연결이 완료되면 onComplete 콜백이 호출됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -200,7 +214,7 @@ callee.connectCall('MY_CHANNEL_ID')
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 callee = RemonCall.builder()
     .serviceId("MY_SERVICE_ID")
@@ -215,6 +229,24 @@ callee.onComplete(() -> {
 });
 
 callee.connect("MY_CHANNEL_ID");
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+callee = RemonCall.builder()
+    .serviceId("MY_SERVICE_ID")
+    .key("MY_SERVICE_KEY")
+    .context(CallActivity.this)
+    .localView(surfRendererLocal)
+    .remoteView(surfRendererRemote)
+    .build()
+
+callee.onComplete {
+    // Caller-Callee connect each other. Do something
+}
+
+callee.connect("MY_CHANNEL_ID")
 ```
 {% endtab %}
 
@@ -238,14 +270,16 @@ RemonCall *callee = [[RemonCall alloc] init];
     // Caller-Callee connect each other. Do something
 }];
 ​
-[callee connect:chId :nil];
+[callee connect:chId :@"MY_CHANNEL_ID"];
 ```
 {% endtab %}
 {% endtabs %}
 
 ### Callbacks <a id="observer"></a>
 
-개발중 다양한 상태 추적을 돕기 위한 Callback을 제공 합니다.
+개발중 다양한 상태 추적을 돕기 위한 Callback을 제공 합니다. 
+
+* 안드로이드 2.4.13, iOS 2.6.9 버전부터 콜백은 모두 UI Thread 에서 호출됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -270,11 +304,11 @@ const listener = {
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCall = RemonCall.builder().build();
 
-remonCall.onInit((token) -> {
+remonCall.onInit(() -> {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 });
 ​
@@ -292,23 +326,45 @@ remonCall.onClose(() -> {
 ```
 {% endtab %}
 
-{% tab title="iOS - Swift" %}
-```swift
-let remonCall = RemonCall()
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCall = RemonCall.builder().build()
 
-remonCall.onInit { (token) in
+remonCall.onInit {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
 ​
-remonCall.onConnect { (channelId) in
-    // 해당 'chid'로 미리 생성된 채널이 없다면 다른 사용자가 해당 'chid'로 연결을 시도 할때 까지 대기 상태가 됩니다. 
+remonCall.onConnect { channelId ->
+    // 통화 생성 후 대기 혹은 응답
 }
 ​
 remonCall.onComplete {
     // Caller, Callee간 통화 시작
 }
 ​
-remonCast.onClose {
+remonCall.onClose {
+    // 종료
+}
+```
+{% endtab %}
+
+{% tab title="iOS - Swift" %}
+```swift
+let remonCall = RemonCall()
+
+remonCall.onInit { [weak self](token) in
+    // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
+}
+​
+remonCall.onConnect { [weak self](channelId) in
+    // 해당 'chid'로 미리 생성된 채널이 없다면 다른 사용자가 해당 'chid'로 연결을 시도 할때 까지 대기 상태가 됩니다. 
+}
+​
+remonCall.onComplete { [weak self] in
+    // Caller, Callee간 통화 시작
+}
+​
+remonCast.onClose { [weak self](closeType) in
     // 종료
 }
 ```
@@ -353,14 +409,25 @@ const calls = await remonCall.fetchCalls()
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCall = RemonCall.builder().build();
 
 remonCall.fetchCalls();
-remonCall.onFetch(calls -> {
+remonCall.onFetch( calls -> {
     // Do something
 });
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCall = RemonCall.builder().build()
+
+remonCall.fetchCalls()
+remonCall.onFetch { calls -> 
+    // Do something
+}
 ```
 {% endtab %}
 
@@ -401,24 +468,31 @@ remonCall.close()
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCall = RemonCall.builder().build();
 remonCall.close();
 ```
 {% endtab %}
 
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCall = RemonCall.builder().build()
+remonCall.close()
+```
+{% endtab %}
+
 {% tab title="iOS - Swift" %}
 ```swift
 let remonCall = RemonCall()
-remonCall.close()
+remonCall.closeRemon()
 ```
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCall *remonCall = [[RemonCall alloc]init];
-[remonCall closeRemon:YES];
+[remonCall closeRemon];
 ```
 {% endtab %}
 {% endtabs %}

@@ -57,6 +57,62 @@
         android:layout_height="match_parent" />
 </com.remotemonster.sdk.PercentFrameLayout>
 ```
+
+ConstraintLayout 과 같이 안드로이드에서 제공하는 레이아웃으로 구성할 수 있습니다.
+
+```markup
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Remote -->
+    <RelativeLayout
+        android:id="@+id/layoutRemote"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintDimensionRatio="H,1:1.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/surfRendererRemote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    
+    <!-- Local -->
+    <RelativeLayout
+        android:id="@+id/layoutLocal"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_margin="18dp"
+        app:layout_constraintDimensionRatio="H,1:1.33"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/surfRendererLocal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/remon_identity"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
@@ -66,8 +122,6 @@ Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 �
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
-
-
 Interface Builder를 통해 지정 하게 되며 iOS - Getting Start에 따라 환경설정을 했다면 이미 View등록이 완료된 상태 입니다. 혹, 아직 완료가 안된 상태라면 아래를 참고하세요.
 
 {% page-ref page="../ios/ios-getting-started.md" %}
@@ -116,7 +170,7 @@ caster.createCast()
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 caster = RemonCast.builder()
     .serviceId("MY_SERVICE_ID")
@@ -133,9 +187,26 @@ caster.create();
 ```
 {% endtab %}
 
+{% tab title="Android - Kotlin" %}
+```kotlin
+caster = RemonCast.builder()
+    .serviceId("MY_SERVICE_ID")
+    .key("MY_SERVICE_KEY")
+    .context(CastActivity.this)
+    .localView(surfRendererlocal)        // local Video Renderer
+    .build()
+
+caster.onCreate { channelId -> 
+    myChannelId = channelId;
+}
+
+caster.create()
+```
+{% endtab %}
+
 {% tab title="iOS - Swift" %}
 ```swift
-remonCast.create()
+remonCast.create("MY_CHANNEL_ID")
 ```
 
 혹은 아래와 같이 Interface Builder 없이 작성 가능합니다.
@@ -150,13 +221,13 @@ remonCast.onCreate { (channelId) in
     let myChannelId = caster.channelId
 }
 
-caster.create()
+caster.create("MY_CHANNEL_ID")
 ```
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
 ```objectivec
-[remonCast create:nil];
+[remonCast create:@"MY_CHANNEL_ID"];
 ```
 
 Or you can create it without _Interface Builder_ as follows.
@@ -168,11 +239,10 @@ caster.serviceKey = @"MY_SERVICE_KEY";
 caster.localView = localView;
 
 [self.remonCast onCreateWithBlock:^(NSString * _Nullable chId) {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.channelIdLabel setText:chId];
-    });
+    [self.channelIdLabel setText:chId];
 }];
-[caster create:nil];
+
+[caster create:@"MY_CHANNEL_ID"];
 ```
 {% endtab %}
 {% endtabs %}
@@ -211,7 +281,7 @@ viewer.joinCast('MY_CHANNEL_ID')                  // myChnnelId from caster
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 viewer = RemonCast.builder()
     .serviceId("MY_SERVICE_ID")
@@ -226,9 +296,25 @@ viewer.join("MY_CHANNEL_ID");                     // myChid from caster
 ```
 {% endtab %}
 
+{% tab title="Android - Kotlin" %}
+```kotlin
+viewer = RemonCast.builder()
+    .serviceId("MY_SERVICE_ID")
+    .key("MY_SERVICE_KEY")
+    .context(ViewerActivity.this)
+    .remoteView(surfRendererRemote)        // remote video renderer
+    .build()
+​
+viewer.onJoin{
+}
+
+viewer.join("MY_CHANNEL_ID")                     // myChid from caster
+```
+{% endtab %}
+
 {% tab title="iOS - Swift" %}
 ```swift
-remonCast.join(myChannelId)                  // myChannelId from caster
+remonCast.join("MY_CHANNEL_ID")
 ```
 
 혹은 아래와 같이 Interface Builder 없이 작성 가능합니다.
@@ -243,58 +329,52 @@ viewer.onJoin {
     // Do something
 }
 
-viewer.join("MY_CHANNEL_ID")              // myChannelId from caster
+viewer.join("MY_CHANNEL_ID")
 ```
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
 ```javascript
-// <video id="remoteVideo" autoplay></video>
-let myChannelId
+[remonCast join:@"MY_CHANNEL_ID"]
+```
 
-const config = {
-  credential: {
-    serviceId: 'MY_SERVICE_ID',
-    key: 'MY_SERVICE_KEY'
-  },
-  view: {
-    local: '#remoteVideo'
-  },
-  media: {
-    recvonly: true
-  }
-}
+Or you can create it without _Interface Builder_ as follows.
 
-const listener = {
-  onJoin() {
-    // Do something
-  }
-}
-​
-const viewer = new Remon({ listener, config })
-viewer.joinCast('MY_CHANNEL_ID')                  // myChnnelId from caster
+```swift
+RemonCast *caster = [[RemonCast alloc]init];
+caster.serviceId = @"MY_SERVICE_ID";
+caster.serviceKey = @"MY_SERVICE_KEY";
+caster.localView = localView;
+
+[self.remonCast onJoinWithBlock:^() {
+
+}];
+
+[caster join:@"MY_CHANNEL_ID"];
 ```
 {% endtab %}
 {% endtabs %}
 
-### Observer
+### Callbacks <a id="observer"></a>
 
-개발중 다양한 상태 추적을 돕기 위한 Callback을 제공 합니다.
+개발중 다양한 상태 추적을 돕기 위한 Callback을 제공 합니다. 
+
+* 안드로이드 2.4.13, iOS 2.6.9 버전부터 콜백은 모두 UI Thread 에서 호출됩니다.
 
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
 const listener = {
-  onInit() {
+  onInit(token) {
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
   },
 ​  
-  onCreate(channelId) {
-    // 방송 생성 및 시청 준비 완료
+  onConnect(channelId) {
+    // 통화 생성 후 대기 혹은 응답
   },
 ​
-  onJoin() {
-    // 시청 시작
+  onComplete() {
+    // Caller, Callee간 통화 시작
   },
 ​  
   onClose() {
@@ -304,25 +384,55 @@ const listener = {
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCast = RemonCast.builder().build();
 
+// UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 remonCast.onInit(() -> {
-    // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 });
 ​
+// 방송 생성
 remonCast.onCreate((channelId) -> {
-    // 방송 생성 및 시청 준비 완료
 });
 ​
-remonCast.onJoin(() -> {
-    // 시청 시작
+// 방송 참
+remonCast.onJoin ( () -> {
+});
+
+// Caller, Callee간 통화 시작
+remonCast.onComplete(() -> {
 });
 ​
+// 종료
 remonCast.onClose(() -> {
-    // 종료
 });
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCast = RemonCast.builder().build()
+
+// UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
+remonCast.onInit {
+}
+​
+// 방송 생성
+remonCast.onCreate { channelId -> {
+}
+​
+// 방송 참
+remonCast.onJoin {
+}
+
+// Caller, Callee간 통화 시작
+remonCast.onComplete {
+}
+​
+// 종료
+remonCast.onClose {
+}
 ```
 {% endtab %}
 
@@ -330,19 +440,22 @@ remonCast.onClose(() -> {
 ```swift
 let remonCast = RemonCast()
 
-remonCast.onInit {
+remonCast.onInit { [weak self] in
     // UI 처리등 remon이 초기화 되었을 때 처리하여야 할 작업
 }
-
-remonCast.onCreate { (channelId) in
-    // 방송 생성 및 시청 준비 완료
+​
+remonCast.onCreate { [weak self](channelId) in
+    // 해당 'chid'로 미리 생성된 채널이 없다면 다른 사용자가 해당 'chid'로 연결을 시도 할때 까지 대기 상태가 됩니다. 
+}
+​
+remonCast.onJoin { [weak self] in
 }
 
-remonCast.onJoin {
-    // 시청 시작
+remonCast.onComplete { [weak self] in
+    // Caller, Callee간 통화 시작
 }
-
-remonCast.onClose {
+​
+remonCast.onClose { [weak self](closeType) in
     // 종료
 }
 ```
@@ -350,31 +463,35 @@ remonCast.onClose {
 
 {% tab title="iOS - ObjC" %}
 ```objectivec
-RemonCast *caster = [[RemonCast alloc]init];
-[caster onInitWithBlock:^{
+RemonCast *remonCast = [[RemonCast alloc] init];
+
+[remonCast onInitWithBlock:^{
     // Things to do when remon is initialized, such as UI processing, etc.
 }];
 
-[caster onCreateWithBlock:^(NSString * _Nullable chId) {
-    // Broadcast creation and watching preparation is complete
+[remonCast onConnectWithBlock:^(NSString * _Nullable chId) {
+    // Make a call then wait the callee
 }];
 
-[caster onJoinWithBlock:^(NSString * _Nullable chId) {
-    // Start watching
+[remonCast onJoinWithBlock:^{
 }];
 
-[caster onCloseWithBlock:^{
-    // End watching
+[remonCast onCompleteWithBlock:^{
+    // Start between Caller and Callee
+}];
+
+[remonCast onCloseWithBlock:^{
+    // End calling
 }];
 ```
 {% endtab %}
 {% endtabs %}
 
-더 많은 내용은 아래를 참조 하세요.
+더 많은 내용은 아래를 참조 하세요.​
 
 {% page-ref page="callbacks.md" %}
 
-### Channel
+### Channel 목록 조회
 
 방송을 만들면 채널이 생성되고 고유한 `channelId`가 생성 됩니다. 이 `channelId`를 통해 시청자가 생성된 방송에 접근가능합니다. 이때 방송중인 전체 채널 목록을 아래와 같이 조회 가능합니다.
 
@@ -386,14 +503,28 @@ const casts = await remonCast.fetchCasts()
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCast = RemonCast.builder().build();
 
-remonCast.featchCasts();
 remonCast.onFetch((casts) -> {
     // Do something
 });
+
+remonCast.featchCasts();
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCast = RemonCast.builder().build()
+
+remonCast.onFetch { casts ->
+    // Do something
+}
+
+remonCast.featchCasts()
+
 ```
 {% endtab %}
 
@@ -434,24 +565,31 @@ remonCast.close()
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCast = RemonCast.builder().build();
 remonCast.close();
 ```
 {% endtab %}
 
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCast = RemonCast.builder().build()
+remonCast.close()
+```
+{% endtab %}
+
 {% tab title="iOS - Swift" %}
 ```swift
 let remonCast = RemonCast()
-remonCast.close()
+remonCast.closeRemon()
 ```
 {% endtab %}
 
 {% tab title="iOS - ObjC" %}
 ```objectivec
 RemonCast *remonCast = [[RemonCast alloc]init];
-[remonCast closeRemon:YES];
+[remonCast closeRemon];
 ```
 {% endtab %}
 {% endtabs %}

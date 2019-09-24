@@ -4,6 +4,8 @@
 
 `RemonCast`, `RemonCall`의 간단한 코드 만으로 통신 및 방송이 가능 합니다. 사용자의 필요에 따라 UI처리 및 추가 작업이 필요한 경우가 발생 합니다. 아래의 다양한 Callback을 통해 보다 세부적인 개발이 가능합니다.
 
+안드로이드 2.4.13, iOS 2.6.9 버전부터 콜백은 모두 UI Thread 에서 호출됩니다. 이전 버전의 경우 UI 요소의 변경 시 UI Thread 와 관련한 처리를 추가해야 합니다.
+
 방송과 통신은 각각에 적합한 이벤트와 흐름을 가지고 있습니다. 이를 알아두면 Callback를 활용하는데 도움이 됩니다. 이에 대한 내용은 아래를 참고하세요.
 
 {% page-ref page="../overview/flow.md" %}
@@ -12,9 +14,10 @@
 
 ## Basics
 
-### onInit\(token\)
+### onInit\(token\) / onInit\(\)
 
-`onInit`은 SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 이때 인증 정보인 `token`을 돌려 받습니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다.
+`onInit`은 SDK가 인터넷을 통해 RemoteMonster 서버에 정상적으로 접속하여 RemoteMonster의 방송, 통신 인프라를 사용할 준비가 완료된 상태를 의미합니다. 이때 인증 정보인 `token`을 돌려 받습니다. 대다수의 경우 사용할 일이 없으며 디버깅에 활용하게 됩니다.  
+\(Android 의 경우 token 을 전달하지 않습니다.\)
 
 {% tabs %}
 {% tab title="Web" %}
@@ -27,11 +30,19 @@ const listener = {
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCast.onInit(() -> {
     // Do something
 });
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCast.onInit {
+
+}
 ```
 {% endtab %}
 
@@ -72,13 +83,23 @@ cast.createCast()                          // Server generate chid
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCast.onCreate((channelId) -> {
     // Do something
 });
 
-remonCast.create();             // Server generate channelId
+remonCast.create("ChannelName");             // Server generate channelId
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCast.onCreate {(channelId)->
+
+}
+
+remonCast.create("ChannelName")
 ```
 {% endtab %}
 
@@ -119,13 +140,23 @@ cast.joinCast('MY_CHANNEL_ID')                    // 'chid' is mandatory
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCast.onJoin(() ->
     // Do something
 });
 
 remonCast.join('MY_CHANNEL_ID');             // channelId is mandatory
+```
+{% endtab %}
+
+{% tab title="Android -Kotlin" %}
+```kotlin
+remonCast.onJoin {
+    // Do something
+}
+
+remonCast.join('MY_CHANNEL_ID');   
 ```
 {% endtab %}
 
@@ -179,14 +210,26 @@ call.connectCall('MY_CHANNEL_ID')
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
+// 콜백
 remonCall.onConnect((channelId) -> {
     // Do something
 });
 
-remonCall.connect();
-// Or
+// 연결
+remonCall.connect("MY_CHANNEL_ID");
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+// 콜백
+remonCall.onConnect{ channelId ->
+    // Do something
+}
+
+// 연결
 remonCall.connect("MY_CHANNEL_ID");
 ```
 {% endtab %}
@@ -197,8 +240,6 @@ remonCall.onConnect { (channelId) in
      // Do something
 }
 
-remonCast.connect()
-// Or
 remonCast.connect("MY_CHANNEL_ID")
 ```
 {% endtab %}
@@ -229,11 +270,19 @@ const listener = {
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCall.onComplete(() -> {
     // Do something
 });
+```
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCall.onComplete {
+    // Do something
+}
 ```
 {% endtab %}
 
@@ -265,19 +314,28 @@ const listener = {
     // Do something
   }
 }
-
-const remon = new Remon({ listener })
-remon.close()
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
-remonCast.onClose(() -> {
-    // Do something
+remonCast.onClose((closeType) -> {
+    // CloseType.MINE : 자신이 close() 를 호출해 연결을 끊은 경우
+    // CloseType.OTHER : 상대방이 close() 를 호출해 연결을 끊은 경우
+    // CloseType.OTHER_UNEXPECTED : 상대방이 끊어져서 연결이 종료된 경우
+    // CloseType.UNKNOWN : 이유를 알 수 없이 연결이 종료된 경우
 });
+```
+{% endtab %}
 
-remonCast.close();
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCast.onClose { closeType:CloseType ->
+    // CloseType.MINE : 자신이 close() 를 호출해 연결을 끊은 경우
+    // CloseType.OTHER : 상대방이 close() 를 호출해 연결을 끊은 경우
+    // CloseType.OTHER_UNEXPECTED : 상대방이 끊어져서 연결이 종료된 경우
+    // CloseType.UNKNOWN : 이유를 알 수 없이 연결이 종료된 경우
+}
 ```
 {% endtab %}
 
@@ -315,11 +373,28 @@ const listener = {
 ```
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
 remonCast.onError((error) -> {
     // Do something
 });
+```
+{% endtab %}
+
+{% tab title="Android -Kotlin" %}
+```kotlin
+remonCall.onError { error: RemonException ->
+    when( error.code ) {
+    RemonErrorCode.unknown->
+    RemonErrorCode.initError->
+    RemonErrorCode.wsError->
+    RemonErrorCode.connectError->
+    RemonErrorCode.iceError->
+    RemonErrorCode.mediaError->
+    RemonErrorCode.invalidParameterError->
+    RemonErrorCode.networkChange->
+    }
+}
 ```
 {% endtab %}
 
@@ -335,8 +410,6 @@ remonCast.onError { (error) in
 N/A
 {% endtab %}
 {% endtabs %}
-
-좀 더 자세한 내용은 아래를 참고하세요.
 
 {% page-ref page="error.md" %}
 
@@ -429,44 +502,7 @@ remonCall.onRemoteVideoSizeChanged {(view, size) in
 {% endtab %}
 {% endtabs %}
 
-### onStateChange\(state\)
-
-최초 `Remon`객체를 만들고 방을 만들며 접속하고 접속에 성공하고 방송, 통신을 마칠 때까지의 모든 상태 변화에 대해 처리하는 메소드입니다. `RemonState` Enum객체를 통해 어떤 상태로 변경되었는지를 알려줍니다. 일반적으로는 사용되지 않으며 디버깅에 유용합니다.
-
-`RemonState`의 상태는 다음과 같습니다.
-
-| 값 | 내용 | 비고 |
-| :--- | :--- | :--- |
-| INIT | 시작 |  |
-| WAIT | 채널 생성 |  |
-| CONNECT | 채널, 방 접속 |  |
-| COMPLETE | 연결 완료 |  |
-| FAIL | 실패 |  |
-| CLOSE | 종료 |  |
-
-{% tabs %}
-{% tab title="Web" %}
-```javascript
-const listener = {
-  onStateChange(state) {
-    // Do something
-  }
-}
-```
-{% endtab %}
-
-{% tab title="Android" %}
-N/A
-{% endtab %}
-
-{% tab title="iOS - Swift" %}
-N/A
-{% endtab %}
-
-{% tab title="iOS - ObjC" %}
-N/A
-{% endtab %}
-{% endtabs %}
+### 
 
 ### onStat\(report\)
 
@@ -500,13 +536,24 @@ const listener = {
 `Remon` 객체를 생성할 때 입력 인자로 넣는 listener의 메소드 중 `onStat()` 을 구현하여 품질 정보를 받을 수 있습니다. 위의 `result`에서 받을 수 있는 여러 정보 중 `result.rating` 이 바로 네트워크 상황에 따른 통합적인 통화 품질 정보입니다.
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android - Java" %}
 ```java
   @Override
   public void onStat(RemonStatReport report) {
       Logger.i(TAG, "report: " + report.getHealthRating());
       String stat = "health:" + report.getHealthRating().getLevel() + "\n";
   }
+```
+
+report에는 방송/통신의 상태를 알 수있는 여러가지 값들이 있습니다. `report.getHealthRating().getLevel()`을 통해 품질을 상태를 알 수도 있고, `report.getRemoteFrameRate()` / `report.getLocalFrameRate()`를 통해 해당 연결의 fps를 확인 할 수 있습니다.
+{% endtab %}
+
+{% tab title="Android - Kotlin" %}
+```kotlin
+remonCall.onStat { report:RemonStatReport ->
+      Logger.i(TAG, "report: " + report.getHealthRating())
+      val stat:String = "health:" + report.getHealthRating().getLevel() + "\n"
+}
 ```
 
 report에는 방송/통신의 상태를 알 수있는 여러가지 값들이 있습니다. `report.getHealthRating().getLevel()`을 통해 품질을 상태를 알 수도 있고, `report.getRemoteFrameRate()` / `report.getLocalFrameRate()`를 통해 해당 연결의 fps를 확인 할 수 있습니다.

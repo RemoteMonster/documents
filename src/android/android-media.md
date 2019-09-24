@@ -14,7 +14,7 @@ description: 뷰와 레이아웃에 대해 소개합니다.
 
 ## View
 
-레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `SurfaceViewRender`를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRender`가 가장 핵심이므로 먼저 살펴보겠습니다.
+레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `SurfaceViewRender` 와 SurfaceViewRender 를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRender`가 가장 핵심이므로 먼저 살펴보겠습니다.
 
 ### SurfaceViewRender
 
@@ -75,7 +75,7 @@ localRender.setScalingType(RendererCommon.ScalingType);
 
 ### PercentFrameLayout
 
-리모트몬스터 안드로이드 SDK에서는 영상관련 View의 배치를 쉽게 하기 위해 `PercentFrameLayout`을 제공합니다. `PercentFrameLayout`을 이용하면 영상 관련 View를 RelativeLayout안에서 자유롭게 배치하고 동적으로 움직일 수 있습니다. `PercentFrameLayout`은 layout내의 뷰들을 퍼센트 방식으로 배치합니다.
+안드로이드의 ConstraintLayout 과 같이 제공하려는 서비스에 맞게 레이아웃을 구성 합니다. 리모트몬스터 안드로이드 SDK에서는 영상관련 View의 배치를 쉽게 하기 위해 `PercentFrameLayout`을 제공합니다. `PercentFrameLayout`을 이용하면 영상 관련 View를 RelativeLayout안에서 자유롭게 배치하고 동적으로 움직일 수 있습니다. `PercentFrameLayout`은 layout내의 뷰들을 퍼센트 방식으로 배치합니다. 
 
 해당 레이아웃을 relativeLayout상에서 가로세로 100%채워서 배치 합니다.
 

@@ -27,11 +27,11 @@ build.gradle\(Module:app\) 의 dependencies에 아래와 같이 추가합니다.
 ```groovy
 dependencies {
     /* RemoteMonster SDK */
-    api 'com.remotemonster:sdk:2.2.14'
+    api 'com.remotemonster:sdk:2.4.14'
 }
 ```
 
-그 외에 multiDex와 dataBinding등을 설정해야 합니다.
+그 외에 multiDex 를 설정합니다.
 
 ```text
 android {
@@ -39,30 +39,22 @@ android {
         ...
         multiDexEnabled true
     }
-    dataBinding {
-        enabled = true
-    }
 }
 ```
 
 ### Permission 설정
 
-안드로이드 최신 버전의 경우 앱의 권한에 대해 처음 앱 사용시 사용자에게 직접 묻게 됩니다. 처리해야할 권한은 다음과 같습니다.
+안드로이드 최신 버전의 경우 앱의 권한에 대해 처음 앱 사용시 사용자에게 직접 묻게 됩니다. 서비스에서 추가적으로 필요한 권한을 설정합니다. SDK 에서 디폴트로 필요로하는 권한은 다음과 같습니다.
 
-```java
-public static final String[] MANDATORY_PERMISSIONS = {
-  "android.permission.INTERNET",
-  "android.permission.CAMERA",
-  "android.permission.RECORD_AUDIO",
-  "android.permission.MODIFY_AUDIO_SETTINGS",
-  "android.permission.ACCESS_NETWORK_STATE",
-  "android.permission.CHANGE_WIFI_STATE",
-  "android.permission.ACCESS_WIFI_STATE",
-  "android.permission.READ_PHONE_STATE",
-  "android.permission.BLUETOOTH",
-  "android.permission.BLUETOOTH_ADMIN",
-  "android.permission.WRITE_EXTERNAL_STORAGE"
-};
+```markup
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.BLUETOOTH"/>
 ```
 
 ## 개발
@@ -182,7 +174,7 @@ button.setOnClickListener{
 
 만약 A라는 통화용 채널을 만들었는데 상대방은 어떻게 A라는 채널이 있는지 확인할 수 있을까요? 검색을 해야합니다. 다음과 같이 RemonCall의 메소드를 이용하여 채널을 검색하고 해당 채널에 들어갈 수 있습니다. 통화는 항상 2명만 참여할 수 있습니다.
 
-```text
+```java
 remonCall = RemonCall.builder().build();
 remonCall.fetchCalls();
 remonCall.onFetch(calls -> {
@@ -212,25 +204,18 @@ remonCall이나 remonCast로 수행할 수 있는 메소드는 크게 다음과 
 
 ### Callback에 대하여
 
-다양한 이벤트를 받아서 처리할 수 있습니다.
+다양한 이벤트를 받아서 처리할 수 있습니다. 이벤트 콜백은 방송, 통신에 따라 콜백의 종류가 다릅니다. 
 
-* onInit\(\): RemonCast, RemonCall객체를 생성하면 인증절차등을 거쳐서 객체 생성이 마무리됩니다. 이렇게 잘 마무리되면 onInit메소드가 호출됩니다. 보통 onInit의 인자로 인증의 결과인 token값이 같이 전송됩니다.
-
-```java
-remonCast.onInit((token) -> {
-    // Do something
-});
-
-
-```
-
-* onConnect\(\): 통화용 채널이 만들어졌을 때 발생합니다.
-* onCreate\(\): 방송을 온전히 송출하게 될 때 발생합니다. 인자값으로 방송룸의 ID가 반환됩니다.
-* onJoin\(\): 시청이 온전히 이루어질 때 발생합니다.
-* onComplete\(\): 통화용 채널에 입장했을 때 발생합니다.
-* onClose\(\): 방송과 통화가 종료되었을 때 발생합니다.
-* onError\(\): 에러가 발생하면 모두 이 onError로 오류 메시지가 전달됩니다.
+* onInit\(\): 방송\(RemonCast\), 통화\(RemonCall\) 객체를 생성하면 인증절차등을 거쳐서 객체 생성이 마무리됩니다. 이렇게 잘 마무리되면 onInit메소드가 호출됩니다. 보통 onInit의 인자로 인증의 결과인 token값이 같이 전송됩니다. 
+* onConnect\(\): 통화\(RemonCall\)를 위한 채널이 만들어졌을 때 발생합니다. 연결된 채널명\(채널ID\)가 전달되며, 동일한 채널에 접속한 사용자간 Peer 연결이 진행됩니다.
+* onComplete : 통화\(RemonCall\) 를 위해 다른 사용자와의 Peer 연결이 완료된 이후 발생합니다.
+* onCreate\(\): 방송\(RemonCast\) 을 온전히 송출하게 될 때 발생합니다. 인자값으로 방송룸의 ID가 반환됩니다.
+* onJoin\(\): 방송\(RemonCast\) 시청이 온전히 이루어질 때 발생합니다.
+* onClose\(\): 방송\(RemonCast\)과 통화\(RemonCall\)가 종료되었을 때 발생합니다. 인자값으로 CloseType이 전달됩니다.
+* onError\(\): 에러가 발생하면 모두 이 onError로 오류 메시지가 전달됩니다. 
 * onStat\(\): 현재 방송, 통화 품질을 3초마다 주기로 알려줍니다.
 
-[Callback에 대한 더 자세한 페이지](https://docs.remotemonster.com/common/callbacks)
+콜백에 대해 세부 내용 알고싶으시면 아래 내용을 참고하세요.
+
+{% page-ref page="../common/callbacks.md" %}
 

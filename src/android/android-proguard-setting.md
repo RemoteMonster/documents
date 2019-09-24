@@ -63,36 +63,7 @@ buildTypes {
 -keepclasseswithmembers class * {@retrofit2.http.* <methods>;}
 -keep class retrofit2.** { *; }
 
-# ignore netty lib warning
--dontwarn io.netty.**
-
-# netty 4.0
--keep class io.netty.** {*;}
--keep interface io.netty.** {*;}
-
-# Slf4j for android
--keep class org.slf4j.** {*;}
--keep interface org.slf4j.** {*;}
-
-# Jzlib
--keep class com.jcraft.jzlib.** {*;}
--keep interface com.jcraft.jzlib.** {*;}
-
-
-# fasterxml
--keepnames class com.fasterxml.jackson.** { *; }
--dontwarn com.fasterxml.jackson.databind.**
--keep class org.codehaus.** { *; }
--keepclassmembers public final enum org.codehaus.jackson.annotate.JsonAutoDetect$Visibility {
-    public static final org.codehaus.jackson.annotate.JsonAutoDetect$Visibility *; }
-
-# okio
--dontwarn okhttp3.**
--dontwarn okio.**
--dontnote okhttp3.**
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-위의 `proguard-rules.pro`는 한개의 파일로 돼 있지만 `netty`, `fasterxml`, `okio` 부분은 파일을 나눠서 설정 하시기를 권장드립니다. 
 
