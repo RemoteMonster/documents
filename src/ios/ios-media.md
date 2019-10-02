@@ -116,13 +116,30 @@ iOS에서 `Audio Session Category, Mode` 설정에 따라 스피커출력, 음�
 
 소리 출력 디바이스는 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. RemonCall, RemonCast 생성전에 호출하면 해당 설정이 유지되므로, viewDidLoad\(\) 메쏘드에서 원하는 카테고리와 모드를 설정해 줍니다.
 
+구버전과 최신버전간 사용 api 가 다르므로 아래 코드를 참고하시기 바랍니다.
+
 {% tabs %}
 {% tab title="iOS - Swift" %}
 ```swift
-//  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
 override func viewDidLoad() {
 	super.viewDidLoad()
 	
+	// sdk 2.6.0 이하버전
+	do {
+        // 오디오세션 카테고리 설정
+        if #available(iOS 10.0, *) {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
+        }else {
+            AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSession.Category.playback)
+        }
+        try AVAudioSession.sharedInstance().setActive(true, options: [])
+        try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+    } catch {
+        print(error)
+    }
+	
+	
+	// sdk 2.6.10 이상
 	// AVAudioSession.Mode.voiceChat : 수화기 사용
 	// AVAudioSession.Mode.videoChat : 스피커 사용
 	RemonClient.setAudioSessionConfiguration(
