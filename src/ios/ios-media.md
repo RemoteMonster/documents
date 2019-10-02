@@ -135,6 +135,7 @@ override func viewDidLoad() {
 
 {% tab title="iOS - ObjC" %}
 ```objectivec
+// Objective-C의 경우 아직 업데이트되지 않았습니다.
 //  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
 - (void)viewDidLoad {
     [super viewDidLoad];
