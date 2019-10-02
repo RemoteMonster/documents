@@ -110,11 +110,11 @@ remonCast.useExternalCapturer = YES;
 
 ## Audio
 
-### Session Category
+### Session Category, Mode
 
-iOS에서 `Audio Session Category` 설정에 따라 스피커출력, 음소거 스위치의 작동, 이어폰 연결 작동, 블루투스 등이 상이 하게 작동할 수 있습니다. SDK에서는 기본적으로 `AVAudioSessionCategoryPlayback`를 권장하며 위에 설명된 Background Policy는 `AVAudioSessionCategoryPlayback`를 사용시에 동작입니다. 대부분의 방송, 통신에 대해서는 기본값을 권장합니다. 다만 개발자가 필요에 따라 다양한 세션을 사용하여 원하는 작동을 구현 가능합니다.
+iOS에서 `Audio Session Category, Mode` 설정에 따라 스피커출력, 음소거 스위치의 작동, 이어폰 연결 작동, 블루투스 등이 상이 하게 작동할 수 있습니다. 서비스에 따라 `AVAudioSession.Category.playback, AVAudioSession.Category.playAndRecord` 등을 사용할 수 있습니다.  WebRTC 의 기본값은 playAndRecord 이며, 대부분의 방송, 통신에 대해서는 기본값을 권장합니다. 다만 통화, 방송 송출, 방송 시청 등 서비스에 맞춰 필요에 따라 AVAudioSession.Category 를 변경해 사용하실 수 있습니다.
 
-Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리가 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다.
+소리 출력 디바이스는 기본적으로 ear piece 로 나오게 되며 스피커로 나오게 하려면 아래와 같은 적용이 필요합니다. RemonCall, RemonCast 생성전에 호출하면 해당 설정이 유지되므로, viewDidLoad\(\) 메쏘드에서 원하는 카테고리와 모드를 설정해 줍니다.
 
 {% tabs %}
 {% tab title="iOS - Swift" %}
@@ -122,19 +122,13 @@ Apple기본 제공의 `Audio Session Categroy`인 `soloAmbient` 사용시 소리
 //  이 코드는 soloAmbient 카테고리를 사용하고, speaker로 음성을 출력 합니다.
 override func viewDidLoad() {
 	super.viewDidLoad()
-	do {
-	    if #available(iOS 10.0, *) {
-	        try AVAudioSession.sharedInstance().setCategory(.soloAmbient, mode: .default)
-	    }
-	    else {
-	        AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSession.Category.soloAmbient)
-	    }
-	    
-	    try AVAudioSession.sharedInstance().setActive(true, options: [])
-	    try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
-	} catch {
-	    print(error)
-	}
+	
+	// AVAudioSession.Mode.voiceChat : 수화기 사용
+	// AVAudioSession.Mode.videoChat : 스피커 사용
+	RemonClient.setAudioSessionConfiguration(
+                category: AVAudioSession.Category.playAndRecord,
+                mode: AVAudioSession.Mode.videoChat,
+                options: [] );
 }
 ```
 {% endtab %}
@@ -157,7 +151,7 @@ override func viewDidLoad() {
 {% endtab %}
 {% endtabs %}
 
-Aduio Session에 대한 모드와 일반적인 사용은 아래 링크를 확인하세요.
+Audio Session에 대한 모드와 일반적인 사용은 아래 링크를 확인하세요.
 
 {% embed url="https://developer.apple.com/library/archive/documentation/Audio/Conceptual/AudioSessionProgrammingGuide/AudioSessionCategoriesandModes/AudioSessionCategoriesandModes.html" %}
 
