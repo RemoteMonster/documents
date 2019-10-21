@@ -25,7 +25,7 @@ Objc 환경이라면 ALWAYS\_EMBED\_SWIFT\_STANDARD\_LIBRARIES 값을 Yes로 설
 
 ## SDK 설치 - Cocoapods
 
-SDK 설치를 원하는 프로젝트의 `Podfile`에 `pod 'RemoteMonster', '~> 2.0'`을 추가 합니다
+SDK 설치를 원하는 프로젝트의 `Podfile`에 `pod 'RemoteMonster', '~> 2.6.11'`을 추가 합니다
 
 {% code-tabs %}
 {% code-tabs-item title="Podfile" %}
@@ -33,7 +33,7 @@ SDK 설치를 원하는 프로젝트의 `Podfile`에 `pod 'RemoteMonster', '~> 2
 target 'MyApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'RemoteMonster', '~> 2.6'
+  pod 'RemoteMonster', '~> 2.6.11'
 end
 ```
 {% endcode-tabs-item %}
@@ -43,6 +43,15 @@ end
 
 ```bash
 $ pod install
+```
+
+
+
+업데이트가 정상적으로 이루어지지 않는 경우 cocoapods의 로컬 저장소를 먼저 업데이트 후 사용해 보시기 바랍니다.
+
+```text
+$ pod repo update
+$ pod update
 ```
 
 ## SDK 설치 - 직접 import
@@ -63,12 +72,12 @@ Build Phases에 copy file 항목을 추가 하고, 위 단계에서 추가한 Fr
 
 ### 인터페이스빌
 
-RemonCast, RemonCall 객체는 `RemonIBController` 를 상속받은 객체이며, RemonIBController 는 InterfaceBuilder를 이용한 설정이 가능하도록 구성되어 있습니다. 
+RemonCast, RemonCall 객체는 `RemonClient(sdk 2.6.9 이하 버전은 RemonIBController)` 를 상속받은 객체이며,  RemonClient는 InterfaceBuilder를 이용한 설정이 가능하도록 구성되어 있습니다. 
 
-* 스토리보드에 `RemonIBController`의 하위객체인 `RemonCall` 또는 `RemonCast`를 추가합니다.
+* 스토리보드에 `RemonClient`의 하위객체인 `RemonCall` 또는 `RemonCast`를 추가합니다.
   * `RemonCall`를 1:1 통신을 지원 하며 `RemonCast`는 1:N 방송을 지원 합니다.
-  * xcode의 한계상 직접 RemonCall이나 RemonCast를 삽입이 불가능합니다. 따라서 RemonCall이나 RemonCast 객체를 Designer에 삽입할 수 없으므로 Library에서 Object 컴포넌트로 먼저 삽입후 해당 Object의 class를 아래 그림과 같이 직접 수정해 주세요. module은 remonios로 설정하시면 됩니다. ![](../.gitbook/assets/ios_insertclass.png)
-  * InterfaceBuilder에서 `Utilities` 뷰를 이용하여 `Remon`을 설정 합니다.
+  * xcode의 한계상 직접 RemonCall이나 RemonCast를 삽입이 불가능합니다. 따라서 RemonCall이나 RemonCast 객체를 Designer에 삽입할 수 없으므로 Library에서 Object 컴포넌트로 먼저 삽입후 해당 Object의 class를 아래 그림과 같이 직접 수정해 주세요. module은 RemoteMonster로 설정하시면 됩니다. ![](../.gitbook/assets/ios_insertclass.png)
+  * InterfaceBuilder에서 `Utilities` 뷰를 이용하여 `RemonCall`을 설정 합니다.
 * `ServiceID`와 `Service Key`를 설정합니다.
   * 만약 간단하게 테스트를 하기 원한다면 아무것도 입력 안해도 됩니다.
   * 실제 서비스를 고려한다면 아래를 참고하여 내가 사용할 키를 발급받으세요.
@@ -77,11 +86,11 @@ RemonCast, RemonCall 객체는 `RemonIBController` 를 상속받은 객체이며
 
 ![](../.gitbook/assets/assets_-lalxanhbadmg35tjnme_-ld6qhxe4uifrqyin4nc_-ld6qipiwo_7ear1le04_basic_config__3_.png)
 
-* 스토리보드에서 원하는 Scene에서 원하는 위치에 `Veiw`를 배치하고 `RemonIBController`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
+* 스토리보드에서 원하는 Scene에서 원하는 위치에 `Veiw`를 배치하고 `RemonClient(sdk 2.6.9 이하는 RemonIBController)`의 `remoteView`와 `localView`에 바인딩 하여 줍니다.
 
 ![](../.gitbook/assets/basic_config3-2.png)
 
-* `Remon`를 사용하는 `ViewContoller`에 RemoteMonster SDK를 임포트 하고, `RemonIBController`객체를 아웃렛 변수에 바인딩 합니다.
+* `Remon`를 사용하는 `ViewContoller`에 RemoteMonster SDK를 임포트 하고, `RemonClient(sdk 2.6.9 이하는 RemonIBController)`객체를 아웃렛 변수에 바인딩 합니다.
 
 ![](../.gitbook/assets/config3.png)
 
