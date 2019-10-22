@@ -1,4 +1,4 @@
-# Simulcast - beta
+# Simulcast
 
 영상 방송 송출시 고화질, 저화질의 영상을 동시에 보내고, 수신측에서 이를 선택적으로 받을 수 있으며 이 기능을 Simulcast라 합니다. 
 

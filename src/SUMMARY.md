@@ -15,18 +15,18 @@
 * [Web - Overview](web/web-overview.md)
 * [Web - Getting Started](web/web-getting-started.md)
 * [Web - Media](web/web-view.md)
+* [Web - Debug Inside](web/web-debug-inside.md)
 * [Web - Github](https://github.com/remotemonster/web-sdk/)
 * [Web - SDK Reference](https://remotemonster.github.io/web-sdk/docs/)
-* [Web - Debug Inside](web/web-debug-inside.md)
 
 ## Android
 
 * [Android - Overview](android/android-overview.md)
 * [Android - Getting Started](android/android-getting-started.md)
 * [Android - Media](android/android-media.md)
+* [Android - ProGuard](android/android-proguard-setting.md)
 * [Android - Github](https://github.com/remotemonster/android-sdk/)
 * [Android - SDK Reference](https://remotemonster.github.io/android-sdk/)
-* [Android - ProGuard](android/android-proguard-setting.md)
 
 ## iOS
 
@@ -52,7 +52,7 @@
 * [Network Environment](common/network-environment.md)
 * [Studio Environment](common/studio-environment.md)
 * [Media](common/media.md)
-* [Simulcast - beta](common/livecast-simulcast.md)
+* [Simulcast](common/livecast-simulcast.md)
 * [Record - beta](common/record.md)
 * [Error](common/error.md)
 * [About WebRTC](common/about-webrtc.md)
