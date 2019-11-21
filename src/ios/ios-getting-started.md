@@ -27,8 +27,7 @@ Objc 환경이라면 ALWAYS\_EMBED\_SWIFT\_STANDARD\_LIBRARIES 값을 Yes로 설
 
 SDK 설치를 원하는 프로젝트의 `Podfile`에 `pod 'RemoteMonster', '~> 2.6.11'`을 추가 합니다
 
-{% code-tabs %}
-{% code-tabs-item title="Podfile" %}
+{% code title="Podfile" %}
 ```text
 target 'MyApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -36,8 +35,7 @@ target 'MyApp' do
   pod 'RemoteMonster', '~> 2.6.11'
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 . 그리고 터미널에서 `pod install` 를 실행 합니다. 만약 `pod install` 이 동작하지 않는 다면 `pod update`를 실행 합니다.
 

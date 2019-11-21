@@ -6,8 +6,7 @@ description: ProGuard 설정시 RemonSDK의 Setting이 필요합니다.  SDK에�
 
 ## gradle.build
 
-{% code-tabs %}
-{% code-tabs-item title="gradle.build" %}
+{% code title="gradle.build" %}
 ```text
 buildTypes {
         debug {
@@ -20,13 +19,11 @@ buildTypes {
         }
     }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ## proguard-rules.pro
 
-{% code-tabs %}
-{% code-tabs-item title="proguard-rules.pro" %}
+{% code title="proguard-rules.pro" %}
 ```text
 # By default, the flags in this file are appended to flags specified
 # in /home/calmglow/dev/Android/tools/proguard/proguard-android.txt
@@ -64,6 +61,5 @@ buildTypes {
 -keep class retrofit2.** { *; }
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 

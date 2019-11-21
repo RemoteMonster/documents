@@ -131,8 +131,7 @@ surfaceView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_BALNANCED);
 
 RemonCall의 setSpeakerphone\(boolean\)을 이용하여,  스피커폰을 사용할지 Earpiece 모드를 사용할 지 설정 할 수 있습니다. 
 
-{% code-tabs %}
-{% code-tabs-item title="CallActivity.java" %}
+{% code title="CallActivity.java" %}
 ```java
 btnSpeakerPhoneOnOff.setOnClickListener(view -> {
             if (remonCall != null) {
@@ -141,8 +140,7 @@ btnSpeakerPhoneOnOff.setOnClickListener(view -> {
             }
         });
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ## Background Policy
 
