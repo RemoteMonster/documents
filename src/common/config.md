@@ -174,7 +174,7 @@ config.userMeta = @"string";
 
 ### Select Video, Audio
 
-비디오를 키고 끔으로써 영상방송/통화 혹은 음성방송/통화 컨텐츠 서비스를 만들 수 있습니다.
+비디오를 끄면 음성방송/통화 서비스를 만들 수 있습니다.
 
 {% tabs %}
 {% tab title="Web" %}
