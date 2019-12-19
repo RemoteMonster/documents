@@ -316,13 +316,20 @@ remonCall.autoCaptureStart = YES;     // default true
 {% endtab %}
 {% endtabs %}
 
-### Music / Voice Mode
+### 오디오 타입 : Voice, Music 타입
 
-영상, 음성모드일때 음성의 작동방식을 설정 할 수 있습니다. Voice 모드는 노이즈를 억제하고 음성을 명확하게 전달하는데 초점이 맞추어져 있으며 통화에 적합합니다. Music모드는 모든 소리를 왜곡 없이 명확하게 전달하는데 중점이 있습니다. 기본값은 Voice 입니다. 
+오디오 관련 작동방식을 설정 할 수 있습니다. Voice 타입은 주변 소음을 제거하고 음성을 전달하는데 초점이 맞추어져 있으며 통화에 적합합니다. Music 타입은 모든 소리를 가공 없이 전달하는데 중점이 있습니다.
 
 {% tabs %}
 {% tab title="Web" %}
-N/A
+```text
+let config = {
+    media: {},
+    rtc: {audioType: "music"}
+};
+```
+
+기본 오디오 타입은 **VOICE** 입니다.
 {% endtab %}
 
 {% tab title="Android - Java" %}
