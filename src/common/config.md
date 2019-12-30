@@ -322,7 +322,7 @@ remonCall.autoCaptureStart = YES;     // default true
 
 {% tabs %}
 {% tab title="Web" %}
-```text
+```javascript
 let config = {
     media: {},
     rtc: {audioType: "music"}
@@ -366,6 +366,31 @@ iOS는 동적으로 해당기능을 제공하지 않으며 다음과 같이 설�
 ![](../.gitbook/assets/remonsettings%20%281%29.png)
 
 `RemonSettings.plist` 파일을 프로젝트에 추가하고, AudioType 값을 원하는 모드로 변경해 주세요.
+{% endtab %}
+{% endtabs %}
+
+### 오디오 추가 설정
+
+오디오 설정에는 다양한 세부항목이 있습니다. Web용 SDK를 이용할 때 아래와 같은 세부항목을 설정할 수 있습니다. 방송/통화 환경이나 목적에 따라 적합한 설정이 다를 수 있습니다. 설정항목들을 적절히 조합하여 이용하시기 바랍니다.
+
+{% tabs %}
+{% tab title="Web" %}
+```javascript
+let config = {
+  media: {
+    audio: {
+      channelCount: 2,
+      maxBandwidth: 128,
+      autoGainControl: false,
+      echoCancellation: false,
+      noiseSuppression: false,
+    }
+  },
+  rtc: {
+    audioType: "music"
+  }
+};
+```
 {% endtab %}
 {% endtabs %}
 
