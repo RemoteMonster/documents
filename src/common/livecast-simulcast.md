@@ -2,6 +2,8 @@
 
 Simulcast는 비디오를 다양한 화질로 송신하고, 네트워크 상황에 따라 적절한 화질을 선택하여 수신하는 기능입니다.
 
+자세한 설명은 아래 WebRTC Glossary를 참고해주십시오.
+
 {% embed url="https://webrtcglossary.com/simulcast/" %}
 
 ## 지원범위
