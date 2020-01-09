@@ -176,7 +176,7 @@ remonCast.simulcast = true;
 {% endtab %}
 {% endtabs %}
 
-Web SDK는 fps를 낮추어 정해진 대역폭에서 움직임을 떨어뜨리고 고화질의 이미지를 보여주거나 maxBandwidth를 낮추어 저화질의 이미지를 보여주는 등의 최적화를 시도할 수 있으나, 이런 설정은 추가적인 인코더의 연산을 일으키며 가급적 변경하지 않거나 입력 신호단에서 최적의 값을 제공하는것이 좋습니다.   
+Web SDK는 fps를 낮추어 정해진 대역폭에서 움직임을 떨어뜨리고 고화질의 이미지를 보여주거나 maxBandwidth를 낮추어 저화질의 이미지를 보여주는 등의 최적화를 시도할 수 있습니다. 이런 설정은 추가적인 인코더의 연산을 일으키므로 가급적 변경하지 않는 것이 좋습니다. 필요하다면 입력장치의 설정을 변경하는 것이 좋습니다.   
   
 Android, iOS SDK는 fps, maxBandwidth 등 세부적인 조절은 불가능하며, 내부에 설정된 기준대로만 화질이 선택됩니다. 
 
@@ -184,7 +184,7 @@ Simulcast를 적용한 송출은 모바일 기기의 CPU, 배터리 사용량을
 
 ## 수신 \(beta\)
 
-수신 시 아래와 같이 Simucast layer를 선택합니다. 선택지는 HIGH, MEDIUM, LOW입니다.
+수신 시 아래와 같이 Simulcast layer를 선택합니다. 선택지는 HIGH, MEDIUM, LOW입니다.
 
 {% tabs %}
 {% tab title="Web" %}
