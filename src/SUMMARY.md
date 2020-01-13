@@ -64,7 +64,7 @@
 * [통화 새 프로젝트 설정 - Web](drafts-videocall/new-project-web.md)
 * [단순 통화 앱 만들기 - Web](drafts-videocall/simplevideocall-code-web.md)
 
-## drafts-livestreaming
+## drafts - 방송 <a id="drafts-livestreaming"></a>
 
 * [Untitled](drafts-livestreaming/untitled.md)
 
