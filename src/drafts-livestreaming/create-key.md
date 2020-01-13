@@ -17,23 +17,23 @@ RemoteMonster를 이용하려면 Service ID와 Key를 반드시 발급 받아야
 
 웹 콘솔에 로그인하면 아래와 같은 화면이 표시됩니다. "새 프로젝트 추가" 카드를 클릭하면 새 프로젝트\(서비스\)를 생성할 수 있습니다. 각각의 프로젝트\(서비스\)는 고유한 Service ID와 Secret Key를 갖고 있습니다.
 
-![](https://github.com/RemoteMonster/documents/tree/02c6158dc0e266b8b3ebb7cc7339759e1749eee8/.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image-7.png)
 
 프로젝트명은 각각의 프로젝트\(서비스\)를 사람이 구분할 수 있도록 하기위해 입력합니다. 프로젝트 생성 시 Service ID가 자동으로 생성됩니다. Service ID는 각각의 프로젝트\(서비스\)를 앱이 구분할 수 있도록 합니다.
 
-![](https://github.com/RemoteMonster/documents/tree/02c6158dc0e266b8b3ebb7cc7339759e1749eee8/.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image-12.png)
 
 프로젝트\(서비스\)를 생성하지 않아도 기본 프로젝트가 이미 만들어져있습니다. 기본 프로젝트의 이름을 바꾸어 사용하면 아주 조금 빨리 시작할 수 있습니다.
 
-![](https://github.com/RemoteMonster/documents/tree/02c6158dc0e266b8b3ebb7cc7339759e1749eee8/.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image-11.png)
 
 새로 만든 프로젝트\(서비스\) 카드를 클릭하면 프로젝트의 상세 정보와 Service ID, Secret Key를 확인 할 수 있습니다.
 
-![](https://github.com/RemoteMonster/documents/tree/02c6158dc0e266b8b3ebb7cc7339759e1749eee8/.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image-3%20%281%29.png)
 
 Secret Key를 확인하려면 우측의 눈 아이콘을 클릭하십시오.
 
-![\(&#xADF8;&#xB9BC; &#xC18D;&#xC758; Service ID&#xC640; Secret Key&#xB294; &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.\)](https://github.com/RemoteMonster/documents/tree/02c6158dc0e266b8b3ebb7cc7339759e1749eee8/.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image-4%20%281%29.png)
 
 ## Service ID와 Secret Key 사용
 
@@ -42,8 +42,4 @@ Secret Key를 확인하려면 우측의 눈 아이콘을 클릭하십시오.
 앱 소스코드에 Service ID와 Key를 Config의 적절한 위치에 삽입합니다. 자세한 내용은 다음 가이드를 참고합니다.
 
 [새 프로젝트 설정\(Web\)](new-project-web.md)
-
-[새 프로젝트 설정\(Android\)](https://github.com/RemoteMonster/documents/tree/02c6158dc0e266b8b3ebb7cc7339759e1749eee8/src/drafts-livestreaming/new-project-android.md)
-
-[새 프로젝트 설정\(iOS\)](https://github.com/RemoteMonster/remon-devguide-ko-2019/tree/eb0c6572bc39b0b2570a633d77a6749d62fef12a/videocallplatform/tutorial-simplevideocall/new-project-ios.md)
 

@@ -57,14 +57,14 @@
 * [Error](common/error.md)
 * [About WebRTC](common/about-webrtc.md)
 
-## drafts - 통화 <a id="drafts-videocall"></a>
+## 튜토리얼 - 통화 <a id="drafts-videocall"></a>
 
 * [통화 5 분 안에 시작하기](drafts-videocall/videocall-quickstart.md)
 * [통화 키 발급](drafts-videocall/create-key.md)
 * [통화 새 프로젝트 설정 - Web](drafts-videocall/new-project-web.md)
 * [단순 통화 앱 만들기 - Web](drafts-videocall/simplevideocall-code-web.md)
 
-## drafts - 방송 <a id="drafts-livestreaming"></a>
+## 튜토리얼 - 방송 <a id="drafts-livestreaming"></a>
 
 * [방송 5 분 안에 시작하기](drafts-livestreaming/livestreaming-quickstart.md)
 * [방송 키 발급](drafts-livestreaming/create-key.md)
