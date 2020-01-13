@@ -19,7 +19,7 @@
 
 주의 : Secret Key는 \*\*\*\*\*\*\*\*\*\*\*\*\*\* 이 아닙니다. 우측 눈 아이콘을 누르면 표시됩니다.
 
-![](../.gitbook/assets/image-3.png)
+![](../.gitbook/assets/image-3%20%281%29.png)
 
 ## **샘플 앱으로 통화 실시**
 
@@ -39,9 +39,9 @@ https://github.com/내 아이디/remon-devguide-quickstart
 
 저장소의 HTML 파일들을 웹에서 볼 수 있도록 설정합니다. "Settings" 탭으로 이동합니다. 페이지 아래에 "GitHub Pages" 섹션으로 이동하여, Source를 master branch로 선택합니다.
 
-![](https://github.com/RemoteMonster/documents/tree/e2044c65c8b1aad5a747edbaa9b0d3a44386427a/src/.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image-17.png)
 
-![](https://github.com/RemoteMonster/documents/tree/e2044c65c8b1aad5a747edbaa9b0d3a44386427a/src/.gitbook/assets/image%20%2814%29.png)
+![](../.gitbook/assets/image-8.png)
 
 HTML 파일을 아래 주소에서 확인할 수 있습니다. 아래와 같은 화면이 표시됩니다.
 
@@ -49,11 +49,11 @@ HTML 파일을 아래 주소에서 확인할 수 있습니다. 아래와 같은 
 https://내 아이디.github.io/remon-devguide-quickstart/simplevideocall-tutorial.html
 ```
 
-![](https://github.com/RemoteMonster/documents/tree/e2044c65c8b1aad5a747edbaa9b0d3a44386427a/src/.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image-19.png)
 
 접속이 잘 되는 것을 확인했으면, 앱에 Service ID와 Secret Key를 입력합니다. 내 저장소로 이동하여 simplevideocall-tutorial.html 파일을 클릭합니다. 아래와 같은 화면이 표시됩니다. 오른쪽 편집 아이콘\(연필 모양\)을 클릭합니다.
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 콘솔에서 확인한 Service ID와 Secret Key\(Service Key\)를 52번 행에 입력합니다. "Commit changes" 버튼을 눌러 저장합니다.
 
@@ -67,7 +67,7 @@ https://내 아이디.github.io/remon-devguide-quickstart/simplevideocall-tutori
 
 두 창에서 "시작" 버튼을 클릭합니다. Camera와 Microphone 사용을 **반드시** 허락\(Allow\)합니다.
 
-![](https://github.com/RemoteMonster/documents/tree/e2044c65c8b1aad5a747edbaa9b0d3a44386427a/src/.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image-6.png)
 
 잘 안 되신다면 아래 3가지를 먼저 확인해보시기 바랍니다.
 
@@ -79,7 +79,7 @@ https://내 아이디.github.io/remon-devguide-quickstart/simplevideocall-tutori
 
 콘솔 창에서, "통화플랫폼 &gt; 채널 및 세션" 메뉴로 이동합니다. 방금 만든 통화에 대한 정보를 조회할 수 있습니다.
 
-![](https://github.com/RemoteMonster/documents/tree/e2044c65c8b1aad5a747edbaa9b0d3a44386427a/src/.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image-10.png)
 
 **축하합니다. 통화플랫폼이 정상적을 동작하는 것을 확인하였습니다.**
 

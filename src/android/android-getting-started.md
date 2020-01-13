@@ -12,7 +12,7 @@
 
 API Level 18이상으로 설정 합니다.
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 ### Compatibility 설정
 

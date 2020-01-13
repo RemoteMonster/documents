@@ -29,7 +29,7 @@
 
 아래와 같은 모습이 보입니다. simplelivestreaming.html, simplewatch.html 파일을 웹에 게시할 겁니다. 본 가이드는 GitHub Pages를 이용합니다. https가 지원되는 환경이라면 다른 곳에 파일을 게시해도 좋습니다.
 
-![](../.gitbook/assets/image-2.png)
+![](../.gitbook/assets/image-2%20%281%29.png)
 
 우측 상단의 Fork 버튼을 클릭합니다. 내 저장소가 생겼습니다. 내 저장소의 주소는 아래와 같습니다.
 
@@ -61,7 +61,7 @@ https://내 아이디.github.io/remon-devguide-quickstartlivestreaming/simplewat
 
 콘솔에서 확인한 Service ID와 Secret Key\(Service Key\)를 52번 행에 입력합니다. "Commit changes" 버튼을 눌러 저장합니다.
 
-![](../.gitbook/assets/image-1.png)
+![](../.gitbook/assets/image-1%20%281%29.png)
 
 웹 브라우저 창을 2개 엽니다. 아래 주소를 각각의 창에서 방문합니다.
 
