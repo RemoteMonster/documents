@@ -60,4 +60,6 @@
 ## drafts
 
 * [Untitled](drafts/untitled.md)
-
+* [통화 키 발급](drafts/create-key.md)
+* [통화 새 프로젝트 설정 - Web](drafts/new-project-web.md)
+* [단순 통화 앱 만들기 - Web](drafts/simplevideocall-code-web.md)
