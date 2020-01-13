@@ -1,4 +1,4 @@
-# 단순 통화 앱 만들기\(Web\)
+# 단순 통화 앱 만들기 - Web
 
 ## 목차
 
@@ -86,7 +86,7 @@ video 요소 2개를 추가합니다. 하나는 내 영상을 표시하고, 다�
 
 아래와 같은 모습을 만들겁니다. 안 예쁘다고요? 문서 뒷부분에서 예쁘게 해보겠습니다.
 
-![](../../.gitbook/assets/simplevideocall-010.png)
+![](https://github.com/RemoteMonster/documents/tree/86188abf462170321bc5ebe2a7f5421ffb9799fb/.gitbook/assets/simplevideocall-010.png)
 
 {% tabs %}
 {% tab title="index.html" %}
@@ -347,7 +347,7 @@ footer {
 {% endtab %}
 {% endtabs %}
 
-![](../../.gitbook/assets/simplevideocall_041.png)
+![](https://github.com/RemoteMonster/documents/tree/86188abf462170321bc5ebe2a7f5421ffb9799fb/.gitbook/assets/simplevideocall_041.png)
 
 ## 그 외 주요 메소드들 <a id="undefined-2"></a>
 

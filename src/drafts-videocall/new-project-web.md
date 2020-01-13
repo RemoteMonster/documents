@@ -1,4 +1,4 @@
-# 새 프로젝트 설정\(Web\)
+# 통화 새 프로젝트 설정 - Web
 
 ## 준비사항 <a id="undefined"></a>
 
@@ -34,7 +34,7 @@ adapter.js 최신 버전을 remon.js 앞에 삽입해주십시오. 웹 브라우
 
 ### NPM으로 라이브러리 다운로드
 
-npm으로 최신 버전을 다운로드 할 수 있습니다. node\_modules/webrtc-adapter/out/adapter.js 파일과 node\_modules/@remotemonster/sdk/remon.min.js 파일을 HTML 파일에 위 예시를 참고하여 삽입하십시오. 
+npm으로 최신 버전을 다운로드 할 수 있습니다. node\_modules/webrtc-adapter/out/adapter.js 파일과 node\_modules/@remotemonster/sdk/remon.min.js 파일을 HTML 파일에 위 예시를 참고하여 삽입하십시오.
 
 ```bash
 npm install @remotemonster/sdk
@@ -59,7 +59,7 @@ const config = {
 </script>
 ```
 
-설정이 완료된 HTML파일의 예시는 다음과 같습니다. 
+설정이 완료된 HTML파일의 예시는 다음과 같습니다.
 
 {% tabs %}
 {% tab title="index.html" %}
@@ -96,7 +96,7 @@ const config = {
 
 RemoteMonster를 이용한 개발은 Remon 클래스에 대한 이해가 필요합니다.
 
-[Remon 클래스 알아보기](../../drafts/drafts/inside-remoncall-sdk/remoncall.md)
+[Remon 클래스 알아보기](https://github.com/RemoteMonster/documents/tree/86188abf462170321bc5ebe2a7f5421ffb9799fb/drafts/drafts/inside-remoncall-sdk/remoncall.md)
 
 프로젝트 설정을 완료했습니다. 이어서 기능을 구현에 대해 알아봅니다.
 
