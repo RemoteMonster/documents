@@ -67,4 +67,7 @@
 ## drafts - 방송 <a id="drafts-livestreaming"></a>
 
 * [Untitled](drafts-livestreaming/untitled.md)
-
+* [방송 5 분 안에 시작하기](drafts-livestreaming/livestreaming-quickstart.md)
+* [방송 키 발급](drafts-livestreaming/create-key.md)
+* [방송 새 프로젝트 설정 - Web](drafts-livestreaming/new-project-web.md)
+* [단순 시청 앱 만들기 - Web](drafts-livestreaming/simplelivestreaming-code-web.md)
