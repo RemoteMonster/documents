@@ -59,6 +59,7 @@
 
 ## drafts - 통화 <a id="drafts-videocall"></a>
 
+* [통화 5 분 안에 시작하기](drafts-videocall/videocall-quickstart.md)
 * [통화 키 발급](drafts-videocall/create-key.md)
 * [통화 새 프로젝트 설정 - Web](drafts-videocall/new-project-web.md)
 * [단순 통화 앱 만들기 - Web](drafts-videocall/simplevideocall-code-web.md)
