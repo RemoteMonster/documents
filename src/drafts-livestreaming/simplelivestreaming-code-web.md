@@ -1,4 +1,4 @@
-# 단순 시청 앱 만들기\(Web\)
+# 단순 시청 앱 만들기 - Web
 
 ## 목차
 
@@ -281,7 +281,7 @@ video 요소의 크기를 조절하고 배치를 바꾸어 보기 좋게 합니�
 {% endtab %}
 {% endtabs %}
 
-![\(&#xC2DC;&#xCCAD; &#xC571;&#xC758; &#xC2E4;&#xC81C; &#xC678;&#xC591;&#xC740; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.\)](../../.gitbook/assets/video.saramara.ai_sangyong_simplewatch-l.html-nexus-5.png)
+![\(&#xC2DC;&#xCCAD; &#xC571;&#xC758; &#xC2E4;&#xC81C; &#xC678;&#xC591;&#xC740; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.\)](https://github.com/RemoteMonster/documents/tree/02c6158dc0e266b8b3ebb7cc7339759e1749eee8/.gitbook/assets/video.saramara.ai_sangyong_simplewatch-l.html-nexus-5.png)
 
 ## 그 외 주요 메소드들 <a id="undefined-2"></a>
 
