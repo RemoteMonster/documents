@@ -67,13 +67,13 @@
 
 * [통화 5 분 안에 시작하기](drafts-videocall/videocall-quickstart.md)
 * [통화 키 발급](drafts-videocall/create-key.md)
-* [통화 새 프로젝트 설정 - Web](drafts-videocall/new-project-web.md)
+* [새 통화 프로젝트 설정 - Web](drafts-videocall/new-project-web.md)
 * [단순 통화 앱 만들기 - Web](drafts-videocall/simplevideocall-code-web.md)
 
 ## 튜토리얼 - 방송 <a id="drafts-livestreaming"></a>
 
 * [방송 5 분 안에 시작하기](drafts-livestreaming/livestreaming-quickstart.md)
 * [방송 키 발급](drafts-livestreaming/create-key.md)
-* [방송 새 프로젝트 설정 - Web](drafts-livestreaming/new-project-web.md)
+* [새 방송 프로젝트 설정 - Web](drafts-livestreaming/new-project-web.md)
 * [단순 시청 앱 만들기 - Web](drafts-livestreaming/simplelivestreaming-code-web.md)
 

@@ -2,9 +2,9 @@
 
 ## 그룹통화란?
 
-다수의 참여자가 통화에 참여하는 서비스를 위한 기능입니다. Remon SDK를 이용하여 통화 또는 방송 구현 경험이 있으면 이해에 도움이 됩니다. 통화 또는 방송 튜토리얼을 학습한 후에 그룹통화를 학습하기를 권장합니다.
+다수의 참여자가 통화에 참여하는 서비스를 위한 기능입니다. Remon SDK를 이용하여 통화 또는 방송 구현 경험이 있으면 이해에 도움이 됩니다. 통화 또는 방송 튜토리얼을 학습한 후에 그룹통화를 학습하기를 권장합니다. 
 
-## 그룹통화 샘플 앱
+##  그룹통화 샘플 앱
 
 * [https://sample.remotemonster.com/conference.html](https://sample.remotemonster.com/conference.html)
 
@@ -55,7 +55,7 @@ var listener= {
 
 // 권장하는 방법은 아니지만, 연결이 진행된 후 Remon 객체에서도 확인할 수 있습니다.
 // remon = new Remon({ config, listener });
-// var myid = remon.context.channel.id;
+// var myid = remon.context.channel.id; 
 ```
 
 * 이제 그룹 통화 방에 속해있는 모든 참여자의 채널id를 확보하였습니다.
