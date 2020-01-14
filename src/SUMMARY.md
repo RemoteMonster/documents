@@ -57,6 +57,12 @@
 * [Error](common/error.md)
 * [About WebRTC](common/about-webrtc.md)
 
+## 그룹통화 <a id="groupcall"></a>
+
+* [그룹통화 만들기\(Android\)](groupcall/groupcall-android.md)
+* [그룹통화 만들기\(iOS\)](groupcall/groupcall-ios.md)
+* [그룹통화 만들기\(Web\)](groupcall/groupcall-web.md)
+
 ## 튜토리얼 - 통화 <a id="drafts-videocall"></a>
 
 * [통화 5 분 안에 시작하기](drafts-videocall/videocall-quickstart.md)
@@ -70,10 +76,4 @@
 * [방송 키 발급](drafts-livestreaming/create-key.md)
 * [방송 새 프로젝트 설정 - Web](drafts-livestreaming/new-project-web.md)
 * [단순 시청 앱 만들기 - Web](drafts-livestreaming/simplelivestreaming-code-web.md)
-
-## 그룹통화 <a id="groupcall"></a>
-
-* [그룹통화 만들기(Android)](groupcall/groupcall-android.md)
-* [그룹통화 만들기(iOS)](groupcall/groupcall-ios.md)
-* [그룹통화 만들기(Web)](groupcall/groupcall-web.md)
 

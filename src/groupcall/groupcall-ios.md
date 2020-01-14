@@ -41,7 +41,7 @@ RemonConference 클래스는 콜백으로 사용하기 위해 아래 메소드�
 
 그룹통화 화면을 나의 영상 한 개와 그룹 참여자의 영상 여러 개로 구성합니다. 레이아웃에 영상을 표시할 view를 만들고 인덱스를 지정하여 참여자의 영상을 원하는 위치에 표시할 수 있도록 합니다.
 
-![XCode &#xC2A4;&#xD1A0;&#xB9AC;&#xBCF4;&#xB4DC;](../.gitbook/assets/2019-12-04-1.47.05.png)
+![XCode &#xC2A4;&#xD1A0;&#xB9AC;&#xBCF4;&#xB4DC;](https://github.com/RemoteMonster/documents/tree/2e1e5d31614ca7cfc44f8058f414d03b035e4026/src/.gitbook/assets/2019-12-04-1.47.05.png)
 
 ## 레이아웃 초기화
 
@@ -51,7 +51,7 @@ RemonConference 클래스는 콜백으로 사용하기 위해 아래 메소드�
 @IBOutlet var viewArray: [UIView]!
 ```
 
-![&#xBDF0;&#xB4E4;&#xC744; &#xBC30;&#xC5F4;&#xC5D0; &#xCD94;&#xAC00;](../.gitbook/assets/2019-12-04-2.25.33.png)
+![&#xBDF0;&#xB4E4;&#xC744; &#xBC30;&#xC5F4;&#xC5D0; &#xCD94;&#xAC00;](https://github.com/RemoteMonster/documents/tree/2e1e5d31614ca7cfc44f8058f414d03b035e4026/src/.gitbook/assets/2019-12-04-2.25.33.png)
 
 ## RemonConference 객체 생성
 
