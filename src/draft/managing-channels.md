@@ -191,7 +191,7 @@ https://signal.remotemonster.com/lambda/channel-force-termination
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+채널을 강제로 종료합니다. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
