@@ -40,6 +40,7 @@
 
 * [Admin API - Livecast - beta](api/admin-livecast.md)
 * [Webhook API - Livecast - beta](api/webhook-livecast.md)
+* [Managing Channels](api/managing-channels.md)
 
 ## Common
 
