@@ -92,7 +92,25 @@ peerCount 는 누적 세션수입니다.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+### 예시
 
+{% tabs %}
+{% tab title="curl" %}
+```bash
+curl -X POST https://consoleapi.remotemonster.com/v1/search \
+-H 'Content-type: application/json' \
+-d '
+{
+  "serviceId": "tutoring",
+  "secret":"681d0f861b793a61c1a428bb0c70aa9294f98fad83994b21",
+  "keyword" : "",
+  "starttime": 1581315000,
+  "endtime": 1581315900
+}
+'
+```
+{% endtab %}
+{% endtabs %}
 
 ## 방송 중인 채널 조회
 
@@ -153,7 +171,17 @@ numOfWatchers 는 조회 시각의 시청세션수입니다, 누적 시청세션
 {% endapi-method-spec %}
 {% endapi-method %}
 
+### 예시
 
+{% tabs %}
+{% tab title="curl" %}
+```bash
+curl -X POST 'https://signal.remotemonster.com/lambda/broadcast-channel-list' \
+-H 'Content-type: application/json' \
+-d '{"serviceId":"my-service-id","my-secret-key"}'
+```
+{% endtab %}
+{% endtabs %}
 
 ## 채널 강제 종료
 
@@ -205,7 +233,17 @@ Secret Key
 {% endapi-method-spec %}
 {% endapi-method %}
 
+### 예시
 
+{% tabs %}
+{% tab title="curl" %}
+```bash
+curl -X POST https://signal.remotemonster.com/lambda/channel-force-termination \
+-H 'Content-type: application/json' \
+-d '{"serviceId":"my-service-id","my-secret-key","channelId":"the-channel-id"}'
+```
+{% endtab %}
+{% endtabs %}
 
 
 
