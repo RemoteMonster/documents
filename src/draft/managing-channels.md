@@ -17,7 +17,7 @@
 
 ## Service ID, Secret Key 확인
 
-리모트몬스터 웹콘솔의 Project Information 메뉴에서 Service ID, Secret Key를 확인할 수 있습니다.  
+리모트몬스터 웹 콘솔의 Project Information 메뉴에서 Service ID, Secret Key를 확인할 수 있습니다.  
 Secret Key는 \*\*\*\*\*\*\*\*\*\*\*\*\*\* 이 아닙니다. 우측 눈 아이콘을 누르면 표시됩니다.
 
 ![&#xC6F9; &#xCF58;&#xC194;&#xC758; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xAE30;&#xBCF8;&#xC815;&#xBCF4; &#xD654;&#xBA74;](../.gitbook/assets/image-3%20%281%29.png)
