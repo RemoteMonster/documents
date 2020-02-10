@@ -101,8 +101,8 @@ curl -X POST https://consoleapi.remotemonster.com/v1/search \
 -H 'Content-type: application/json' \
 -d '
 {
-  "serviceId": "tutoring",
-  "secret":"681d0f861b793a61c1a428bb0c70aa9294f98fad83994b21",
+  "serviceId": "my-service-id",
+  "secret":"",
   "keyword" : "",
   "starttime": 1581315000,
   "endtime": 1581315900
@@ -153,13 +153,13 @@ numOfWatchers 는 조회 시각의 시청세션수입니다, 누적 시청세션
 [
   {
     "id": "1581324488053_Dc5aQ",
-    "serviceId": "a3333c-f333-4f9a-9a47-66f838ed44e2",
+    "serviceId": "my-service-id",
     "createTime": "2020-02-10T08:48:09.828Z",
     "numOfWatchers": 0
   },
   {
     "id": "1581324445005_s1c9g",
-    "serviceId": "a3331c3c-f333-4f9a-9a47-66f838ed44e2",
+    "serviceId": "my-service-id",
     "createTime": "2020-02-10T08:47:27.011Z",
     "numOfWatchers": 0
   }
