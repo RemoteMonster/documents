@@ -40,6 +40,7 @@
 
 * [Admin API - Livecast - beta](api/admin-livecast.md)
 * [Webhook API - Livecast - beta](api/webhook-livecast.md)
+* [Managing Channels](api/managing-channels.md)
 
 ## Common
 
@@ -76,8 +77,4 @@
 * [방송 키 발급](drafts-livestreaming/create-key.md)
 * [새 방송 프로젝트 설정 - Web](drafts-livestreaming/new-project-web.md)
 * [단순 시청 앱 만들기 - Web](drafts-livestreaming/simplelivestreaming-code-web.md)
-
-## Draft
-
-* [Managing Channels](draft/managing-channels.md)
 
