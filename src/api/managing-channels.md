@@ -24,7 +24,7 @@ Secret Key는 \*\*\*\*\*\*\*\*\*\*\*\*\*\* 이 아닙니다. 우측 눈 아이�
 
 ## 채널 검색
 
-{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path="" %}
+{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path=" " %}
 {% api-method-summary %}
 https://consoleapi.remotemonster.com/v1/search
 {% endapi-method-summary %}
@@ -114,7 +114,7 @@ curl -X POST https://consoleapi.remotemonster.com/v1/search \
 
 ## 방송 중인 채널 조회
 
-{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path="" %}
+{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path=" " %}
 {% api-method-summary %}
 https://signal.remotemonster.com/lambda/broadcast-channel-list
 {% endapi-method-summary %}
@@ -185,7 +185,7 @@ curl -X POST 'https://signal.remotemonster.com/lambda/broadcast-channel-list' \
 
 ## 채널 강제 종료
 
-{% api-method method="post" host="https://signal.remotemonster.com/lambda/channel-force-termination" path="" %}
+{% api-method method="post" host="https://signal.remotemonster.com/lambda/channel-force-termination" path=" " %}
 {% api-method-summary %}
 https://signal.remotemonster.com/lambda/channel-force-termination
 {% endapi-method-summary %}
