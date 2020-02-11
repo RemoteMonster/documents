@@ -8,7 +8,9 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
- 녹화 기능을 사용할지 여부를 결정합니다. 이 값은 기본값으로 지정되며, 별도로 클라이언트에서 정책과 별게로 녹화 기능을 선택적으로 사용가능합니다.
+리모트몬스터는 방송서버 측 녹화 기능을 제공합니다. 이는 방송자의 비디오를 리모트몬스터가 받아 파일로 저장하는 것입니다. 방송서버 측 녹화 기능을 이용하기 전에 이메일로 사용 신청을 하십시오.  
+이 API는 방송서버의 녹화 기능을 켜고 끕니다. 새 프로젝트\(서비스\)는 기본값으로 방송서버의 녹화 기능이 꺼져있습니다.  
+방송서버의 녹화 기능은 앱\(클라이언트\)의 녹화 기능과 별개입니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -50,7 +52,7 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
- 녹화가 완료될시 호출하고자 하는 Url. 해당 Url로 녹화가 완료되면 POST가 호출됩니다. 자세한 내용은 Record 항목을 살펴보세요.
+녹화가 완료될시 호출하고자 하는 Url. 해당 Url로 녹화가 완료되면 POST가 호출됩니다. 자세한 내용은 Record 항목을 살펴보세요.
 {% endapi-method-description %}
 
 {% api-method-spec %}

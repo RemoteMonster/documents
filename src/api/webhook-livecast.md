@@ -4,7 +4,7 @@
 
 {% page-ref page="admin-livecast.md" %}
 
-{% api-method method="post" host="https://YOUR\_DOMAIN.COM/SLUG/" path="" %}
+{% api-method method="post" host="https://YOUR\_DOMAIN.COM/SLUG/" path=" " %}
 {% api-method-summary %}
  record done
 {% endapi-method-summary %}
@@ -52,7 +52,7 @@
 
 {% page-ref page="../common/record.md" %}
 
-{% api-method method="get" host="https://YOUR\_DOMAIN.COM/SLUG/" path="" %}
+{% api-method method="get" host="https://YOUR\_DOMAIN.COM/SLUG/" path=" " %}
 {% api-method-summary %}
  channel create, close
 {% endapi-method-summary %}

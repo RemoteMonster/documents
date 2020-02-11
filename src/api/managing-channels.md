@@ -17,14 +17,14 @@
 
 ## Service ID, Secret Key 확인
 
-[리모트몬스터 웹 콘솔](https://console.remotemonster.com/)의 Project Information 메뉴에서 Service ID, Secret Key를 확인할 수 있습니다.  
+리모트몬스터 웹 콘솔의 Project Information 메뉴에서 Service ID, Secret Key를 확인할 수 있습니다.  
 Secret Key는 \*\*\*\*\*\*\*\*\*\*\*\*\*\* 이 아닙니다. 우측 눈 아이콘을 누르면 표시됩니다.
 
 ![&#xC6F9; &#xCF58;&#xC194;&#xC758; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xAE30;&#xBCF8;&#xC815;&#xBCF4; &#xD654;&#xBA74;](../.gitbook/assets/image-3%20%281%29.png)
 
 ## 채널 검색
 
-{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path=" " %}
+{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path="" %}
 {% api-method-summary %}
 https://consoleapi.remotemonster.com/v1/search
 {% endapi-method-summary %}
@@ -114,7 +114,7 @@ curl -X POST https://consoleapi.remotemonster.com/v1/search \
 
 ## 방송 중인 채널 조회
 
-{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path=" " %}
+{% api-method method="post" host="https://signal.remotemonster.com/lambda/broadcast-channel-list" path="" %}
 {% api-method-summary %}
 https://signal.remotemonster.com/lambda/broadcast-channel-list
 {% endapi-method-summary %}
@@ -185,7 +185,7 @@ curl -X POST 'https://signal.remotemonster.com/lambda/broadcast-channel-list' \
 
 ## 채널 강제 종료
 
-{% api-method method="post" host="https://signal.remotemonster.com/lambda/channel-force-termination" path=" " %}
+{% api-method method="post" host="https://signal.remotemonster.com/lambda/channel-force-termination" path="" %}
 {% api-method-summary %}
 https://signal.remotemonster.com/lambda/channel-force-termination
 {% endapi-method-summary %}
