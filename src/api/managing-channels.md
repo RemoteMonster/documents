@@ -38,17 +38,17 @@ https://consoleapi.remotemonster.com/v1/search
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Content-type" type="string" required=false %}
+{% api-method-parameter name="Content-type" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="serviceId" type="string" required=false %}
+{% api-method-parameter name="serviceId" type="string" required=true %}
 Service ID
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="secret" type="string" required=false %}
+{% api-method-parameter name="secret" type="string" required=true %}
 Secret Key
 {% endapi-method-parameter %}
 
@@ -126,17 +126,17 @@ https://signal.remotemonster.com/lambda/broadcast-channel-list
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Content-type" type="string" required=false %}
+{% api-method-parameter name="Content-type" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="serviceId" type="string" required=false %}
+{% api-method-parameter name="serviceId" type="string" required=true %}
 Service ID
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="secret" type="string" required=false %}
+{% api-method-parameter name="secret" type="string" required=true %}
 Secret Key
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -197,21 +197,21 @@ https://signal.remotemonster.com/lambda/channel-force-termination
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Content-type" type="string" required=false %}
+{% api-method-parameter name="Content-type" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="serviceId" type="string" required=false %}
+{% api-method-parameter name="serviceId" type="string" required=true %}
 Service ID
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="secret" type="string" required=false %}
+{% api-method-parameter name="secret" type="string" required=true %}
 Secret Key
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="channelId" type="string" required=false %}
+{% api-method-parameter name="channelId" type="string" required=true %}
 종료할 채널 ID
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
