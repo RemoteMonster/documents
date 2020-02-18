@@ -57,6 +57,7 @@
 * [Record - beta](common/record.md)
 * [Error](common/error.md)
 * [About WebRTC](common/about-webrtc.md)
+* [FAQ](common/faq.md)
 
 ## 그룹통화 <a id="groupcall"></a>
 
