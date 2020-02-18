@@ -8,7 +8,7 @@
 ## 주요 블로그 및 커뮤니티
 
 * [RemoteMonster Blog](http://blog.remotemonster.com): 리모트몬스터가 운영하는 WebRTC 블로그
-* [WebRTC 한국 커뮤니티](https://www.facebook.com/groups/rtc.korea/): 한국에서 가장활발이 활동되고 있는 WebRTC 커뮤니티
+* [WebRTC 한국 커뮤니티](https://www.facebook.com/groups/rtc.korea/): 한국에서 가장 활발한 WebRTC 커뮤니티
 
 ## 최신 트렌드 및 시장조사
 
