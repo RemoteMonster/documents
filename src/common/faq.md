@@ -2,7 +2,7 @@
 
 ## Android, iOS용 샘플 앱 빌드가 안 됩니다.
 
-빌드 환경의 편차가 커서, 환경에 따라 빌드가 안 되는 경우가 간혹 있습니다. [리모트몬스터 커뮤니티](https://community.remotemonster.com/)에 오류 메시지와 함께 질문을 남겨주십시오. 
+빌드 환경의 편차가 커서, 환경에 따라 빌드가 안 되는 경우가 간혹 있습니다. [리모트몬스터 커뮤니티](https://community.remotemonster.com/)에 오류 메시지와 함께 질문을 남겨주십시오.
 
 ## 방송/통화 시작 전에 카메라를 선택하고 싶습니다.
 
@@ -47,7 +47,7 @@ RemonCast, RemonCall의 인스턴스 메소드 중 switchCamera 가 있습니다
 
 방송자 쪽에서 채널을 생성한 후에 시청자 쪽에서 채널에 접속할 수 있습니다. 시청자 쪽에서 먼저 채널에 접속하려고 시도했는지 확인 바랍니다.
 
-위 문제가 아니라면  [리모트몬스터 커뮤니티](https://community.remotemonster.com/)에 오류 메시지와 함께 질문을 남겨주십시오.
+위 문제가 아니라면 [리모트몬스터 커뮤니티](https://community.remotemonster.com/)에 오류 메시지와 함께 질문을 남겨주십시오.
 
 ## 통화 테스트 시 소리 울림이 심합니다. 왜 그런가요?
 
@@ -62,6 +62,4 @@ RemonCast, RemonCall의 인스턴스 메소드 중 switchCamera 가 있습니다
 [https://sample.remotemonster.com/voiceCall.html](https://sample.remotemonster.com/voiceCall.html)
 
 [https://sample.remotemonster.com/voiceCast.html](https://sample.remotemonster.com/voiceCast.html)
-
-
 
