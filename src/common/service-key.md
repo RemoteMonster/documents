@@ -2,19 +2,15 @@
 
 ## Overview
 
-RemoteMonster를 실제 사용하기 위해서는 Service ID와 Key를 발급 받아 RemoteMonster로 접근이 가능합니다. Service ID와 Key는 각 사용자를 구분 하는 역할을 하며, 각각의 독립된 서비스별로 별도로 발급받아 사용하면 됩니다. 동시에 사용량 측정 및 과금의 기준이 됩니다.
+RemoteMonster를 이용하기 위해서는 Service ID와 Secret Key를 발급 받아야 합니다. Service ID와 Secret Key는 프로젝트\(서비스\) 생성 시 자동으로 생성됩니다. 리모트몬스터는 Service ID와 Secret Key를 서비스\(앱\)를 구분 하는데 사용됩니다. 동시에 사용량 측정 및 과금의 기준이 됩니다. 고객님이 여러 개의 앱을 만들 경우 앱 수만큼 Service ID를 발급받아 사용하면 됩니다.
 
-## 신청
+## 프로젝트 생성
 
-아래 웹 사이트에서 `지금 시작하기` 버튼을 클릭하고 "키 발급 신청서"를 작성합니다.
+아래 웹 사이트의 콘솔 메뉴를 클릭하고, 회원 가입을 완료해주십시오. 프로젝트\(서비스\) 상세 정보를 조회하면 Service ID와 Secret Key를 확인할 수 있습니다.
 
 {% embed url="https://remotemonster.com" caption="RemoteMonster Homepage" %}
 
-"키 발급 신청서"를 작성하면 24시간 이내에 Service ID와 Key를 이메일로 받게 됩니다. Service ID와 Key는 잃어버렸을 경우 찾을 수 없습니다. 이메일을 삭제하지 말고 보관해주십시오. 신청 시 반드시 유효한 이메일 주소를 입력하십시오.
-
-## 발급
-
-신청 시 기입한 이메일 주소로 아래의 정보가 발송됩니다.
+타 사용자의 Service ID와 Secret Key를 함부로 이용해서는 안 됩니다.
 
 ### Service ID
 
