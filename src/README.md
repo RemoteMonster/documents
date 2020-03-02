@@ -8,9 +8,11 @@ RemoteMonster는 방송 통신을 응용하는 서비스를 쉽고 빠르게 개
 
 ## 개발절차
 
-### 서비스 등록 및 인증키 획득
+### 웹 콘솔 가입 및 인증 키 획득
 
-RemoteMonster 홈페이지에서 서비스 개발을 위한 등록을 마칩니다. RemoteMonster는 메일을 통해 인증키를 발급합니다.
+RemoteMonster 웹 콘솔 가입을 합니다. 웹 콘솔에서 프로젝트\(서비스\) 기본 정보 화면에 Service ID와 Secret Key가 표시됩니다.
+
+유료 이용 계약을 하기 전에는, 통화와 방송이 3분간 지속되고 자동으로 끊어집니다.
 
 {% embed url="https://remotemonster.com" caption="RemoteMonster Homepage" %}
 
