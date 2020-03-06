@@ -17,7 +17,7 @@
 {% api-method-request %}
 {% api-method-body-parameters %}
 {% api-method-parameter name="id" type="string" required=true %}
-녹화된 파일의 Channel Id
+녹화가 진행된 Channel Id
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="url" type="string" required=true %}
