@@ -186,7 +186,7 @@ cast.joinCast('MY_CHANNEL_ID')                    // 'channelId' is mandatory
 
 ### onConnect\(channelId\) - communication
 
-통신에서만 사용됩니다. 실질적으로 채널을 만들어 통화를 요청하는 Caller이거나 만들어진 채널에 접속하여 요청에 응답하는 Callee일때의 동작을 달리 하는 경우가 많으며 위해서 개발자가 Caller, Callee여부에 대한 상태를 관리해야 합니다.
+통신에서만 사용됩니다. 실질적으로 채널을 만들어 통화를 요청하는 Caller이거나 만들어진 채널에 접속하여 요청에 응답하는 Callee일때의 동작을 달리 하는 경우가 많으며 개발자가 Caller, Callee여부에 대한 상태를 관리해야 합니다.
 
 Caller는 `connect()`을 통해 채널을 새로 만들고 상대방이 입장하기를 기다립니다.
 
