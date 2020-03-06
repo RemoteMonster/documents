@@ -16,20 +16,24 @@
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
-{% api-method-parameter name="filesize" type="string" required=false %}
-녹화된 파일 크기. Byte
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="duration" type="string" required=false %}
-녹화된 시간. 
+{% api-method-parameter name="id" type="string" required=true %}
+녹화된 파일의 Channel Id
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="url" type="string" required=true %}
-녹화파일이 저장된 URL
+녹화된 파일의 URL
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="id" type="string" required=true %}
-녹화가 진행된 Channel Id
+{% api-method-parameter name="duration" type="string" required=false %}
+녹화된 시간
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="filesize" type="string" required=false %}
+녹화된 파일의 크기\(Byte\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="thumbnail" type="string" required=false %}
+녹화된 파일의 썸네일 URL
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
