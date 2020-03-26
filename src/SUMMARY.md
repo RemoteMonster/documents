@@ -50,6 +50,7 @@
 * [Communication](common/communication.md)
 * [Callbacks](common/callbacks.md)
 * [Channel](common/channel.md)
+* [Channel ID 규칙](common/channel-id-rules.md)
 * [Network Environment](common/network-environment.md)
 * [Studio Environment](common/studio-environment.md)
 * [Media](common/media.md)
