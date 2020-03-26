@@ -98,7 +98,7 @@ video 요소 1개를 추가합니다. 방송의 영상을 표시하기 위해서
   <div id="wingleft"></div>
   <div id="mymain">
     <h2>시청</h2>
-    <video id="remoteVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay playsinline></video>
     <br>
     <button id="mystart" class="btn btn-main">Start</button>
     <button id="mystop" class="btn btn-main" disabled>Stop</button>
