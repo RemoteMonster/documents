@@ -82,11 +82,11 @@
 
 ## 동영상이 표시될 엘리먼트\(video tag\) 추가, 레이아웃에 맞추기
 
-video 요소 2개를 추가합니다. 하나는 내 영상을 표시하고, 다른 하나는 상대방의 영상을 표시하기 위해서입니다. local video 요소에 autoplay 속성이 있으면 통화채널에 들어갔을 때 내 영상이 자동으로 표시됩니다. remote video 요소에 autoplay 속성이 있으면 통화채널에 상대방이 들어왔을 때 상대방 영상이 자동으로 표시됩니다. config에 remote와 local 항목으로 이 video 요소들의 ID를 입력합니다. button 요소 2개를 추가합니다. "시작" 버튼은 통화채널에 들어가고, "종료" 버튼은 통화채널에서 나가는 데 씁니다. 통화채널의 ID를 표시할 영역을 추가합니다. 시작 버튼을 눌렀을 때 영상이 보이지 않으면 video 요소의 autoplay 속성을 확인하십시오.
+video 요소 2개를 추가합니다. 하나는 내 영상을 표시하고, 다른 하나는 상대방의 영상을 표시하기 위해서입니다. local video 요소에 autoplay 속성이 있으면 통화채널에 들어갔을 때 내 영상이 자동으로 표시됩니다. remote video 요소에 autoplay 속성이 있으면 통화채널에 상대방이 들어왔을 때 상대방 영상이 자동으로 표시됩니다. config에 remote와 local 항목으로 이 video 요소들의 ID를 입력합니다. button 요소 2개를 추가합니다. "시작" 버튼은 통화채널에 들어가고, "종료" 버튼은 통화채널에서 나가는 데 씁니다. 통화채널의 ID를 표시할 영역을 추가합니다. 
 
-아래와 같은 모습을 만들겁니다. 안 예쁘다고요? 문서 뒷부분에서 예쁘게 해보겠습니다.
+시작 버튼을 눌렀을 때 영상이 보이지 않으면 video 요소의 autoplay 속성을 확인하십시오. Safari에서 동영상이 표시되지 않으면 playsinline 속성을 추가합니다.
 
-![](https://github.com/RemoteMonster/documents/tree/86188abf462170321bc5ebe2a7f5421ffb9799fb/.gitbook/assets/simplevideocall-010.png)
+local video 요소에는 muted 속성을 추가합니다. muted 속성이 없으면 내 마이크로 들어간 소리가 내 스피커로 나와 하울링이 발생할 수 있습니다.
 
 {% tabs %}
 {% tab title="index.html" %}
@@ -102,9 +102,9 @@ video 요소 2개를 추가합니다. 하나는 내 영상을 표시하고, 다�
   <body>
     <main>
       상대방    
-      <video id="remoteVideo" autoplay></video>
+      <video id="remoteVideo" autoplay playsinline></video>
       나    
-      <video id="localVideo" autoplay></video>
+      <video id="localVideo" muted autoplay playsinline></video>
       <button id="startCall">시작</button>    
       <button id="stopCall">종료</button>    
       <div id="channelId"></div>
@@ -136,6 +136,10 @@ video 요소 2개를 추가합니다. 하나는 내 영상을 표시하고, 다�
 {% endtab %}
 {% endtabs %}
 
+아래와 같은 모습을 만들겁니다. 안 예쁘다고요? 문서 뒷부분에서 예쁘게 해보겠습니다.
+
+![](../.gitbook/assets/simplevideocall-010.png)
+
 ## 채널에 들어가기, 채널ID 확인하기
 
 채널ID를 명시하지 않으면 임의의 채널을 생성합니다. onCreate 콜백을 이용하여 채널ID를 확인합니다.
@@ -153,10 +157,10 @@ video 요소 2개를 추가합니다. 하나는 내 영상을 표시하고, 다�
 
 <body>
     <main> 
-      상대방 
-      <video id="remoteVideo" autoplay></video> 
-      나 
-      <video id="localVideo" autoplay></video> 
+      상대방    
+      <video id="remoteVideo" autoplay playsinline></video>
+      나    
+      <video id="localVideo" muted autoplay playsinline></video>
       <button id="startCall">시작</button> 
       <button id="stopCall">종료</button>
       <div id="channelId"></div>
@@ -237,11 +241,11 @@ video 요소의 크기를 조절하고 배치를 바꾸어 보기 좋게 합니�
         <div class="row">
           <div id="you" class="col-12 col-sm-6 col-md-6">
             <h2>상대방</h2>
-            <video id="remoteVideo" class="remoteVideo" autoplay></video>
+            <video id="remoteVideo" class="remoteVideo" autoplay playsinline></video>
           </div>
           <div id="me" class="col-12 col-sm-6 col-md-6">
             <h2>나</h2>
-            <video id="localVideo" class="localVideo" autoplay></video>
+            <video id="localVideo" class="localVideo" muted autoplay playsinline></video>
           </div>
         </div>
         <div class="row">
@@ -347,7 +351,7 @@ footer {
 {% endtab %}
 {% endtabs %}
 
-![](https://github.com/RemoteMonster/documents/tree/86188abf462170321bc5ebe2a7f5421ffb9799fb/.gitbook/assets/simplevideocall_041.png)
+![](../.gitbook/assets/simplevideocall_041.png)
 
 ## 그 외 주요 메소드들 <a id="undefined-2"></a>
 
