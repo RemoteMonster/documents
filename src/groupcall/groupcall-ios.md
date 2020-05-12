@@ -88,7 +88,8 @@ create 메소드로 그룹통화에 입장한 뒤 on\(\) 메쏘드로 콜백을 
 새 참여자가 그룹통화에 입장하면 연결된 on 메소드의 콜백이 호출됩니다. on 메소드 콜백에서 RemonParticipant 객체가 제공되므로, 해당 정보를 사용해 설정을 진행합니다. 
 
 ```kotlin
-remonConference.create( "방이름", config: config) { _ in
+remonConference.create( "방이름", config: config) { 
+    participant in
 }.on( "onRoomCreated" ) { 
     participant in
     
