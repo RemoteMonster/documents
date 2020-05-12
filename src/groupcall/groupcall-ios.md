@@ -24,7 +24,8 @@ RemonConference 클래스는 콜백으로 사용하기 위해 아래 메소드�
 // create 메소드의 콜백용 메소드
 .on( eventName:"onRoomCreate") { participant in
 }.on( eventName:"onUserJoined") { participant in
-}.on( eventName:"onUserLeaved") { participant in
+}.on( eventName: "onUserStreamConnected" ) { particpant in
+}.on( eventName:"onUserLeft") { participant in
 }.close {
 }.error { error in
 }
@@ -65,7 +66,9 @@ config.serviceId = "콘솔을 통해 발급 받은 Service Id"
 config.key = "콘솔을 통해 발급 받은 Secret Key"
 
 
-remonConference.create( "방이름", config: config) { participant in
+remonConference.create( "방이름", config: config) { 
+    participant in
+    
     // 마스터유저가 전달됩니다. (iOS의 경우 Builder 를 제공하지 않습니다)
     // 객체 생성은 RemonConference에서 이루어지므로 전달된 객체에 설정만을 제공합니다.
     participant.localView( surfaceRendererArray[0] )
@@ -73,7 +76,8 @@ remonConference.create( "방이름", config: config) { participant in
 }.close {
     // 마스터 유저가 종료된 경우 호출됩니다.
     // 송출이 중단되면 그룹통화에서 끊어진 것이므로, 다른 유저와의 연결도 모두 끊어집니다.
-}.error { error
+}.error { 
+    error in
     // 마스터 유저가 연결된 채널에서 에러 발생 시 호출됩니다.
 }
 ```
@@ -85,7 +89,9 @@ create 메소드로 그룹통화에 입장한 뒤 on\(\) 메쏘드로 콜백을 
 
 ```kotlin
 remonConference.create( "방이름", config: config) { _ in
-}.on( "onRoomCreated" ) { participant in
+}.on( "onRoomCreated" ) { 
+    participant in
+    
     // 마스터 유저가 접속된 이후에 호출(실제 송출 시작)
     // TODO: 실제 유저 정보는 각 서비스에서 관리하므로, 서비스에서 채널과 실제 유저 매핑 작업 진행
     // tag 객체에 holder 형태로 객체를 지정해 사용할 수 있습니다.
@@ -94,7 +100,9 @@ remonConference.create( "방이름", config: config) { _ in
     
     // 뷰 설정용
     availableViews?[0] = true
-}.on( "onUserJoined" ) { participant ->
+}.on( "onUserJoined" ) { 
+    participant in
+    
     Log.d( TAG, "Joined new user" )
     // 그룹통화에 새로운 참여자가 입장했을 때 호출됩니다.
     // 새로운 참여자의 RemonParticipant 객체가 전달됩니다.
@@ -106,7 +114,13 @@ remonConference.create( "방이름", config: config) { _ in
         participant.tag = index
     }
 
-}.on( "onUserLeaved" ) { participant ->
+}.on( "onUserStreamConnected" ) { 
+    participant in
+    // 참여자가 연결된 이후에 호출됩니다.
+    
+}.on( "onUserLeft" ) { 
+    participant in
+    
     // 다른 사용자가 퇴장한 경우
     // participant.id 와 participant.tag 를 참조해 어떤 사용자가 퇴장했는지 확인후 퇴장 처리를 합니다.
     if let index = participant.tag as? Int {

@@ -22,15 +22,16 @@ RemonConference 클래스는 콜백으로 사용하기 위해 아래 메소드�
 
 ```kotlin
 // 룸의 콜백용 메소드
-on( "onRoomCreate" ) { participant:RemonParticipant
-}on( "onUserJoined" ) { participant:RemonParticipant
-}on( "onUserLeaved" ) { participant:RemonParticipant
+on( "onRoomCreate" ) { participant:RemonParticipant ->
+}.on( "onUserJoined" ) { participant:RemonParticipant ->
+}.on( "onUserStreamConnected" ) { participant:RemonParticipant ->
+}.on( "onUserLeaved" ) { participant:RemonParticipant ->
 }.close {
-}.error { error:RemonException
+}.error { error:RemonException ->
 }
 
 // participant 콜백용 메소드
-.on( "onComplete" ) { participant:RemonParticipant 
+.on( "onComplete" ) { participant:RemonParticipant ->
 }
 ```
 
@@ -237,7 +238,9 @@ config.context = this
 config.serviceId = "콘솔을 통해 발급 받은 Service Id"
 config.key = "콘솔을 통해 발급 받은 Secret Key"
 
-remonConference.create( "방이름", config) { participant ->
+remonConference.create( "방이름", config) { 
+    participant ->
+    
     // 마스터 유저(송출자,나자신) 초기화
     participant.localView = surfaceRendererArray[0]
     
@@ -246,7 +249,8 @@ remonConference.create( "방이름", config) { participant ->
 }.close {
     // 마스터 유저가 연결된 채널이 종료되면 호출됩니다.
     // 송출이 중단되면 그룹통화에서 끊어진 것이므로, 다른 유저와의 연결도 모두 끊어집니다.
-}.error { error:RemonException
+}.error { 
+    error:RemonException ->
     // 마스터 유저가 연결된 채널에서 에러 발생 시 호출됩니다.
     // 오류로 연결이 종료되면 error -> close 순으로 호출됩니다.
 }
@@ -261,14 +265,19 @@ remonConference.create( "방이름", config) { participant ->
 remonConference.create( "방이름", config) {
     .
     .
-}.on( "onRoomCreated" ) { participant ->
+}.on( "onRoomCreated" ) { 
+    participant ->
+    
     // 마스터 유저가 접속된 이후에 호출(실제 송출 시작)
     // TODO: 실제 유저 정보는 각 서비스에서 관리하므로, 서비스에서 채널과 실제 유저 매핑 작업 진행
 
     // tag 객체에 holder 패턴 형태로 객체를 지정해 사용할 수 있습니다.
     // 예제에서는 뷰설정을 위해 단순히 view의 index를 저장합니다.
     participant.tag = 0
-}.on( "onUserJoined" ) { participant ->
+    
+}.on( "onUserJoined" ) { 
+    participant ->
+    
     Log.d( TAG, "Joined new user" )
     // 그룹통화에 새로운 잠여자가 입장했을 때 호출됩니다.
     // 다른 사용자가 입장한 경우 초기화를 위해 호출됨
@@ -287,7 +296,10 @@ remonConference.create( "방이름", config) {
     participant.on( "onComplete" ) { participant ->
         // updateView()
     }
-}.on( "onUserLeaved" ) { participant ->
+}.on( "onUserStreamConnected" ) { participant ->
+    // 피어의 onComplete 콜백과 동일
+
+}.on( "onUserLeft" ) { participant ->
     // 상대방이 그룹통화에서 퇴장한 경우 or 연결이 종료된 경우 호출됩니다.
     // id 와 tag 를 참조해 어떤 사용자가 퇴장했는지 확인후 퇴장 처리를 합니다.
     val index = participant.tag as Int
