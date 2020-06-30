@@ -68,7 +68,7 @@
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="action" type="string" required=false %}
+{% api-method-parameter name="action" type="string" required=true %}
 close \|\| create
 {% endapi-method-parameter %}
 
