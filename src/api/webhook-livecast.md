@@ -62,20 +62,20 @@
 {% endapi-method-summary %}
 
 {% api-method-description %}
- 방송이 종료되면 아래와 같이 해당하는 channel id값을 담은 JSON 몸체가 호출됩니다.
+ 방송이 종료되면 아래와 같이 해당하는 값을 Query로 호출합니다. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="action" type="string" required=true %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="action" type="string" required=false %}
 close \|\| create
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="chid" type="string" required=true %}
-Channel ID
+Channel Id
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
