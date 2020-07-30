@@ -2,8 +2,6 @@
 
 기능개발시 필요에 따라 리모트몬스터로부터 특정 정보를 받을 필요가 종종 생깁니다. 리모트몬스터는 이를 Webhook 형태로 제공하고 있습니다. 호출 받고자하는 Webhook 주소는 아래를 참고하여 설정합니다.
 
-{% page-ref page="admin-livecast.md" %}
-
 {% api-method method="post" host="https://YOUR\_DOMAIN.COM/SLUG/" path=" " %}
 {% api-method-summary %}
  record done
