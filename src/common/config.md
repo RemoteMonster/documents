@@ -93,7 +93,7 @@ config.setKey("myKey");
 
 {% tab title="Android - Kotlin" %}
 ```kotlin
-var config = com.remotemoster.sdk.Config()
+var config = com.remotemonster.sdk.Config()
 config.serviceId = "serviceId"
 config.key = "serviceKey"
 ```
@@ -140,7 +140,7 @@ config.setMeta( meta );
 var meta = hashMapOf<String, Object>()
 meta.put("uid", "myUid")
 
-var config = com.remotemoster.sdk.Config()
+var config = com.remotemonster.sdk.Config()
 config.meta = meta
 ```
 {% endtab %}
