@@ -14,13 +14,13 @@ description: 뷰와 레이아웃에 대해 소개합니다.
 
 ## View
 
-레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `SurfaceViewRender` 와 SurfaceViewRender 를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRender`가 가장 핵심이므로 먼저 살펴보겠습니다.
+레이아웃과 관련하여 2개의 클래스를 제공하고 있습니다. 가장 핵심이 되는, 영상을 출력하는 View인 `SurfaceViewRenderer` 와 SurfaceViewRenderer 를 효율적으로 RelativeLayout에서 배치하는데 도움을 주는 `PercentFrameLayout`으로 이루어져 있습니다. 이 중에서도 `SurfaceViewRenderer`가 가장 핵심이므로 먼저 살펴보겠습니다.
 
-### SurfaceViewRender
+### SurfaceViewRenderer
 
 #### Basic
 
-Android layout 파일에서 다음과 같이 layout에 배치함으로써 `SurfaceViewRender`를 사용할 수 있습니다.
+Android layout 파일에서 다음과 같이 layout에 배치함으로써 `SurfaceViewRenderer`를 사용할 수 있습니다.
 
 ```markup
 <RelativeLayout
@@ -43,9 +43,9 @@ android:layout_weight="2">
 그리고 특정 Activity에서 다음과 같이 이 View의 객체를 얻어옵니다.
 
 ```java
-SurfaceViewRender localRender =
+SurfaceViewRenderer localRender =
   (SurfaceViewRenderer) findViewById(R.id.local_video_view);
-SurfaceViewRender remoteRender =
+SurfaceViewRenderer remoteRender =
   (SurfaceViewRenderer) findViewById(R.id.remote_video_view);
 ```
 
@@ -53,7 +53,7 @@ SurfaceViewRender remoteRender =
 
 #### Advanced
 
-몇가지 이 `SurfaceViewRender`의 메소드를 살펴보겠습니다.
+몇가지 이 `SurfaceViewRenderer`의 메소드를 살펴보겠습니다.
 
 뷰간의 Z-Order를 설정할 수 있습니다. 즉 이 뷰를 다른 뷰보다 위 위치하도록 설정합니다. 겹치는 뷰가 있을 경우 다른 뷰는 false로 하고 해당 뷰만 true로 설정해야 합니다.
 
